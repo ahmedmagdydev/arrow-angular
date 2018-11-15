@@ -7,7 +7,7 @@ import {DashboardData} from './data';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  private DashboardData:Array<any> = DashboardData;
+  public DashboardData:Array<any> = DashboardData;
   public _orderBy;
   public _status;
   public _itemsPerPage;
