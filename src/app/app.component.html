@@ -35,7 +35,7 @@
 
        <ul class="nav nav-fill main-tabs" id="myTab" role="tablist">
          <li class="nav-item large">
-           <a class="nav-link clearfix d-flex align-items-center active" id="new-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="true">
+           <a class="nav-link clearfix d-flex align-items-center active" id="new-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="true" (click)="changeStatus('new')">
              <span class="tab-detail">
               <p class="number">18</p>
                 <span class="icon-new"></span>
@@ -52,7 +52,7 @@
            </a>
          </li> 
          <li class="nav-item">
-           <a class="nav-link clearfix d-flex align-items-center" id="done-tab" data-toggle="tab" href="#done" role="tab" aria-controls="done" aria-selected="false">
+           <a class="nav-link clearfix d-flex align-items-center" id="done-tab" data-toggle="tab" href="#done" role="tab" aria-controls="done" aria-selected="false" (click)="changeStatus('done')">
              <span class="tab-detail">
               <p class="number">18</p>
                 <span class="icon-done"></span>
@@ -68,7 +68,7 @@
            </a>
          </li>
          <li class="nav-item">
-           <a class="nav-link clearfix d-flex align-items-center" id="waiting-tab" data-toggle="tab" href="#waiting" role="tab" aria-controls="waiting" aria-selected="false">
+           <a class="nav-link clearfix d-flex align-items-center" id="waiting-tab" data-toggle="tab" href="#waiting" role="tab" aria-controls="waiting" aria-selected="false" (click)="changeStatus('assigned')">
              <span class="tab-detail">
               <p class="number">18</p>
                 <span class="icon-assigned"></span>
@@ -85,7 +85,7 @@
            </a>
          </li>
          <li class="nav-item">
-           <a class="nav-link clearfix d-flex align-items-center" id="assigned-tab" data-toggle="tab" href="#assigned" role="tab" aria-controls="assigned" aria-selected="false">
+           <a class="nav-link clearfix d-flex align-items-center" id="assigned-tab" data-toggle="tab" href="#assigned" role="tab" aria-controls="assigned" aria-selected="false" (click)="changeStatus('waiting')">
              <span class="tab-detail">
               <p class="number">18</p>
                 <span class="icon-waiting"></span>
@@ -102,7 +102,7 @@
            </a>
          </li>
          <li class="nav-item">
-           <a class="nav-link clearfix d-flex align-items-center" id="delayed-tab" data-toggle="tab" href="#delayed" role="tab" aria-controls="delayed" aria-selected="false">
+           <a class="nav-link clearfix d-flex align-items-center" id="delayed-tab" data-toggle="tab" href="#delayed" role="tab" aria-controls="delayed" aria-selected="false" (click)="changeStatus('delayed')">
              <span class="tab-detail">
               <p class="number">18</p>
                 <span class="icon-delayed"></span>
@@ -122,41 +122,42 @@
          <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="home-tab">
 
             
-              <div class="table-responsive">
-  <table class="table table-condensed table-main" style="border-collapse:collapse">
+          <div class="table-responsive">
+              <table class="table table-condensed table-main" style="border-collapse:collapse">
   
                 <thead>
-                    <tr><th>Priority  </th>
-                        <th>Subject </th>
-                        <th>Sender</th>
-                        <th>dATE</th>
-                        <th>nUMBER</th>
+                    <tr><th (click)="orderTable('priority')" class="table-filter">Priority</th>
+                        <th (click)="orderTable('title')" class="table-filter">Subject </th>
+                        <th (click)="orderTable('sender')" class="table-filter">Sender</th>
+                        <th (click)="orderTable('date')" class="table-filter">dATE</th>
+                        <th (click)="orderTable('number')" class="table-filter">nUMBER</th>
                         <th>rELATED aCTIONS</th>
                         <th>tEMPLATE</th>
                         <th></th>
                     </tr>
                 </thead>
   
-                <tbody *ngFor="let data of DashboardData">
+                <tbody *ngFor="let data of DashboardData | filterBy: ['status']: _status | orderBy : _orderBy | paginate: { itemsPerPage: _itemsPerPage, currentPage: _currentPage }">
                 <tr data-toggle="collapse" attr.data-target="#row{{data.index}}" class="accordion-toggle collapsed">
                       <td>
-                        <span class="priority priority-{{data.priority}}"><span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                      </span>
+                        <span class="priority priority-{{priority(data.priority)}}" title="priority-{{data.priority}}">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </span>
                       </td>
-                      <td>Test need action from preview</td>
+                      <td>{{data.title}}</td>
                       <td>{{data.sender}}</td>
                       <td>{{data.createdDate | date :'d MMMM yyyy'}}</td>
                       <td>{{data.number}}</td>
                     <td> <span><i class="fa"></i></span>
                     <span><i class="fa"></i></span>
                     <span><i class="fa"></i></span></td>
-                    <td> Internal treatment</td>
+                    <td> {{data.template[0].name}}</td>
                     <td>
                       <div class="dropleft">
                         <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -173,48 +174,52 @@
                   <tr>
                       <td colspan="8" class="hiddenRow"><div id="row{{data.index}}" class="accordian-body collapse" data-parent="#new">
                         <div class="table-details-full">
-                          <h3>Test need action from preview</h3>
+                          <h3>{{data.title}}</h3>
                           <div class="row">
                             <div class="col-3">
                               <label for="">sender:</label>
-                              <p>Mina ,Finance Management </p>
+                              <p>{{data.sender}} </p>
                               <label for="">to:</label>
-                              <p>Mina3 ,Nour  </p>
+                              <p>{{data.to}}</p>
                               <label for="">cc:</label>
-                              <p>Ezzat ,Mina3 ,Nour  </p>
+                              <p>{{data.cc}}</p>
                               <label for="">Need Action  :</label>
-                              <p>No</p>
+                              <p>{{data.needAction ? 'yes' : 'no'}}</p>
                             </div>
+                            
                             <div class="col-3">
                               <label for="">sender:</label>
-                              <p>Mina ,Finance Management </p>
+                              <p>{{data.sender}} </p>
                               <label for="">to:</label>
-                              <p>Mina3 ,Nour  </p>
+                              <p>{{data.to}}</p>
                               <label for="">cc:</label>
-                              <p>Ezzat ,Mina3 ,Nour  </p>
+                              <p>{{data.cc}}</p>
                               <label for="">Need Action  :</label>
-                              <p>No</p>
+                              <p>{{data.needAction ? 'yes' : 'no'}}</p>
                             </div>
+
                             <div class="col-3">
                               <label for="">sender:</label>
-                              <p>Mina ,Finance Management </p>
+                              <p>{{data.sender}} </p>
                               <label for="">to:</label>
-                              <p>Mina3 ,Nour  </p>
+                              <p>{{data.to}}</p>
                               <label for="">cc:</label>
-                              <p>Ezzat ,Mina3 ,Nour  </p>
+                              <p>{{data.cc}}</p>
                               <label for="">Need Action  :</label>
-                              <p>No</p>
+                              <p>{{data.needAction ? 'yes' : 'no'}}</p>
                             </div>
+
                             <div class="col-3">
                               <label for="">sender:</label>
-                              <p>Mina ,Finance Management </p>
+                              <p>{{data.sender}} </p>
                               <label for="">to:</label>
-                              <p>Mina3 ,Nour  </p>
+                              <p>{{data.to}}</p>
                               <label for="">cc:</label>
-                              <p>Ezzat ,Mina3 ,Nour  </p>
+                              <p>{{data.cc}}</p>
                               <label for="">Need Action  :</label>
-                              <p>No</p>
+                              <p>{{data.needAction ? 'yes' : 'no'}}</p>
                             </div>
+                            
                           </div>
                         </div>
                       </div></td>
@@ -223,25 +228,28 @@
                     
                 </tbody>
             </table>
-</div>
+          </div>
               
 
               
-              <div class="table-footer">
-   <div class="d-flex">
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">&lt;</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
-      </ul>
-    </nav>
-
-   </div>
-  </div>
-              
+          <div class="table-footer">
+           <div class="d-flex align-items-center">
+            <pagination-controls 
+                previousLabel=""
+                nextLabel=""
+                autoHide="true"
+                (pageChange)="_currentPage = $event">
+            </pagination-controls>
+            <select class="pl-4" #itemsPerPage (change)="changeItemsPerPage(itemsPerPage.value)">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+            </select>
+            <p class="m-0 pl-1">items per page</p>
+           </div>
+          </div>
+                          
            
          </div>
          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">asd.</div>
