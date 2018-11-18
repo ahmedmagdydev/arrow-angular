@@ -11,7 +11,7 @@ export const DashboardData: Array<any> =[
     "needAction": true,
     "createdDate": "Wednesday, April 23, 2014 7:25 PM",
     "relatedActions": "waiting",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 3404,
     "template": [
       {
@@ -30,14 +30,14 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 1,
     "priority": 14,
-    "status": "Done",
+    "status": "done",
     "sender": "Davis",
     "to": "Mclaughlin",
     "cc": "Tina",
     "needAction": true,
     "createdDate": "Thursday, September 29, 2016 10:10 PM",
     "relatedActions": "cal",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 4736,
     "template": [
       {
@@ -82,7 +82,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 3,
     "priority": 12,
-    "status": "Done",
+    "status": "done",
     "sender": "Josephine",
     "to": "Mildred",
     "cc": "Meyer",
@@ -167,7 +167,7 @@ export const DashboardData: Array<any> =[
     "needAction": true,
     "createdDate": "Tuesday, February 27, 2018 4:04 AM",
     "relatedActions": "waiting",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 4269,
     "template": [
       {
@@ -219,7 +219,7 @@ export const DashboardData: Array<any> =[
     "needAction": false,
     "createdDate": "Tuesday, January 28, 2014 9:05 PM",
     "relatedActions": "cal",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 1606,
     "template": [
       {
@@ -245,7 +245,7 @@ export const DashboardData: Array<any> =[
     "needAction": true,
     "createdDate": "Thursday, March 16, 2017 12:13 PM",
     "relatedActions": "assigned",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 3198,
     "template": [
       {
@@ -271,7 +271,7 @@ export const DashboardData: Array<any> =[
     "needAction": false,
     "createdDate": "Sunday, July 31, 2016 8:26 AM",
     "relatedActions": "waiting",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 3437,
     "template": [
       {
@@ -342,7 +342,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 13,
     "priority": 14,
-    "status": "Done",
+    "status": "done",
     "sender": "Jessica",
     "to": "Maynard",
     "cc": "Amy",
@@ -368,14 +368,14 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 14,
     "priority": 11,
-    "status": "Done",
+    "status": "done",
     "sender": "Beck",
     "to": "Potter",
     "cc": "Malinda",
     "needAction": false,
     "createdDate": "Friday, August 14, 2015 9:53 AM",
     "relatedActions": "assigned",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 4067,
     "template": [
       {
@@ -420,7 +420,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 16,
     "priority": 3,
-    "status": "Done",
+    "status": "done",
     "sender": "Hanson",
     "to": "Joanne",
     "cc": "Diaz",
@@ -446,7 +446,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 17,
     "priority": 5,
-    "status": "Done",
+    "status": "done",
     "sender": "Dawson",
     "to": "Hendrix",
     "cc": "Blackburn",
@@ -557,7 +557,7 @@ export const DashboardData: Array<any> =[
     "needAction": true,
     "createdDate": "Monday, September 8, 2014 8:05 AM",
     "relatedActions": "assigned",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 289,
     "template": [
       {
@@ -576,7 +576,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 22,
     "priority": 10,
-    "status": "Done",
+    "status": "done",
     "sender": "Margery",
     "to": "Geneva",
     "cc": "Lou",
@@ -602,7 +602,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 23,
     "priority": 13,
-    "status": "Done",
+    "status": "done",
     "sender": "Ross",
     "to": "Perez",
     "cc": "Ilene",
@@ -680,7 +680,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 26,
     "priority": 14,
-    "status": "Done",
+    "status": "done",
     "sender": "Lilly",
     "to": "Bailey",
     "cc": "Concetta",
@@ -966,14 +966,14 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 37,
     "priority": 9,
-    "status": "Done",
+    "status": "done",
     "sender": "Iris",
     "to": "Stone",
     "cc": "Albert",
     "needAction": false,
     "createdDate": "Wednesday, May 18, 2016 12:47 AM",
     "relatedActions": "assigned",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 3819,
     "template": [
       {
@@ -1044,7 +1044,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 40,
     "priority": 7,
-    "status": "Done",
+    "status": "done",
     "sender": "Church",
     "to": "Lambert",
     "cc": "Casandra",
@@ -1096,7 +1096,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 42,
     "priority": 6,
-    "status": "Done",
+    "status": "done",
     "sender": "Robert",
     "to": "Hillary",
     "cc": "Rivera",
@@ -1181,7 +1181,7 @@ export const DashboardData: Array<any> =[
     "needAction": true,
     "createdDate": "Wednesday, May 4, 2016 10:58 PM",
     "relatedActions": "cal",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 3310,
     "template": [
       {
@@ -1233,7 +1233,7 @@ export const DashboardData: Array<any> =[
     "needAction": false,
     "createdDate": "Wednesday, July 5, 2017 1:00 PM",
     "relatedActions": "waiting",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 3963,
     "template": [
       {
@@ -1252,7 +1252,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 48,
     "priority": 5,
-    "status": "Done",
+    "status": "done",
     "sender": "Abigail",
     "to": "Sweet",
     "cc": "Chase",
@@ -1311,7 +1311,7 @@ export const DashboardData: Array<any> =[
     "needAction": false,
     "createdDate": "Saturday, September 24, 2016 4:18 PM",
     "relatedActions": "assigned",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 1372,
     "template": [
       {
@@ -1330,14 +1330,14 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 51,
     "priority": 5,
-    "status": "Done",
+    "status": "done",
     "sender": "Hayden",
     "to": "Catalina",
     "cc": "Karla",
     "needAction": true,
     "createdDate": "Friday, July 21, 2017 12:36 AM",
     "relatedActions": "waiting",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 3049,
     "template": [
       {
@@ -1356,7 +1356,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 52,
     "priority": 10,
-    "status": "Done",
+    "status": "done",
     "sender": "Alisa",
     "to": "Sloan",
     "cc": "Horn",
@@ -1382,7 +1382,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 53,
     "priority": 14,
-    "status": "Done",
+    "status": "done",
     "sender": "Galloway",
     "to": "Bauer",
     "cc": "Cindy",
@@ -1512,7 +1512,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 58,
     "priority": 5,
-    "status": "Done",
+    "status": "done",
     "sender": "Tania",
     "to": "Imogene",
     "cc": "Vaughan",
@@ -1649,7 +1649,7 @@ export const DashboardData: Array<any> =[
     "needAction": true,
     "createdDate": "Saturday, October 10, 2015 10:38 PM",
     "relatedActions": "waiting",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 3901,
     "template": [
       {
@@ -1668,7 +1668,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 64,
     "priority": 9,
-    "status": "Done",
+    "status": "done",
     "sender": "Frost",
     "to": "Pratt",
     "cc": "Carroll",
@@ -1805,7 +1805,7 @@ export const DashboardData: Array<any> =[
     "needAction": true,
     "createdDate": "Sunday, November 16, 2014 8:16 AM",
     "relatedActions": "waiting",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 3067,
     "template": [
       {
@@ -1857,7 +1857,7 @@ export const DashboardData: Array<any> =[
     "needAction": true,
     "createdDate": "Saturday, September 27, 2014 8:23 PM",
     "relatedActions": "cal",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 851,
     "template": [
       {
@@ -1902,7 +1902,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 73,
     "priority": 1,
-    "status": "Done",
+    "status": "done",
     "sender": "Maude",
     "to": "Rosalyn",
     "cc": "Estelle",
@@ -1987,7 +1987,7 @@ export const DashboardData: Array<any> =[
     "needAction": false,
     "createdDate": "Sunday, June 28, 2015 10:53 AM",
     "relatedActions": "mail",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 1692,
     "template": [
       {
@@ -2058,14 +2058,14 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 79,
     "priority": 10,
-    "status": "Done",
+    "status": "done",
     "sender": "Hawkins",
     "to": "Wade",
     "cc": "Elizabeth",
     "needAction": false,
     "createdDate": "Saturday, September 15, 2018 4:55 AM",
     "relatedActions": "assigned",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 3186,
     "template": [
       {
@@ -2110,14 +2110,14 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 81,
     "priority": 2,
-    "status": "Done",
+    "status": "done",
     "sender": "Jeanette",
     "to": "Shelby",
     "cc": "Tessa",
     "needAction": false,
     "createdDate": "Thursday, January 29, 2015 5:31 AM",
     "relatedActions": "cal",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 3713,
     "template": [
       {
@@ -2136,7 +2136,7 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 82,
     "priority": 3,
-    "status": "Done",
+    "status": "done",
     "sender": "Stevenson",
     "to": "Carey",
     "cc": "Patsy",
@@ -2273,7 +2273,7 @@ export const DashboardData: Array<any> =[
     "needAction": false,
     "createdDate": "Tuesday, June 6, 2017 11:00 AM",
     "relatedActions": "assigned",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 1119,
     "template": [
       {
@@ -2351,7 +2351,7 @@ export const DashboardData: Array<any> =[
     "needAction": true,
     "createdDate": "Wednesday, September 20, 2017 10:19 PM",
     "relatedActions": "cal",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 4659,
     "template": [
       {
@@ -2377,7 +2377,7 @@ export const DashboardData: Array<any> =[
     "needAction": false,
     "createdDate": "Saturday, August 27, 2016 2:35 PM",
     "relatedActions": "mail",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 1328,
     "template": [
       {
@@ -2429,7 +2429,7 @@ export const DashboardData: Array<any> =[
     "needAction": false,
     "createdDate": "Tuesday, December 1, 2015 6:36 AM",
     "relatedActions": "assigned",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 4957,
     "template": [
       {
@@ -2533,7 +2533,7 @@ export const DashboardData: Array<any> =[
     "needAction": true,
     "createdDate": "Friday, June 20, 2014 5:28 PM",
     "relatedActions": "mail",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 2877,
     "template": [
       {
@@ -2552,14 +2552,14 @@ export const DashboardData: Array<any> =[
     "title":"  Test need action from preview",
     "index": 98,
     "priority": 14,
-    "status": "Done",
+    "status": "done",
     "sender": "Trevino",
     "to": "Foreman",
     "cc": "Nelson",
     "needAction": true,
     "createdDate": "Thursday, February 9, 2017 3:54 AM",
     "relatedActions": "assigned",
-    "keyords": "Done",
+    "keyords": "done",
     "number": 2203,
     "template": [
       {

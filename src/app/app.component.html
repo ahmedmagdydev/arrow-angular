@@ -34,89 +34,24 @@
         </div>
 
        <ul class="nav nav-fill main-tabs" id="myTab" role="tablist">
-         <li class="nav-item large">
-           <a class="nav-link clearfix d-flex align-items-center active" id="new-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="true" (click)="changeStatus('new')">
+         <li class="nav-item" *ngFor="let status of statuses; let i = index" >
+           <a class="nav-link clearfix d-flex align-items-center " attr.aria-controls="{{status}}" id="{{status}}-tab" data-toggle="tab" href="#{{status}}" role="tab"  aria-selected="true" (click)="changeStatus(status)">
              <span class="tab-detail">
-              <p class="number">18</p>
-                <span class="icon-new"></span>
-                <p class="tab-name">new</p>
-                <p>Correspondence </p> 
+              <p class="number">{{dashboardStatus(status).length}}</p>
+                <span class="icon-{{status}}"></span>
+                <p class="tab-name">{{status}}</p> 
+                <p>Correspondence</p> 
                 <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width:25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                  <div class="progress-bar" role="progressbar" style="width:{{dashboardStatus(status).length / DashboardData.length * 100}}%"  aria-valuemin="0" aria-valuemax="100">{{dashboardStatus('new').length / DashboardData.length * 100}}%</div>
                 </div> 
              </span>
              <div class="tab-chart">
-               <canvas id="newChart" width="320" height="130"></canvas>
+               <canvas id="{{status}}Chart" width="320" height="130" attr.data-priority="{{dashboardStatusPrioriy('new')}}"></canvas>
 
              </div>
            </a>
          </li> 
-         <li class="nav-item">
-           <a class="nav-link clearfix d-flex align-items-center" id="done-tab" data-toggle="tab" href="#done" role="tab" aria-controls="done" aria-selected="false" (click)="changeStatus('done')">
-             <span class="tab-detail">
-              <p class="number">18</p>
-                <span class="icon-done"></span>
-                <p class="tab-name">Done</p>
-                <p>Correspondence </p>  
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width:25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-             </span>
-             <span class="tab-chart">
-               <canvas id="doneChart" width="320" height="130"></canvas>
-             </span>
-           </a>
-         </li>
-         <li class="nav-item">
-           <a class="nav-link clearfix d-flex align-items-center" id="waiting-tab" data-toggle="tab" href="#waiting" role="tab" aria-controls="waiting" aria-selected="false" (click)="changeStatus('assigned')">
-             <span class="tab-detail">
-              <p class="number">18</p>
-                <span class="icon-assigned"></span>
-                <p class="tab-name">assigned</p>
-                <p>Correspondence </p>  
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width:25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                </div>
-             </span>
-             <span class="tab-chart">
-               <canvas id="waitingChart" width="320" height="130"></canvas>
-               
-             </span>
-           </a>
-         </li>
-         <li class="nav-item">
-           <a class="nav-link clearfix d-flex align-items-center" id="assigned-tab" data-toggle="tab" href="#assigned" role="tab" aria-controls="assigned" aria-selected="false" (click)="changeStatus('waiting')">
-             <span class="tab-detail">
-              <p class="number">18</p>
-                <span class="icon-waiting"></span>
-                <p class="tab-name">waiting</p>
-                <p>Correspondence </p>  
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width:25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25% </div>
-                </div>
-             </span>
-             <span class="tab-chart">
-               <canvas id="assignedChart" width="320" height="130"></canvas>
-               
-             </span>
-           </a>
-         </li>
-         <li class="nav-item">
-           <a class="nav-link clearfix d-flex align-items-center" id="delayed-tab" data-toggle="tab" href="#delayed" role="tab" aria-controls="delayed" aria-selected="false" (click)="changeStatus('delayed')">
-             <span class="tab-detail">
-              <p class="number">18</p>
-                <span class="icon-delayed"></span>
-                <p class="tab-name">delayed</p>
-                <p>Correspondence </p>  
-                <div class="progress">
-                </div>
-             </span>
-             <span class="tab-chart">
-               <canvas id="delayedChart" width="320" height="130"></canvas>
-               
-             </span>
-           </a> 
-         </li>
+         
        </ul>
        <div class="tab-content" id="myTabContent">
          <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="home-tab">
