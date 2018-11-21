@@ -44,7 +44,9 @@ function removeChart(t) {
 }
 jQuery(document).ready(function(t) {
     function e(e, a) {
-        t("#reportrange span").html(e.format("MMMM D, YYYY") + " - " + a.format("MMMM D, YYYY"))
+        t("#reportrange .from-to").html(e.format("MMMM D, YYYY") + " - " + a.format("MMMM D, YYYY")),
+        t("#reportrange .from").html(e.format("d MMMM YYYY")),
+        t("#reportrange .to").html(a.format("d MMMM YYYY"))
     }
     t("body").on("click", ".toggle-menu", function(e) {
         e.preventDefault(),
@@ -65,8 +67,8 @@ jQuery(document).ready(function(t) {
         }
     }, e),
     e(a, n),
-    displayChart("newChart")
     t('.main-tabs li:first-child').addClass('large').find('a').addClass('active'),
+    setTimeout(function(){displayChart("newChart")},400), 
     t('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
         t(e.target).parent().addClass("large"),
         t(e.relatedTarget).parent().removeClass("large"),

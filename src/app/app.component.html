@@ -26,7 +26,9 @@
              </div>
              <div class="filter-date ml-3">
                <div id="reportrange" class="form-control">
-                   <span></span> 
+                   <span class="from-to"></span> 
+                   <span #fromDate class="from d-none"></span> 
+                   <span #toDate class="to d-none"></span> 
                    <i class="fa fa-calendar"></i>&nbsp;
                </div>
              </div>
@@ -89,9 +91,12 @@
                       <td>{{data.sender}}</td>
                       <td>{{data.createdDate | date :'d MMMM yyyy'}}</td>
                       <td>{{data.number}}</td>
-                    <td> <span><i class="fa"></i></span>
-                    <span><i class="fa"></i></span>
-                    <span><i class="fa"></i></span></td>
+                    <td> 
+                      <span *ngFor="let action of data.relatedActions ; let i = index" class="{{i > 2 ? 'd-none' : null}} mr-3">
+                        <i class="icon-{{action}}"></i>
+                      </span>
+                      <span *ngIf="data.relatedActions.length > 2"> ...</span>
+                    </td>
                     <td> {{data.template[0].name}}</td>
                     <td>
                       <div class="dropleft">
@@ -123,36 +128,37 @@
                             </div>
                             
                             <div class="col-3">
-                              <label for="">sender:</label>
-                              <p>{{data.sender}} </p>
-                              <label for="">to:</label>
-                              <p>{{data.to}}</p>
-                              <label for="">cc:</label>
-                              <p>{{data.cc}}</p>
-                              <label for="">Need Action  :</label>
-                              <p>{{data.needAction ? 'yes' : 'no'}}</p>
+                              <label for="">Creation Date :</label>
+                              <p>{{data.createdDate | date :'d MMMM yyyy'}} </p>
+                              <label for="">Date :</label>
+                              <p>{{data.createdDate | date :'d MMMM yyyy'}}</p>
+                              <label for="">Related Actions :</label>
+                              <p>
+                                <span class="mr-3" *ngFor="let action of data.relatedActions">
+                                  <i class="icon-{{action}}"></i>
+                                </span>
+                              
+                              </p>
+                              <label for="">Keywords:</label>
+                              <p>{{data.keyords}}</p>
                             </div>
 
                             <div class="col-3">
-                              <label for="">sender:</label>
-                              <p>{{data.sender}} </p>
-                              <label for="">to:</label>
-                              <p>{{data.to}}</p>
-                              <label for="">cc:</label>
-                              <p>{{data.cc}}</p>
-                              <label for="">Need Action  :</label>
-                              <p>{{data.needAction ? 'yes' : 'no'}}</p>
+                              <label for="">Number:</label>
+                              <p>{{data.number}} </p>
+                              <label for="">Templates:</label>
+                              <p>{{data.template[0].name}}</p>
+                              <label for="">Short Description:</label>
+                              <p>{{data.shortDesc}}</p>
+                              
                             </div>
 
                             <div class="col-3">
-                              <label for="">sender:</label>
-                              <p>{{data.sender}} </p>
-                              <label for="">to:</label>
-                              <p>{{data.to}}</p>
-                              <label for="">cc:</label>
-                              <p>{{data.cc}}</p>
-                              <label for="">Need Action  :</label>
-                              <p>{{data.needAction ? 'yes' : 'no'}}</p>
+                              <label for="">Redirect Instruction:</label>
+                              <p>{{data.redirectInst}} </p>
+                              <label for="">Redirect comment:</label>
+                              <p>{{data.redirectComment}}</p>
+                              <a href="#" class="btn btn-primary mt-3 preview-t">PREVIEW TEMPLATE</a>
                             </div>
                             
                           </div>

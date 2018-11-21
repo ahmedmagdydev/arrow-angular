@@ -10,7 +10,7 @@ export const DashboardData: Array<any> =[
     "cc": "Vargas",
     "needAction": true,
     "createdDate": "Wednesday, April 23, 2014 7:25 PM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 3404,
     "template": [
@@ -36,7 +36,7 @@ export const DashboardData: Array<any> =[
     "cc": "Tina",
     "needAction": true,
     "createdDate": "Thursday, September 29, 2016 10:10 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 4736,
     "template": [
@@ -62,7 +62,7 @@ export const DashboardData: Array<any> =[
     "cc": "Marsha",
     "needAction": false,
     "createdDate": "Friday, October 6, 2017 5:19 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 2785,
     "template": [
@@ -88,7 +88,7 @@ export const DashboardData: Array<any> =[
     "cc": "Meyer",
     "needAction": false,
     "createdDate": "Tuesday, April 7, 2015 1:51 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 3557,
     "template": [
@@ -114,7 +114,7 @@ export const DashboardData: Array<any> =[
     "cc": "Sonya",
     "needAction": true,
     "createdDate": "Sunday, December 18, 2016 11:50 PM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 4680,
     "template": [
@@ -140,7 +140,7 @@ export const DashboardData: Array<any> =[
     "cc": "Whitney",
     "needAction": true,
     "createdDate": "Friday, August 14, 2015 2:22 PM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 2042,
     "template": [
@@ -166,7 +166,7 @@ export const DashboardData: Array<any> =[
     "cc": "Summers",
     "needAction": true,
     "createdDate": "Tuesday, February 27, 2018 4:04 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 4269,
     "template": [
@@ -192,7 +192,7 @@ export const DashboardData: Array<any> =[
     "cc": "Rollins",
     "needAction": false,
     "createdDate": "Saturday, March 4, 2017 8:46 PM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 2094,
     "template": [
@@ -218,7 +218,7 @@ export const DashboardData: Array<any> =[
     "cc": "Guerrero",
     "needAction": false,
     "createdDate": "Tuesday, January 28, 2014 9:05 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 1606,
     "template": [
@@ -244,7 +244,7 @@ export const DashboardData: Array<any> =[
     "cc": "Prince",
     "needAction": true,
     "createdDate": "Thursday, March 16, 2017 12:13 PM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 3198,
     "template": [
@@ -270,7 +270,7 @@ export const DashboardData: Array<any> =[
     "cc": "Brewer",
     "needAction": false,
     "createdDate": "Sunday, July 31, 2016 8:26 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 3437,
     "template": [
@@ -296,7 +296,7 @@ export const DashboardData: Array<any> =[
     "cc": "Wilder",
     "needAction": true,
     "createdDate": "Saturday, September 1, 2018 7:13 PM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 579,
     "template": [
@@ -322,7 +322,7 @@ export const DashboardData: Array<any> =[
     "cc": "Angelica",
     "needAction": false,
     "createdDate": "Monday, November 10, 2014 9:34 PM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 2543,
     "template": [
@@ -348,7 +348,7 @@ export const DashboardData: Array<any> =[
     "cc": "Amy",
     "needAction": false,
     "createdDate": "Monday, October 17, 2016 12:13 PM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 4952,
     "template": [
@@ -374,7 +374,7 @@ export const DashboardData: Array<any> =[
     "cc": "Malinda",
     "needAction": false,
     "createdDate": "Friday, August 14, 2015 9:53 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 4067,
     "template": [
@@ -400,7 +400,7 @@ export const DashboardData: Array<any> =[
     "cc": "Mills",
     "needAction": false,
     "createdDate": "Thursday, August 31, 2017 1:58 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 243,
     "template": [
@@ -426,7 +426,7 @@ export const DashboardData: Array<any> =[
     "cc": "Diaz",
     "needAction": true,
     "createdDate": "Friday, June 8, 2018 6:48 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 436,
     "template": [
@@ -452,7 +452,7 @@ export const DashboardData: Array<any> =[
     "cc": "Blackburn",
     "needAction": true,
     "createdDate": "Sunday, May 21, 2017 1:59 PM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 1720,
     "template": [
@@ -478,7 +478,7 @@ export const DashboardData: Array<any> =[
     "cc": "Alexandra",
     "needAction": false,
     "createdDate": "Tuesday, July 4, 2017 3:18 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 2859,
     "template": [
@@ -504,7 +504,7 @@ export const DashboardData: Array<any> =[
     "cc": "Marshall",
     "needAction": true,
     "createdDate": "Friday, March 20, 2015 9:38 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 2975,
     "template": [
@@ -530,7 +530,7 @@ export const DashboardData: Array<any> =[
     "cc": "Hebert",
     "needAction": false,
     "createdDate": "Wednesday, June 17, 2015 12:29 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 2658,
     "template": [
@@ -556,7 +556,7 @@ export const DashboardData: Array<any> =[
     "cc": "Donovan",
     "needAction": true,
     "createdDate": "Monday, September 8, 2014 8:05 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 289,
     "template": [
@@ -582,7 +582,7 @@ export const DashboardData: Array<any> =[
     "cc": "Lou",
     "needAction": true,
     "createdDate": "Friday, October 24, 2014 7:17 AM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 865,
     "template": [
@@ -608,7 +608,7 @@ export const DashboardData: Array<any> =[
     "cc": "Ilene",
     "needAction": false,
     "createdDate": "Wednesday, October 19, 2016 1:05 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 4404,
     "template": [
@@ -634,7 +634,7 @@ export const DashboardData: Array<any> =[
     "cc": "Elba",
     "needAction": true,
     "createdDate": "Saturday, May 20, 2017 7:48 AM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 2715,
     "template": [
@@ -660,7 +660,7 @@ export const DashboardData: Array<any> =[
     "cc": "Molly",
     "needAction": true,
     "createdDate": "Monday, November 17, 2014 4:12 PM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 1656,
     "template": [
@@ -686,7 +686,7 @@ export const DashboardData: Array<any> =[
     "cc": "Concetta",
     "needAction": false,
     "createdDate": "Sunday, March 15, 2015 4:52 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 772,
     "template": [
@@ -712,7 +712,7 @@ export const DashboardData: Array<any> =[
     "cc": "Jensen",
     "needAction": false,
     "createdDate": "Sunday, January 26, 2014 4:41 PM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 4018,
     "template": [
@@ -738,7 +738,7 @@ export const DashboardData: Array<any> =[
     "cc": "Carey",
     "needAction": false,
     "createdDate": "Wednesday, March 18, 2015 11:01 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 2860,
     "template": [
@@ -764,7 +764,7 @@ export const DashboardData: Array<any> =[
     "cc": "Vincent",
     "needAction": false,
     "createdDate": "Monday, September 19, 2016 2:47 AM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 3911,
     "template": [
@@ -790,7 +790,7 @@ export const DashboardData: Array<any> =[
     "cc": "Lola",
     "needAction": false,
     "createdDate": "Friday, May 1, 2015 3:23 PM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 1917,
     "template": [
@@ -816,7 +816,7 @@ export const DashboardData: Array<any> =[
     "cc": "Ofelia",
     "needAction": false,
     "createdDate": "Tuesday, May 29, 2018 5:10 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 1070,
     "template": [
@@ -842,7 +842,7 @@ export const DashboardData: Array<any> =[
     "cc": "Coleman",
     "needAction": true,
     "createdDate": "Monday, October 29, 2018 10:28 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 411,
     "template": [
@@ -868,7 +868,7 @@ export const DashboardData: Array<any> =[
     "cc": "Lorie",
     "needAction": false,
     "createdDate": "Thursday, August 21, 2014 8:13 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 3375,
     "template": [
@@ -894,7 +894,7 @@ export const DashboardData: Array<any> =[
     "cc": "Moody",
     "needAction": true,
     "createdDate": "Thursday, October 29, 2015 5:44 PM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 4157,
     "template": [
@@ -920,7 +920,7 @@ export const DashboardData: Array<any> =[
     "cc": "Medina",
     "needAction": false,
     "createdDate": "Saturday, October 29, 2016 11:04 PM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 3993,
     "template": [
@@ -946,7 +946,7 @@ export const DashboardData: Array<any> =[
     "cc": "Velez",
     "needAction": false,
     "createdDate": "Saturday, July 14, 2018 3:11 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 4515,
     "template": [
@@ -972,7 +972,7 @@ export const DashboardData: Array<any> =[
     "cc": "Albert",
     "needAction": false,
     "createdDate": "Wednesday, May 18, 2016 12:47 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 3819,
     "template": [
@@ -998,7 +998,7 @@ export const DashboardData: Array<any> =[
     "cc": "Rosemary",
     "needAction": true,
     "createdDate": "Saturday, January 14, 2017 3:28 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 2828,
     "template": [
@@ -1024,7 +1024,7 @@ export const DashboardData: Array<any> =[
     "cc": "Gay",
     "needAction": false,
     "createdDate": "Tuesday, March 20, 2018 7:47 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 2957,
     "template": [
@@ -1050,7 +1050,7 @@ export const DashboardData: Array<any> =[
     "cc": "Casandra",
     "needAction": false,
     "createdDate": "Thursday, July 23, 2015 7:42 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 1612,
     "template": [
@@ -1076,7 +1076,7 @@ export const DashboardData: Array<any> =[
     "cc": "Pugh",
     "needAction": true,
     "createdDate": "Wednesday, July 8, 2015 8:26 PM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 4465,
     "template": [
@@ -1102,7 +1102,7 @@ export const DashboardData: Array<any> =[
     "cc": "Rivera",
     "needAction": true,
     "createdDate": "Tuesday, September 5, 2017 2:13 PM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 1407,
     "template": [
@@ -1128,7 +1128,7 @@ export const DashboardData: Array<any> =[
     "cc": "Sherry",
     "needAction": false,
     "createdDate": "Monday, January 19, 2015 5:00 PM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 396,
     "template": [
@@ -1154,7 +1154,7 @@ export const DashboardData: Array<any> =[
     "cc": "Adele",
     "needAction": true,
     "createdDate": "Thursday, December 14, 2017 7:42 AM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 4541,
     "template": [
@@ -1180,7 +1180,7 @@ export const DashboardData: Array<any> =[
     "cc": "Vaughn",
     "needAction": true,
     "createdDate": "Wednesday, May 4, 2016 10:58 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 3310,
     "template": [
@@ -1206,7 +1206,7 @@ export const DashboardData: Array<any> =[
     "cc": "Crosby",
     "needAction": true,
     "createdDate": "Saturday, March 14, 2015 7:25 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 298,
     "template": [
@@ -1232,7 +1232,7 @@ export const DashboardData: Array<any> =[
     "cc": "Terry",
     "needAction": false,
     "createdDate": "Wednesday, July 5, 2017 1:00 PM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 3963,
     "template": [
@@ -1258,7 +1258,7 @@ export const DashboardData: Array<any> =[
     "cc": "Chase",
     "needAction": false,
     "createdDate": "Wednesday, October 5, 2016 2:39 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 1270,
     "template": [
@@ -1284,7 +1284,7 @@ export const DashboardData: Array<any> =[
     "cc": "Kirsten",
     "needAction": false,
     "createdDate": "Monday, May 21, 2018 2:00 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 2831,
     "template": [
@@ -1310,7 +1310,7 @@ export const DashboardData: Array<any> =[
     "cc": "Velazquez",
     "needAction": false,
     "createdDate": "Saturday, September 24, 2016 4:18 PM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 1372,
     "template": [
@@ -1336,7 +1336,7 @@ export const DashboardData: Array<any> =[
     "cc": "Karla",
     "needAction": true,
     "createdDate": "Friday, July 21, 2017 12:36 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 3049,
     "template": [
@@ -1362,7 +1362,7 @@ export const DashboardData: Array<any> =[
     "cc": "Horn",
     "needAction": true,
     "createdDate": "Saturday, January 25, 2014 5:44 PM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 3795,
     "template": [
@@ -1388,7 +1388,7 @@ export const DashboardData: Array<any> =[
     "cc": "Cindy",
     "needAction": false,
     "createdDate": "Friday, September 18, 2015 12:55 PM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 3870,
     "template": [
@@ -1414,7 +1414,7 @@ export const DashboardData: Array<any> =[
     "cc": "Florence",
     "needAction": false,
     "createdDate": "Sunday, February 1, 2015 5:28 PM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 1829,
     "template": [
@@ -1440,7 +1440,7 @@ export const DashboardData: Array<any> =[
     "cc": "Helene",
     "needAction": false,
     "createdDate": "Wednesday, April 26, 2017 4:23 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 265,
     "template": [
@@ -1466,7 +1466,7 @@ export const DashboardData: Array<any> =[
     "cc": "Myers",
     "needAction": false,
     "createdDate": "Thursday, August 17, 2017 10:42 PM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 3856,
     "template": [
@@ -1492,7 +1492,7 @@ export const DashboardData: Array<any> =[
     "cc": "Desiree",
     "needAction": true,
     "createdDate": "Saturday, August 1, 2015 4:42 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 962,
     "template": [
@@ -1518,7 +1518,7 @@ export const DashboardData: Array<any> =[
     "cc": "Vaughan",
     "needAction": false,
     "createdDate": "Thursday, July 27, 2017 2:52 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 4867,
     "template": [
@@ -1544,7 +1544,7 @@ export const DashboardData: Array<any> =[
     "cc": "Erma",
     "needAction": true,
     "createdDate": "Thursday, February 20, 2014 1:18 AM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 3006,
     "template": [
@@ -1570,7 +1570,7 @@ export const DashboardData: Array<any> =[
     "cc": "Cooke",
     "needAction": false,
     "createdDate": "Saturday, May 26, 2018 3:02 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 3458,
     "template": [
@@ -1596,7 +1596,7 @@ export const DashboardData: Array<any> =[
     "cc": "Valencia",
     "needAction": true,
     "createdDate": "Sunday, May 10, 2015 8:21 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 3204,
     "template": [
@@ -1622,7 +1622,7 @@ export const DashboardData: Array<any> =[
     "cc": "Chasity",
     "needAction": false,
     "createdDate": "Sunday, January 21, 2018 4:38 PM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 1407,
     "template": [
@@ -1648,7 +1648,7 @@ export const DashboardData: Array<any> =[
     "cc": "Manning",
     "needAction": true,
     "createdDate": "Saturday, October 10, 2015 10:38 PM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 3901,
     "template": [
@@ -1674,7 +1674,7 @@ export const DashboardData: Array<any> =[
     "cc": "Carroll",
     "needAction": true,
     "createdDate": "Saturday, June 9, 2018 5:39 PM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 2873,
     "template": [
@@ -1700,7 +1700,7 @@ export const DashboardData: Array<any> =[
     "cc": "Fitzgerald",
     "needAction": true,
     "createdDate": "Sunday, August 19, 2018 11:50 PM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 3727,
     "template": [
@@ -1726,7 +1726,7 @@ export const DashboardData: Array<any> =[
     "cc": "Valentine",
     "needAction": false,
     "createdDate": "Monday, May 8, 2017 11:40 AM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 4035,
     "template": [
@@ -1752,7 +1752,7 @@ export const DashboardData: Array<any> =[
     "cc": "Casey",
     "needAction": true,
     "createdDate": "Saturday, August 9, 2014 5:49 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 4728,
     "template": [
@@ -1778,7 +1778,7 @@ export const DashboardData: Array<any> =[
     "cc": "Coffey",
     "needAction": false,
     "createdDate": "Saturday, May 12, 2018 6:58 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 1267,
     "template": [
@@ -1804,7 +1804,7 @@ export const DashboardData: Array<any> =[
     "cc": "Alisha",
     "needAction": true,
     "createdDate": "Sunday, November 16, 2014 8:16 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 3067,
     "template": [
@@ -1830,7 +1830,7 @@ export const DashboardData: Array<any> =[
     "cc": "Mitzi",
     "needAction": true,
     "createdDate": "Sunday, September 17, 2017 9:36 PM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 1194,
     "template": [
@@ -1856,7 +1856,7 @@ export const DashboardData: Array<any> =[
     "cc": "Amanda",
     "needAction": true,
     "createdDate": "Saturday, September 27, 2014 8:23 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 851,
     "template": [
@@ -1882,7 +1882,7 @@ export const DashboardData: Array<any> =[
     "cc": "Davidson",
     "needAction": true,
     "createdDate": "Friday, November 14, 2014 10:00 PM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 341,
     "template": [
@@ -1908,7 +1908,7 @@ export const DashboardData: Array<any> =[
     "cc": "Estelle",
     "needAction": false,
     "createdDate": "Thursday, May 3, 2018 10:37 AM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 2106,
     "template": [
@@ -1934,7 +1934,7 @@ export const DashboardData: Array<any> =[
     "cc": "Deirdre",
     "needAction": true,
     "createdDate": "Saturday, July 14, 2018 8:20 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 4375,
     "template": [
@@ -1960,7 +1960,7 @@ export const DashboardData: Array<any> =[
     "cc": "Daisy",
     "needAction": true,
     "createdDate": "Sunday, October 4, 2015 1:53 PM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 3553,
     "template": [
@@ -1986,7 +1986,7 @@ export const DashboardData: Array<any> =[
     "cc": "Jeanine",
     "needAction": false,
     "createdDate": "Sunday, June 28, 2015 10:53 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 1692,
     "template": [
@@ -2012,7 +2012,7 @@ export const DashboardData: Array<any> =[
     "cc": "Berg",
     "needAction": true,
     "createdDate": "Monday, December 21, 2015 7:38 AM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 981,
     "template": [
@@ -2038,7 +2038,7 @@ export const DashboardData: Array<any> =[
     "cc": "Davenport",
     "needAction": false,
     "createdDate": "Sunday, November 12, 2017 6:25 PM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 770,
     "template": [
@@ -2064,7 +2064,7 @@ export const DashboardData: Array<any> =[
     "cc": "Elizabeth",
     "needAction": false,
     "createdDate": "Saturday, September 15, 2018 4:55 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 3186,
     "template": [
@@ -2090,7 +2090,7 @@ export const DashboardData: Array<any> =[
     "cc": "Montoya",
     "needAction": false,
     "createdDate": "Monday, March 10, 2014 6:17 AM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 294,
     "template": [
@@ -2116,7 +2116,7 @@ export const DashboardData: Array<any> =[
     "cc": "Tessa",
     "needAction": false,
     "createdDate": "Thursday, January 29, 2015 5:31 AM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 3713,
     "template": [
@@ -2142,7 +2142,7 @@ export const DashboardData: Array<any> =[
     "cc": "Patsy",
     "needAction": false,
     "createdDate": "Saturday, December 16, 2017 12:22 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 733,
     "template": [
@@ -2168,7 +2168,7 @@ export const DashboardData: Array<any> =[
     "cc": "Eliza",
     "needAction": false,
     "createdDate": "Thursday, July 27, 2017 7:21 AM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 1792,
     "template": [
@@ -2194,7 +2194,7 @@ export const DashboardData: Array<any> =[
     "cc": "Myrna",
     "needAction": false,
     "createdDate": "Wednesday, September 26, 2018 10:14 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 2674,
     "template": [
@@ -2220,7 +2220,7 @@ export const DashboardData: Array<any> =[
     "cc": "Chrystal",
     "needAction": false,
     "createdDate": "Thursday, February 6, 2014 12:53 AM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 3950,
     "template": [
@@ -2246,7 +2246,7 @@ export const DashboardData: Array<any> =[
     "cc": "Wyatt",
     "needAction": true,
     "createdDate": "Thursday, October 9, 2014 7:13 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 3355,
     "template": [
@@ -2272,7 +2272,7 @@ export const DashboardData: Array<any> =[
     "cc": "Walls",
     "needAction": false,
     "createdDate": "Tuesday, June 6, 2017 11:00 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 1119,
     "template": [
@@ -2298,7 +2298,7 @@ export const DashboardData: Array<any> =[
     "cc": "Beard",
     "needAction": false,
     "createdDate": "Friday, July 6, 2018 4:28 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 3186,
     "template": [
@@ -2324,7 +2324,7 @@ export const DashboardData: Array<any> =[
     "cc": "Bettie",
     "needAction": false,
     "createdDate": "Tuesday, January 14, 2014 10:32 AM",
-    "relatedActions": "waiting",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 1204,
     "template": [
@@ -2350,7 +2350,7 @@ export const DashboardData: Array<any> =[
     "cc": "Greene",
     "needAction": true,
     "createdDate": "Wednesday, September 20, 2017 10:19 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 4659,
     "template": [
@@ -2376,7 +2376,7 @@ export const DashboardData: Array<any> =[
     "cc": "Harper",
     "needAction": false,
     "createdDate": "Saturday, August 27, 2016 2:35 PM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 1328,
     "template": [
@@ -2402,7 +2402,7 @@ export const DashboardData: Array<any> =[
     "cc": "Sawyer",
     "needAction": false,
     "createdDate": "Sunday, April 22, 2018 11:57 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 1342,
     "template": [
@@ -2428,7 +2428,7 @@ export const DashboardData: Array<any> =[
     "cc": "Cathy",
     "needAction": false,
     "createdDate": "Tuesday, December 1, 2015 6:36 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 4957,
     "template": [
@@ -2454,7 +2454,7 @@ export const DashboardData: Array<any> =[
     "cc": "Cantrell",
     "needAction": false,
     "createdDate": "Wednesday, March 9, 2016 2:26 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 2063,
     "template": [
@@ -2480,7 +2480,7 @@ export const DashboardData: Array<any> =[
     "cc": "Shanna",
     "needAction": true,
     "createdDate": "Friday, December 8, 2017 3:23 PM",
-    "relatedActions": "cal",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "assigned",
     "number": 1895,
     "template": [
@@ -2506,7 +2506,7 @@ export const DashboardData: Array<any> =[
     "cc": "Roth",
     "needAction": true,
     "createdDate": "Saturday, May 17, 2014 12:28 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "waiting",
     "number": 3642,
     "template": [
@@ -2532,7 +2532,7 @@ export const DashboardData: Array<any> =[
     "cc": "Mcmillan",
     "needAction": true,
     "createdDate": "Friday, June 20, 2014 5:28 PM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 2877,
     "template": [
@@ -2558,7 +2558,7 @@ export const DashboardData: Array<any> =[
     "cc": "Nelson",
     "needAction": true,
     "createdDate": "Thursday, February 9, 2017 3:54 AM",
-    "relatedActions": "assigned",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "done",
     "number": 2203,
     "template": [
@@ -2584,7 +2584,7 @@ export const DashboardData: Array<any> =[
     "cc": "Hill",
     "needAction": true,
     "createdDate": "Tuesday, May 3, 2016 11:33 AM",
-    "relatedActions": "mail",
+    "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
     "keyords": "new",
     "number": 1370,
     "template": [
