@@ -1,0 +1,196 @@
+
+              
+      <div class="container-fluid main-content">
+        <div class="d-flex my-3">
+          <h2 class="mr-auto">Home</h2>
+          <div class="filter-wrapper d-flex align-items-center">
+
+            <label class="switch d-flex mx-3">
+            <span>Personal</span>
+                 <input type="checkbox">
+                 <span>
+                     <strong></strong>
+                 </span>
+            <span>Department</span>
+             </label>
+             <div class="category mx-3">
+               <select name="" class="form-control">
+                 <option value="">All Departments</option>
+                 <option value=""> Departments</option>
+                 <option value="">All </option>
+               </select>
+             </div>
+             <div class="filter-date ml-3">
+               <div id="reportrange" class="form-control">
+                   <span class="from-to"></span> 
+                   <span #fromDate class="from d-none"></span> 
+                   <span #toDate class="to d-none"></span> 
+                   <i class="fa fa-calendar"></i>&nbsp;
+               </div>
+             </div>
+          </div>
+        </div>
+
+       <ul class="nav nav-fill main-tabs" id="myTab" role="tablist">
+         <li class="nav-item" *ngFor="let status of statuses; let i = index" >
+           <a class="nav-link clearfix d-flex align-items-center " attr.aria-controls="{{status}}" id="{{status}}-tab" data-toggle="tab" href="#{{status}}" role="tab"  aria-selected="true" (click)="changeStatus(status)">
+             <span class="tab-detail">
+              <p class="number">{{dashboardStatus(status).length}}</p>
+                <span class="icon-{{status}}"></span>
+                <p class="tab-name">{{status}}</p> 
+                <p>Correspondence</p> 
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width:{{dashboardStatus(status).length / DashboardData.length * 100}}%"  aria-valuemin="0" aria-valuemax="100">{{dashboardStatus('new').length / DashboardData.length * 100}}%</div>
+                </div> 
+             </span>
+             <div class="tab-chart">
+               <canvas id="{{status}}Chart" width="320" height="130" attr.data-priority="{{dashboardStatusPrioriy('new')}}"></canvas>
+
+             </div>
+           </a>
+         </li> 
+         
+       </ul>
+       <div class="tab-content" id="myTabContent">
+         <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="home-tab">
+
+            
+          <div class="table-responsive">
+              <table class="table table-condensed table-main" style="border-collapse:collapse">
+  
+                <thead>
+                    <tr><th (click)="orderTable('priority')" class="table-filter">Priority</th>
+                        <th (click)="orderTable('title')" class="table-filter">Subject </th>
+                        <th (click)="orderTable('sender')" class="table-filter">Sender</th>
+                        <th (click)="orderTable('date')" class="table-filter">dATE</th>
+                        <th (click)="orderTable('number')" class="table-filter">nUMBER</th>
+                        <th>rELATED aCTIONS</th>
+                        <th>tEMPLATE</th>
+                        <th></th>
+                    </tr>
+                </thead>
+  
+                <tbody *ngFor="let data of DashboardData | filterBy: ['status']: _status | orderBy : _orderBy | paginate: { itemsPerPage: _itemsPerPage, currentPage: _currentPage }">
+                <tr data-toggle="collapse" attr.data-target="#row{{data.index}}" class="accordion-toggle collapsed">
+                      <td>
+                        <span class="priority priority-{{priority(data.priority)}}" title="priority-{{data.priority}}">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </span>
+                      </td>
+                      <td>{{data.title}}</td>
+                      <td>{{data.sender}}</td>
+                      <td>{{data.createdDate | date :'d MMMM yyyy'}}</td>
+                      <td>{{data.number}}</td>
+                    <td> 
+                      <span *ngFor="let action of data.relatedActions ; let i = index" class="{{i > 2 ? 'd-none' : null}} mr-3">
+                        <i class="icon-{{action}}"></i>
+                      </span>
+                      <span *ngIf="data.relatedActions.length > 2"> ...</span>
+                    </td>
+                    <td> {{data.template[0].name}}</td>
+                    <td>
+                      <div class="dropleft">
+                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-ellipsis-v"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td colspan="8" class="hiddenRow"><div id="row{{data.index}}" class="accordian-body collapse" data-parent="#new">
+                        <div class="table-details-full">
+                          <h3>{{data.title}}</h3>
+                          <div class="row">
+                            <div class="col-3">
+                              <label for="">sender:</label>
+                              <p>{{data.sender}} </p>
+                              <label for="">to:</label>
+                              <p>{{data.to}}</p>
+                              <label for="">cc:</label>
+                              <p>{{data.cc}}</p>
+                              <label for="">Need Action  :</label>
+                              <p>{{data.needAction ? 'yes' : 'no'}}</p>
+                            </div>
+                            
+                            <div class="col-3">
+                              <label for="">Creation Date :</label>
+                              <p>{{data.createdDate | date :'d MMMM yyyy'}} </p>
+                              <label for="">Date :</label>
+                              <p>{{data.createdDate | date :'d MMMM yyyy'}}</p>
+                              <label for="">Related Actions :</label>
+                              <p>
+                                <span class="mr-3" *ngFor="let action of data.relatedActions">
+                                  <i class="icon-{{action}}"></i>
+                                </span>
+                              
+                              </p>
+                              <label for="">Keywords:</label>
+                              <p>{{data.keyords}}</p>
+                            </div>
+
+                            <div class="col-3">
+                              <label for="">Number:</label>
+                              <p>{{data.number}} </p>
+                              <label for="">Templates:</label>
+                              <p>{{data.template[0].name}}</p>
+                              <label for="">Short Description:</label>
+                              <p>{{data.shortDesc}}</p>
+                              
+                            </div>
+
+                            <div class="col-3">
+                              <label for="">Redirect Instruction:</label>
+                              <p>{{data.redirectInst}} </p>
+                              <label for="">Redirect comment:</label>
+                              <p>{{data.redirectComment}}</p>
+                              <a href="#" class="btn btn-primary mt-3 preview-t">PREVIEW TEMPLATE</a>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div></td>
+                  </tr>
+                  
+                    
+                </tbody>
+            </table>
+          </div>
+              
+
+              
+          <div class="table-footer">
+           <div class="d-flex align-items-center">
+            <pagination-controls 
+                previousLabel=""
+                nextLabel=""
+                autoHide="true"
+                (pageChange)="_currentPage = $event">
+            </pagination-controls>
+            <select class="pl-4" #itemsPerPage (change)="changeItemsPerPage(itemsPerPage.value)">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+            </select>
+            <p class="m-0 pl-1">items per page</p>
+           </div>
+          </div>
+                          
+           
+         </div>
+         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">asd.</div>
+         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+       </div>
+        
+      </div>
