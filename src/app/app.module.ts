@@ -9,6 +9,7 @@ import { SideMenuComponent } from './shared/side-menu/side-menu.component';
 import {NgPipesModule} from 'ngx-pipes';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FabComponent } from './shared/fab/fab.component';
 
 
 const appRoutes: Routes = [
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     SideMenuComponent,
-    DashboardComponent
+    DashboardComponent,
+    FabComponent
   ],
   imports: [
     BrowserModule,

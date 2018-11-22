@@ -1,7 +1,7 @@
 export const DashboardData: Array<any> =[
   {
     "_id": "5be97dc88d8c9f5db903b7d8",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 0,
     "priority": 12,
     "status": "assigned",
@@ -27,7 +27,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8fd7424f082a36aba",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 1,
     "priority": 14,
     "status": "done",
@@ -53,7 +53,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8605da7387e2995c5",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 2,
     "priority": 3,
     "status": "new",
@@ -79,7 +79,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc89c44184632227814",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 3,
     "priority": 12,
     "status": "done",
@@ -105,7 +105,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc81f649a791368cd8b",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 4,
     "priority": 11,
     "status": "assigned",
@@ -131,7 +131,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8c14a177feb956700",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 5,
     "priority": 4,
     "status": "waiting",
@@ -157,7 +157,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc87c5de2605407cd81",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 6,
     "priority": 13,
     "status": "assigned",
@@ -183,7 +183,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8f6066bd60c06b5ed",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 7,
     "priority": 12,
     "status": "assigned",
@@ -209,7 +209,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8c6dd5a3d503face9",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 8,
     "priority": 4,
     "status": "assigned",
@@ -235,7 +235,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc849137da00a6bd9aa",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 9,
     "priority": 8,
     "status": "new",
@@ -261,7 +261,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8fb1e5a7b4802aefb",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 10,
     "priority": 7,
     "status": "assigned",
@@ -287,7 +287,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc84bd0a3fa18708cc7",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 11,
     "priority": 1,
     "status": "waiting",
@@ -313,7 +313,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc81ca8cef72171cd28",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 12,
     "priority": 9,
     "status": "new",
@@ -339,7 +339,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8f8bb2bb2f49ff36b",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 13,
     "priority": 14,
     "status": "done",
@@ -365,7 +365,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8ffcd5575b3f5b178",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 14,
     "priority": 11,
     "status": "done",
@@ -391,7 +391,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8c2f30dabcc321577",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 15,
     "priority": 11,
     "status": "new",
@@ -417,7 +417,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8cc36bce3a56e310b",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 16,
     "priority": 3,
     "status": "done",
@@ -443,7 +443,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc886095fbb00dd4ac6",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 17,
     "priority": 5,
     "status": "done",
@@ -469,7 +469,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc833679a8353f90411",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 18,
     "priority": 8,
     "status": "waiting",
@@ -495,7 +495,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc80e6a79c269b9cdd9",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 19,
     "priority": 7,
     "status": "waiting",
@@ -521,7 +521,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc82df6aecb2c6c7b28",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 20,
     "priority": 3,
     "status": "waiting",
@@ -547,7 +547,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc86f035762bfc1c919",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 21,
     "priority": 10,
     "status": "assigned",
@@ -573,7 +573,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8155d7b902ea8050a",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 22,
     "priority": 10,
     "status": "done",
@@ -599,7 +599,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc845a20100bb05257d",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 23,
     "priority": 13,
     "status": "done",
@@ -625,7 +625,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8763250fb15a6bfb7",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 24,
     "priority": 4,
     "status": "assigned",
@@ -651,7 +651,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc80dbc65447f21b3f9",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 25,
     "priority": 7,
     "status": "assigned",
@@ -677,7 +677,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8f46ca973ef222664",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 26,
     "priority": 14,
     "status": "done",
@@ -703,7 +703,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc883f3b6d747ed065f",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 27,
     "priority": 3,
     "status": "assigned",
@@ -729,7 +729,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc862624be17275070f",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 28,
     "priority": 11,
     "status": "waiting",
@@ -755,7 +755,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8d366a897fcbbbccc",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 29,
     "priority": 10,
     "status": "new",
@@ -781,7 +781,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc82c6b15fd88096902",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 30,
     "priority": 12,
     "status": "new",
@@ -807,7 +807,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8719eb055535176e2",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 31,
     "priority": 4,
     "status": "waiting",
@@ -833,7 +833,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc87d101a40cc891ebb",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 32,
     "priority": 13,
     "status": "new",
@@ -859,7 +859,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc881727a120125fd96",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 33,
     "priority": 2,
     "status": "assigned",
@@ -885,7 +885,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8d99138634220b132",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 34,
     "priority": 7,
     "status": "new",
@@ -911,7 +911,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8f4b9a7ed716fdabb",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 35,
     "priority": 13,
     "status": "assigned",
@@ -937,7 +937,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc83e18444ab3c150e5",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 36,
     "priority": 6,
     "status": "new",
@@ -963,7 +963,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8196a9bd70e02b160",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 37,
     "priority": 9,
     "status": "done",
@@ -989,7 +989,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc860da572abefd7c9e",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 38,
     "priority": 9,
     "status": "new",
@@ -1015,7 +1015,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc83c89fec86c114d98",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 39,
     "priority": 12,
     "status": "assigned",
@@ -1041,7 +1041,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8e376a7143e73b10b",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 40,
     "priority": 7,
     "status": "done",
@@ -1067,7 +1067,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc80cd0c575f6925b57",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 41,
     "priority": 4,
     "status": "new",
@@ -1093,7 +1093,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc871533893280728f3",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 42,
     "priority": 6,
     "status": "done",
@@ -1119,7 +1119,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8c49cea344fb85da9",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 43,
     "priority": 2,
     "status": "assigned",
@@ -1145,7 +1145,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8208f5ff97abe1ddc",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 44,
     "priority": 13,
     "status": "waiting",
@@ -1171,7 +1171,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc89fb27dd097fe5069",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 45,
     "priority": 6,
     "status": "waiting",
@@ -1197,7 +1197,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8d33568fc3265eb18",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 46,
     "priority": 10,
     "status": "assigned",
@@ -1223,7 +1223,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8c9895a29d61d54ab",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 47,
     "priority": 1,
     "status": "waiting",
@@ -1249,7 +1249,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc84def5764877b98c1",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 48,
     "priority": 5,
     "status": "done",
@@ -1275,7 +1275,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc879644b67a7963569",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 49,
     "priority": 13,
     "status": "new",
@@ -1301,7 +1301,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8bab3bb96094f9a8a",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 50,
     "priority": 8,
     "status": "new",
@@ -1327,7 +1327,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc849f0ac5eb7bc4f87",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 51,
     "priority": 5,
     "status": "done",
@@ -1353,7 +1353,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc824bb76470f875a43",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 52,
     "priority": 10,
     "status": "done",
@@ -1379,7 +1379,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc87200ba3faa48d8d1",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 53,
     "priority": 14,
     "status": "done",
@@ -1405,7 +1405,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8887657220a855432",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 54,
     "priority": 10,
     "status": "assigned",
@@ -1431,7 +1431,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8102f0338ae9a17f0",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 55,
     "priority": 9,
     "status": "waiting",
@@ -1457,7 +1457,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc89c799ec0fb90f124",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 56,
     "priority": 7,
     "status": "assigned",
@@ -1483,7 +1483,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc88656f8efd6f5846d",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 57,
     "priority": 14,
     "status": "assigned",
@@ -1509,7 +1509,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc84783b17d575eec31",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 58,
     "priority": 5,
     "status": "done",
@@ -1535,7 +1535,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc809e6f6c963a238ea",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 59,
     "priority": 9,
     "status": "assigned",
@@ -1561,7 +1561,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8dcbb1b35f6331436",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 60,
     "priority": 10,
     "status": "new",
@@ -1587,7 +1587,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc85f9bfe9be16f6234",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 61,
     "priority": 14,
     "status": "new",
@@ -1613,7 +1613,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc864959f61270cb5c0",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 62,
     "priority": 8,
     "status": "assigned",
@@ -1639,7 +1639,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8bf6df0b8c1731fba",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 63,
     "priority": 7,
     "status": "new",
@@ -1665,7 +1665,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8aef5643193fb8c38",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 64,
     "priority": 9,
     "status": "done",
@@ -1691,7 +1691,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc83bff34ab89afb7d6",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 65,
     "priority": 7,
     "status": "waiting",
@@ -1717,7 +1717,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8f9bdb0e01913e6b1",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 66,
     "priority": 11,
     "status": "new",
@@ -1743,7 +1743,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8b66f2fcdb2025a30",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 67,
     "priority": 3,
     "status": "new",
@@ -1769,7 +1769,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc82fa6c1999552c9cb",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 68,
     "priority": 2,
     "status": "waiting",
@@ -1795,7 +1795,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc800fa919196f26e9d",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 69,
     "priority": 4,
     "status": "new",
@@ -1821,7 +1821,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc85677e7eedd5eec18",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 70,
     "priority": 14,
     "status": "assigned",
@@ -1847,7 +1847,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8d2a06d957ad6bda4",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 71,
     "priority": 10,
     "status": "waiting",
@@ -1873,7 +1873,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8902ef8e576fa6b6d",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 72,
     "priority": 4,
     "status": "assigned",
@@ -1899,7 +1899,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc862ac7ce45bbd4200",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 73,
     "priority": 1,
     "status": "done",
@@ -1925,7 +1925,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc82a4cf7fb99baaff3",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 74,
     "priority": 4,
     "status": "assigned",
@@ -1951,7 +1951,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8c954fbb4c4499a1c",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 75,
     "priority": 3,
     "status": "assigned",
@@ -1977,7 +1977,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8ce77a30a741d6221",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 76,
     "priority": 8,
     "status": "waiting",
@@ -2003,7 +2003,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc81f248069a6c6d1a5",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 77,
     "priority": 5,
     "status": "new",
@@ -2029,7 +2029,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8a411b0286be92569",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 78,
     "priority": 5,
     "status": "new",
@@ -2055,7 +2055,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc82cf1fd218f61128d",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 79,
     "priority": 10,
     "status": "done",
@@ -2081,7 +2081,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc805ee06d0025a005c",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 80,
     "priority": 11,
     "status": "waiting",
@@ -2107,7 +2107,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc87a4adc42fa5dac98",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 81,
     "priority": 2,
     "status": "done",
@@ -2133,7 +2133,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8b24788493c2b91e7",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 82,
     "priority": 3,
     "status": "done",
@@ -2159,7 +2159,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc883cf4abfde4987b1",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 83,
     "priority": 3,
     "status": "new",
@@ -2185,7 +2185,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc86c10c8972d0ef230",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 84,
     "priority": 14,
     "status": "new",
@@ -2211,7 +2211,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8ef5c7d089c6c2ddb",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 85,
     "priority": 8,
     "status": "new",
@@ -2237,7 +2237,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8906804b559caaebc",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 86,
     "priority": 8,
     "status": "new",
@@ -2263,7 +2263,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8f01c24d996b42451",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 87,
     "priority": 3,
     "status": "new",
@@ -2289,7 +2289,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc809f45b35a2f7cc29",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 88,
     "priority": 7,
     "status": "new",
@@ -2315,7 +2315,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8d0f9c692413e6bdf",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 89,
     "priority": 7,
     "status": "new",
@@ -2341,7 +2341,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8de1a511b22857c18",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 90,
     "priority": 6,
     "status": "waiting",
@@ -2367,7 +2367,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8ee643846e9a88f19",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 91,
     "priority": 2,
     "status": "waiting",
@@ -2393,7 +2393,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8d8ecab96ff9677ba",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 92,
     "priority": 1,
     "status": "assigned",
@@ -2419,7 +2419,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc81d13508187dbb253",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 93,
     "priority": 6,
     "status": "assigned",
@@ -2445,7 +2445,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc84abaf20e32a1a715",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 94,
     "priority": 1,
     "status": "waiting",
@@ -2471,7 +2471,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc864a6fdb4b80a5cb1",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 95,
     "priority": 10,
     "status": "waiting",
@@ -2497,7 +2497,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8f8ced698d4e0b1ad",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 96,
     "priority": 9,
     "status": "assigned",
@@ -2523,7 +2523,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc88221117242cb1682",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 97,
     "priority": 10,
     "status": "new",
@@ -2549,7 +2549,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc823b78a00e578c1ae",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 98,
     "priority": 14,
     "status": "done",
@@ -2575,7 +2575,7 @@ export const DashboardData: Array<any> =[
   },
   {
     "_id": "5be97dc8e63f0e4d9c2baffc",
-    "title":"  Test need action from preview",
+    "title":"يحتاج الى معاينة",
     "index": 99,
     "priority": 6,
     "status": "new",

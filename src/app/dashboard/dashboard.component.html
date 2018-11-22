@@ -2,20 +2,20 @@
               
       <div class="container-fluid main-content">
         <div class="d-flex my-3">
-          <h2 class="mr-auto">Home</h2>
+          <h2 class="mr-auto">الرئيسية</h2>
           <div class="filter-wrapper d-flex align-items-center">
 
             <label class="switch d-flex mx-3">
-            <span>Personal</span>
+            <span>شخصي</span>
                  <input type="checkbox">
                  <span>
                      <strong></strong>
                  </span>
-            <span>Department</span>
+            <span>إدارة</span>
              </label>
              <div class="category mx-3">
                <select name="" class="form-control">
-                 <option value="">All Departments</option>
+                 <option value="">جميغ الإدارات</option>
                  <option value=""> Departments</option>
                  <option value="">All </option>
                </select>
@@ -38,13 +38,13 @@
               <p class="number">{{dashboardStatus(status).length}}</p>
                 <span class="icon-{{status}}"></span>
                 <p class="tab-name">{{status}}</p> 
-                <p>Correspondence</p> 
+                <p>مراسلات</p> 
                 <div class="progress">
                   <div class="progress-bar" role="progressbar" style="width:{{dashboardStatus(status).length / DashboardData.length * 100}}%"  aria-valuemin="0" aria-valuemax="100">{{dashboardStatus('new').length / DashboardData.length * 100}}%</div>
                 </div> 
              </span>
              <div class="tab-chart">
-               <canvas id="{{status}}Chart" width="320" height="130" attr.data-priority="{{dashboardStatusPrioriy('new')}}"></canvas>
+               <canvas id="{{status}}Chart" width="320" height="130" attr.data-priority="{{dashboardStatusPrioriy(status)}}"></canvas>
 
              </div>
            </a>
@@ -154,7 +154,7 @@
                               <p>{{data.redirectInst}} </p>
                               <label for="">Redirect comment:</label>
                               <p>{{data.redirectComment}}</p>
-                              <a href="#" class="btn btn-primary mt-3 preview-t">PREVIEW TEMPLATE</a>
+                              <a href="#" data-toggle="modal" data-target="#preview-template" class="btn btn-primary mt-3 preview-t">استعراض القالب</a>
                             </div>
                             
                           </div>
@@ -194,3 +194,23 @@
        </div>
         
       </div>
+
+
+
+
+<div class="modal fade" id="preview-template" tabindex="-1" role="dialog" aria-labelledby="preview-template" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">استعراض القالب</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="assets/images/preview.JPG" class="img-fluid">
+      </div>
+     
+    </div>
+  </div>
+</div>

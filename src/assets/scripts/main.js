@@ -1,13 +1,15 @@
 "use strict";
 function displayChart(t) {
     // console.log($(document.getElementById(t)).data('priority'))
+    var priority = $(document.getElementById(t)).data('priority').split(',')
+    // console.log(priority)
     var t = new Chart(document.getElementById(t).getContext("2d"),{
         type: "doughnut",
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green"],
+            labels: ["urgent", "high importance", "normal", "low importance"],
             datasets: [{
                 label: "# of Votes",
-                data: $(document.getElementById(t)).data('priority').split(','),
+                data: priority,
                 backgroundColor: ["#00dc77", "#ffae00", "#fd4242", "#dadde1"],
                 borderWidth: 0
             }]
@@ -16,7 +18,7 @@ function displayChart(t) {
             cutoutPercentage: 80,
             scales: {},
             legend: {
-                position: "right",
+                position: "left",
                 labels: {
                     usePointStyle: !0,
                     fontColor: "#000",
@@ -26,7 +28,7 @@ function displayChart(t) {
                             var n = (e.backgroundColor,
                             e.datasets[0]);
                             return {
-                                text: n.data[a] + " " + t,
+                                text: t,
                                 index: a,
                                 strokeStyle: n.backgroundColor[a],
                                 lineWidth: 3,
