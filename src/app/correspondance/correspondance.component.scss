@@ -1,0 +1,94 @@
+.priority{
+	&-1 > span, &-2 > span{
+		background-color: #fd4242;
+	}
+	&-3 > span, &-4 > span{
+		background-color: #ffae00;
+	}
+	&-5 > span, &-6 > span{
+		background-color: #0f72d7;
+	}
+	&-7 > span{
+		background-color: #dadde1;
+	}
+}
+
+.table-footer{
+	select{
+		background-color: transparent;
+		border:0;
+		color: #00dc77;
+	}
+	/deep/ .ngx-pagination{
+		margin-bottom: 0;
+		padding: 0;
+		li{
+			a{
+				outline: none;
+				&:hover{
+					background-color: transparent;
+					text-decoration: none;
+				}
+			}
+			&.current{
+				background: #00dc77;
+				border-radius: 50%;
+			}
+			&.disabled{
+				opacity: 0;
+			}
+			&.pagination-next a, &.pagination-previous a {
+				color: #00dc77;
+			}
+		}
+	}
+}
+
+.preview-t{
+	background-image: url(../../assets/images/preview-t.png);
+	background-repeat: no-repeat;
+	background-position: 92%;
+	padding: 0.6rem 0.8rem;
+	padding-right: 45px;
+	border-radius: 20px;
+}
+
+.corres-carousel{
+	width: calc(100% - 53px);
+	position: relative;
+	/deep/ .slick-arrow{
+		position: absolute;
+		right: 100%;
+		left: auto;
+		&.slick-next{
+			margin-right: 20px;
+		}
+	}
+	.slide{
+		a{
+			color: #898c91;
+			    display: inline-block;
+			    padding: 2px 7px;
+			    border-radius: 26px;
+			&.active {
+			    background: #fff;
+			}
+		}
+		&-name{
+			text-transform: capitalize;
+			margin-right: 15px;
+		}
+		&-number{
+			background-color: #fff;
+			border-radius: 50%;
+			padding: 3px;
+			width: 30px;
+			height: 30px;
+			display: inline-block;
+			float: right;
+			text-align: center;
+			position: relative;
+			    bottom: 2px;
+		}
+	}
+}

@@ -10,11 +10,13 @@ import {NgPipesModule} from 'ngx-pipes';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FabComponent } from './shared/fab/fab.component';
+import { CorrespondanceComponent } from './correspondance/correspondance.component';
+import { SlickModule } from 'ngx-slick';
 
 
 const appRoutes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: 'test',      component: HeaderComponent }
+  { path: 'home', component: DashboardComponent },
+  { path: 'corres',      component: CorrespondanceComponent }
   
 ];
 
@@ -25,13 +27,15 @@ const appRoutes: Routes = [
     HeaderComponent,
     SideMenuComponent,
     DashboardComponent,
-    FabComponent
+    FabComponent,
+    CorrespondanceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgPipesModule,
     NgxPaginationModule,
+    SlickModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

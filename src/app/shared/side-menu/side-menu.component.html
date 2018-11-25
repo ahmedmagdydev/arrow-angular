@@ -1,13 +1,13 @@
 <aside>
         <ul class="side-menu">
-          <li class="active"><a href="#" class="home">الرئيسية</a>
+          <li [routerLinkActive]="['active']"><a  routerLink="/home"  class="home">الرئيسية</a>
             <ul>
               <li><a href="#"><img src="assets/images/report.svg" alt="">reports</a></li>
               <li><a href="#"><img src="assets/images/dashboard.svg" alt="">dashboard</a></li>
               <li><a href="#"><img src="assets/images/custom.svg" alt="">custom report</a></li>
             </ul>
           </li>
-          <li><a href="#" class="correspondence">مراسلات</a></li>
+          <li [routerLinkActive]="['active']"><a routerLink="/corres"  class="correspondence">مراسلات</a></li>
           <li><a href="#" class="address">دفتر عناوين</a></li>
           <li><a href="#" class="reports">تقارير</a></li>
           <li><a href="#" class="search">بحث</a></li>

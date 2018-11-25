@@ -1,19 +1,19 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {DashboardData} from '../data';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-correspondance',
+  templateUrl: './correspondance.component.html',
+  styleUrls: ['./correspondance.component.scss']
 })
-export class DashboardComponent implements OnInit, AfterViewInit{
-
+export class CorrespondanceComponent implements OnInit {
 	  public DashboardData:Array<any> = DashboardData;
 	  public _orderBy;
 	  public _status;
 	  public _itemsPerPage;
 	  public _currentPage;
-	  public statuses:Array<any> = ['new','done','assigned','waiting','delayed'];
+	  public statuses:Array<any> = ['new','done','assigned','waiting','delayed','new','done','assigned','waiting','delayed'];
+	  public corresIndex ;
 	  public priority(_priority){
 	  	return Math.ceil(_priority / 2);
 	  }
@@ -64,24 +64,30 @@ export class DashboardComponent implements OnInit, AfterViewInit{
 			this._orderBy = 'sender';
 			this._status= 'new';
 			this._itemsPerPage = 5;
-
+			this.corresIndex = 0;
 	      	// console.log(this.dashboardStatusPrioriy('new'));
 	    }
 
-	    ngAfterViewInit(){
-	    	let t = $;
-	    	t('.main-tabs li:first-child').addClass('large').find('a').addClass('active'),
-	    	setTimeout(function(){displayChart("newChart")},400), 
-	    	t('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-	    	    t(e.target).parent().addClass("large"),
-	    	    t(e.relatedTarget).parent().removeClass("large"),
-	    	    t("#" + t(e.relatedTarget).attr("aria-controls") + "Chart"),
-	    	    setTimeout(function() {
-	    	    	// console.log(t(e.target).attr("aria-controls") + "Chart")
-	    	        displayChart(t(e.target).attr("aria-controls") + "Chart")
-	    	    }, 400)
-	    	})
+	    slides = [
+	      {img: "http://placehold.it/350x150/000000"},
+	      {img: "http://placehold.it/350x150/111111"},
+	      {img: "http://placehold.it/350x150/333333"},
+	      {img: "http://placehold.it/350x150/333333"},
+	      {img: "http://placehold.it/350x150/333333"},
+	      {img: "http://placehold.it/350x150/666666"}
+	    ];
+	    slideConfig = {"slidesToShow": 7, "slidesToScroll": 1,"rtl": true, "infinite":false};
+	     
+	    corresActive(index){
+	    	this.corresIndex = index;
 	    }
+	    pop(e){
+	    	e.preventDefault()
+	    }
+	    
 
+	    afterChange(e) {
+	      console.log(e);
+	    }
 
 }
