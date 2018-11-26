@@ -69,18 +69,18 @@ export class DashboardComponent implements OnInit, AfterViewInit{
 	    }
 
 	    ngAfterViewInit(){
-	    	let t = $;
-	    	t('.main-tabs li:first-child').addClass('large').find('a').addClass('active'),
-	    	setTimeout(function(){displayChart("newChart")},400), 
-	    	t('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-	    	    t(e.target).parent().addClass("large"),
-	    	    t(e.relatedTarget).parent().removeClass("large"),
-	    	    t("#" + t(e.relatedTarget).attr("aria-controls") + "Chart"),
-	    	    setTimeout(function() {
-	    	    	// console.log(t(e.target).attr("aria-controls") + "Chart")
-	    	        displayChart(t(e.target).attr("aria-controls") + "Chart")
-	    	    }, 400)
-	    	})
+	    	// let t = $;
+	    	// t('.main-tabs li:first-child').addClass('large').find('a').addClass('active'),
+	    	// setTimeout(function(){displayChart("newChart")},400), 
+	    	// t('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
+	    	//     t(e.target).parent().addClass("large"),
+	    	//     t(e.relatedTarget).parent().removeClass("large"),
+	    	//     t("#" + t(e.relatedTarget).attr("aria-controls") + "Chart"),
+	    	//     setTimeout(function() {
+	    	//     	// console.log(t(e.target).attr("aria-controls") + "Chart")
+	    	//         displayChart(t(e.target).attr("aria-controls") + "Chart")
+	    	//     }, 400)
+	    	// })
 	    }
 
 
