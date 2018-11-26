@@ -40,7 +40,7 @@
                 <p class="tab-name">{{status}}</p> 
                 <p>مراسلات</p> 
                 <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width:{{dashboardStatus(status).length / DashboardData.length * 100}}%"  aria-valuemin="0" aria-valuemax="100">{{dashboardStatus('new').length / DashboardData.length * 100}}%</div>
+                  <div class="progress-bar" role="progressbar" [style.width]="dashboardStatus(status).length / DashboardData.length * 100 + '%'"  aria-valuemin="0" aria-valuemax="100">{{dashboardStatus(status).length / DashboardData.length * 100}}%</div>
                 </div> 
              </span>
              <div class="tab-chart">

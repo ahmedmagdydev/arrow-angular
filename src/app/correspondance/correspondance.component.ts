@@ -15,7 +15,6 @@ export class CorrespondanceComponent implements OnInit {
 	  public statuses:Array<any> = ['new','done','assigned','waiting','delayed','new','done','assigned','waiting','delayed'];
 	  public corresIndex ;
 	  checkedRows=[];
-	  showCheckBox = false;
 	  public priority(_priority){
 	  	return Math.ceil(_priority / 2);
 	  }
@@ -60,14 +59,16 @@ export class CorrespondanceComponent implements OnInit {
 	  	}else{
 	  		this._orderBy = orderArg;
 	  	}
-	  	
+	  	this.uncheckAll();
 	  }
 	  public ngOnInit():void {
 			this._orderBy = 'sender';
 			this._status= 'new';
 			this._itemsPerPage = 10;
 			this.corresIndex = 0;
+			this._currentPage=1;
 	      	// console.log(this.dashboardStatusPrioriy('new'));
+
 	    }
 
 
@@ -77,29 +78,94 @@ export class CorrespondanceComponent implements OnInit {
 	    	this.corresIndex = index;
 	    	this._status = thisStatus;
 	  		this._currentPage = 1;
-	  		this.checkedRows=[]
+	  		// this.checkedRows=[]
+	  		this.uncheckAll()
 	    }
 	    pop(e){
 	    	e.preventDefault()
 	    }
-	    
-	    checkRow(e,_id){
-	    	if(e.target.checked == true){
-	    		this.checkedRows.push(_id);
+	    showCheckBox(){
+	    	if(this.checkedRows.length > 0 ){
+	    		return true;
 	    	}else{
-	    		const index = this.checkedRows.indexOf(_id)
+	    		return false;
+	    	}
+	    }
+	    checkRow(e,data,selected){
+	    	if(e.target.checked == true){
+	    		this.checkedRows.push(data);
+	    	}else{
+	    		const index = this.checkedRows.indexOf(data)
 	    		if (index > -1) {
 	    		  this.checkedRows.splice(index, 1);
 	    		}
 	    	}
 	    	console.log(this.checkedRows)
-	    	if(this.checkedRows.length > 0 ){
-	    		this.showCheckBox = true;
+	    	
+	    }
+	    uncheckAll(){
+	    	this.checkedRows=[];
+	    	this.DashboardData.forEach(x => x.selected = false)
+	    }
+	    checkAll(ev) {
+	    	let filteredRows
+	    	let orderby = this._orderBy 
+	    	this.checkedRows = []
+	    	filteredRows = this.DashboardData.filter(
+    	         x => x.status === this._status);
+	    	if(orderby.charAt(0) == '-'){
+	    		let thisOrderby = orderby.substring(1,5000);
+	    	filteredRows.sort((a, b) => {
+	    	    if (b[thisOrderby] < a[thisOrderby]) return -1;
+	    	    else if (b[thisOrderby] > a[thisOrderby]) return 1;
+	    	    else return 0; 
+	    	  });	
 	    	}else{
-	    		this.showCheckBox = false;
+	    		filteredRows.sort((a, b) => {
+	    	    if (a[orderby] < b[orderby]) return -1;
+	    	    else if (a[orderby] > b[orderby]) return 1;
+	    	    else return 0;
+	    	  });
 	    	}
+	    	let filteredInPage = filteredRows.slice((this._itemsPerPage*this._currentPage)-this._itemsPerPage, (this._itemsPerPage*this._currentPage))
+
+	      	filteredInPage.forEach(
+	      		x => {
+	      			x.selected = ev.target.checked;
+	      			this.checkedRows.push(x)
+	      		}
+
+	      		)
+	      	if(!ev.target.checked){
+				this.checkedRows=[]
+	      	}
+	    	console.log(this.checkedRows)
 	    }
 
+	    isAllChecked() {
+	    		    	let filteredRows
+	    		    	let orderby = this._orderBy 
+	    		    	filteredRows = this.DashboardData.filter(
+	    	    	         x => x.status === this._status);
+	    		    	if(orderby.charAt(0) == '-'){
+	    		    		let thisOrderby = orderby.substring(1,5000);
+	    		    	filteredRows.sort((a, b) => {
+	    		    	    if (b[thisOrderby] < a[thisOrderby]) return -1;
+	    		    	    else if (b[thisOrderby] > a[thisOrderby]) return 1;
+	    		    	    else return 0; 
+	    		    	  });	
+	    		    	}else{
+	    		    		filteredRows.sort((a, b) => {
+	    		    	    if (a[orderby] < b[orderby]) return -1;
+	    		    	    else if (a[orderby] > b[orderby]) return 1;
+	    		    	    else return 0;
+	    		    	  });
+	    		    	}
+	    		    	let filteredInPage = filteredRows.slice((this._itemsPerPage*this._currentPage)-this._itemsPerPage, (this._itemsPerPage*this._currentPage))
+
+	      return filteredInPage.every(_ => _.selected);
+
+	    }
 	    afterChange(e) {
 	      console.log(e);
 	    }

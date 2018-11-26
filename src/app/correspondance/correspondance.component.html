@@ -8,10 +8,10 @@
               </ul>
           
         </div>
-
+ 
         <ngx-slick class="corres-carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
             <div ngxSlickItem *ngFor="let status of statuses; let i = index" class="slide">
-                  <a (click)="corresActive(i,status)" class="{{corresIndex == i ? 'active' : null}}">
+                  <a (click)="corresActive(i,status)" class="{{status}} {{corresIndex == i ? 'active' : null}}">
                   	<span class="slide-name">{{status}}</span>
                   	<span class="slide-number">50</span>
                   </a>
@@ -20,7 +20,7 @@
         
 
 
-       <div class="{{showCheckBox? 'showCheckBox' : null}}">
+       <div id="new" class="{{showCheckBox() ? 'showCheckBox' : null}}">
          <div class="mt-4">
           <div class="table-header">
                   <div class="d-flex align-items-center">
@@ -30,7 +30,7 @@
                        <ul>
                            <li><a href="#" data-toggle="tooltip" title="Trash"><img src="assets/images/trash.png"></a></li>
                            <li><a href="#" data-toggle="tooltip" title="Forward"><img src="assets/images/forward.png"></a></li>
-                           <li><span>اختيار الكل</span><input type="checkbox"></li>
+                           <li><span>اختيار الكل</span><input class="check-all" (change)="checkAll($event)"  [checked]="isAllChecked()" type="checkbox"></li>
                       </ul>
                     </div>
                    
@@ -57,7 +57,7 @@
                 <tbody *ngFor="let data of DashboardData | filterBy: ['status']: _status | orderBy : _orderBy | paginate: { itemsPerPage: _itemsPerPage, currentPage: _currentPage }">
                 <tr data-toggle="collapse" attr.data-target="#row{{data.index}}" class="accordion-toggle collapsed">
                         <td>
-                        	<input type="checkbox" class="table-check" id="data._id"  (click)="checkRow($event,data._id);$event.stopPropagation()">
+                        	<input type="checkbox"  [(ngModel)]="data.selected"  class="table-check" id="data._id"  (click)="checkRow($event,data,data.selected);$event.stopPropagation()">
                         </td>
 
                       <td>
@@ -163,7 +163,7 @@
                 previousLabel=""
                 nextLabel=""
                 autoHide="true"
-                (pageChange)="_currentPage = $event">
+                (pageChange)="_currentPage = $event;uncheckAll()">
             </pagination-controls>
             <select class="pl-4" #itemsPerPage (change)="changeItemsPerPage(itemsPerPage.value)">
               <option value="5">5</option>
