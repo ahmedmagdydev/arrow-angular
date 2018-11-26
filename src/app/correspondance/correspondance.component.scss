@@ -92,3 +92,128 @@
 		}
 	}
 }
+
+    .breadcrumb{padding: 0px;
+        margin: 0px;
+        background-color: transparent;
+        float: right;
+        width: 80% !important;
+        > li{float:right;
+             padding-right: 10px;
+
+            & > a{color:#000;
+                       text-decoration: none;
+                       font-weight: bolder;
+                       font-size: 30px;
+                    }
+        }
+             li:last-child{
+                           color:#8f9094;
+                           font-weight:700;
+                           line-height: 2 !important;
+                           }
+        }
+
+
+.table-check{   width: 20px;
+    opacity: 0;
+    height: 20px;
+    background: #EEE;
+    box-shadow: 0 0 0 0 #25c68b inset, 0 0 0 2px #939caa inset, 0 0 0 10px #fff inset, 0 0 0 0 #ddd inset, 0 0 0 0 #ddd;
+    transition: all .2s;
+    margin-right: 5px;
+    padding: 25px;
+    vertical-align: middle;
+    float: right;
+    margin-left: 5px;
+}
+
+tr:hover .table-check{opacity: 1;} 
+.showCheckBox tr .table-check{opacity: 1;}
+.table-header-item ul li:not(:last-child){opacity: 0;}
+.showCheckBox .table-header-item ul li{opacity: 1 !important;}
+.table-check:active {
+    background: #ddd;
+    box-shadow: 0 0 0 0 #25c68b inset, 0 0 0 1px #939caa inset, 0 0 0 0 #EEE inset, 0 0 0 0px #ddd inset, 0 0 0 12px #ddd;
+}
+
+.table-check:checked:active {
+    background: #25c68b;
+    box-shadow: 0 0 0 8px #25c68b inset, 0 0 0 0 #939caa inset, 0 0 0 0px #EEE inset, 0 0 0 0px #ddd inset, 0 0 0 8px #D6E5E4;
+}
+
+.table-check:checked {
+    background: #F9F9F9;
+    box-shadow: 0 0 0 11px #25c68b inset, 0 0 0 0 #939caa inset, 0 0 0 8px #EEE inset, 0 0 0 0 #ddd inset, 0 0 0 0 #ddd;
+  content: url(https://i.imgur.com/OrSqEu5.png);
+}
+
+
+.table-header {
+    padding: 12px 43px;
+    background: #fff;
+    margin-bottom: 0px;
+    border-radius:  8px 8px 0 0;
+    box-shadow: 0.261px 2.989px 8px 0 rgba(15,114,215,.2);
+}
+.table-header-item{
+    height: 50px;
+
+  
+    > ul{list-style: none;
+        margin: 0px;
+        padding: 0px;
+        position: absolute;
+        right:110px;
+        :last-child{border-right: none;}
+     
+      > li {float: left;
+            padding: 7px 7px;
+            border-right: 1px solid #ccc;
+      
+            
+            
+            > input[type="checkbox"] {
+                width: 20px;
+                height: 20px;
+                background: #EEE;
+                box-shadow: 0 0 0 0 #25c68b inset, 0 0 0 2px #939caa inset, 0 0 0 10px #fff inset, 0 0 0 0 #ddd inset, 0 0 0 0 #ddd;
+                transition: all .2s;
+                margin-right: 5px;
+                padding: 25px;
+                vertical-align: middle;
+                float: right;
+                margin-left: 10px;
+                margin-top: 4px;
+               
+              }
+              
+              input[type="checkbox"]:active {
+                  background: #ddd;
+                  box-shadow: 0 0 0 0 #25c68b inset, 0 0 0 1px #939caa inset, 0 0 0 0 #EEE inset, 0 0 0 0px #ddd inset, 0 0 0 12px #ddd;
+              }
+              
+              input[type="checkbox"]:checked:active {
+                  background: #25c68b;
+                  box-shadow: 0 0 0 8px #25c68b inset, 0 0 0 0 #939caa inset, 0 0 0 0px #EEE inset, 0 0 0 0px #ddd inset, 0 0 0 8px #D6E5E4;
+              }
+              
+              input[type="checkbox"]:checked {
+                  background: #F9F9F9;
+                  box-shadow: 0 0 0 11px #25c68b inset, 0 0 0 0 #939caa inset, 0 0 0 8px #EEE inset, 0 0 0 0 #ddd inset, 0 0 0 0 #ddd;
+                content: url(https://i.imgur.com/OrSqEu5.png);
+              }
+
+              > span{vertical-align: middle;
+                     color:#939caa;
+                     font-weight: 500px;}
+
+              > a{text-align: center;
+                  cursor:pointer; 
+                  padding: 0px 15px;
+                  &:hover{opacity:0.7;} 
+                
+                }
+        }
+    }
+}

@@ -14,6 +14,8 @@ export class CorrespondanceComponent implements OnInit {
 	  public _currentPage;
 	  public statuses:Array<any> = ['new','done','assigned','waiting','delayed','new','done','assigned','waiting','delayed'];
 	  public corresIndex ;
+	  checkedRows=[];
+	  showCheckBox = false;
 	  public priority(_priority){
 	  	return Math.ceil(_priority / 2);
 	  }
@@ -63,28 +65,40 @@ export class CorrespondanceComponent implements OnInit {
 	  public ngOnInit():void {
 			this._orderBy = 'sender';
 			this._status= 'new';
-			this._itemsPerPage = 5;
+			this._itemsPerPage = 10;
 			this.corresIndex = 0;
 	      	// console.log(this.dashboardStatusPrioriy('new'));
 	    }
 
-	    slides = [
-	      {img: "http://placehold.it/350x150/000000"},
-	      {img: "http://placehold.it/350x150/111111"},
-	      {img: "http://placehold.it/350x150/333333"},
-	      {img: "http://placehold.it/350x150/333333"},
-	      {img: "http://placehold.it/350x150/333333"},
-	      {img: "http://placehold.it/350x150/666666"}
-	    ];
+
 	    slideConfig = {"slidesToShow": 7, "slidesToScroll": 1,"rtl": true, "infinite":false};
 	     
-	    corresActive(index){
+	    corresActive(index, thisStatus){
 	    	this.corresIndex = index;
+	    	this._status = thisStatus;
+	  		this._currentPage = 1;
+	  		this.checkedRows=[]
 	    }
 	    pop(e){
 	    	e.preventDefault()
 	    }
 	    
+	    checkRow(e,_id){
+	    	if(e.target.checked == true){
+	    		this.checkedRows.push(_id);
+	    	}else{
+	    		const index = this.checkedRows.indexOf(_id)
+	    		if (index > -1) {
+	    		  this.checkedRows.splice(index, 1);
+	    		}
+	    	}
+	    	console.log(this.checkedRows)
+	    	if(this.checkedRows.length > 0 ){
+	    		this.showCheckBox = true;
+	    	}else{
+	    		this.showCheckBox = false;
+	    	}
+	    }
 
 	    afterChange(e) {
 	      console.log(e);
