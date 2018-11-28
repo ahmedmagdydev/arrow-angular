@@ -61,8 +61,12 @@
 		right: 100%;
 		left: auto;
 		&.slick-next{
-			margin-right: 20px;
+			margin-right: 30px;
 		}
+    &.slick-next:before, &.slick-prev:before{
+          background: #000;
+    border-radius: 50%;
+    }
 	}
 	.slide{
 		a{
@@ -152,12 +156,15 @@ tr:hover .table-check{opacity: 1;}
 
 
 .table-header {
-    padding: 12px 43px;
-    background: #fff;
-    margin-bottom: 0px;
-    border-radius:  8px 8px 0 0;
-    box-shadow: 0.261px 2.989px 8px 0 rgba(15,114,215,.2);
+  padding: 5px 5px 0px;
+  background: #fff;
+  margin-bottom: 0px;
+  border-radius: 8px 8px 0 0;
+  box-shadow: -1px -1px 8px 0 rgba(15, 114, 215, 0.2);
+  position: relative;
+  top: 4px;
 }
+
 .table-header-item{
     height: 50px;
 
@@ -166,10 +173,10 @@ tr:hover .table-check{opacity: 1;}
         margin: 0px;
         padding: 0px;
         position: absolute;
-        right:110px;
         :last-child{border-right: none;}
      
-      > li {float: left;
+      > li {
+        float: left;
             padding: 7px 7px;
             border-right: 1px solid #ccc;
       

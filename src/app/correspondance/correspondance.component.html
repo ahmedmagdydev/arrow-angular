@@ -21,7 +21,7 @@
 
 
        <div id="new" class="{{showCheckBox() ? 'showCheckBox' : null}}">
-         <div class="mt-4">
+         <div class="mt-2">
           <div class="table-header">
                   <div class="d-flex align-items-center">
                           
@@ -42,8 +42,8 @@
   
                 <thead>
                     <tr>
-                        <th></th>
-                    	<th (click)="orderTable('priority')" class="table-filter">الاهمية</th>
+                        <th style="width: 55px"></th>
+                    	<th (click)="orderTable('priority')" class="table-filter  text-center">الاهمية</th>
                         <th (click)="orderTable('title')" class="table-filter">العنوان </th>
                         <th (click)="orderTable('sender')" class="table-filter">المرسل</th>
                         <th (click)="orderTable('date')" class="table-filter">التاريخ</th>
