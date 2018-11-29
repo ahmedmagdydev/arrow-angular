@@ -55,13 +55,13 @@
               <table class="table table-condensed table-main" style="border-collapse:collapse">
   
                 <thead>
-                    <tr><th (click)="orderTable('priority')" class="table-filter  text-center">الاهمية</th>
-                        <th (click)="orderTable('title')" class="table-filter">العنوان </th>
-                        <th (click)="orderTable('sender')" class="table-filter">المرسل</th>
-                        <th (click)="orderTable('date')" class="table-filter">التاريخ</th>
-                        <th (click)="orderTable('number')" class="table-filter">الرقم</th>
+                    <tr><th (click)="orderTable('priority')" class="table-filter  text-center">الاهمية  <i class="fa {{faSort('priority')}}"></i></th>
+                        <th (click)="orderTable('title')" class="table-filter">العنوان  <i class="fa {{faSort('title')}}"></i></th>
+                        <th (click)="orderTable('sender')" class="table-filter">المرسل <i class="fa {{faSort('sender')}}"></i></th>
+                        <th (click)="orderTable('date')" class="table-filter">التاريخ <i class="fa {{faSort('date')}}"></i></th>
+                        <th (click)="orderTable('number')" class="table-filter">الرقم <i class="fa {{faSort('number')}}"></i></th>
                         <th>الإجراءات ذات الصلة</th>
-                        <th>القالب</th>
+                        <th (click)="orderTable('template.name')" class="table-filter">القالب <i class="fa {{faSort('template.name')}}"></i></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -95,12 +95,17 @@
                         <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i class="fa fa-ellipsis-v"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                           <a class="dropdown-item" href="#">  Open <span class="ic0n-item icon-Open"></span> </a>
+                           <a class="dropdown-item" href="#">Reply <span class="ic0n-item icon-Reply1"></span></a>
+                           <a class="dropdown-item" href="#"> Reply to all <span class="ic0n-item icon-Reply-to-all"></span></a>
+                           <a class="dropdown-item" href="#">Forward <span class="ic0n-item icon-Foward"></span></a>
+                           <a class="dropdown-item" href="#">History <span class="ic0n-item icon-History"></span></a>
+                           <a class="dropdown-item" href="#">Archived versions  <span class="ic0n-item icon-Archived-Vesions"></span></a>
+                           <a class="dropdown-item" href="#">Mark as unread<span class="ic0n-item icon-Shape-995"></span></a>
+                       </div>
                       </div>
+
                     </td>
                   </tr>
                   <tr>
@@ -180,6 +185,7 @@
               <option value="30">30</option>
             </select>
             <p class="m-0 pl-1">items per page</p>
+            <a href="#" class="ml-auto text-black">view all</a>
            </div>
           </div>
                           

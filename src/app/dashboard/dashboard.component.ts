@@ -67,12 +67,21 @@ export class DashboardComponent implements OnInit, AfterViewInit{
 	  	}
 	  	
 	  }
+	  faSort(sortby){
+	  	if(this._orderBy == sortby){
+	  		return 'fa-sort-asc'
+	  	}else if (this._orderBy.substring(1,5000) == sortby){
+	  		return 'fa-sort-desc'
+	  	}else{
+	  		return 'fa-sort'
+	  	}
+	  }
 	  public ngOnInit():void {
 			this._orderBy = 'sender';
 			this._status= 'new';
 			this._itemsPerPage = 5;
 			$('.date-range').calendarsPicker({
-				rangeSelect: true, monthsToShow: 2,
+				rangeSelect: true, monthsToShow: 1,
 				calendar: $.calendars.instance('islamic') 
 			});
 	      	// console.log(this.dashboardStatusPrioriy('new'));

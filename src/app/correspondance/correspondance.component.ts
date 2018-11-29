@@ -8,7 +8,7 @@ import {DashboardData} from '../data';
 })
 
 export class CorrespondanceComponent implements OnInit {
-
+	
 	  public DashboardData:Array<any> = DashboardData;
 	  public _orderBy;
 	  public _status;
@@ -182,5 +182,13 @@ export class CorrespondanceComponent implements OnInit {
 	    afterChange(e) {
 	      console.log(e);
 	    }
-
+	    faSort(sortby){
+	    	if(this._orderBy == sortby){
+	    		return 'fa-sort-asc'
+	    	}else if (this._orderBy.substring(1,5000) == sortby){
+	    		return 'fa-sort-desc'
+	    	}else{
+	    		return 'fa-sort'
+	    	}
+	    }
 }

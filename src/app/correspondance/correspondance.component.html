@@ -43,13 +43,13 @@
                 <thead>
                     <tr>
                         <th style="width: 55px"></th>
-                    	<th (click)="orderTable('priority')" class="table-filter  text-center">الاهمية</th>
-                        <th (click)="orderTable('title')" class="table-filter">العنوان </th>
-                        <th (click)="orderTable('sender')" class="table-filter">المرسل</th>
-                        <th (click)="orderTable('date')" class="table-filter">التاريخ</th>
-                        <th (click)="orderTable('number')" class="table-filter">الرقم</th>
+                    	<th (click)="orderTable('priority')" class="table-filter  text-center">الاهمية  <i class="fa {{faSort('priority')}}"></i></th>
+                        <th (click)="orderTable('title')" class="table-filter">العنوان  <i class="fa {{faSort('title')}}"></i></th>
+                        <th (click)="orderTable('sender')" class="table-filter">المرسل <i class="fa {{faSort('sender')}}"></i></th>
+                        <th (click)="orderTable('date')" class="table-filter">التاريخ <i class="fa {{faSort('date')}}"></i></th>
+                        <th (click)="orderTable('number')" class="table-filter">الرقم <i class="fa {{faSort('number')}}"></i></th>
                         <th>الإجراءات ذات الصلة</th>
-                        <th>القالب</th>
+                        <th (click)="orderTable('template.name')" class="table-filter">القالب <i class="fa {{faSort('template.name')}}"></i></th>
                         <th></th>
                     </tr>
                 </thead>
