@@ -82,7 +82,15 @@ export class DashboardComponent implements OnInit, AfterViewInit{
 			this._itemsPerPage = 5;
 			$('.date-range').calendarsPicker({
 				rangeSelect: true, monthsToShow: 1,
-				calendar: $.calendars.instance('islamic') 
+				calendar: $.calendars.instance('islamic') ,
+				prevText: 'السابق', 
+			    todayText: 'اليوم', 
+			    nextText: 'التالى', 
+			    clearText: 'مسح', 
+			    closeText: 'إغلاق', 
+			    onClose: function(dates) { 
+			    	alert('The chosen date(s): ' + dates); 
+			    }
 			});
 	      	// console.log(this.dashboardStatusPrioriy('new'));
 	    }
