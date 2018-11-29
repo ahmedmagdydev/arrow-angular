@@ -6,15 +6,28 @@ import {DashboardData} from '../data';
   templateUrl: './correspondance.component.html',
   styleUrls: ['./correspondance.component.scss']
 })
+
 export class CorrespondanceComponent implements OnInit {
+
 	  public DashboardData:Array<any> = DashboardData;
 	  public _orderBy;
 	  public _status;
 	  public _itemsPerPage;
 	  public _currentPage;
-	  public statuses:Array<any> = ['new','done','assigned','waiting','delayed','new','done','assigned','waiting','delayed'];
+	  public statuses:Array<any> = [
+	  {"number":20,"en":"new","ar":"جديد"},
+	  {"number":30,"en":"done","ar":"تم"},
+	  {"number":25,"en":"assigned","ar":"مسجب"},
+	  {"number":20,"en":"waiting","ar":"منتظر"},
+	  {"number":40,"en":"delayed","ar":"مؤجل"},
+	  {"number":20,"en":"new","ar":"جديد"},
+	  {"number":30,"en":"done","ar":"تم"},
+	  {"number":25,"en":"assigned","ar":"مسجب"},
+	  {"number":20,"en":"waiting","ar":"منتظر"}
+	  ,{"number":40,"en":"delayed","ar":"مؤجل"}
+	  ];
 	  public corresIndex ;
-	  checkedRows=[];
+	  public checkedRows=[];
 	  public priority(_priority){
 	  	return Math.ceil(_priority / 2);
 	  }

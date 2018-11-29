@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, LOCALE_ID, Inject} from '@angular/core';
 
 
 @Component({
@@ -7,5 +7,8 @@ import { Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent  {
-  
+  constructor(
+    @Inject(LOCALE_ID) public readonly localeId
+  ) {
+  }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import {DashboardData} from '../data';
+declare var $;
+declare var displayChart;
 
 @Component({
   selector: 'app-dashboard',
@@ -7,13 +9,18 @@ import {DashboardData} from '../data';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit, AfterViewInit{
-
 	  public DashboardData:Array<any> = DashboardData;
 	  public _orderBy;
 	  public _status;
 	  public _itemsPerPage;
 	  public _currentPage;
-	  public statuses:Array<any> = ['new','done','assigned','waiting','delayed'];
+	  public statuses:Array<any> = [
+	  {"en":"new","ar":"جديد"},
+	  {"en":"done","ar":"تم"},
+	  {"en":"assigned","ar":"مسجب"},
+	  {"en":"waiting","ar":"منتظر"}
+	  ,{"en":"delayed","ar":"مؤجل"}
+	  ];
 	  public priority(_priority){
 	  	return Math.ceil(_priority / 2);
 	  }
@@ -64,23 +71,26 @@ export class DashboardComponent implements OnInit, AfterViewInit{
 			this._orderBy = 'sender';
 			this._status= 'new';
 			this._itemsPerPage = 5;
-
+			$('.date-range').calendarsPicker({
+				rangeSelect: true, monthsToShow: 2,
+				calendar: $.calendars.instance('islamic') 
+			});
 	      	// console.log(this.dashboardStatusPrioriy('new'));
 	    }
 
 	    ngAfterViewInit(){
-	    	// let t = $;
-	    	// t('.main-tabs li:first-child').addClass('large').find('a').addClass('active'),
-	    	// setTimeout(function(){displayChart("newChart")},400), 
-	    	// t('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-	    	//     t(e.target).parent().addClass("large"),
-	    	//     t(e.relatedTarget).parent().removeClass("large"),
-	    	//     t("#" + t(e.relatedTarget).attr("aria-controls") + "Chart"),
-	    	//     setTimeout(function() {
-	    	//     	// console.log(t(e.target).attr("aria-controls") + "Chart")
-	    	//         displayChart(t(e.target).attr("aria-controls") + "Chart")
-	    	//     }, 400)
-	    	// })
+	    	let t = $;
+	    	t('.main-tabs li:first-child').addClass('large').find('a').addClass('active'),
+	    	setTimeout(function(){displayChart("newChart")},400), 
+	    	t('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
+	    	    t(e.target).parent().addClass("large"),
+	    	    t(e.relatedTarget).parent().removeClass("large"),
+	    	    t("#" + t(e.relatedTarget).attr("aria-controls") + "Chart"),
+	    	    setTimeout(function() {
+	    	    	// console.log(t(e.target).attr("aria-controls") + "Chart")
+	    	        displayChart(t(e.target).attr("aria-controls") + "Chart")
+	    	    }, 400)
+	    	})
 	    }
 
 

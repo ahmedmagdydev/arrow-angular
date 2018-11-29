@@ -6,7 +6,7 @@ function displayChart(t) {
     var t = new Chart(document.getElementById(t).getContext("2d"),{
         type: "doughnut",
         data: {
-            labels: ["urgent", "high importance", "normal", "low importance"],
+            labels: ["ضروري", "مهم", "عادي", "غير مهم"],
             datasets: [{
                 label: "# of Votes",
                 data: priority,
@@ -52,32 +52,9 @@ jQuery(document).ready(function(t) {
     }
     t("body").on("click", ".toggle-menu", function(e) {
         e.preventDefault(),
-        t(".main").toggleClass("menu-closed")
+        t("body").toggleClass("menu-closed")
     });
-    var a = moment()
-      , n = moment();
-    t("#reportrange").daterangepicker({
-        startDate: a,
-        endDate: n,
-        ranges: {
-            Today: [moment(), moment()],
-            Yesterday: [moment().subtract(1, "days"), moment().subtract(1, "days")],
-            "Last 7 Days": [moment().subtract(6, "days"), moment()],
-            "Last 30 Days": [moment().subtract(29, "days"), moment()],
-            "This Month": [moment().startOf("month"), moment().endOf("month")],
-            "Last Month": [moment().subtract(1, "month").startOf("month"), moment().subtract(1, "month").endOf("month")]
-        }
-    }, e),
-    e(a, n),
-    t('.main-tabs li:first-child').addClass('large').find('a').addClass('active'),
-    setTimeout(function(){displayChart("newChart")},400), 
-    t('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
-        t(e.target).parent().addClass("large"),
-        t(e.relatedTarget).parent().removeClass("large"),
-        t("#" + t(e.relatedTarget).attr("aria-controls") + "Chart"),
-        setTimeout(function() {
-        	// console.log(t(e.target).attr("aria-controls") + "Chart")
-            displayChart(t(e.target).attr("aria-controls") + "Chart")
-        }, 400)
-    })
+   
+    t('.main-tabs li:first-child').addClass('large').find('a').addClass('active')
+    
 });

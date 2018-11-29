@@ -21,30 +21,26 @@
                </select>
              </div>
              <div class="filter-date ml-3">
-               <div id="reportrange" class="form-control">
-                   <span class="from-to"></span> 
-                   <span #fromDate class="from d-none"></span> 
-                   <span #toDate class="to d-none"></span> 
-                   <i class="fa fa-calendar"></i>&nbsp;
-               </div>
+              بالتاريخ
+               <input type="text" class="date-range">
              </div>
           </div>
         </div>
 
        <ul class="nav nav-fill main-tabs" id="myTab" role="tablist">
          <li class="nav-item" *ngFor="let status of statuses; let i = index" >
-           <a class="nav-link clearfix d-flex align-items-center " attr.aria-controls="{{status}}" id="{{status}}-tab" data-toggle="tab" href="#{{status}}" role="tab"  aria-selected="true" (click)="changeStatus(status)">
+           <a class="nav-link clearfix d-flex align-items-center " attr.aria-controls="{{status.en}}" id="{{status.en}}-tab" data-toggle="tab" href="#{{status.en}}" role="tab"  aria-selected="true" (click)="changeStatus(status.en)">
              <span class="tab-detail">
-              <p class="number">{{dashboardStatus(status).length}}</p>
-                <span class="icon-{{status}}"></span>
-                <p class="tab-name">{{status}}</p> 
+              <p class="number">{{dashboardStatus(status.en).length}}</p>
+                <span class="icon-{{status.en}}"></span>
+                <p class="tab-name">{{status.ar}}</p> 
                 <p>مراسلات</p> 
                 <div class="progress">
-                  <div class="progress-bar" role="progressbar" [style.width]="dashboardStatus(status).length / DashboardData.length * 100 + '%'"  aria-valuemin="0" aria-valuemax="100">{{dashboardStatus(status).length / DashboardData.length * 100}}%</div>
+                  <div class="progress-bar" role="progressbar" [style.width]="dashboardStatus(status.en).length / DashboardData.length * 100 + '%'"  aria-valuemin="0" aria-valuemax="100">{{dashboardStatus(status.en).length / DashboardData.length * 100}}%</div>
                 </div> 
              </span>
              <div class="tab-chart">
-               <canvas id="{{status}}Chart" width="320" height="130" attr.data-priority="{{dashboardStatusPrioriy(status)}}"></canvas>
+               <canvas id="{{status.en}}Chart" width="320" height="130" attr.data-priority="{{dashboardStatusPrioriy(status.en)}}"></canvas>
 
              </div>
            </a>
@@ -59,13 +55,13 @@
               <table class="table table-condensed table-main" style="border-collapse:collapse">
   
                 <thead>
-                    <tr><th (click)="orderTable('priority')" class="table-filter">Priority</th>
-                        <th (click)="orderTable('title')" class="table-filter">Subject </th>
-                        <th (click)="orderTable('sender')" class="table-filter">Sender</th>
-                        <th (click)="orderTable('date')" class="table-filter">dATE</th>
-                        <th (click)="orderTable('number')" class="table-filter">nUMBER</th>
-                        <th>rELATED aCTIONS</th>
-                        <th>tEMPLATE</th>
+                    <tr><th (click)="orderTable('priority')" class="table-filter  text-center">الاهمية</th>
+                        <th (click)="orderTable('title')" class="table-filter">العنوان </th>
+                        <th (click)="orderTable('sender')" class="table-filter">المرسل</th>
+                        <th (click)="orderTable('date')" class="table-filter">التاريخ</th>
+                        <th (click)="orderTable('number')" class="table-filter">الرقم</th>
+                        <th>الإجراءات ذات الصلة</th>
+                        <th>القالب</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -82,10 +78,10 @@
                           <span></span>
                           <span></span>
                         </span>
-                      </td>
+                      </td> 
                       <td>{{data.title}}</td>
                       <td>{{data.sender}}</td>
-                      <td>{{data.createdDate | date :'d MMMM yyyy'}}</td>
+                      <td>{{data.createdDate | date:'shortDate'}}</td>
                       <td>{{data.number}}</td>
                     <td> 
                       <span *ngFor="let action of data.relatedActions ; let i = index" class="{{i > 2 ? 'd-none' : null}} mr-3">
@@ -125,9 +121,9 @@
                             
                             <div class="col-3">
                               <label for="">Creation Date :</label>
-                              <p>{{data.createdDate | date :'d MMMM yyyy'}} </p>
+                              <p>{{data.createdDate | date:'shortDate'}} </p>
                               <label for="">Date :</label>
-                              <p>{{data.createdDate | date :'d MMMM yyyy'}}</p>
+                              <p>{{data.createdDate | date:'shortDate'}}</p>
                               <label for="">Related Actions :</label>
                               <p>
                                 <span class="mr-3" *ngFor="let action of data.relatedActions">
