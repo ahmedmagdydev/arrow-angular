@@ -13,15 +13,21 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FabComponent } from './shared/fab/fab.component';
 import { CorrespondanceComponent } from './correspondance/correspondance.component';
 import { SlickModule } from 'ngx-slick';
-
+import { TableComponent } from './shared/table/table.component';
+import { NewCorrespondanceComponent } from './new-correspondance/new-correspondance.component';
+import { MainInfoComponent } from './new-correspondance/main-info/main-info.component';
+import { AttachmentsComponent } from './new-correspondance/attachments/attachments.component';
+import { TasksComponent } from './new-correspondance/tasks/tasks.component';
+import { RelatedComponent } from './new-correspondance/related/related.component';
+import { HistoryComponent } from './new-correspondance/history/history.component';
+import { RedirectComponent } from './new-correspondance/redirect/redirect.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'home', component: DashboardComponent },
-  { path: 'corres',      component: CorrespondanceComponent }
-  
+  { path: 'corres',      component: CorrespondanceComponent }  ,
+  { path: 'new-corres',      component: NewCorrespondanceComponent }  
 ];
-
 
 @NgModule({
   declarations: [
@@ -30,7 +36,15 @@ const appRoutes: Routes = [
     SideMenuComponent,
     DashboardComponent,
     FabComponent,
-    CorrespondanceComponent
+    CorrespondanceComponent,
+    TableComponent,
+    NewCorrespondanceComponent,
+    MainInfoComponent,
+    AttachmentsComponent,
+    TasksComponent,
+    RelatedComponent,
+    HistoryComponent,
+    RedirectComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Output } from '@angular/core';
 import {DashboardData} from '../data';
 declare var $;
 declare var displayChart;
@@ -10,10 +10,9 @@ declare var displayChart;
 })
 export class DashboardComponent implements OnInit, AfterViewInit{
 	  public DashboardData:Array<any> = DashboardData;
-	  public _orderBy;
-	  public _status;
 	  public _itemsPerPage;
 	  public _currentPage;
+	  @Output() _status
 	  public statuses:Array<any> = [
 	  {"en":"new","ar":"جديد"},
 	  {"en":"done","ar":"تم"},
@@ -21,19 +20,25 @@ export class DashboardComponent implements OnInit, AfterViewInit{
 	  {"en":"waiting","ar":"منتظر"}
 	  ,{"en":"delayed","ar":"مؤجل"}
 	  ];
-	  public priority(_priority){
-	  	return Math.ceil(_priority / 2);
-	  }
-	  public changeItemsPerPage(_value){
-	  	this._itemsPerPage = _value;
-	  }
 
+	  
+	  
+
+	  
+
+	  
+	  
+	  public changeStatus(thisStatus){
+	  	this._status = thisStatus;
+	  	this._currentPage = 1;
+	  }
+	  
 	  public dashboardStatus(status){
-	    return  DashboardData.filter(function (data) {
+	    return  this.DashboardData.filter(function (data) {
 	      return data.status === status;
 	    }); 
 	  }
-
+	  
 	  public dashboardStatusPrioriy(status){
 	    const thisStatus = this.dashboardStatus(status);
 	    const red = thisStatus.filter(function (item) {
@@ -52,34 +57,8 @@ export class DashboardComponent implements OnInit, AfterViewInit{
 	    return array
 	  }
 	  
-
-	  public changeStatus(thisStatus){
-	  	this._status = thisStatus;
-	  	this._currentPage = 1;
-	  }
-
-	  public orderTable = function (orderArg) {
-	  	
-	  	if (this._orderBy == orderArg ){
-	  		this._orderBy = '-' + orderArg;
-	  	}else{
-	  		this._orderBy = orderArg;
-	  	}
-	  	
-	  }
-	  faSort(sortby){
-	  	if(this._orderBy == sortby){
-	  		return 'fa-sort-asc'
-	  	}else if (this._orderBy.substring(1,5000) == sortby){
-	  		return 'fa-sort-desc'
-	  	}else{
-	  		return 'fa-sort'
-	  	}
-	  }
 	  public ngOnInit():void {
-			this._orderBy = 'sender';
-			this._status= 'new';
-			this._itemsPerPage = 5;
+			
 			$('.date-range').calendarsPicker({
 				rangeSelect: true, monthsToShow: 1,
 				calendar: $.calendars.instance('islamic') ,
