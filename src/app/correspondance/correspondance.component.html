@@ -9,7 +9,7 @@
            
         </div>
  
-        <ngx-slick class="corres-carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+        <ngx-slick class="corres-carousel" #slickModal="slick-modal" [config]="slideConfig">
             <div ngxSlickItem *ngFor="let status of statuses; let i = index" class="slide">
                   <a  (click)="corresActive(i,status.en)" class="{{status.en}} {{corresIndex == i ? 'active' : null}}">
                   	<span class="slide-name">{{status.ar}}</span>

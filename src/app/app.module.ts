@@ -21,6 +21,9 @@ import { TasksComponent } from './new-correspondance/tasks/tasks.component';
 import { RelatedComponent } from './new-correspondance/related/related.component';
 import { HistoryComponent } from './new-correspondance/history/history.component';
 import { RedirectComponent } from './new-correspondance/redirect/redirect.component';
+import { PrepareLetterComponent } from './new-correspondance/prepare-letter/prepare-letter.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -44,7 +47,8 @@ const appRoutes: Routes = [
     TasksComponent,
     RelatedComponent,
     HistoryComponent,
-    RedirectComponent
+    RedirectComponent,
+    PrepareLetterComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     NgPipesModule,
     NgxPaginationModule,
+    CKEditorModule,
     SlickModule.forRoot(),
     RouterModule.forRoot(
       appRoutes
