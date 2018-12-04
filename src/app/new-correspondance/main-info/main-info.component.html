@@ -1,11 +1,11 @@
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-5 mr-auto">
 		<div class="form-group">
 			<label for="">العنوان</label>
 			<div class="form-control-plaintext">تحتاج للمتابعة</div>
 		</div>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-5">
 		
 		<div class="row">
 			<div class="col-6">
@@ -16,7 +16,7 @@
 			</div>
 			<div class="col-6">
 				<div class="form-group">
-					<label for="">العنوان</label>
+					<label for="">تاريخ المعاملة</label>
 					<input type="date" class="form-control date-control">
 				</div>
 			</div>
@@ -24,18 +24,48 @@
 	</div>
 </div>
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-5 mr-auto">
 		<div class="form-group">
-			<label for="">العنوان</label>
+			<label for="">الوجدة</label>
 			<select name="" id="" class="form-control">
 				<option value="asdsda">asdasdasd</option>
 			</select>
 		</div>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-5">
 		<div class="form-group">
-			<label for="">العنوان</label>
-			<div class="form-control-plaintext">تحتاج للمتابعة</div>
+			<label for="">درجة الثقة</label>
+			<select name="" id="" class="form-control">
+				<option value="asdsda">asdasdasd</option>
+			</select>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-5 mr-auto">
+		<div class="form-group">
+			<label for="">الاهمية</label>
+			<select name="" id="" class="form-control">
+				<option value="asdsda">asdasdasd</option>
+			</select>
+		</div>
+	</div>
+	<div class="col-md-5">
+		<div class="form-group keywords-wrapper">
+			<label for="">كلمات</label>
+			<mat-form-field class="example-chip-list">
+			  <mat-chip-list #chipList>
+			    <mat-chip *ngFor="let keyword of keywords" [selectable]="selectable"
+			             [removable]="removable" (removed)="remove(keyword)">
+			      {{keyword.name}}
+			      <i matChipRemove class="fa fa-close" *ngIf="removable"></i>
+			    </mat-chip>
+			    <input [matChipInputFor]="chipList"
+			           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+			           [matChipInputAddOnBlur]="addOnBlur"
+			           (matChipInputTokenEnd)="add($event)">
+			  </mat-chip-list>
+			</mat-form-field>
 		</div>
 	</div>
 </div>

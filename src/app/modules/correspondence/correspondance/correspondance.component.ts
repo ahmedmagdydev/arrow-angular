@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DashboardData} from '../data';
+import {DashboardData} from '../../../data';
 
 @Component({
   selector: 'app-correspondance',

@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, Output } from '@angular/core';
-import {DashboardData} from '../data';
+import {DashboardData} from '../../../data';
 declare var $;
 declare var displayChart;
 
