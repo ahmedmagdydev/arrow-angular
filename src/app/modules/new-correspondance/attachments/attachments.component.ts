@@ -99,10 +99,10 @@ export class AttachmentsComponent implements OnInit {
           const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
           fileEntry.file((file: File) => {
           	
-   			// fileEntry._date = Date.now();
-   			// fileEntry._type = file.type;
-   			// fileEntry._size = file.size;
-   			// fileEntry._owner = "ahmed magdy";
+   			fileEntry._date = Date.now();
+   			fileEntry._type = file.type;
+   			fileEntry._size = file.size;
+   			fileEntry._owner = "ahmed magdy";
             // Here you can access the real file
             // console.log(droppedFile.relativePath, file);
    			// this.modifiedDate = file.lastModified;
