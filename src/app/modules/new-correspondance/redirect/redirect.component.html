@@ -1,0 +1,57 @@
+<div class="row">
+	<div class="col-md-6">
+		Individual<mat-slide-toggle>Collective</mat-slide-toggle>
+
+		<div>
+			<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+			  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+			    <button mat-icon-button disabled></button>
+			    <mat-checkbox class="checklist-leaf-node"
+			                  [checked]="checklistSelection.isSelected(node)"
+			                  (change)="todoLeafItemSelectionToggle(node)">{{node.item}}</mat-checkbox>
+			  </mat-tree-node>
+			
+			 
+			
+			  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+			    <a mat-icon-button matTreeNodeToggle
+			            [attr.aria-label]="'toggle'">
+			      <i class="{{treeControl.isExpanded(node) ? 'fa fa-angle-down' : 'fa fa-angle-left'}} ">
+			        
+			      </i>
+			    </a>
+			    <mat-checkbox [checked]="descendantsAllSelected(node)"
+			                  [indeterminate]="descendantsPartiallySelected(node)"
+			                  (change)="todoItemSelectionToggle(node)">{{node.item}}</mat-checkbox>
+			  </mat-tree-node>
+			</mat-tree>
+		</div>
+
+	</div>
+	<div class="col-md-6  bg-gray py-3">
+		<h4>Redirect To</h4>
+		<div class="pb-3" *ngFor="let item of database.dataChange._value">
+			<div class="redirect-header">
+				{{item.item}}
+			</div>
+			<ul class="redirects p-0">
+				<li class="d-flex align-items-center" *ngFor="let child of item.children">
+					<span class="mr-auto">
+						<p>{{child.item}}</p>
+						<p class="text-light">To express opinion , To benefit , To save</p>
+					</span>
+					<span>
+						<ul class="list-inline">
+							<li class="list-inline-item">
+								<a href="#"><span class="icon-trash"></span></a>
+							</li>
+							<li class="list-inline-item">
+								<a href="#"><span class="icon-info"></span></a>
+							</li>
+						</ul>
+					</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
