@@ -149,7 +149,7 @@ public orderTable = function (orderArg) {
   constructor() { }
   ngOnInit() {
   	this._orderBy = 'sender';
-  	this._status= 'new';
+  	// this._status= 'new';
   	this._itemsPerPage = 5;
   	this.corresIndex = 0;
   	this._currentPage=1; 

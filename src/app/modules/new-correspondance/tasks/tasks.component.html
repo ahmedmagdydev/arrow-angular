@@ -1,3 +1,57 @@
-<p>
-  tasks works!
-</p>
+<div class="tasks-container">
+	<div *ngIf="tasks.length <= 0" class="text-center no-content">
+		<div><span class="icon-no-task"></span></div>
+		<p>No tasks found Start Creating first task</p>
+		<div>
+			<div class="btn btn-outline-primary btn-block" (click)="addTask = true">Creating New Task</div>
+		</div>
+	</div>
+	<div class="{{addTask ? 'add-task show' : 'add-task' }}">
+		<a  class="close" (click)="addTask = false"><i class="fa fa-times"></i></a>
+		<div class="form-group"><label for="">task name</label>
+		<input type="text" class="form-control" id="staticEmail">
+	</div>
+	<div class="form-group">
+		Single Performed <mat-slide-toggle> Multi-Performed </mat-slide-toggle>
+	</div>
+	<div class="form-group">
+		<label for="">performers</label>
+		<select name="" id="" class="form-control"></select>
+	</div>
+	
+	<div class="form-group">
+		<label for="">performers</label>
+		<select name="" id="" class="form-control">
+			<option value="">important</option>
+		</select>
+	</div>
+	<div class="form-group row">
+		<div class="col-md-6">
+			<label for="">due date</label>
+			  <input type="text" class="date-picker form-control"/>
+		</div>
+		<div class="col-md-6">
+			<label for="">due time</label>
+			  <input type="text" class="date-picker form-control"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="">Source...</label>
+		
+	</div>
+	<div class="form-group">
+		<label for="">Observation</label>
+		
+	</div>
+	<div class="form-group">
+		<label for="">Description</label>
+		
+	</div>
+	<div class="form-group text-center">
+		<div class="btn btn-primary" (click)="addTasks()">create task</div>
+	</div>
+	</div>
+	<div *ngIf="tasks.length > 0">
+		 <app-table [DashboardData]="tasks" [_status]="" [showHeader]="false" [showFooter]="false"></app-table>
+	</div>
+</div>
