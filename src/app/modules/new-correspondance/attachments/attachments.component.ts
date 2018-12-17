@@ -90,7 +90,6 @@ export class AttachmentsComponent implements OnInit {
    	console.log(item)
    }
     public dropped(event: UploadEvent) {
-    	console.log(event)
       this.files = this.files.concat(event.files);
       for (const droppedFile of event.files) {
    
@@ -131,7 +130,13 @@ export class AttachmentsComponent implements OnInit {
         }
       }
     }
-   
+   // public uploadOnClick(event){
+      
+
+   //   this.files = this.files.concat(event);
+   //      console.log(this.files)
+          
+   // }
     public fileOver(event){
       // console.log(event);
     }

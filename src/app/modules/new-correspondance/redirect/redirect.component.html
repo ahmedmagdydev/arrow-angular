@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-6">
-		Individual<mat-slide-toggle>Collective</mat-slide-toggle>
+		Individual <mat-slide-toggle> Collective</mat-slide-toggle>
 
 		<div>
 			<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
@@ -30,14 +30,14 @@
 	</div>
 	<div class="col-md-6  bg-gray py-3">
 		<h4>Redirect To</h4>
-		<div class="pb-3" >
+		<div class="pb-3" *ngFor="let item of database.dataChange._value">
 			<div class="redirect-header">
-				group
+				{{item.item}}
 			</div>
 			<ul class="redirects p-0">
-				<li class="d-flex align-items-center">
+				<li class="d-flex align-items-center" *ngFor="let child of item.children">
 					<span class="mr-auto">
-						<p>item</p>
+						<p>{{child.item}}</p>
 						<p class="text-light">To express opinion , To benefit , To save</p>
 					</span>
 					<span>
