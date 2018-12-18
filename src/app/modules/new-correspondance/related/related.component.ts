@@ -117,7 +117,7 @@ export class RelatedComponent implements OnInit {
 		}
 		];
 
-		this.addTask = false;
+		this.addRelated = false;
 
 	}
   constructor() { }
