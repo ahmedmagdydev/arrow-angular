@@ -31,13 +31,13 @@
 			</div>
 			
 		</div>
-	</div>
+	</div> 
 	<div class="related-container">
-		<div class="no-related">
+		<div class="no-related text-center" *ngIf="searchRelated == false">
 			<span class="icon-search-related"></span>
 			<p>إبدأ البحث  لإضافة معاملات ذات صلة</p>
 		</div>
-		<div>
+		<div *ngIf="searchRelated == true">
 			<app-table [DashboardData]="related" [_status]="" [showHeader]="true" [showFooter]="true"></app-table>
 		</div>
 	</div>

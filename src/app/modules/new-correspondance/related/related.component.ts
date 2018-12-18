@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RelatedComponent implements OnInit {
 	public related=[];
-	public addRelated = false;
+	public searchRelated = false;
 	public _status = "";
 	public addRelatedCorr(){
 		this.related=[
@@ -117,7 +117,7 @@ export class RelatedComponent implements OnInit {
 		}
 		];
 
-		this.addRelated = false;
+		this.searchRelated = true;
 
 	}
   constructor() { }

@@ -1,0 +1,17 @@
+.related-container{
+	position: relative;
+	min-height: 500px;
+	.no-related{
+		width: 300px;
+		height: 220px;
+		position: absolute;
+		left: 0;right: 0;bottom: 0;top: 0;
+		margin: auto;
+	}
+}
+.icon-search-related{
+	font-size: 110px;
+	margin-bottom: 30px;
+	display: block;
+	color: #d3d3d3;
+}
