@@ -1,3 +1,46 @@
-<p>
-  related works!
-</p>
+<mat-accordion>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h3>إضافة معاملات ذات صلة</h3>
+      </mat-panel-title>
+      <mat-panel-description>
+       
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+	
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group"><label for="">رقم المعاملة</label><input class="form-control" type="text"></div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-group"><label for="">رقم الصلاحية</label><input class="form-control" type="text"></div>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group"><label for="">نوع القالب</label><select class="form-control" name="" id="">
+				<option value="">قالب 1</option>
+			</select></div>
+		</div>
+		<div class="col-md-1">
+
+			<div class="form-group">
+				<label  class="hidden">search</label>
+				<div>
+					<div class="btn btn-primary rounded-circle" (click)="addRelatedCorr()"><i class="fa fa-search"></i></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="related-container">
+		<div class="no-related">
+			<span class="icon-search-related"></span>
+			<p>إبدأ البحث  لإضافة معاملات ذات صلة</p>
+		</div>
+		<div>
+			<app-table [DashboardData]="related" [_status]="" [showHeader]="true" [showFooter]="true"></app-table>
+		</div>
+	</div>
+  </mat-expansion-panel>
+
+</mat-accordion>

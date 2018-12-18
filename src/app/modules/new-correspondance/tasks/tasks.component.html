@@ -1,54 +1,54 @@
 <div class="tasks-container">
 	<div *ngIf="tasks.length <= 0" class="text-center no-content">
 		<div><span class="icon-no-task"></span></div>
-		<p>No tasks found Start Creating first task</p>
+		<p>لا يوجد مهام قم بإنشاء اول مهمة</p>
 		<div>
-			<div class="btn btn-outline-primary btn-block" (click)="addTask = true">Creating New Task</div>
+			<div class="btn btn-outline-primary btn-block" (click)="addTask = true">إنشاء مهمة جديدة</div>
 		</div>
 	</div>
 	<div class="{{addTask ? 'add-task show' : 'add-task' }}">
 		<a  class="close" (click)="addTask = false"><i class="fa fa-times"></i></a>
-		<div class="form-group"><label for="">task name</label>
+		<div class="form-group"><label for="">اسم المهمة</label>
 		<input type="text" class="form-control" id="staticEmail">
 	</div>
 	<div class="form-group">
-		Single Performed <mat-slide-toggle> Multi-Performed </mat-slide-toggle>
+		فردي <mat-slide-toggle> جماعي </mat-slide-toggle>
 	</div>
 	<div class="form-group">
-		<label for="">performers</label>
+		<label for="">المؤدى</label>
 		<select name="" id="" class="form-control"></select>
 	</div>
 	
 	<div class="form-group">
-		<label for="">performers</label>
+		<label for="">الاهمية</label>
 		<select name="" id="" class="form-control">
-			<option value="">important</option>
+			<option value="">مهم جدا</option>
 		</select>
 	</div>
 	<div class="form-group row">
 		<div class="col-md-6">
-			<label for="">due date</label>
+			<label for="">تاريخ التسليم</label>
 			  <input type="text" class="date-picker form-control"/>
 		</div>
 		<div class="col-md-6">
-			<label for="">due time</label>
+			<label for="">وقت التسليم</label>
 			  <input type="text" class="date-picker form-control"/>
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="">Source...</label>
+		<label for="">المصدر...</label>
 		
 	</div>
 	<div class="form-group">
-		<label for="">Observation</label>
+		<label for="">مراقبة</label>
 		
 	</div>
 	<div class="form-group">
-		<label for="">Description</label>
+		<label for="">وصف</label>
 		
 	</div>
 	<div class="form-group text-center">
-		<div class="btn btn-primary" (click)="addTasks()">create task</div>
+		<div class="btn btn-primary" (click)="addTasks()">إنشاء المهمة</div>
 	</div>
 	</div>
 	<div *ngIf="tasks.length > 0">

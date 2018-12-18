@@ -16,7 +16,8 @@ import {MatChipsModule,
         MatTreeModule,
         MatCheckboxModule,
       MatIconModule,
-    MatRadioModule} from '@angular/material';
+    MatRadioModule,
+  MatExpansionModule} from '@angular/material';
 import {sharedModule} from '../../shared/shared.module';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -50,6 +51,7 @@ import { FileDropModule } from 'ngx-file-drop';
     MatCheckboxModule,
     MatIconModule,
     MatRadioModule,
+    MatExpansionModule,
     CKEditorModule
   ] 
 })
