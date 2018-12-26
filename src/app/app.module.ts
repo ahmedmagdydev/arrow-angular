@@ -1,43 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { SideMenuComponent } from './shared/side-menu/side-menu.component';
-import { FabComponent } from './shared/fab/fab.component';
-
-
-
-const appRoutes: Routes = [
-  {path: '',redirectTo: 'home',pathMatch: 'full'},
-  { path: 'home',
-    loadChildren: './modules/home/home.module#HomeModule' },
-  { path: 'corres',
-    loadChildren: './modules/correspondence/correspondence.module#CorrespondenceModule' }  ,
-  { path: 'new-corres', 
-  loadChildren: './modules/new-correspondance/new-correspondance.module#NewCorrespondanceModule' }  
-];
+import {UtilService} from './services/util.service';
+import {HttpClientModule} from '@angular/common/http';
+import {TranslationModule, L10nLoader} from 'angular-l10n';
+import {l10nConfig} from './config/AppConfig';
+import {LayoutModule} from './modules/shared/layout/layout.module';
 
 @NgModule({
-  declarations: [ 
-    AppComponent,
-    HeaderComponent,
-    SideMenuComponent,
-    FabComponent
+  declarations: [
+    AppComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    
-    RouterModule.forRoot(
-      appRoutes
-    )
+    BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, LayoutModule,
+    TranslationModule.forRoot(l10nConfig)
   ],
-  providers: [],
+  providers: [UtilService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(public l10nLoader: L10nLoader) {
+    this.l10nLoader.load();
+  }
+}

@@ -1,0 +1,14 @@
+<div class="table-header">
+  <div class="d-flex align-items-center">
+    <div class="table-header-item">
+      <ul>
+        <li><a href="#" data-toggle="tooltip" title="Trash"><img src="assets/images/trash.png" alt="trash"></a></li>
+        <li><a href="#" data-toggle="tooltip" title="Forward"><img src="assets/images/forward.png" alt="forward"></a></li>
+        <li>
+          <label for="selectAll">اختيار الكل</label>
+          <input class="check-all" id="selectAll" (change)="checkAll($event)"  [checked]="isAllChecked" type="checkbox">
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

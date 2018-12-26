@@ -1,0 +1,31 @@
+
+.table-footer{
+  select{
+    background-color: transparent;
+    border:0;
+    color: #00dc77;
+  }
+  /deep/ .ngx-pagination{
+    margin-bottom: 0;
+    padding: 0;
+    li{
+      a{
+        outline: none;
+        &:hover{
+          background-color: transparent;
+          text-decoration: none;
+        }
+      }
+      &.current{
+        background: #00dc77;
+        border-radius: 50%;
+      }
+      &.disabled{
+        opacity: 0;
+      }
+      &.pagination-next a, &.pagination-previous a {
+        color: #00dc77;
+      }
+    }
+  }
+}

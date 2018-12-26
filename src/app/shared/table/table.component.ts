@@ -1,33 +1,41 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  styleUrls: ['./table.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TableComponent implements OnInit {
-	public _itemsPerPage;
-	public _currentPage;
-	public checkedRows=[];
-	  public corresIndex ;
+export class TableComponent {
+
+  _itemsPerPage = 5;
+  _currentPage = 1;
+  checkedRows = [];
+  corresIndex = 0;
 	@Input() DashboardData;
-	@Input() _status;
-	@Input() _orderBy; 
+	@Input() _status = 'new';
+	@Input() _orderBy = 'sender';
 	@Input() showHeader;
 	@Input() showFooter;
 
-  public priority(_priority){
-  	return Math.ceil(_priority / 2);
-  }
-  public changeItemsPerPage(_value){
-  	this._itemsPerPage = _value;
-  }
-  public dashboardStatus(status){
+
+
+
+  constructor() { }
+
+
+
+
+
+
+  public priority(_priority): any { return Math.ceil(_priority / 2); }
+  public changeItemsPerPage(_value) { this._itemsPerPage = _value; }
+  public dashboardStatus(status): any {
     return  this.DashboardData.filter(function (data) {
       return data.status === status;
-    }); 
+    });
   }
-  public dashboardStatusPrioriy(status){
+/*  public dashboardStatusPrioriy(status){
     const thisStatus = this.dashboardStatus(status);
     const red = thisStatus.filter(function (item) {
       return item.priority <= 4;
@@ -43,27 +51,21 @@ export class TableComponent implements OnInit {
     });
     const array = new Array(red.length,orange.length,blue.length,gray.length)
     return array
+  }*/
+
+  faSort(sortby): string {
+    if ( this._orderBy === sortby) {
+      return 'fa-sort-asc';
+    } else if (this._orderBy.substring(1, 5000) === sortby) {
+      return 'fa-sort-desc';
+    } else {
+      return 'fa-sort';
+    }
   }
-  
-  faSort(sortby){
-  	if(this._orderBy == sortby){
-  		return 'fa-sort-asc'
-  	}else if (this._orderBy.substring(1,5000) == sortby){
-  		return 'fa-sort-desc'
-  	}else{
-  		return 'fa-sort'
-  	}
-  }
-  showCheckBox(){
-  	if(this.checkedRows.length > 0 ){
-  		return true;
-  	}else{
-  		return false;
-  	}
-  }
+  showCheckBox(): boolean { return this.checkedRows.length > 0; }
   isAllChecked() {
-  		    	let filteredRows
-  		    	let orderby = this._orderBy 
+  		    	let filteredRows;
+  		    	let orderby = this._orderBy ;
   		    	filteredRows = this.DashboardData.filter(
   	    	         x => x.status === this._status);
   		    	if(orderby.charAt(0) == '-'){
@@ -146,13 +148,6 @@ public orderTable = function (orderArg) {
 	  	this.uncheckAll();
 	  }
 
-  constructor() { }
-  ngOnInit() {
-  	this._orderBy = 'sender';
-  	// this._status= 'new';
-  	this._itemsPerPage = 5;
-  	this.corresIndex = 0;
-  	this._currentPage=1; 
-  }
+
 
 }

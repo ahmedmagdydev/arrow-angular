@@ -1,0 +1,51 @@
+<div id="new" class="{{showCheckBox() ? 'showCheckBox' : null}}">
+  <div class="mt-2">
+    <app-table-header *ngIf="showHeader" [isAllChecked]="isAllChecked()" (checkAllEvent)="checkAll($event)"></app-table-header>
+    <div class="table-responsive">
+      <table class="table table-condensed table-main" style="border-collapse:collapse">
+        <thead>
+        <tr>
+          <th style="width: 55px" *ngIf="showHeader"></th>
+          <th (click)="orderTable(col.name)" class="table-filter" *ngFor="let col of tableInfo.columns">
+            {{col.title | translate: lang}}  <i class="fa {{faSort(col.name)}}" *ngIf="col.name !== 'actions'"></i>
+          </th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let row of tableInfo.data | filterBy: ['status']: _status | orderBy : _orderBy | paginate: { itemsPerPage: _itemsPerPage, currentPage: _currentPage }; let i=index">
+        <tr data-toggle="collapse" attr.data-target="#row{{row.index}}" class="accordion-toggle collapsed">
+          <td  *ngIf="showHeader">
+            <input type="checkbox"  [(ngModel)]="row.selected"  class="table-check" id="row._id"
+                   (click)="checkRow($event,row,row.selected);$event.stopPropagation()">
+          </td>
+          <td *ngFor="let col of tableInfo.columns">
+            <span *ngIf="col.innerName; else notObject">{{getObjectAttributeFromArray(row[col.name], col.innerName)}}</span>
+            <ng-template #notObject>
+                <span *ngIf="col.name === 'priority'" class="priority priority-{{priority(row.priority)}}" title="priority-{{row.priority}}">
+                  <span *ngFor="let i of [1,2,3,4,5,6,7]"></span>
+                </span>
+                <span *ngIf="col.name !== 'priority' && col.name !== 'relatedActions' && !col.isDate">{{row[col.name]}}</span>
+                <span *ngIf="col.isDate">{{row[col.name] | date:'shortDate'}} </span>
+              <span *ngIf="col.name === 'relatedActions'">
+                <span *ngFor="let action of row[col.name] ; let i = index" class="{{i > 2 ? 'd-none' : null}} mr-3">
+                  <i class="icon-{{action}}"></i>
+                </span>
+                <span *ngIf="row[col.name].length > 2"> ...</span>
+              </span>
+            </ng-template>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="8" class="hiddenRow">
+            <div id="row{{row.index}}" class="accordian-body collapse" data-parent="#new">
+              <app-row-details [data]="row" [detailsColumns]="tableInfo.detailsColumns"></app-row-details>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <app-table-footer *ngIf="showFooter" [currentPage]="_currentPage" (currentPageEvent) = "currentPageChanged($event)"
+                      (unCheckAllEvent) = "uncheckAll($event)" (itemsPerPageEvent)="changeItemsPerPage($event)">
+    </app-table-footer>
+  </div>
+</div>

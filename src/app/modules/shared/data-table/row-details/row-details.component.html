@@ -1,0 +1,21 @@
+<div class="table-details-full">
+  <h3>{{data.title}}</h3>
+  <div class="row">
+    <div class="col-3" *ngFor="let col of detailsColumns">
+      <label for="">{{col.title | translate: lang}} :</label>
+      <p *ngIf="!col.innerName && !col.isDate  && col.name !== 'relatedActions'">{{data[col.name]}} </p>
+      <p *ngIf="col.isDate">{{data[col.name] | date:'shortDate'}} </p>
+      <p *ngIf="col.innerName">{{getObjectAttributeFromArray (data[col.name], col.innerName)}} </p>
+      <p *ngIf="col.name === 'relatedActions'">
+        <span class="mr-3" *ngFor="let action of data[col.name]">
+          <i class="icon-{{action}}"></i>
+        </span>
+      </p>
+    </div>
+    <div class="col-3">
+      <a href="#" data-toggle="modal" data-target="#preview-template" class="btn btn-primary mt-3 preview-t">
+        {{'template.view' | translate: lang}}
+      </a>
+    </div>
+  </div>
+</div>

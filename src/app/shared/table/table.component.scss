@@ -1,93 +1,93 @@
 .priority{
-	&-1 > span, &-2 > span{
-		background-color: #fd4242;
-	}
-	&-3 > span, &-4 > span{
-		background-color: #ffae00;
-	}
-	&-5 > span, &-6 > span{
-		background-color: #0f72d7;
-	}
-	&-7 > span{
-		background-color: #dadde1;
-	}
+  &-1 > span, &-2 > span{
+    background-color: #fd4242;
+  }
+  &-3 > span, &-4 > span{
+    background-color: #ffae00;
+  }
+  &-5 > span, &-6 > span{
+    background-color: #0f72d7;
+  }
+  &-7 > span{
+    background-color: #dadde1;
+  }
 }
 
 .table-footer{
-	select{
-		background-color: transparent;
-		border:0;
-		color: #00dc77;
-	}
-	/deep/ .ngx-pagination{
-		margin-bottom: 0;
-		padding: 0;
-		li{
-			a{
-				outline: none;
-				&:hover{
-					background-color: transparent;
-					text-decoration: none;
-				}
-			}
-			&.current{
-				background: #00dc77;
-				border-radius: 50%;
-			}
-			&.disabled{
-				opacity: 0;
-			}
-			&.pagination-next a, &.pagination-previous a {
-				color: #00dc77;
-			}
-		}
-	}
+  select{
+    background-color: transparent;
+    border:0;
+    color: #00dc77;
+  }
+  /deep/ .ngx-pagination{
+    margin-bottom: 0;
+    padding: 0;
+    li{
+      a{
+        outline: none;
+        &:hover{
+          background-color: transparent;
+          text-decoration: none;
+        }
+      }
+      &.current{
+        background: #00dc77;
+        border-radius: 50%;
+      }
+      &.disabled{
+        opacity: 0;
+      }
+      &.pagination-next a, &.pagination-previous a {
+        color: #00dc77;
+      }
+    }
+  }
 }
 
 .preview-t{
-	background-image: url(../../../assets/images/preview-t.png);
-	background-repeat: no-repeat;
-	background-position: 92%;
-	padding: 0.6rem 0.8rem;
-	padding-right: 45px;
-	border-radius: 20px;
+  //background-image: url(../../../assets/images/preview-t.png);
+  background-repeat: no-repeat;
+  background-position: 92%;
+  padding: 0.6rem 0.8rem;
+  padding-right: 45px;
+  border-radius: 20px;
 }
 
 
 
 
 
-.table-check{   
-    width: 20px;
-    opacity: 0;
-    height: 20px;
-    background: #EEE;
-    box-shadow: 0 0 0 0 #25c68b inset, 0 0 0 2px #939caa inset, 0 0 0 10px #fff inset, 0 0 0 0 #ddd inset, 0 0 0 0 #ddd;
-    transition: all .2s;
-    margin-right: 5px;
-    padding: 25px;
-    vertical-align: middle;
-    float: right;
-    margin-left: 5px;
+.table-check{
+  width: 20px;
+  opacity: 0;
+  height: 20px;
+  background: #EEE;
+  box-shadow: 0 0 0 0 #25c68b inset, 0 0 0 2px #939caa inset, 0 0 0 10px #fff inset, 0 0 0 0 #ddd inset, 0 0 0 0 #ddd;
+  transition: all .2s;
+  margin-right: 5px;
+  padding: 25px;
+  vertical-align: middle;
+  float: right;
+  margin-left: 5px;
 }
 
-tr:hover .table-check{opacity: 1;} 
+tr:hover .table-check{opacity: 1;}
 .showCheckBox tr .table-check{opacity: 1;}
 .table-header-item ul li:not(:last-child){opacity: 0;}
 .showCheckBox .table-header-item ul li{opacity: 1 !important;}
 .table-check:active {
-    background: #ddd;
-    box-shadow: 0 0 0 0 #25c68b inset, 0 0 0 1px #939caa inset, 0 0 0 0 #EEE inset, 0 0 0 0px #ddd inset, 0 0 0 12px #ddd;
+  background: #ddd;
+  box-shadow: 0 0 0 0 #25c68b inset, 0 0 0 1px #939caa inset, 0 0 0 0 #EEE inset, 0 0 0 0px #ddd inset, 0 0 0 12px #ddd;
 }
 
 .table-check:checked:active {
-    background: #25c68b;
-    box-shadow: 0 0 0 8px #25c68b inset, 0 0 0 0 #939caa inset, 0 0 0 0px #EEE inset, 0 0 0 0px #ddd inset, 0 0 0 8px #D6E5E4;
+  background: #25c68b;
+  box-shadow: 0 0 0 8px #25c68b inset, 0 0 0 0 #939caa inset, 0 0 0 0px #EEE inset, 0 0 0 0px #ddd inset, 0 0 0 8px #D6E5E4;
 }
 
 .table-check:checked {
-    background: #F9F9F9;
-    box-shadow: 0 0 0 11px #25c68b inset, 0 0 0 0 #939caa inset, 0 0 0 8px #EEE inset, 0 0 0 0 #ddd inset, 0 0 0 0 #ddd;
+  background: #F9F9F9;
+  box-shadow: 0 0 0 11px #25c68b inset, 0 0 0 0 #939caa inset, 0 0 0 8px #EEE inset, 0 0 0 0 #ddd inset, 0 0 0 0 #ddd;
   content: url(https://i.imgur.com/OrSqEu5.png);
 }
 
@@ -103,65 +103,65 @@ tr:hover .table-check{opacity: 1;}
 }
 
 .table-header-item{
-    height: 50px;
+  height: 50px;
 
-  
-    > ul{list-style: none;
-        margin: 0px;
-        padding: 0px;
-        position: absolute;
-        :last-child{border-right: none;}
-     
-      > li {
-        float: left;
-            padding: 7px 7px;
-            border-right: 1px solid #ccc;
-      
-            
-            
-            > input[type="checkbox"] {
-                width: 20px;
-                height: 20px;
-                background: #EEE;
-                box-shadow: 0 0 0 0 #25c68b inset, 0 0 0 2px #939caa inset, 0 0 0 10px #fff inset, 0 0 0 0 #ddd inset, 0 0 0 0 #ddd;
-                transition: all .2s;
-                margin-right: 5px;
-                padding: 25px;
-                vertical-align: middle;
-                float: right;
-                margin-left: 10px;
-                margin-top: 4px;
-               
-              }
-              
-              input[type="checkbox"]:active {
-                  background: #ddd;
-                  box-shadow: 0 0 0 0 #25c68b inset, 0 0 0 1px #939caa inset, 0 0 0 0 #EEE inset, 0 0 0 0px #ddd inset, 0 0 0 12px #ddd;
-              }
-              
-              input[type="checkbox"]:checked:active {
-                  background: #25c68b;
-                  box-shadow: 0 0 0 8px #25c68b inset, 0 0 0 0 #939caa inset, 0 0 0 0px #EEE inset, 0 0 0 0px #ddd inset, 0 0 0 8px #D6E5E4;
-              }
-              
-              input[type="checkbox"]:checked {
-                  background: #F9F9F9;
-                  box-shadow: 0 0 0 11px #25c68b inset, 0 0 0 0 #939caa inset, 0 0 0 8px #EEE inset, 0 0 0 0 #ddd inset, 0 0 0 0 #ddd;
-                content: url(https://i.imgur.com/OrSqEu5.png);
-              }
 
-              > span{vertical-align: middle;
-                     color:#939caa;
-                     font-weight: 500px;}
+  > ul{list-style: none;
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    :last-child{border-right: none;}
 
-              > a{text-align: center;
-                  cursor:pointer; 
-                  padding: 0px 15px;
-                  &:hover{opacity:0.7;} 
-                
-                }
-        }
+    > li {
+      float: left;
+      padding: 7px 7px;
+      border-right: 1px solid #ccc;
+
+
+
+      > input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        background: #EEE;
+        box-shadow: 0 0 0 0 #25c68b inset, 0 0 0 2px #939caa inset, 0 0 0 10px #fff inset, 0 0 0 0 #ddd inset, 0 0 0 0 #ddd;
+        transition: all .2s;
+        margin-right: 5px;
+        padding: 25px;
+        vertical-align: middle;
+        float: right;
+        margin-left: 10px;
+        margin-top: 4px;
+
+      }
+
+      input[type="checkbox"]:active {
+        background: #ddd;
+        box-shadow: 0 0 0 0 #25c68b inset, 0 0 0 1px #939caa inset, 0 0 0 0 #EEE inset, 0 0 0 0px #ddd inset, 0 0 0 12px #ddd;
+      }
+
+      input[type="checkbox"]:checked:active {
+        background: #25c68b;
+        box-shadow: 0 0 0 8px #25c68b inset, 0 0 0 0 #939caa inset, 0 0 0 0px #EEE inset, 0 0 0 0px #ddd inset, 0 0 0 8px #D6E5E4;
+      }
+
+      input[type="checkbox"]:checked {
+        background: #F9F9F9;
+        box-shadow: 0 0 0 11px #25c68b inset, 0 0 0 0 #939caa inset, 0 0 0 8px #EEE inset, 0 0 0 0 #ddd inset, 0 0 0 0 #ddd;
+        content: url(https://i.imgur.com/OrSqEu5.png);
+      }
+
+      > span{vertical-align: middle;
+        color:#939caa;
+        font-weight: 500px;}
+
+      > a{text-align: center;
+        cursor:pointer;
+        padding: 0px 15px;
+        &:hover{opacity:0.7;}
+
+      }
     }
+  }
 }
 
  

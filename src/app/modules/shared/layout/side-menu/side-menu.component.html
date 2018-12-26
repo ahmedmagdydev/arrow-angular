@@ -1,0 +1,17 @@
+<aside>
+  <ul class="side-menu">
+    <li [routerLinkActive]="['active']">
+      <a  routerLink="/home"  class="home">{{'home' | translate: lang}}</a>
+      <ul>
+        <li><a href="#"><span class="icon-Shape-1083-1"></span> {{'reports' | translate: lang}}</a></li>
+        <li><a href="#"><span class="icon-Forma-1-copy-6"></span> {{'customReports' | translate: lang}}</a></li>
+      </ul>
+    </li>
+    <li [routerLinkActive]="['active']"><a routerLink="/corres"  class="correspondence">{{'correspondences' | translate: lang}}</a></li>
+    <li><a href="#" class="address">{{'addressBook' | translate: lang}}</a></li>
+    <li><a href="#" class="reports">{{'reports' | translate: lang}}</a></li>
+    <li><a href="#" class="search">{{'search' | translate: lang}}</a></li>
+    <li><a href="#" class="tasks">{{'tasks' | translate: lang}}</a></li>
+    <li><a href="#" class="monitor">{{'follow' | translate: lang}}</a></li>
+  </ul>
+</aside>

@@ -6,9 +6,12 @@
                     <div class="table-header-item">
                         
                        <ul>
-                           <li><a href="#" data-toggle="tooltip" title="Trash"><img src="assets/images/trash.png"></a></li>
-                           <li><a href="#" data-toggle="tooltip" title="Forward"><img src="assets/images/forward.png"></a></li>
-                           <li><span>اختيار الكل</span><input class="check-all" (change)="checkAll($event)"  [checked]="isAllChecked()" type="checkbox"></li>
+                           <li><a href="#" data-toggle="tooltip" title="Trash"><img src="../../../assets/images/trash.png" alt="trash"></a></li>
+                           <li><a href="#" data-toggle="tooltip" title="Forward"><img src="../../../assets/images/forward.png" alt="forward"></a></li>
+                           <li>
+                             <label for="selectAll">اختيار الكل</label>
+                             <input class="check-all" id="selectAll" (change)="checkAll($event)"  [checked]="isAllChecked()" type="checkbox">
+                           </li>
                       </ul>
                     </div>
                    
@@ -32,7 +35,7 @@
                     </tr>
                 </thead>
   
-                <tbody *ngFor="let data of DashboardData | filterBy: ['status']: _status | orderBy : _orderBy | paginate: { itemsPerPage: _itemsPerPage, currentPage: _currentPage }">
+                <tbody *ngFor="let data of DashboardData | filterBy: ['status']: _status | orderBy : _orderBy | paginate: { itemsPerPage: _itemsPerPage, currentPage: _currentPage }; let i=index">
                 <tr data-toggle="collapse" attr.data-target="#row{{data.index}}" class="accordion-toggle collapsed">
                         <td  *ngIf="showHeader">
                         	<input type="checkbox"  [(ngModel)]="data.selected"  class="table-check" id="data._id"  (click)="checkRow($event,data,data.selected);$event.stopPropagation()">
@@ -62,7 +65,8 @@
                     <td> {{data.template[0].name}}</td>
                     <td>
                       <div class="dropleft">
-                        <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a href="#" data-toggle="dropdown"
+                           [attr.aria-label]="'recordAction' + i" aria-haspopup="true" aria-expanded="false">
                           <i class="fa fa-ellipsis-v"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -143,12 +147,14 @@
                 autoHide="true"
                 (pageChange)="_currentPage = $event;uncheckAll()">
             </pagination-controls>
-            <select class="pl-4" #itemsPerPage (change)="changeItemsPerPage(itemsPerPage.value)">
-              <option value="5">5</option>
-              <option value="10" selected>10</option>
-              <option value="20">20</option>
-              <option value="30">30</option>
-            </select>
+            <label>
+              <select class="pl-4" #itemsPerPage (change)="changeItemsPerPage(itemsPerPage.value)">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+              </select>
+            </label>
             <p class="m-0 pl-1">عناصر بالصفحة</p>
            </div>
           </div>
