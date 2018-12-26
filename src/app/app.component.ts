@@ -8,7 +8,16 @@ import {NavigationEnd, Router} from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent  {
-  authorized = true;
+  authorized;
 
-  
+  constructor(@Inject(LOCALE_ID) public readonly localeId, router: Router) {
+      router.events.subscribe((event: any) => {
+          console.log(event);
+          if (event instanceof NavigationEnd ) {
+            if ( event.url && event.url.indexOf('/auth') !== -1) {
+                this.authorized = false;
+            }
+          }
+      });
+  }
 }

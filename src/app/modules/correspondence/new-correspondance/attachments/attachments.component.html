@@ -1,10 +1,20 @@
 <div class="row">
 	<div class="col-md-6" style="min-height: 500px">
-	    <file-drop headertext="قم بإسقاط الملفات هنا" (onFileDrop)="dropped($event)" 
-	    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
-	        <i class="icon-upload"></i>
-	        <!-- <input type="file" (change)="uploadOnClick($event)"> -->
-	    </file-drop>
+	    <div class="row">
+	    	<div class="col-md-3">
+	    		<div class="scan">
+	    			<span class="icon-scan"></span>
+	    			<p>سكان ملف</p>
+	    		</div>
+	    	</div>
+	    	<div class="col-md-9">
+	    		<file-drop headertext="قم بإسقاط الملفات هنا" (onFileDrop)="dropped($event)" 
+	    		(onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+	    		    <i class="icon-upload"></i>
+	    		    <!-- <input type="file" (change)="uploadOnClick($event)"> -->
+	    		</file-drop>
+	    	</div>
+	    </div>
 	    		<!--  -->
 	    	
 	    <div class="upload-table">

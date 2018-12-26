@@ -11,6 +11,8 @@ import { PrepareLetterComponent } from './prepare-letter/prepare-letter.componen
 import { NewCorrespondanceRoutingModule } from './new-correspondance-routing.module';
 import {DataTableModule} from '../../shared/data-table/data-table.module';
 import { OrgChartModule } from 'ng2-org-chart';
+import { CKEditorModule } from 'ng2-ckeditor';
+
 import {MatChipsModule,
         MatAutocompleteModule,
         MatFormFieldModule,
@@ -21,7 +23,7 @@ import {MatChipsModule,
     MatRadioModule,
   MatExpansionModule} from '@angular/material';
 // import {sharedModule} from '../../shared/shared.module';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+// import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 // import { Diagram} from 'gojs';

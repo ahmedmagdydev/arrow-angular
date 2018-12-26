@@ -10,8 +10,11 @@
 	<div class="col-md-6 text-right"><div class="btn btn-primary">معاينة الخطاب</div></div>
 </div>
 
-<ckeditor [editor]="Editor" data="<p>Hello world!</p>"></ckeditor>
 
+
+<ckeditor [(ngModel)]="ckeditorContent">
+ </ckeditor>
+{{ckeditorContent}}
 <div class="mt-4">
 	<label for="">يحتاج توقيع من : </label>
 	<div>
