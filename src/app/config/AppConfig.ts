@@ -19,7 +19,7 @@ export const l10nConfig: L10nConfig = {
 // ========================= API =====================
 export const APP_PROFILE = {
   test: {url : 'http://10.0.10.107:7676/arrow-bootstrap-opt/'},
-  local: {url : 'http://localhost:4200/'}
+  local: {url : 'https://arrow-angular.herokuapp.com/'}
 };
 export const APP_PROFILE_active = APP_PROFILE.local;
 export const API_URLS = {
