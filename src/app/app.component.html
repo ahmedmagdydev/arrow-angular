@@ -1,4 +1,4 @@
-<div *ngIf="authorized; else notAuthorized">
+<div>
 	<app-header></app-header>
 	<div class="main">
 		<app-side-menu></app-side-menu>
@@ -6,8 +6,6 @@
 		<app-fab></app-fab>
 	</div>
 </div>
-<ng-template #notAuthorized>
-	<router-outlet></router-outlet>
-</ng-template>
+
 
 
