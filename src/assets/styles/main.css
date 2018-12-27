@@ -19,7 +19,8 @@ body:after {
     content: '';
     width: 92px;
     height: 100%;
-    background: linear-gradient(90deg,#f5f6fa,#f5f6fa calc(100% - 92px),#3edaa2 calc(100% - 92px),#3edaa2);
-    position: fixed;
+   background: #3dd9a1;
+   position: fixed;
     right: 0;
+    top: 58px;
 }
