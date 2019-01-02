@@ -9,19 +9,28 @@
 		margin: auto;
 	}
 }
-
-.add-task{
-	width: 600px;
-	background-color: #fff;
+.add-task-container{
 	transform:translateX(9000px);
 	transition:all .3s ease;
+	position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+	width: 600px;
+    &.show{
+		    transform: translateX(calc(100% - 600px));
+		    
+	}
+}
+.add-task{
+	background-color: #fff;
+	
   	box-shadow: 0px 3px 31px 0px rgba(0, 0, 0, 0.3);
   	    padding: 20px;
-  	    position: absolute;
-  	    left: 0;
-	&.show{
-		    transform: translate(-14px,-16px);
-	}
+  	    position: relative;
+  	    z-index: 1;
+	
+
 }
 
 .icon-no-task{
@@ -30,3 +39,29 @@
 	display: block;
 	color: #d3d3d3;
 }
+.add-attachment{
+		position: absolute;
+	right: 100%;
+	top: 0;
+  	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
+	background-color: #fff;
+	height: 100%;
+	    transform: translateX(100%);
+	transition:all .3s ease;
+	padding: 20px;
+	    &.show{
+	    transform: translateX(0);
+
+	    }
+}
+/deep/ app-attachments{
+
+		& > .row {
+			& > div:first-child{
+				    max-width: 100%;
+			}
+			& > div:last-child{
+				display: none;
+			}
+		}
+	}

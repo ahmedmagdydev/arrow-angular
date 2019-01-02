@@ -6,7 +6,7 @@ export const  pieChartOptions: any = {
     "type": "pie", "polar": false,
     "plotBackgroundColor": null, "plotBorderWidth": null, "plotShadow": false, "inverted": false,
     "parallelAxes": {"resize": {"lineWidth": 4}},
-    "style": "{\"fontFamily\":\"\\\"Lucida Grande\\\", \\\"Lucida Sans Unicode\\\", Verdana, Arial, Helvetica, sans-serif\",\"fontSize\":\"12px\"}",
+    "style": "{\"fontFamily\":\"\\\"cairo regular\\\", \\\"Lucida Sans Unicode\\\", Verdana, Arial, Helvetica, sans-serif\",\"fontSize\":\"12px\"}",
     "width": 310, "height": 190
   },
   "plotOptions": {
@@ -20,6 +20,7 @@ export const  pieChartOptions: any = {
   "series": [
     {
       "name": "", "turboThreshold": 0, "colorByPoint": true,
+      
       data: [],
     }
   ],

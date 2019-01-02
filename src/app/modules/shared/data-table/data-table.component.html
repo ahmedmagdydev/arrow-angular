@@ -7,7 +7,8 @@
         <tr>
           <th style="width: 55px" *ngIf="showHeader"></th>
           <th (click)="orderTable(col.name)" class="table-filter" *ngFor="let col of tableInfo.columns">
-            {{col.title | translate: lang}}  <i class="fa {{faSort(col.name)}}" *ngIf="col.name !== 'actions'"></i>
+            <span  *ngIf="col.name !== 'actionList'">{{col.title | translate: lang}}</span>
+            <i class="fa {{faSort(col.name)}}" *ngIf="col.name !== 'actions'"></i>
           </th>
         </tr>
         </thead>
@@ -31,6 +32,19 @@
                 </span>
                 <span *ngIf="row[col.name].length > 2"> ...</span>
               </span>
+
+            <div class="dropleft" *ngIf="col.name === 'actionList'">
+              <a href="#" data-toggle="dropdown"
+                 [attr.aria-label]="'recordAction' + i" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-ellipsis-v"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+
             </ng-template>
           </td>
         </tr>

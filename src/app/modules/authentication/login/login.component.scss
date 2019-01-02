@@ -1,0 +1,34 @@
+.login-cont:after {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-image: url(/assets/images/00.jpg) !important;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    padding-top: 10px;
+    padding-right: 30px;
+    color: #515760;
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.login-head, .login-wrap{
+	position: relative;
+	z-index: 4;
+}
+
+.mat-input-element,/deep/ .mat-form-field-infix {
+    height: 34px;
+} 
+
+.full-width {
+    width: 100%;
+}
+.login-cont .login-wrap .login-form{
+    height: 530px;
+}

@@ -10,25 +10,32 @@ import { RedirectComponent } from './redirect/redirect.component';
 import { PrepareLetterComponent } from './prepare-letter/prepare-letter.component';
 import { NewCorrespondanceRoutingModule } from './new-correspondance-routing.module';
 import {DataTableModule} from '../../shared/data-table/data-table.module';
-import { OrgChartModule } from 'ng2-org-chart';
 import { CKEditorModule } from 'ng2-ckeditor';
 
-import {MatChipsModule,
-        MatAutocompleteModule,
-        MatFormFieldModule,
-        MatSlideToggleModule,
-        MatTreeModule,
-        MatCheckboxModule,
-      MatIconModule,
+
+import {
+    MatChipsModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatSlideToggleModule,
+    MatTreeModule,
+    MatCheckboxModule,
+    MatIconModule,
     MatRadioModule,
-  MatExpansionModule} from '@angular/material';
+    MatExpansionModule, MatDialogModule, MatButtonModule
+} from '@angular/material';
 // import {sharedModule} from '../../shared/shared.module';
-// import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 // import { Diagram} from 'gojs';
 import { FileDropModule } from 'ngx-file-drop';
-
+import { FileUploaderModule } from '../../shared/file-uploader/file-uploader.module';
+import { FileUploader, FileUploadModule } from 'ng2-file-upload';
+import {InstractionComponent} from './redirect/instraction/instraction.component';
+import {LocalizationModule} from '../../shared/localization/localization.module';
+import { RedirectPreviewComponent } from './redirect/redirect-preview/redirect-preview.component';
+import { RedirectAddOtherContactsComponent } from './redirect/redirect-add-other-contacts/redirect-add-other-contacts.component';
+import {VisualTreeModule} from '../../shared/charts/visual-tree/visual-tree.module';
 @NgModule({
   declarations: [
   NewCorrespondanceComponent,
@@ -38,7 +45,7 @@ import { FileDropModule } from 'ngx-file-drop';
 ,RelatedComponent
 ,HistoryComponent
 ,RedirectComponent
-,PrepareLetterComponent ],
+,PrepareLetterComponent,InstractionComponent, RedirectPreviewComponent, RedirectAddOtherContactsComponent ],
   imports: [
     CommonModule,
     NewCorrespondanceRoutingModule,
@@ -46,7 +53,7 @@ import { FileDropModule } from 'ngx-file-drop';
     MatFormFieldModule,
     FormsModule,
     HttpClientModule,
-    FileDropModule,
+    // FileDropModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
     MatSlideToggleModule,
@@ -56,8 +63,14 @@ import { FileDropModule } from 'ngx-file-drop';
     MatRadioModule,
     MatExpansionModule,
     CKEditorModule,
-    OrgChartModule,
-DataTableModule
-  ] 
+    FileUploadModule,
+DataTableModule,
+FileUploaderModule,
+      LocalizationModule,
+      MatDialogModule,
+      MatButtonModule,
+      VisualTreeModule
+  ],
+    entryComponents: [InstractionComponent]
 })
 export class NewCorrespondanceModule { }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {correspondencesStatusLookup, correspondencesTableInfoLookup} from '../../../../config/Lookups';
 import {CoresspondenceService} from '../../../../services/coresspondence/coresspondence.service';
-import {UtilService} from '../../../../services/util.service';
+import {UtilService} from '../../../../services/util/util.service';
 import {Language, TranslationService} from 'angular-l10n';
 import {API_URLS} from '../../../../config/AppConfig';
 

@@ -1,0 +1,55 @@
+<div class="nodeDetails zoomIn" *ngIf="showNodePreview">
+    <div class="nodeDetailsContent zoomIn" *ngIf="showNodePreview">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-close" (click)="closeNodePreview()"></i>
+                {{selectedNode.title}}
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <label for="">المرسل:</label>
+                        <p>{{selectedNode.correspondence.sender}} </p>
+                        <label for="">الى:</label>
+                        <p>{{selectedNode.correspondence.to}}</p>
+                        <label for="">نسخة كربونية:</label>
+                        <p>{{selectedNode.correspondence.cc}}</p>
+                        <label for="">تحتاج إجراء:</label>
+                        <p>{{selectedNode.correspondence.needAction ? 'نعم' : 'لا'}}</p>
+                    </div>
+                    <div class="col-3">
+                        <label for="">تاريخ الانشاء :</label>
+                        <p>{{selectedNode.correspondence.createdDate | date:'shortDate'}} </p>
+                        <label for="">تاريخ :</label>
+                        <p>{{selectedNode.correspondence.createdDate | date:'shortDate'}}</p>
+                        <label for="">اجراءات متعلقة:</label>
+                        <p>
+                            <span class="mr-3" *ngFor="let action of selectedNode.relatedActions">
+                                <i class="icon-{{action}}"></i>
+                            </span>
+                        </p>
+                        <label for="">كلمات:</label>
+                        <p>{{selectedNode.correspondence.keyords}}</p>
+                    </div>
+
+                    <div class="col-3">
+                        <label for="">رقم:</label>
+                        <p>{{selectedNode.correspondence.number}} </p>
+                        <label for="">قالب:</label>
+                        <p>{{selectedNode.correspondence.template[0].name}}</p>
+                        <label for="">وصف مختصر:</label>
+                        <p>{{selectedNode.correspondence.shortDesc}}</p>
+                    </div>
+                    <div class="col-3">
+                        <label for="">تعليمات التوجيه:</label>
+                        <p>{{selectedNode.correspondence.redirectInst}} </p>
+                        <label for="">تعليقات التوجيه:</label>
+                        <p>{{selectedNode.correspondence.redirectComment}}</p>
+                        <a href="#" selectedNode-toggle="modal" selectedNode-target="#preview-template"
+                           class="btn btn-primary mt-3 preview-t">استعراض القالب</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

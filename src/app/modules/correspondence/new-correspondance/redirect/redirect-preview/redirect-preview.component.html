@@ -1,0 +1,37 @@
+<h4 >{{'redirectTo' | translate :lang}}</h4>
+<div *ngFor="let category of categories; let i = index">
+    <div class="pb-3" *ngIf="isCategoryHasSelectedDepartments(category)">
+      <div class="redirect-header">{{category.name}}</div>
+      <ul class="redirects p-0">
+        <li class="d-flex align-items-center" *ngFor="let department of category.departments; let j=index">
+          <div *ngIf="department.selected">
+            <div class="mr-auto selectedDepartmentData">
+              <span>{{department.name}}</span>
+              <div *ngIf="department.multipleSendFields && !sendGroup">
+                <div class="dataItem" *ngFor="let field of department.multipleSendFields; let fieldIndex= index">
+                  <span>{{field.name}} : </span>
+                  <span *ngIf="field.type !== 'instraction'">{{field.value}}</span>
+                  <div *ngIf="field.type === 'instraction'">
+                    <mat-chip-list #chipList>
+                      <mat-chip *ngFor="let item of field.value; let i=index" [removable]="false">
+                        {{item.option}}
+                      </mat-chip>
+                    </mat-chip-list>
+                  </div>
+                </div>
+              </div>
+              <ul class="list-inline departmentActions">
+                <li class="list-inline-item">
+                  <span class="icon-trash" (click)="deleteDepartment(department, category)"></span>
+                </li>
+              <!--  <li class="list-inline-item">
+                 <span class="icon-info"></span>
+                </li>-->
+              </ul>
+              <!--<span class="text-light">للحفظ, للمراجعة</span>-->
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+</div>

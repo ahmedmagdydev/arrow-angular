@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {UtilService} from './services/util.service';
+import {UtilService} from './services/util/util.service';
 import {HttpClientModule} from '@angular/common/http';
 import {TranslationModule, L10nLoader} from 'angular-l10n';
 import {l10nConfig} from './config/AppConfig';

@@ -1,0 +1,63 @@
+*{box-sizing: border-box;}
+.treeResizerContainer, .treeContainer{position: relative;overflow: hidden;display: block;width: 100%;}
+.treeContainer{border: 1px solid #cac7c7;background: #E7E7E7;height: 82vh;}
+.tree{
+  position: absolute;left: 0;right: 0;margin-left: auto;margin-right: auto;overflow: hidden;
+  white-space:nowrap;width: max-content;padding: 0 30px 20px 30px;
+}
+.tree:active ul li .node, .tree:active ul li ul li .node, .tree:active ul li ul li ul li .node{
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.tree * {margin: 0; padding: 0;}
+.tree ul {
+  cursor: move;padding-top: 30px;position: relative;display: block;margin:  0 auto;width: fit-content;
+}
+.tree li {
+  float: left;text-align: center;list-style-type: none;position: relative;padding: 20px 5px 0 5px;
+  -transition: all 0.5s;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;
+}
+/*We will use ::before and ::after to draw the connectors*/
+.tree li::before, .tree li::after{
+  content: '';position: absolute; top: 0; right: 50%;border-top: 2px solid #696969;width: 50%; height: 20px;
+}
+.tree li::after{right: auto; left: 50%;border-left: 2px solid #696969;}
+.tree li:only-child::after, .tree li:only-child::before {display: none;}
+.tree li:only-child{ padding-top: 0;}
+.tree li:first-child::before, .tree li:last-child::after{border: 0 none;}
+.tree li:last-child::before{
+  border-right: 2px solid #696969;
+  border-radius: 0 5px 0 0;-webkit-border-radius: 0 5px 0 0;-moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+  border-radius: 5px 0 0 0;-webkit-border-radius: 5px 0 0 0;-moz-border-radius: 5px 0 0 0;
+}
+.tree ul ul::before{
+  content: ''; position: absolute; top: 0; left: 50%;border-left: 2px solid #696969;width: 0; height: 30px;
+}
+.tree li div.node{
+  height: 100px;
+  width: 200px;
+  padding: 0;text-decoration: none;
+  background-color: white;color: #8b8b8b;
+  font-size: 16px;display: inline-block;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  -transition: all 0.5s;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;
+  cursor: pointer;animation: zoominoutsinglefeatured .3s ;
+}
+.node .card-header{padding: 5px; color: #222; text-transform: capitalize; font-weight: 600;
+  -transition: all 0.5s;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;
+}
+.tree li div.node:hover .card-header, .tree li div.node:hover+ul li div.node .card-header{
+  background: #28B481; color: #fff;
+}
+.tree li div.node:hover+ul li::after, .tree li div.node:hover+ul li::before, .tree li div.node:hover+ul::before,
+.tree li div.node:hover+ul ul::before{border-color:  #94a0b4;}
+
+
+
+
+
+
+
+/************ tree resize **************/
+.mat-icon-button, .mat-icon-button:active {outline: none;}

@@ -12,7 +12,9 @@
     background-color: #dadde1;
   }
 }
-
+.accordion-toggle{
+  cursor: pointer;
+}
 .table-footer{
   select{
     background-color: transparent;
@@ -55,7 +57,7 @@
 
 
 
-
+th{white-space: nowrap;}
 
 .table-check{
   width: 20px;

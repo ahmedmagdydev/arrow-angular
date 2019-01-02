@@ -2,7 +2,12 @@
 .corres-carousel{
   width: calc(100% - 53px);
   position: relative;
-  /deep/ .slick-arrow{
+  /deep/ {
+    .slick-list{
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+    .slick-arrow{
     position: absolute;
     right: 100%;
     left: auto;
@@ -14,6 +19,7 @@
     border-radius: 50%;
     }
   }
+}
   .slide{
     a{
       color: #898c91;
@@ -24,11 +30,11 @@
           outline: none;
       &.active {
           background: #fff;
+          box-shadow: 0 0 4px 1px #ccc;
       }
     }
     &-name{
       text-transform: capitalize;
-      margin-right: 15px;
     }
     &-number{
       background-color: #fff;
@@ -37,7 +43,6 @@
       width: 30px;
       height: 30px;
       display: inline-block;
-      float: right;
       text-align: center;
       position: relative;
           bottom: 2px;

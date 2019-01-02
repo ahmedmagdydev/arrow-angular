@@ -1,0 +1,15 @@
+<div class="treeContainer">
+  <div [ngStyle]="{'-ms-transform': 'scale('+teeSize+')', '-webkit-transform': 'scale('+teeSize+')', 'transform': 'scale('+teeSize+')'}">
+    <div cdkDrag *ngIf="!showNodePreview" class="tree">
+      <app-tree-level [treeData]="treeData" (openNodePreviewEvent)="openNodePreview($event)"></app-tree-level>
+    </div>
+  </div>
+  <!--tree node preview-->
+  <app-node-preview [selectedNode]="selectedNode" [showNodePreview]="showNodePreview" (closeNodePreviewEvent)="closeNodePreview($event)"></app-node-preview>
+</div>
+<!--tree resize-->
+<div class="treeResizerContainer">
+  <button mat-icon-button color="primary" (click)="resizeTree('increase')"><i class="fa fa-plus"></i></button>
+  <button mat-icon-button color="primary" (click)="resizeTree('decrease')"><i class="fa fa-minus"></i></button>
+  <button mat-icon-button color="accent" (click)="teeSize =1"><i class="fa fa-refresh"></i></button>
+</div>

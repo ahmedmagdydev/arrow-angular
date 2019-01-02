@@ -1,15 +1,147 @@
-import { Component, AfterViewInit } from '@angular/core';
+import {Component, AfterViewInit} from '@angular/core';
 import * as go from "gojs";
 declare var $;
 declare var OrgChart;
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
-  styleUrls: ['./history.component.scss']
+  styleUrls: ['./history.component.scss'],
 })
-export class HistoryComponent implements AfterViewInit {
+export class HistoryComponent {
 
-  
+    showNodePreview;
+    selectedNode: any;
+    heistory: any[] = [
+        {
+            title: 'مينا (مدير مساعد شئون عاملين ) ',
+            data: [
+                {title: 'receiveDate', value: new Date()},
+                {title: 'correspondenceNo', value: '123456/2500/2019'},
+                {title: 'needAction', value: true},
+                {title: 'dueDate', value: new Date()},
+            ],
+            correspondence: {
+                "index": 33,
+                "priority": 2,
+                "status": "assigned",
+                "sender": "احمد مجدى (مساعد مدير شئون العاملين)",
+                "to": "عبدالله",
+                "cc": "خالد, محمود",
+                "needAction": false,
+                "createdDate": "Thursday, August 21, 2014 8:13 AM",
+                "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
+                "keyords": "new",
+                "number": 3375,
+                "template": [
+                    {
+                        "name":"نموذج معامله داخليه"
+                    },
+                    {
+                        "url": "New Hampshire.com"
+                    }
+                ],
+                "shortDesc": "Quis sint non pariatur nostrud. Tempor ad ex dolore enim tempor voluptate dolore magna nisi ullamco in.",
+                "redirectInst": "laboris labore velit laborum et",
+                "redirectComment": "In sit elit sunt sunt laborum sit magna id excepteur labore Lorem."
+            },
+            childs: [
+                {
+                    title: 'محمد قرنى ( مدير مساعد اداره الاكل ) ' ,
+                    data: [
+                        {title: 'receiveDate', value: new Date()},
+                        {title: 'correspondenceNo', value: '123456/2500/2019'},
+                        {title: 'needAction', value: true},
+                        {title: 'dueDate', value: new Date()},
+                    ],
+                    correspondence: {
+                        "index": 33,
+                        "priority": 2,
+                        "status": "assigned",
+                        "sender": "احمد مجدى (مساعد مدير شئون العاملين)",
+                        "to": "عبدالله",
+                        "cc": "خالد, محمود",
+                        "needAction": false,
+                        "createdDate": "Thursday, August 21, 2014 8:13 AM",
+                        "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
+                        "keyords": "new",
+                        "number": 3375,
+                        "template": [
+                            {
+                                "name":"نموذج معامله داخليه"
+                            },
+                            {
+                                "url": "New Hampshire.com"
+                            }
+                        ],
+                        "shortDesc": "Quis sint non pariatur nostrud. Tempor ad ex dolore enim tempor voluptate dolore magna nisi ullamco in.",
+                        "redirectInst": "laboris labore velit laborum et",
+                        "redirectComment": "In sit elit sunt sunt laborum sit magna id excepteur labore Lorem."
+                    }
+                },
+                // {title: 'node 1.2', childs: [{title: 'node 1.2.1',
+                //         childs: [{title: 'node 1.2.1.1'}, {title: 'node 1.2.1'}]}, {title: 'node 1.2.1.2'}]
+                // },
+                {title: 'عمر عادل ( مددير مساعد اداره القهوه ) '  ,
+                    data: [
+                        {title: 'receiveDate', value: new Date()},
+                        {title: 'correspondenceNo', value: '123456/2500/2019'},
+                        {title: 'needAction', value: true},
+                        {title: 'dueDate', value: new Date()},
+                    ],
+                    correspondence: {
+                        "index": 33,
+                        "priority": 2,
+                        "status": "assigned",
+                        "sender": "احمد مجدى (مساعد مدير شئون العاملين)",
+                        "to": "عبدالله",
+                        "cc": "خالد, محمود",
+                        "needAction": false,
+                        "createdDate": "Thursday, August 21, 2014 8:13 AM",
+                        "relatedActions": ["replied","forwarded","attachment","tasks","related","recalled","substitution"],
+                        "keyords": "new",
+                        "number": 3375,
+                        "template": [
+                            {
+                                "name":"نموذج معامله داخليه"
+                            },
+                            {
+                                "url": "New Hampshire.com"
+                            }
+                        ],
+                        "shortDesc": "Quis sint non pariatur nostrud. Tempor ad ex dolore enim tempor voluptate dolore magna nisi ullamco in.",
+                        "redirectInst": "laboris labore velit laborum et",
+                        "redirectComment": "In sit elit sunt sunt laborum sit magna id excepteur labore Lorem."
+                    }
+                },
+        ]}
+    ];
+    openNodePreview(selectedNode) {
+        this.selectedNode = selectedNode;
+        this.showNodePreview = true;
+    }
+    closeNodePreview() {
+        this.selectedNode = null;
+        this.showNodePreview = false;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
 public gojsArray = { "class": "go.TreeModel",
   "nodeDataArray": [
 {"key":1, "name":"Stella Payne Diaz", "title":"CEO"},
@@ -260,6 +392,6 @@ console.log(_this.gojsArray)
 
 
    // init()
-}
+}*/
 
 }

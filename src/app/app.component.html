@@ -1,11 +1,6 @@
-<div>
-	<app-header></app-header>
-	<div class="main">
-		<app-side-menu></app-side-menu>
-		<router-outlet></router-outlet>
-		<app-fab></app-fab>
-	</div>
+<app-header *ngIf="authorized;"></app-header>
+<div class="main">
+	<app-side-menu *ngIf="authorized;"></app-side-menu>
+	<router-outlet></router-outlet>
+	<app-fab *ngIf="authorized;"></app-fab>
 </div>
-
-
-

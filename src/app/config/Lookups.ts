@@ -6,11 +6,25 @@ export const correspondencesStatusLookup: any[] = [
   {title: 'waiting', coresspondences: [], percent: 0},
   {title: 'delayed', coresspondences: [], percent: 0}
 ];
+export const correspondencesPortalStatusLookup: any[] = [
+    {title: 'new', coresspondences: [], percent: 0},
+    {title: 'done', coresspondences: [], percent: 0},
+    {title: 'assigned', coresspondences: [], percent: 0},
+    {title: 'waiting', coresspondences: [], percent: 0},
+    {title: 'delayed', coresspondences: [], percent: 0},
+    {title: 'deleted', coresspondences: [], percent: 0},
+    {title: 'recall', coresspondences: [], percent: 0},
+    {title: 'global', coresspondences: [], percent: 0},
+    {title: 'notifications', coresspondences: [], percent: 0},
+    {title: 'personalFolders', coresspondences: [], percent: 0},
+];
 export const correspondencesTableInfoLookup: any = {
   columns: [
     {title: 'priority', name: 'priority'}, {title: 'title', name: 'title'}, {title: 'sender', name: 'sender'},
     {title: 'createdDate', name: 'createdDate', isDate: true}, {title: 'number', name: 'number'},
-    {title: 'relatedActions', name: 'relatedActions'}, {title: 'template.name', name: 'template', innerName: 'name'},
+    {title: 'relatedActions', name: 'relatedActions'},
+    {title: 'template.name', name: 'template', innerName: 'name'},
+    {title: 'actionList', name: 'actionList'},
   ],
   detailsColumns: [
     {title: 'priority', name: 'priority'}, {title: 'title', name: 'title'}, {title: 'sender', name: 'sender'},
@@ -40,3 +54,9 @@ export const newCorrespondenceActionsLookup: any[] = [
   {action: 'related-correspondence'},
   {action: 'links'},
 ];
+
+export  interface fileObject {
+  name?: string, size?: number , lastModifiedDate?: string, type?: string, owner?: string,
+  versions?: File[]
+};
+

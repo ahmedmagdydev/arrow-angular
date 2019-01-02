@@ -1,7 +1,20 @@
+<!--
+<div align="center" id="myDiagramDiv"
+                    style=" width: 100%; height: 500px"></div>
 
-<div style="width:100%; height:700px; display: none;" id="orgchart"></div>
-
-<div id="myDiagramDiv" style="width:100%; height:700px;"></div>
-
-
-
+                    <div id="myInspector"></div>
+                    <textarea id="mySavedModel" style="width:100%;height:250px;display: none;">
+{ "class": "go.TreeModel",
+  "nodeDataArray": [
+{"key":1, "name":"Administration 01 ", "title":"created"},
+{"key":2, "name":"Administration 01", "title":"To express opinion ", "parent":1},
+{"key":3, "name":"Administration 01", "title":" To save", "parent":1},
+{"key":4, "name":"Administration 01", "title":"To Benefit", "parent":1},
+{"key":5, "name":"Administration", "title":"To express opinion", "parent":4},
+{"key":6, "name":"Administration", "title":"To express opinion", "parent":5},
+{"key":7, "name":"Administration", "title":"To express opinion", "parent":2},
+{"key":8, "name":"Administration", "title":"To express opinion", "parent":2}
+ ]
+}
+    </textarea>-->
+<app-visual-tree [treeData]="heistory"></app-visual-tree>

@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {UtilService} from '../../../services/util.service';
+import {UtilService} from '../../../services/util/util.service';
 import {API_URLS} from '../../../config/AppConfig';
 import {correspondencesStatusLookup, correspondencesTableInfoLookup} from '../../../config/Lookups';
 import {Language, TranslationService} from 'angular-l10n';

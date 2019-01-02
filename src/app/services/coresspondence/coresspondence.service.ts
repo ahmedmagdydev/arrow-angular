@@ -43,4 +43,19 @@ export class CoresspondenceService {
     return this.locale.getDefaultLocale() === 'ar' ? ["ضروري", "مهم", "عادي", "غير مهم"] :
       ["important", "urgant", "normal", "not important"];
   }
+
+
+    // ----------------------- new correspondence -----------------------
+    getInitFields() {
+        let fields: Array<any> = new Array<any>();
+        fields = [
+            {name: 'توجيه', type: 'text'},
+            {name: 'تاريخ الاستحقاق', type: 'date'},
+            {name: 'تعليق', type: 'textArea'},
+            {name: 'يحتاج اتخاز قرار', type: 'checkbox'},
+            {name: 'instraction', type: 'text', instraction: true},
+        ];
+        return fields;
+    }
+
 }

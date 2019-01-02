@@ -13,6 +13,9 @@
 			}
 		}
 	}
+	.progress-bar {
+		background-color: #25c088;
+	}
 	.upload-table{
 		border: 1px solid #e3e3e8;
 		border-radius: 8px;
@@ -40,7 +43,11 @@
 }
 
 
+.my-drop-zone { border: dotted 3px lightgray; }
+.nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+.another-file-over-class { border: dotted 3px green; }
 
+html, body { height: 100%; }
 .attachment-container{
 	position: relative;
 	min-height: 500px;

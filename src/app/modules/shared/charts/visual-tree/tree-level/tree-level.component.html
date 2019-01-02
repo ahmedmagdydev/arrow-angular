@@ -1,0 +1,15 @@
+<ul *ngIf="treeData && treeData.length>0">
+  <li *ngFor="let node of treeData">
+    <div class="node" (click)="openNodePreview(node)">
+      <div class="card-header">{{node.title}}</div>
+      <div class="node-content">
+          <div *ngFor="let item of node.data">
+            <span>{{ item.title | translate: lang}}</span> :
+            <span *ngIf="!isDate(item.value)">{{ item.value}}</span>
+            <span *ngIf="isDate(item.value)">{{ item.value | date : 'medium'}}</span>
+          </div>
+      </div>
+    </div>
+    <app-tree-level [treeData]="node.childs" *ngIf="node.childs && node.childs.length > 0" (openNodePreviewEvent)="openNodePreview($event)"></app-tree-level>
+  </li>
+</ul>

@@ -1,0 +1,47 @@
+<div class="row mulipleSendInputs">
+  <div class="col-sm-12 mulipleSendInputsTitle">{{'addOtherContacts' | translate: lang}}</div>
+  <div class="col-sm-12 ">
+    <div class="input-group mb-3 addContactInputGroup">
+      <input type="text" class="form-control" placeholder="to"
+             (keyup)="_filter(addAnotherContactCtrl.value)" [formControl]="addAnotherContactCtrl"
+             [matAutocomplete]="auto"
+             aria-label="Recipient's username" aria-describedby="button-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary addContactsBtn"
+                [disabled]="!selectedContact"
+                (click)="addAnotherContact()" type="button" id="button-addon2">Add</button>
+      </div>
+    </div>
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelectOtherContact($event)">
+      <mat-option *ngFor="let contact of filteredOtherContacts; let i =index" [value]="contact.name">
+        {{contact.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </div>
+  <div class="anotherContacts">
+    <div *ngFor="let contact of selectedOtherContacts; let contactIndex =index">
+      <div class="redirect-header anotherContactsItemNoBody" *ngIf="sendGroup">
+        <i class="fa fa-close" (click)="removeSelectedContact(contactIndex)"></i> {{contact.name}}
+      </div>
+      <div class="row " *ngIf="!sendGroup">
+        <div class="col-sm-12">
+          <div class="row anotherContactsItem">
+            <div class="col-sm-12 redirect-header"><i class="fa fa-close" (click)="removeSelectedContact(contactIndex)"></i> {{contact.name}}</div>
+            <div class="col-lg-6 " *ngFor="let field of contact.multipleSendFields; let fieldIndex= index">
+              <div class="form-group" [ngClass]=" {'multipleSendCheckbox' : field.type === 'checkbox', 'col-lg-12': field.type === 'textArea'}">
+                <label for="" *ngIf="field.type !== 'checkbox'">{{field.name}}</label>
+                <input *ngIf="field.type === 'text' && !field.instraction" type="text" class="form-control">
+                <input *ngIf="field.type === 'text' && field.instraction" [value]="field.value || ''"
+                       (click)="openInstractionPopUp(contactIndex, fieldIndex)" type="text" class="form-control">
+
+                <input *ngIf="field.type === 'date'" type="date" class="form-control">
+                <mat-checkbox *ngIf="field.type === 'checkbox'">{{field.name}}</mat-checkbox>
+                <textarea class="form-control" *ngIf="field.type === 'textArea'"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

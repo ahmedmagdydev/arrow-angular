@@ -5,8 +5,8 @@
   margin: auto;
   background: #FFF;
   margin-top: 10px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
-  transition: all 0.3s; 
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  transition: all 0.3s;
   border-radius: 3px;
 }
 
@@ -56,7 +56,7 @@
   bottom: 30px;
   left: 30px;
   z-index: 50px;
-  
+
 }
 
 #container-floating:hover{
@@ -126,12 +126,12 @@
   background-color: #fff;
   box-shadow: 0 0 7px 1px #dfdfdf;
   width:180px;
-  
+
   left:20px;
   bottom: 95px;
   animation-delay: 0.2s;
-  animation: bounce-out-nds 0.3s linear;
-  animation-fill-mode:  forwards;
+  //animation: bounce-out-nds 0.3s linear;
+  //animation-fill-mode:  forwards;
     border-radius: 4px;
     :after {
       top: 100%;
@@ -147,31 +147,31 @@
       border-width: 7px;
       margin-left: -20px;
     }
-    
-  
-  
+
+
+
   > p{color:#ccc;
     padding: 10px 10px 0px 10px;
-      
+
        font-size: 18px;}
-     > .templates-container{ 
+     > .templates-container{
                   height: 180px;
                   overflow-y:auto;
-                           
+
 
    > ul{
-    
+
           font-size: 14px;
           list-style: none;
           padding: 0 8px;
           > li{padding: 5px 10px 5px 10px;
-            
+
             &:hover {background-color: #25c088;
               a{
                 color: #fff;
               }
                       }
-         
+
         }
         }
       }
@@ -190,7 +190,7 @@
 }
 
 #container-floating:hover .nds{
-  
+
   animation: bounce-nds 0.1s linear;
   animation-fill-mode:  forwards;
 }

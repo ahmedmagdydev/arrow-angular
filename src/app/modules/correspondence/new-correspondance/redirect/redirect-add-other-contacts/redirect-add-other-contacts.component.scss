@@ -1,0 +1,45 @@
+
+.mulipleSendInputs{
+  background: #f7f7f7 !important; border: 1px solid #f1e7e7;
+  margin: 15px 4px 5px 4px;
+}
+.mulipleSendInputsTitle{
+  border-bottom: 1px solid #f1e7e7; font-weight: 600; text-transform: capitalize; padding: 5px 10px; font-size: 16px;
+}
+.multipleSendCheckbox{position: relative; display: block; padding-top: 35px;}
+.addContactsBtn, .addContactsBtn:hover{background: #24AF7D; color: #fff; border-radius: 5px 0 0 5px;     height: 38px;
+}
+
+.addContactInputGroup{padding: 0; margin-right: -3px; margin-top: 10px;}
+.mat-input-element {
+  width: auto;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.input-group-append {
+  margin-right: -4px;
+}
+.anotherContacts{border-top: 1px solid #f1e7e7; position: relative; display: block; min-width: 100%; width: 100%;}
+.anotherContactsItem, .anotherContactsItemNoBody{ margin: 10px; border: 1px solid #ced4da;}
+.anotherContactsItem{background: #fff;}
+
+
+.anotherContacts .fa-close{position: absolute; left: 10px; top: 9px; cursor: pointer;}
+
+
+
+.redirect-header {
+  font-size: 17px;
+  font-weight: bold;
+  background: #e7e7e7;
+  padding: 5px 9px;
+  margin-bottom: 9px;
+  position: relative; display: block; overflow: hidden;
+}

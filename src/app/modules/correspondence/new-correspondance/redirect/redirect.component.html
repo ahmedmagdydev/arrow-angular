@@ -1,57 +1,67 @@
 <div class="row">
-	<div class="col-md-6">
-		فردي <mat-slide-toggle> جماعي</mat-slide-toggle>
+	<div class="col-md-6">{{'individual' | translate: lang}}
+		<mat-slide-toggle [checked]="sendGroup" (change)="sendOptionChanged($event)"> {{'collective' | translate: lang}}</mat-slide-toggle>
+		<div class="categoriesContainer">
+			<mat-accordion>
+				<mat-expansion-panel *ngFor="let category of categories; let i = index">
+					<mat-expansion-panel-header [ngClass]="{'selected' : category.selected}">
+						<mat-panel-title>
+							<mat-checkbox [checked]="category.selected" (change)="toggleCategory(category)">{{category.name}}</mat-checkbox>
+						</mat-panel-title>
+					</mat-expansion-panel-header>
+					<div>
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item" *ngFor="let department of category.departments; let j=index">
+								<mat-checkbox [checked]="department.selected" (change)="toggleDepartment(category, department)">
+									{{department.name}}
+								</mat-checkbox>
+								<div class="row" *ngIf="!sendGroup && department.selected && department.multipleSendFields">
+									<div class="col-lg-6 form-group" [ngClass]="{
+                    'multipleSendCheckbox' : field.type === 'checkbox', 'col-lg-12': field.type === 'textArea' }"
+										 *ngFor="let field of department.multipleSendFields; let fieldIndex= index">
+										<label for="" *ngIf="field.type !== 'checkbox'">{{field.name}}</label>
+										<input *ngIf="field.type === 'text' && !field.instraction"
+											   type="text" class="form-control" (keyup)="updateFieldValue($event.target.value, fieldIndex, i, j)">
 
-		<div>
-			<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-			  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
-			    <button mat-icon-button disabled></button>
-			    <mat-checkbox class="checklist-leaf-node"
-			                  [checked]="checklistSelection.isSelected(node)"
-			                  (change)="todoLeafItemSelectionToggle(node)">{{node.item}}</mat-checkbox>
-			  </mat-tree-node>
-			
-			 
-			
-			  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
-			    <a mat-icon-button matTreeNodeToggle
-			            [attr.aria-label]="'toggle'">
-			      <i class="{{treeControl.isExpanded(node) ? 'fa fa-angle-down' : 'fa fa-angle-left'}} ">
-			        
-			      </i>
-			    </a>
-			    <mat-checkbox [checked]="descendantsAllSelected(node)"
-			                  [indeterminate]="descendantsPartiallySelected(node)"
-			                  (change)="todoItemSelectionToggle(node)">{{node.item}}</mat-checkbox>
-			  </mat-tree-node>
-			</mat-tree>
-		</div>
+										<input *ngIf="field.type === 'date'" (change)="updateFieldValue($event.target.value, fieldIndex, i, j)"
+											   type="date" class="form-control">
 
-	</div>
-	<div class="col-md-6  bg-gray py-3">
-		<h4>توجيه الى</h4>
-		<div class="pb-3">
-			<div class="redirect-header">
-				group 01
-			</div>
-			<ul class="redirects p-0">
-				<li class="d-flex align-items-center" >
-					<span class="mr-auto">
-						<p>admin 01</p>
-						<p class="text-light">للحفظ, للمراجعة</p>
-					</span>
-					<span>
-						<ul class="list-inline">
-							<li class="list-inline-item">
-								<a href="#"><span class="icon-trash"></span></a>
-							</li>
-							<li class="list-inline-item">
-								<a href="#"><span class="icon-info"></span></a>
+										<input *ngIf="field.type === 'text' && field.instraction"
+											   [value]="field.value || ''"
+											   (click)="openInstractionPopUp(fieldIndex, i, j)" type="text" class="form-control">
+
+										<mat-checkbox *ngIf="field.type === 'checkbox'"
+													  (change)="updateFieldValue($event.checked, fieldIndex, i, j)">
+											{{field.name}}
+										</mat-checkbox>
+										<textarea class="form-control" (keyup)="updateFieldValue($event.target.value, fieldIndex, i, j)"
+												  *ngIf="field.type === 'textArea'"></textarea>
+									</div>
+								</div>
 							</li>
 						</ul>
-					</span>
-				</li>
-			</ul>
+					</div>
+				</mat-expansion-panel>
+			</mat-accordion>
 		</div>
+		<div class="row mulipleSendInputs" *ngIf="sendGroup">
+			<div class="col-sm-12 mulipleSendInputsTitle">{{'multiSend' | translate: lang}}</div>
+			<div class="form-group" *ngFor="let field of multipleSendFields; let fieldIndex= index"
+				 [ngClass]="{'multipleSendCheckbox' : field.type === 'checkbox',
+           'col-lg-6': field.type !== 'textArea',
+           'col-lg-12': field.type === 'textArea'}">
+				<label for="" *ngIf="field.type !== 'checkbox'">{{field.name}}</label>
+				<input *ngIf="field.type === 'text' && !field.instraction" type="text" class="form-control">
+				<input *ngIf="field.type === 'text' && field.instraction" (click)="openInstractionPopUp()" type="text" class="form-control">
+
+				<input *ngIf="field.type === 'date'" type="date" class="form-control">
+				<mat-checkbox *ngIf="field.type === 'checkbox'">{{field.name}}</mat-checkbox>
+				<textarea class="form-control" *ngIf="field.type === 'textArea'"></textarea>
+			</div>
+		</div>
+		<app-redirect-add-other-contacts [sendGroup]="sendGroup" (addContactEvent)="onSelectedContactsChanged($event)"></app-redirect-add-other-contacts>
+	</div>
+	<div class="col-md-6  bg-gray py-3 selectedDataPreview">
+		<app-redirect-preview [categories] ="categories" [sendGroup] ='sendGroup' (deleteDepartmentEvent)="deleteDepartment($event)"></app-redirect-preview>
 	</div>
 </div>

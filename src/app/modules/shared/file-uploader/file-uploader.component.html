@@ -1,0 +1,26 @@
+
+
+<div class="container">
+    <div class="navbar navbar-default">
+    </div>
+    <div class="row">
+        <div class="col-md-6" >
+			<div ng2FileDrop
+                 (onFileDrop)="fileOverAnother($event)"
+				 [uploader]="uploader"
+				 (click)="clickOnUploadInput($event)"
+				 class="well my-drop-zone">
+				 <i class="icon-upload"></i>
+			   <p class=" center"> {{'dropFiles' | translate: lang}} </p>
+			   <p style="font-size: 18px; color:lightgray;margin-right: 180px;">{{'clickHere' | translate: lang}} </p>
+            </div>
+			
+            <input type="file" class="hidden" id="importInput" (change)="fileOverAnother($event)"
+                   ng2FileSelect [uploader]="uploader" multiple  /><br/>
+ 
+        
+        </div>
+ 
+    </div>
+ 
+</div>

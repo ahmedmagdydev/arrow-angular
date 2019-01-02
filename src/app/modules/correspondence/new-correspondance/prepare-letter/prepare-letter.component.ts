@@ -1,6 +1,6 @@
 import { Component, ViewChild ,AfterViewChecked} from '@angular/core';
 import {CKEditorComponent} from 'ng2-ckeditor';
-
+ 
 @Component({
   selector: 'app-prepare-letter',
   templateUrl: './prepare-letter.component.html',

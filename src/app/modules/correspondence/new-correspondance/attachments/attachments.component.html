@@ -1,41 +1,25 @@
+
 <div class="row">
 	<div class="col-md-6" style="min-height: 500px">
-	    <div class="row">
-	    	<div class="col-md-3">
-	    		<div class="scan">
-	    			<span class="icon-scan"></span>
-	    			<p>سكان ملف</p>
-	    		</div>
-	    	</div>
-	    	<div class="col-md-9">
-	    		<file-drop headertext="قم بإسقاط الملفات هنا" (onFileDrop)="dropped($event)" 
-	    		(onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
-	    		    <i class="icon-upload"></i>
-	    		    <!-- <input type="file" (change)="uploadOnClick($event)"> -->
-	    		</file-drop>
-	    	</div>
-	    </div>
-	    		<!--  -->
-	    	
-	    <div class="upload-table">
-	        
-<!-- {{files | json}} -->
-	                <div class="d-flex align-items-center" *ngFor="let item of files; let i=index">
-	                    <div class="d-flex align-items-center mr-auto">
-	                    	<i class="icon-attachment"></i>
-		                    <div>
-		                    	<div class="file-name">{{ item.relativePath }}</div>
-		                    	<div class="file-date" [(ngModel)]="item.modDate" ngDefaultControl>{{ modifiedDate | date }}</div>
-		                	</div>
-	                	</div>
-	                	<ul class="list-inline m-0">
-	                		<li class="list-inline-item"><a href="#"><span class="icon-eye"></span></a></li>
-	                		<li class="list-inline-item"><a  (click)="showInfo(item)"><span class="icon-info"></span></a></li>
-	                		<li class="list-inline-item"><a href="#"><span class="icon-trash"></span></a></li>
-	                	</ul>
-	                </div>
-
-	    </div>
+		<app-file-uploader [lang]="lang" (uploaders)="handleUploaders($event)"></app-file-uploader>
+		<div class="upload-table">
+				<div class="d-flex align-items-center" *ngFor="let item of files; let i=index">
+						<div class="d-flex align-items-center mr-auto">
+							<i class="icon-attachment"></i>
+								<div>
+									<div class="file-name">{{item.name }}</div>
+									<div *ngIf="!fileUploaderComponent.uploader.queue[i].isUploaded" class="progress-bar progress-bar-success" [ngStyle]="{ 'width': fileUploaderComponent.uploader.queue[i].progress + '%', 'height': '5px' }"  placement="bottom"></div>
+									<div *ngIf="fileUploaderComponent.uploader.queue[i].isUploaded" class="file-date"  >{{item.lastModifiedDate | date  }}</div>
+								</div>
+										
+									</div>
+									<ul class="list-inline m-0">
+										<li class="list-inline-item"><a href="#"><span class="icon-eye"></span></a></li>
+										<li class="list-inline-item"><a  (click)="showFileDetails(item, i)"><span class="icon-info"></span></a></li>
+										<li class="list-inline-item"><a (click)="deleteFile(i, item)"><span class="icon-trash"></span></a></li>
+									</ul>
+								</div>
+					</div>
 	</div>
 	<div class="col-md-6 bg-gray py-3">
 		<div class="attachment-container">
@@ -43,66 +27,69 @@
 				<div>
 					<span class="icon-info-big"></span>
 				</div>
-				<p>قم باختيار ملف لاستعراضه او عرض بياناته</p>
+				<p>{{'chooseFileToView' | translate: lang}}</p>
 			</div>
 			<div *ngIf="info"> 
-				<h5>معلومات عامة</h5>
+				<h5>{{'fileDetails' | translate: lang}}</h5>
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group row">
-						    <label  class="col-sm-3 col-form-label">النوع</label>
+						    <label  class="col-sm-3 col-form-label">{{'type' | translate: lang}}</label>
 						    <div class="col-sm-9">
-						      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{itemInfo._type}}">
+						      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{detailsObj.type}}">
 			
 						    </div>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group row">
-						    <label  class="col-sm-3 col-form-label">المالك</label>
+						    <label  class="col-sm-3 col-form-label">{{'owner' | translate: lang}}</label>
 						    <div class="col-sm-9">
-						           <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{itemInfo._owner}}">
+						           <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="احمد مجدى">
 			
 						    </div>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group row">
-						    <label  class="col-sm-3 col-form-label">الحجم</label>
+						    <label  class="col-sm-3 col-form-label">{{'size' | translate: lang}}</label>
 						    <div class="col-sm-9">
-						    	      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{itemInfo._size}}">
+									  <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="bytes {{detailsObj.size/1024 | number}} ">
 			
 						    </div>
 						</div>
 					</div>
 					<div class="col-md-6">
-						<div class="form-group row">
-						    <label  class="col-sm-3 col-form-label">تاريخ التعديل</label>
+						<div class="formz-group row">
+						    <label  class="col-sm-3 col-form-label">{{'modifiedDate' | translate: lang}}</label>
 						    <div class="col-sm-9">
-						    	      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{itemInfo._date | date}}">
-			
+						    	<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{detailsObj.lastModifiedDate  | date}}">				   
 						    </div>
 						</div>
 					</div>
 				</div>
 				<hr>
-				<h5>نسخ</h5>
-				<div class="form-group row">
-				    <label  class="col-sm-3 col-form-label">V01</label>
-				    <div class="col-sm-9">
-				    	      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{itemInfo._date | date}}">
-			
+				<h5>{{'versions' | translate: lang}}</h5>
+				<div *ngIf="info">
+				<div class="form-group row"  *ngFor="let version of selectedFile.versions">
+						<input type="radio" name="gender" value="male" (click)="changeSelectedVersion(version)">
+				    <label  class="col-sm-3 col-form-label"> </label>
+					<input type="text" (click)="select(version)" readonly class="form-control-plaintext" id="staticEmail" value="{{version.name }}">
+
+					<div class="col-sm-9">
+				    	      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{version.lastModifiedDate | date}}">
 				    </div>
 				</div>
+				<input type="file" (change)="importVersion($event)" ng2FileSelect [uploader]="versionUploader" multiple  /><br/>
+
+			</div>
 				<div class="form-group row">
-				    <label  class="col-sm-3 col-form-label">V01</label>
 				    <div class="col-sm-9">
-				    	      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{itemInfo._date | date}}">
-			
+				    	      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{selectedFile._date | date}}">
 				    </div>
 				</div>
 				<hr>
-				<h5>صلاحيات </h5>
+				<h5>{{'AccessRights' | translate: lang}} </h5>
 				<mat-form-field class="example-chip-list">
 					
 					<mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
@@ -121,7 +108,7 @@
 					</mat-chip-list>
 				</mat-form-field>
 				<hr>
-				<mat-slide-toggle>عرض للكل</mat-slide-toggle>
+				<mat-slide-toggle>{{'viewAll' | translate: lang}}</mat-slide-toggle>
 			</div>
 		</div>
 	</div>
