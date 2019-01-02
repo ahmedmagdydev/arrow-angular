@@ -19,6 +19,7 @@ export class TasksComponent implements OnInit {
 
 	public tasks=[];
 	public addTask = false;
+	public addAttachment = false;
 	public _status = "";
 
 	constructor(private util: UtilService, private coresspondenceService: CoresspondenceService,
