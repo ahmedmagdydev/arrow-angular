@@ -1,6 +1,6 @@
 <div class="table-header">
   <div class="d-flex align-items-center">
-    <div class="table-header-item">
+    <div class="table-header-item mr-auto">
       <ul>
         <li><a href="#" data-toggle="tooltip" title="Trash"><img src="assets/images/trash.png" alt="trash"></a></li>
         <li><a href="#" data-toggle="tooltip" title="Forward"><img src="assets/images/forward.png" alt="forward"></a></li>
@@ -9,6 +9,9 @@
           <input class="check-all" id="selectAll" (change)="checkAll($event)"  [checked]="isAllChecked" type="checkbox">
         </li>
       </ul>
+    </div>
+    <div class="table-header-search">
+      <input type="text" class="form-control" placeholder="بحث ....">
     </div>
   </div>
 </div>

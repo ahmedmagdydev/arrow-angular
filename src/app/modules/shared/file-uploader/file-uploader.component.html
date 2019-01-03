@@ -4,7 +4,7 @@
     <div class="navbar navbar-default">
     </div>
     <div class="row">
-        <div class="col-md-6" >
+        <div class="col-md-9" >
 			<div ng2FileDrop
                  (onFileDrop)="fileOverAnother($event)"
 				 [uploader]="uploader"
@@ -19,6 +19,12 @@
                    ng2FileSelect [uploader]="uploader" multiple  /><br/>
  
         
+        </div>
+        <div class="col-md-3">
+            <div class="scan">
+                <span class="icon-scan"></span>
+                <p>مسح ضوئى</p>
+            </div>
         </div>
  
     </div>

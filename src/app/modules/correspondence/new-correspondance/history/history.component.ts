@@ -1,7 +1,5 @@
 import {Component, AfterViewInit} from '@angular/core';
-import * as go from "gojs";
-declare var $;
-declare var OrgChart;
+
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
@@ -15,10 +13,11 @@ export class HistoryComponent {
         {
             title: 'مينا (مدير مساعد شئون عاملين ) ',
             data: [
-                {title: 'receiveDate', value: new Date()},
+                {title: 'receiveDate', value: ''},
                 {title: 'correspondenceNo', value: '123456/2500/2019'},
                 {title: 'needAction', value: true},
                 {title: 'dueDate', value: new Date()},
+                {title: 'status', value:  'انشأت'},
             ],
             correspondence: {
                 "index": 33,
@@ -52,6 +51,7 @@ export class HistoryComponent {
                         {title: 'correspondenceNo', value: '123456/2500/2019'},
                         {title: 'needAction', value: true},
                         {title: 'dueDate', value: new Date()},
+                        {title: 'status', value:  'انجزت'},
                     ],
                     correspondence: {
                         "index": 33,
@@ -87,6 +87,7 @@ export class HistoryComponent {
                         {title: 'correspondenceNo', value: '123456/2500/2019'},
                         {title: 'needAction', value: true},
                         {title: 'dueDate', value: new Date()},
+                        {title: 'status', value:  'احيلت'},
                     ],
                     correspondence: {
                         "index": 33,

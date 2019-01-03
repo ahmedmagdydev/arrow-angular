@@ -1,13 +1,13 @@
 <div class="container-fluid main-content">
 	<div class="d-flex mt-3">
-	  <h4 class="mr-auto"><span class="icon-related"></span> إنشاء توجيه</h4>
+	  <h4 class="mr-auto"><span class="icon-related"></span>{{'correspondence.create' | translate: lang}}</h4>
 	  <div class="filter-wrapper d-flex align-items-center">
 
 	   <ul class="list-inline">
 	   	<li class="list-inline-item dropdown">
 	   	   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	   	    <span class="icon-corres-send"></span>
-	   	  ارسال
+	   	   {{'action.send' | translate: lang}}
 	   	   </a>
 	   	   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	   	     <a class="dropdown-item" href="#">Action</a>
@@ -17,7 +17,7 @@
 	   	 <li class="list-inline-item dropdown">
 	   	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	   	     <span class="icon-save"></span>
-	   	 حفظ
+				{{'action.save' | translate: lang}}
 	   	    </a>
 	   	    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	   	      <a class="dropdown-item" href="#">Action</a>
@@ -27,7 +27,7 @@
 	   	  <li class="list-inline-item dropdown">
 	   	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	   	    <span class="icon-archive"></span>
-	   	   ارشيف
+				{{'action.archive' | translate: lang}}
 	   	    </a>
 	   	    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	   	      <a class="dropdown-item" href="#">Action</a>
@@ -37,7 +37,7 @@
 	   	  <li class="list-inline-item dropdown">
 	   	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	   	    <span class="icon-print"></span>
-	   	   اطباعة
+				{{'action.print' | translate: lang}}
 	   	    </a>
 	   	    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	   	      <a class="dropdown-item" href="#">Action</a>
@@ -47,7 +47,7 @@
 	   	  <li class="list-inline-item dropdown">
 	   	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	   	     <span class="icon-export"></span>
-	   	   تصدير
+				{{'action.export' | translate: lang}}
 	   	    </a>
 	   	    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	   	      <a class="dropdown-item" href="#">Action</a>
@@ -57,7 +57,7 @@
 	   	  <li class="list-inline-item dropdown">
 	   	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	   	    <span class="icon-close"></span>
-	   	   اغلاق
+				{{'action.close' | translate: lang}}
 	   	    </a>
 	   	    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 	   	      <a class="dropdown-item" href="#">Action</a>
@@ -67,7 +67,7 @@
 	   	  <li class="list-inline-item">
 	   	  	<a href="#">
 	   	  		<span class="icon-clone"></span>
-	   	  		نسخ
+				{{'action.clone' | translate: lang}}
 	   	  	</a>
 	   	  </li>
 
@@ -78,25 +78,25 @@
 	<div class="new-corres">
 		<ul class="nav " id="myTab" role="tablist">
 		  <li class="nav-item">
-		    <a class="nav-link active" id="main-tab" data-toggle="tab" href="#main" role="tab" aria-controls="main" aria-selected="true">معلومات رئيسية</a>
+		    <a class="nav-link active" id="main-tab" data-toggle="tab" href="#main" role="tab" aria-controls="main" aria-selected="true">{{'mainInfo' | translate: lang}}</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" id="attachments-tab" data-toggle="tab" href="#attachments" role="tab" aria-controls="attachments" aria-selected="false">مرفقات</a>
+		    <a class="nav-link" id="attachments-tab" data-toggle="tab" href="#attachments" role="tab" aria-controls="attachments" aria-selected="false">{{'attachments' | translate: lang}}</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" id="tasks-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="tasks" aria-selected="false">مهام</a>
+		    <a class="nav-link" id="tasks-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="tasks" aria-selected="false">{{'tasks' | translate: lang}}</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" id="related-tab" data-toggle="tab" href="#related" role="tab" aria-controls="related" aria-selected="false">معاملات ذات صلة</a>
+		    <a class="nav-link" id="related-tab" data-toggle="tab" href="#related" role="tab" aria-controls="related" aria-selected="false">{{'correspondence.related' | translate: lang}}</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="false">التاريخ</a>
+		    <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="false">{{'history' | translate: lang}}</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" id="redirect-tab" data-toggle="tab" href="#redirect" role="tab" aria-controls="redirect" aria-selected="false">توجيه</a>
+		    <a class="nav-link" id="redirect-tab" data-toggle="tab" href="#redirect" role="tab" aria-controls="redirect" aria-selected="false">{{'redirect' | translate: lang}}</a>
 		  </li>
 		   <li class="nav-item">
-		    <a class="nav-link" id="prepare-tab" data-toggle="tab" href="#prepare" role="tab" aria-controls="prepare" aria-selected="false">إعداد خطاب</a>
+		    <a class="nav-link" id="prepare-tab" data-toggle="tab" href="#prepare" role="tab" aria-controls="prepare" aria-selected="false">{{'prepareLetter' | translate: lang}}</a>
 		  </li>
 		</ul>
 		

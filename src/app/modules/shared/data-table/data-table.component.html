@@ -23,6 +23,7 @@
             <ng-template #notObject>
                 <span *ngIf="col.name === 'priority'" class="priority priority-{{priority(row.priority)}}" title="priority-{{row.priority}}">
                   <span *ngFor="let i of [1,2,3,4,5,6,7]"></span>
+                  <i class="delayed"></i>
                 </span>
                 <span *ngIf="col.name !== 'priority' && col.name !== 'relatedActions' && !col.isDate">{{row[col.name]}}</span>
                 <span *ngIf="col.isDate">{{row[col.name] | date:'shortDate'}} </span>
@@ -34,14 +35,18 @@
               </span>
 
             <div class="dropleft" *ngIf="col.name === 'actionList'">
-              <a href="#" data-toggle="dropdown"
+              <a href="#" data-toggle="dropdown" class="three-dots-menu" 
                  [attr.aria-label]="'recordAction' + i" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-ellipsis-v"></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#"><span class="icon-Open"></span> فتح</a>
+                <a class="dropdown-item" href="#"><span class="icon-Reply"></span> رد</a>
+                <a class="dropdown-item" href="#"><span class="icon-Reply-to-all"></span> رد الكل</a>
+                <a class="dropdown-item" href="#"><span class="icon-Foward"></span> تمرير</a>
+                <a class="dropdown-item" href="#"><span class="icon-History"></span> تاريخ</a>
+                <a class="dropdown-item" href="#"><span class="icon-Archived-Vesions"></span> ارشيف</a>
+                <a class="dropdown-item" href="#"><span class="icon-Shape-995"></span> غير معرف</a>
               </div>
             </div>
 

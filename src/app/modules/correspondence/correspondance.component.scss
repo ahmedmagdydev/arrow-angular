@@ -30,7 +30,7 @@
           outline: none;
       &.active {
           background: #fff;
-          box-shadow: 0 0 4px 1px #ccc;
+          box-shadow: -0.523px 5.977px 0px 0px rgba(76, 117, 158, 0.03);
       }
     }
     &-name{
@@ -100,4 +100,8 @@
   &.delayed {
     color: #fb2932 !important;
   }
+}
+
+.filter-menu-trigger{
+  font-weight: bold;
 }

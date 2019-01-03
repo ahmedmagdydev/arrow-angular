@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Language} from 'angular-l10n';
 
 @Component({
   selector: 'app-new-correspondance',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewCorrespondanceComponent implements OnInit {
 
+    @Language() lang: string;
   constructor() { }
 
   ngOnInit() {

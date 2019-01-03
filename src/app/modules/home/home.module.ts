@@ -5,6 +5,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {DataTableModule} from '../shared/data-table/data-table.module';
 import {LocalizationModule} from '../shared/localization/localization.module';
 import {ChartsModule} from '../shared/charts/charts.module';
+
 @NgModule({
   declarations: [DashboardComponent ],
   imports: [

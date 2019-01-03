@@ -1,7 +1,6 @@
-.my-drop-zone {   border-radius: 25px;
+.my-drop-zone {   border-radius: 8px;
     border: 1px solid lightgrey;
     padding: 20px; 
-    width: 500px;
     height: 150px;   }
  /* Default class applied to drop zones on over */
 
@@ -22,4 +21,23 @@
     display: block;
   }
   
+  .scan {
+      text-align: center;
+      border: 1px solid #e3e3e8 ;
+      border-radius: 8px;
+      /* height: 100%; */
+      padding: 25px;
+      height: 150px;
+      cursor: pointer;
+        & > p {
+        padding: 0;
+        margin: 0;
+        font-weight: bolder;
+        color:grey;
+    }
+    & > span {
+        font-size: 30px;
+            color: #d3d3d3;
+    }
+  }
 html, body { height: 100%; }

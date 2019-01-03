@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       this.loginForm = new FormGroup({
           userName: new FormControl('', [Validators.required]),
           password: new FormControl('', [Validators.required]),
+          domain: new FormControl('', [Validators.required]),
           language: new FormControl(''),
           rememberMe: new FormControl(''),
           forceLogin: new FormControl(''),
@@ -39,7 +40,7 @@ export class LoginComponent implements OnInit {
       }
   }
   setLocal(event) {
-    const selectedValue = event.target.value;
+    const selectedValue = event.value;
     this.locale.setDefaultLocale(selectedValue);
     localStorage.setItem('currentLocale', selectedValue);
   }

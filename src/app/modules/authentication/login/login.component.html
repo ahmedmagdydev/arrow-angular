@@ -1,56 +1,46 @@
 <div class="login-cont">
-       <div class="login-head">
-       <img src="assets/images/logo-arrow.png" />
-         </div>
-         <div class="login-wrap">
-           
-           <div class="login-form">
-              <img src="assets/images/logo-main.jpg" />
-
-           <div class="form-group">
-             <mat-form-field class="full-width">
-                <input matInput placeholder="إسم المستخدم">
-              </mat-form-field>
-           </div>
-           <div class="form-group">
-             <mat-form-field class="full-width">
-                <input matInput placeholder="كلمة السر " type="password">
-              </mat-form-field>
-           </div>
-           <div class="form-group">
-             <mat-form-field class="full-width">
-                <input matInput placeholder="النطاق  ">
-              </mat-form-field>
-           </div>
-            <div class="form-group">
-              <mat-form-field class="full-width">
-                <mat-select placeholder="select language">
-                  <mat-option  value="arabic">
-                    arabic
-                  </mat-option>
-                  <mat-option  value="english">
-                    english
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
+    <div class="login-head"><img src="assets/images/logo-arrow.png"/></div>
+    <div class="login-wrap">
+        <form class="login-form" name="form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" novalidate>
+            <div class="login-form">
+                <img src="assets/images/logo-main.jpg"/>
+                <div class="form-group">
+                    <mat-form-field class="full-width">
+                        <input formControlName="userName" matInput placeholder="{{'userName' | translate: lang}}">
+                    </mat-form-field>
+                    <span class="error" *ngIf="!form.userName.valid && submitted">{{'userNameRequired' | translate: lang}}</span>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="full-width">
+                        <input matInput formControlName="password"  placeholder="{{'password' | translate: lang}}" type="password">
+                    </mat-form-field>
+                    <span class="error" *ngIf="!form.password.valid && submitted">{{'passwordRequired' | translate: lang}}</span>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="full-width">
+                        <input matInput placeholder="{{'domain' | translate: lang}}" formControlName="domain">
+                    </mat-form-field>
+                    <span class="error" *ngIf="!form.domain.valid && submitted">{{'domainRequired' | translate: lang}}</span>
+                </div>
+                <div class="form-group">
+                    <mat-form-field class="full-width">
+                        <mat-select formControlName="language" placeholder="{{'language' | translate: lang}}" (selectionChange)="setLocal($event)">
+                            <mat-option value="ar">{{'arabic' | translate: lang}}</mat-option>
+                            <mat-option value="en">{{'english' | translate: lang}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-checkbox formControlName="rememberMe">{{'rememberMe' | translate: lang}}</mat-checkbox>
+                </div>
+                <div class="form-group">
+                    <mat-checkbox formControlName="forceLogin">{{'forceLogin' | translate: lang}}</mat-checkbox>
+                </div>
+                <button class="login-btn" type="submit">{{'login' | translate: lang}}</button>
             </div>
-             <div class="form-group">
-               <mat-checkbox>تذكرني </mat-checkbox>
-             </div>
-             <div class="form-group">
-               <mat-checkbox>إجبار الدخول </mat-checkbox>
-             </div>
-                
-               
-                
-                <div class="login-btn"> <a href="http://localhost:9000/home.html" >Login</a></div>    
-      
-           </div>
-           
-           <div class="login-footer">
-              <p>2014 - 2018 © Asset Technology Group. All rights reserved.</p>
-             </div>
-         
-           </div>
-           
-      </div>
+        </form>
+        <div class="login-footer">
+            <p>2014 - 2018 © {{'assetCopy' | translate: lang}}.</p>
+        </div>
+    </div>
+</div>

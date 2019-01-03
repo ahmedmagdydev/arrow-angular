@@ -12,8 +12,11 @@
     background-color: #dadde1;
   }
 }
-.accordion-toggle{
+tr.accordion-toggle{
   cursor: pointer;
+  &.collapsed:hover [class*=" icon-"],&.collapsed:hover [class^="icon-"]{
+    color: #00bb65;
+  }
 }
 .table-footer{
   select{
@@ -168,3 +171,14 @@ tr:hover .table-check{opacity: 1;}
 
 
 
+
+
+.dropdown-item span {
+    width: 26px;
+    display: inline-block;
+}
+a.three-dots-menu {
+    width: 50px;
+    display: inline-block;
+    text-align: center;
+}

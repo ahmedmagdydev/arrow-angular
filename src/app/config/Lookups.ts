@@ -20,7 +20,7 @@ export const correspondencesPortalStatusLookup: any[] = [
 ];
 export const correspondencesTableInfoLookup: any = {
   columns: [
-    {title: 'priority', name: 'priority'}, {title: 'title', name: 'title'}, {title: 'sender', name: 'sender'},
+    {title: 'priority', name: 'priority'}, {title: 'subject', name: 'title'}, {title: 'sender', name: 'sender'},
     {title: 'createdDate', name: 'createdDate', isDate: true}, {title: 'number', name: 'number'},
     {title: 'relatedActions', name: 'relatedActions'},
     {title: 'template.name', name: 'template', innerName: 'name'},
