@@ -113,5 +113,7 @@
   "relatedCorrespondenceAdd": "Add related Correspondences",
   "privilegeNo": "privilege Number",
   "templateType": "Template Type",
-  "relatedCorrespondenceSearch": "Start Search to add related correspondences"
+  "relatedCorrespondenceSearch": "Start Search to add related correspondences",
+  "letterPreview": "letter Preview",
+  "searchResult": "searchResult"
 }

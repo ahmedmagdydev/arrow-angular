@@ -38,6 +38,7 @@ import { RedirectAddOtherContactsComponent } from './redirect/redirect-add-other
 import {VisualTreeModule} from '../../shared/charts/visual-tree/visual-tree.module';
 import { HijriDateModule } from '../../shared/hijri-date/hijri-date.module';
 import {CorrespondenceTemplateModule} from '../correspondence-template/correspondence-template.module';
+import { LetterPreviewComponent } from './prepare-letter/letter-preview/letter-preview.component';
 @NgModule({
   declarations: [
   NewCorrespondanceComponent,
@@ -47,7 +48,8 @@ import {CorrespondenceTemplateModule} from '../correspondence-template/correspon
 ,RelatedComponent
 ,HistoryComponent
 ,RedirectComponent
-,PrepareLetterComponent,InstractionComponent, RedirectPreviewComponent, RedirectAddOtherContactsComponent ],
+,PrepareLetterComponent,InstractionComponent, RedirectPreviewComponent, RedirectAddOtherContactsComponent,
+      LetterPreviewComponent ],
   imports: [
     CommonModule,
     NewCorrespondanceRoutingModule,
@@ -76,6 +78,6 @@ import {CorrespondenceTemplateModule} from '../correspondence-template/correspon
     HijriDateModule,
     CorrespondenceTemplateModule
   ],
-    entryComponents: [InstractionComponent]
+    entryComponents: [InstractionComponent, LetterPreviewComponent]
 })
 export class NewCorrespondanceModule { }

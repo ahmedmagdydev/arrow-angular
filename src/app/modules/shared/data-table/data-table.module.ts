@@ -9,9 +9,11 @@ import { TableHeaderComponent } from './table-header/table-header.component';
 import { TableFooterComponent } from './table-footer/table-footer.component';
 import { RowDetailsComponent } from './row-details/row-details.component';
 import {LocalizationModule} from '../localization/localization.module';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 @NgModule({
   declarations: [DataTableComponent, TableHeaderComponent, TableFooterComponent, RowDetailsComponent],
-  imports: [CommonModule, NgxPaginationModule, NgPipesModule, FormsModule, LocalizationModule],
+  imports: [CommonModule, NgxPaginationModule, NgPipesModule, FormsModule, LocalizationModule, MatCheckboxModule],
   exports: [DataTableComponent, SlickModule]
 })
 export class DataTableModule { }

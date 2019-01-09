@@ -14,7 +14,7 @@ export class TemplateManagerService {
       return script;
   }
 
-  /* *************** create <link> style************ */
+  /* *************** create <style> style************ */
   createStyleSheet(content: string): HTMLElement {
       const link = document.createElement('style');
       link.type = 'text/css';

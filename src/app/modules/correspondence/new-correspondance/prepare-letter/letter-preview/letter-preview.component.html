@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-lg-12 popupHeader">
+    <i class="fa fa-close" (click)="close()"></i>
+    <div class="title_style">
+      <div class="border_left hidden-xs"></div><h2>{{'letterPreview' | translate: lang}}</h2><div class="border_right"></div>
+    </div>
+  </div>
+  <!--end title-->
+
+  <div class="col-lg-12">
+    <div class="row">
+      <div class="col-6">
+        <p class="dataItem"><span> {{'correspondenceNo' | translate: lang}} :</span> {{letter.corresNumber}} </p>
+      </div>
+      <div class="col-6">
+        <p class="dataItem"><span> {{'subject' | translate: lang}} : </span> {{letter.subject}} </p>
+      </div>
+    </div>
+  </div>
+  <!--end letter header-->
+
+  <div class="col-lg-12 letterContent" [innerHTML]="letter.content"></div>
+  <!--end letter content-->
+
+
+  <div class="col-lg-12"></div>
+  <!--end letter footer-->
+</div>

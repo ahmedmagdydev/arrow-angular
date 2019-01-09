@@ -1,6 +1,8 @@
 <app-header *ngIf="authorized;"></app-header>
-<div class="main">
+<div class="main" >
 	<app-side-menu *ngIf="authorized;"></app-side-menu>
-	<router-outlet></router-outlet>
+	<!--<div [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''" >-->
+		<router-outlet  #o="outlet"></router-outlet>
+	<!--</div>-->
 	<app-fab *ngIf="authorized;"></app-fab>
 </div>

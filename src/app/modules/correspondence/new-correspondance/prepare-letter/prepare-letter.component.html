@@ -1,22 +1,24 @@
-<div class="row align-items-center">
-	<div class="col-md-6">
-		<div class="form-group">
-			<label for="">{{'selectLetterTemplate' | translate: lang}}</label>
-			<select name="" id="" class="form-control">
-				<option value="">قاليب 1</option>
-			</select>
+<form [formGroup]="prepareLetterForm">
+	<div class="row align-items-center">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="">{{'selectLetterTemplate' | translate: lang}}</label>
+				<select name="" id="" class="form-control" formControlName="template">
+					<option value="">قاليب 1</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-md-6 text-right"><div class="btn btn-primary" (click)="letterPreview()">{{'previewLetter' | translate: lang}}</div></div>
+	</div>
+	<ckeditor formControlName="content"> </ckeditor>
+	<div class="mt-4">
+		<label for="">: {{'needSigningFrom' | translate: lang}}</label>
+		<div>
+			<mat-radio-group formControlName="needSigningFrom">
+				<mat-radio-button value="1">احمد مجدي</mat-radio-button>
+				<mat-radio-button value="2">بلال جابر</mat-radio-button>
+				<mat-radio-button value="3">الاء ابراهيم</mat-radio-button>
+			</mat-radio-group>
 		</div>
 	</div>
-	<div class="col-md-6 text-right"><div class="btn btn-primary">{{'previewLetter' | translate: lang}}</div></div>
-</div>
-<ckeditor [(ngModel)]="ckeditorContent"> </ckeditor>
-<div class="mt-4">
-	<label for="">: {{'needSigningFrom' | translate: lang}}</label>
-	<div>
-		<mat-radio-group>
-		  <mat-radio-button value="1">احمد مجدي</mat-radio-button>
-		  <mat-radio-button value="2">بلال جابر</mat-radio-button>
-		  <mat-radio-button value="3">الاء ابراهيم</mat-radio-button>
-		</mat-radio-group>
-	</div>
-</div>
+</form>

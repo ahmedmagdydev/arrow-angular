@@ -1,0 +1,17 @@
+.footer{
+  border-top: 1px solid #f1e7e7;
+  margin-top: 20px; padding-top: 10px;
+}
+.mat-raised-button {
+  background: #24AF7D; border-radius: 20px;
+}
+
+.letterContent{
+  border: 1px solid #e1e4e8;
+  padding: 10px;
+  margin: 10px 0;
+  background: #fcfcff;
+}
+.popupHeader{text-align: center; font-weight: 600;
+  font-size: 16px; margin-bottom: 20px; position: relative !important; display: block; overflow: hidden !important;}
+.fa-close{position: absolute; top: 0; right: 10px; cursor: pointer; z-index: 999999999;}

@@ -7,9 +7,15 @@
 .dataItem > span:nth-child(1){font-weight: 600;}
 
 
+/**** to fix inject template ui issues ************/
 
 
-
+html, body{padding: 0 !important; margin: 0 !important;}
+// a {border: none !important;}
+body, td, input, select, textarea {
+    font-size: 14px !important;
+    //font-family: 'Microsoft Sans Serif' , Arial, Helvetica, Verdana;
+}
 
 
 
@@ -66,3 +72,9 @@
     0% { transform: scale(.5); }
     100% { transform: scale(1); }
 }
+/*
+router-outlet ~ * {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}*/

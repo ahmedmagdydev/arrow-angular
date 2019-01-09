@@ -1,0 +1,45 @@
+<div class="container-fluid main-content">
+  <div class="d-flex align-items-center">
+    <ul class="breadcrumb mr-auto">
+      <li><a href="#">{{'searchResult' | translate: lang}}</a></li>
+    </ul>
+
+    <!-- priority filter -->
+    <a class="filter-menu-trigger" mat-button [matMenuTriggerFor]="filter">تصفية بواسطة: <i class="fa fa-chevron-down"></i></a>
+    <mat-menu #filter="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="date">التاريخ</button>
+      <button mat-menu-item [matMenuTriggerFor]="priority">الاهمية</button>
+      <button mat-menu-item [matMenuTriggerFor]="readUndread">مقروء/غير مقروء</button>
+      <button mat-menu-item [matMenuTriggerFor]="template">القالب</button>
+    </mat-menu>
+
+    <mat-menu #date="matMenu">
+      <button mat-menu-item >اليوم</button>
+      <button mat-menu-item >الشهر الماضى</button>
+    </mat-menu>
+    <mat-menu #priority="matMenu">
+      <button mat-menu-item >مهم</button>
+      <button mat-menu-item >غير مهم</button>
+    </mat-menu>
+    <mat-menu #readUndread="matMenu">
+      <button mat-menu-item >مقروء</button>
+      <button mat-menu-item >غير مقروء</button>
+    </mat-menu>
+    <mat-menu #template="matMenu">
+      <button mat-menu-item >قالب 1</button>
+      <button mat-menu-item >قالب 2</button>
+    </mat-menu>
+    <!-- end priority filter -->
+
+  </div>
+  <ngx-slick class="corres-carousel" #slickModal="slick-modal" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let status of correspondencesStatus; let i = index" class="slide">
+      <a  (click)="corresActive(i,status.title)" class="{{status.title}} {{corresIndex == i ? 'active' : null}}">
+        <span class="slide-name">{{status.title | translate: lang}}</span>
+        <span class="slide-number">{{status.sum}}</span>
+      </a>
+    </div>
+  </ngx-slick>
+  <app-data-table [tableInfo]="correspondencesTable" [_status]="_status" [showHeader]="true" [showFooter]="true"></app-data-table>
+</div>
+

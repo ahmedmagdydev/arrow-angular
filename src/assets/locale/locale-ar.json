@@ -113,5 +113,7 @@
   "relatedCorrespondenceAdd": "إضافة معاملات ذات صلة",
   "privilegeNo": "رقم الصلاحية",
   "templateType": "نوع القالب",
-  "relatedCorrespondenceSearch": "إبدأ البحث  لإضافة معاملات ذات صلة"
+  "relatedCorrespondenceSearch": "إبدأ البحث  لإضافة معاملات ذات صلة",
+  "letterPreview": "معاينه الخطاب",
+  "searchResult": "نتائج البحث"
 }

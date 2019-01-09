@@ -92,7 +92,7 @@
 				<app-redirect ></app-redirect>
 			</div>
 			<div class="tab-pane" [ngClass]="{'active': currentTab === 'prepareLetter'}" id="prepare" role="tabpanel" aria-labelledby="prepare-tab">
-				<app-prepare-letter></app-prepare-letter>
+				<app-prepare-letter [newCorrespondenceForm]="newCorrespondenceForm"></app-prepare-letter>
 			</div>
 		</div>
 	</div> <!--end tabs-->

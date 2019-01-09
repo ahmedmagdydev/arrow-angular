@@ -84,6 +84,7 @@
 </form>
 <div>
 	<label for="">{{'template'| translate: lang}}: issued</label>
-	<app-correspondence-template></app-correspondence-template>
+	<input id="image-file" type="file" value="import" webkitdirectory mozdirectory multiple (change)="importTemplates($event)" />
+	<app-correspondence-template [templateFiles]="selectedTemplate.fileList"></app-correspondence-template>
 </div>
 <!--<img src="assets/images/template-prev.jpg" style="width: 100%;" alt="">-->

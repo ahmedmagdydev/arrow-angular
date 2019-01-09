@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'home', loadChildren: './modules/home/home.module#HomeModule', data: { preload: true } },
   { path: 'corres', loadChildren: './modules/correspondence/correspondence.module#CorrespondenceModule'},
   { path: 'corres-new', loadChildren: './modules/correspondence/new-correspondance/new-correspondance.module#NewCorrespondanceModule'},
+  { path: 'search', loadChildren: './modules/search/search.module#SearchModule'},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, {preloadingStrategy : AppCustomPreloader, useHash: false })],

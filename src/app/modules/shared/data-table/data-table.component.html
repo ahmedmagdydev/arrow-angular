@@ -15,8 +15,11 @@
         <tbody *ngFor="let row of tableInfo.data | filterBy: ['status']: _status | orderBy : _orderBy | paginate: { itemsPerPage: _itemsPerPage, currentPage: _currentPage }; let i=index">
         <tr data-toggle="collapse" attr.data-target="#row{{row.index}}" class="accordion-toggle collapsed">
           <td  *ngIf="showHeader">
-            <input type="checkbox"  [(ngModel)]="row.selected"  class="table-check" id="row._id"
+            <!-- <input type="checkbox"  [(ngModel)]="row.selected"  class="table-check" id="row._id"
                    (click)="checkRow($event,row,row.selected);$event.stopPropagation()">
+ -->
+             <mat-checkbox [checked]="row.selected" (click)="$event.stopPropagation()"  class="table-check" id="{{row._id}}"
+                   (change)="checkRow(row)"></mat-checkbox>
           </td>
           <td *ngFor="let col of tableInfo.columns">
             <span *ngIf="col.innerName; else notObject">{{getObjectAttributeFromArray(row[col.name], col.innerName)}}</span>

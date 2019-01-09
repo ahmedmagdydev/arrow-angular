@@ -12,11 +12,13 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./main-info.component.scss']
 })
 export class MainInfoComponent implements OnInit {
-		@Language() lang: string;
+
+	@Language() lang: string;
     @Input() newCorrespondenceForm: FormGroup;
     @Input() errors: any;
     @Output() newCorrespondenceFormChange: EventEmitter<any> = new EventEmitter<any>();
     mainInfoForm: FormGroup;
+    selectedTemplate: any = { src: '', html: '', style: '', fileList: null};
 
     visible = true;
 	  selectable = true;
@@ -103,6 +105,25 @@ export class MainInfoComponent implements OnInit {
 
 	submit(formValues) {
 		console.log(JSON.stringify(formValues));
+	}
+
+
+
+
+
+
+
+
+
+
+
+    importTemplates(e) {
+			/*console.log('template files : ');
+			console.log(e);*/
+        const fileList: FileList = e.target.files;
+        if ( fileList.length > 0) {
+            this.selectedTemplate.fileList = fileList;
+        }
 	}
 }
 

@@ -1,11 +1,13 @@
 import { Component, LOCALE_ID, Inject} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
+import {fadeAnimation} from './animations';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+    animations: [fadeAnimation] // register the animation
 })
 export class AppComponent  {
   authorized = false;

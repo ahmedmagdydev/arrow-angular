@@ -9,17 +9,22 @@
           <span>{{'filter.departmental' | translate: lang}}</span>
         </label>
         <div class="category mx-3">
-          <label for="departments">
-            <select id="departments" class="form-control" style="font-weight: bold;">
-              <option value="">جميغ الإدارات</option>
-              <option value=""> Departments</option>
-              <option value="">All </option>
-            </select>
-          </label>
+          
+            
+            <mat-form-field style="margin-bottom: -19px;">
+              <mat-select placeholder="الإدارة">
+                <mat-option value="جميع الإدارات">
+                  جميع الإدارات
+                </mat-option>
+                <mat-option  value="إدارة الموارد">
+                  إدارة الموارد
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
         </div>
         <div >
           <label for="filterDate" style="font-weight: bold;">{{'filter.date' | translate: lang}}</label>
-          <!-- <app-hijri-date [rangeSelect]="true" [monthsToShow]="1"></app-hijri-date> -->
+          <app-hijri-date [rangeSelect]="true" [monthsToShow]="1"></app-hijri-date>
         </div>
       </div>
     </div>

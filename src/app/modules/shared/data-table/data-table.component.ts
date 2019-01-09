@@ -70,8 +70,11 @@ export class DataTableComponent {
     let filteredInPage = filteredRows.slice((this._itemsPerPage*this._currentPage)-this._itemsPerPage, (this._itemsPerPage*this._currentPage))
     return filteredInPage.every(_ => _.selected);
   }
-  checkRow(e, data, selected){
-    if ( e.target.checked) {
+  checkRow( data){
+
+    // console.log(selected)
+    data.selected = !data.selected;
+    if ( data.selected) {
       this.checkedRows.push(data);
     } else {
       const index = this.checkedRows.indexOf(data);
@@ -110,11 +113,11 @@ export class DataTableComponent {
 
     filteredInPage.forEach(
       x => {
-        x.selected = ev.target.checked;
+        x.selected = ev.checked;
         this.checkedRows.push(x);
       }
     )
-    if(!ev.target.checked) {
+    if(!ev.checked) {
       this.checkedRows = [];
     }
     this.selectedRowsEvent.emit(this.checkedRows);

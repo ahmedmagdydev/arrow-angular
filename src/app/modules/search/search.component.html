@@ -1,0 +1,34 @@
+<div class="container-fluid main-content">
+  <ul class="nav bg-light justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/search/query"><span class="fa fa-search-plus"></span> New</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><span class="fa fa-search-minus"></span> Delete</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><span class="fa fa-user"></span> Access rights</a>
+    </li>
+  </ul>
+
+
+  <div class="row">
+    <div class="col-lg-8 p-3">
+      <div class="alert alert-primary" role="alert">querie parameters</div>
+      <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2">
+          <label for="dateinput" class="sr-only">date equal</label>
+          <input type="text" class="form-control" id="dateinput" placeholder="date equal">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">search</button>
+      </form>
+    </div>
+    <div class="col-lg-4 p-3">
+      <div class="alert alert-primary" role="alert">saved queries</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
+          <a routerLink="/search/result"> query {{i}} </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
