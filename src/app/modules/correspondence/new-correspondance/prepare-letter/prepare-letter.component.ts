@@ -1,5 +1,6 @@
 import { Component, ViewChild ,AfterViewChecked} from '@angular/core';
 import {CKEditorComponent} from 'ng2-ckeditor';
+import {Language} from 'angular-l10n';
  
 @Component({
   selector: 'app-prepare-letter',
@@ -7,9 +8,9 @@ import {CKEditorComponent} from 'ng2-ckeditor';
   styleUrls: ['./prepare-letter.component.scss']
 })
 export class PrepareLetterComponent implements AfterViewChecked {
-	ckeditorContent: string = '<p>ahmed magdy</p>';
-	@ViewChild(CKEditorComponent) ckeditor : CKEditorComponent;
-
+    ckeditorContent: string = '<p>ahmed magdy</p>';
+    @ViewChild(CKEditorComponent) ckeditor : CKEditorComponent;
+    @Language() lang: string;
   constructor() { }
 
   ngAfterViewChecked() {
@@ -26,7 +27,7 @@ export class PrepareLetterComponent implements AfterViewChecked {
  
 	];
   	editor.config.removeButtons = 'Save,Templates,Source,Find,Replace,Scayt,SelectAll,Forms,Links,Radio,Flash,Smiley,Iframe,Horizontalrule'
-  	console.log(editor.config)
+  	// console.log(editor.config)
   }
 
 }

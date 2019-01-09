@@ -1,8 +1,6 @@
 import {Component, ElementRef, ViewChild, OnInit, OnChanges} from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatAutocompleteSelectedEvent, MatChipInputEvent } from '@angular/material';
-
-import { UploadEvent, UploadFile, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -10,6 +8,7 @@ import { FileUploader } from 'ng2-file-upload';
 import { FileUploaderComponent } from 'src/app/modules/shared/file-uploader/file-uploader.component';
 import {fileObject} from '../../../../config/Lookups';
 import {Language} from 'angular-l10n';
+import { DomSanitizer } from '@angular/platform-browser';
 
 const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 declare var $: any;
@@ -26,10 +25,12 @@ export class AttachmentsComponent  {
   @ViewChild(FileUploaderComponent) fileUploaderComponent: FileUploaderComponent; 
   versionUploader:FileUploader = new FileUploader({url: URL});
   info = false;
+  localImageUrl;
   selectedFile;
   selectedIndex;
   selectedVersion;
   modifiedDate;
+  showImage = false;
   visible = true;
   selectable = true;
   removable = true;
@@ -38,6 +39,7 @@ export class AttachmentsComponent  {
   fruitCtrl = new FormControl();
   filteredFruits: Observable<string[]>;
   fruits: any = [];
+  fileByteArray = [];
      allFruits: any = [
        {
          id: 1,
@@ -57,7 +59,7 @@ export class AttachmentsComponent  {
        }
      ];
       @ViewChild('fruitInput') fruitInput: ElementRef;
-      constructor() {
+      constructor(public sanitizer:DomSanitizer) {
         this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
           startWith(null),
           map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFruits.slice()));
@@ -99,34 +101,23 @@ export class AttachmentsComponent  {
           this.fruitInput.nativeElement.value = '';
           this.fruitCtrl.setValue(null);
         }
+
         // import versions for file selected
         importVersion(event) {
           for(let queue of this.versionUploader.queue) {
             queue.file.name = this.selectedFile.name;
-
-            var reader = new FileReader();
-            var fileByteArray = [];
-            reader.readAsArrayBuffer(queue._file);
-            reader.onloadend = function (evt) {
-              if (event.target.readyState == FileReader.DONE) {
-                var arrayBuffer = event.target.result,
-                array = new Uint8Array(arrayBuffer);
-                for (var i = 0; i < array.length; i++) {
-                  fileByteArray.push(array[i]);
-               }
-              }
-            }
-            const newFile = new File(fileByteArray, this.selectedFile.name, {type: this.selectedFile.type, lastModified: queue.file.lastModifiedDate});
-            console.log(fileByteArray.length);
-            this.files[this.selectedIndex].versions = this.files[this.selectedIndex].versions || [];
-            this.files[this.selectedIndex].versions.push(newFile);   
-            if(!queue.isUploaded) {
+            this.selectedVersion = queue._file;
+            
+          const newFile = new File([""], this.selectedFile.name, {type: queue.file.type, lastModified: this.selectedVersion.lastModifiedDate});
+          this.files[this.selectedIndex].versions = this.files[this.selectedIndex].versions || [];
+          this.files[this.selectedIndex].versions.push(newFile);   
+            
+          if(!queue.isUploaded) {
               queue.upload();
             }   
           }
           this.versionUploader.clearQueue();
-          this.selectedFile = this.files[this.selectedIndex];
-          
+          this.selectedFile = this.files[this.selectedIndex];  
         }
 
         // change selected version
@@ -136,7 +127,7 @@ export class AttachmentsComponent  {
         }     
           
         // handle file uploaded from uploader queue
-        handleUploaders(events) {
+        handleUploaders(events) {       
           for(let event of events) {
             if(!event.isUploaded) {
               const file: fileObject = {};
@@ -144,30 +135,65 @@ export class AttachmentsComponent  {
               file.lastModifiedDate = event._file.lastModifiedDate;
               file.size = event._file.size;
               file.type = event._file.type;
-              file.versions = [event._file];
-              event.upload();                
+              file.versions = [event._file];                           
               this.files.push(file);
             }
-          } 
+          }          
         }
 
-        private _filter(value: any): any[] {
+        // preview Image selected
+        previewImage(item, index) {
+          if(item.type.split('/')[0] === 'image' ) {
+            let fileItem;
+            fileItem = this.fileUploaderComponent.uploader.queue[index];
+            let url = (window.URL) ? window.URL.createObjectURL(fileItem._file) : (window as any).webkitURL.createObjectURL(fileItem._file);
+            this.localImageUrl = url
+            this.info= false;
+            this.showImage = true;
+            this.selectedFile = item;
+            this.selectedIndex = index;
+          }
+        }
+
+        downloadFile(file) {
+          if (window.navigator.msSaveOrOpenBlob) {
+           navigator.msSaveBlob(file, this.selectedFile.name);
+          } else {
+           const downloadLink = document.createElement("a");
+           downloadLink.style.display = "none";
+           document.body.appendChild(downloadLink);
+           let fileItem;
+           fileItem = this.fileUploaderComponent.uploader.queue[this.selectedIndex];
+           let url = (window.URL) ? window.URL.createObjectURL(fileItem._file) : (window as any).webkitURL.createObjectURL(file._file);
+           downloadLink.setAttribute("href", url);
+           downloadLink.setAttribute("download", this.selectedFile.name);
+           downloadLink.click();
+           document.body.removeChild(downloadLink);
+        }
+      }
+
+        
+
+      _filter(value: any): any[] {
           return this.allFruits.filter(fruit => fruit.name.toLowerCase().includes(value.toLowerCase()));
         }
+
       // show details for selected file
       showFileDetails(item, index){
+        
         this.selectedFile = item;
         this.selectedIndex = index;
         this.fillDetailsObj(item);
         this.versionUploader.clearQueue();
+        this.showImage = false;
         this.info= true;
       }
 
       deleteFile(index, item) {
         this.files.splice(index, 1);
         this.fileUploaderComponent.uploader.queue.splice(index,1);
-        if(this.info && item.name === this.selectedFile.name) {
-        this.info = false;
+        if(item.name === this.selectedFile.name) {
+          return this.info? this.info = false : this.showImage = false;
         }
       }
  

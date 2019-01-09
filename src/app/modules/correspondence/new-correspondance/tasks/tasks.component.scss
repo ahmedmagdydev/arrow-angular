@@ -49,6 +49,7 @@
 	    transform: translateX(100%);
 	transition:all .3s ease;
 	padding: 20px;
+	    width: 500px;
 	    &.show{
 	    transform: translateX(0);
 
@@ -59,6 +60,7 @@
 		& > .row {
 			& > div:first-child{
 				    max-width: 100%;
+				    flex: 0 0 100%;
 			}
 			& > div:last-child{
 				display: none;

@@ -5,11 +5,12 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {DataTableModule} from '../shared/data-table/data-table.module';
 import {LocalizationModule} from '../shared/localization/localization.module';
 import {ChartsModule} from '../shared/charts/charts.module';
+import { HijriDateModule } from '../shared/hijri-date/hijri-date.module';
 
 @NgModule({
   declarations: [DashboardComponent ],
   imports: [
-    CommonModule, HomeRoutingModule, DataTableModule, LocalizationModule, ChartsModule
+    CommonModule, HomeRoutingModule, DataTableModule, LocalizationModule, ChartsModule, HijriDateModule
   ]
 })
 export class HomeModule { }

@@ -17,9 +17,9 @@
             </select>
           </label>
         </div>
-        <div class="filter-date ml-3">
+        <div >
           <label for="filterDate" style="font-weight: bold;">{{'filter.date' | translate: lang}}</label>
-          <input type="text" class="date-range ml-1" id="filterDate">
+          <!-- <app-hijri-date [rangeSelect]="true" [monthsToShow]="1"></app-hijri-date> -->
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@
               <p class="number">{{corresStatus.sum}}</p>
                 <span class="icon-{{corresStatus.title}}"></span>
                 <p class="tab-name">{{corresStatus.title | translate : lang}}</p>
-                <p>{{'correspondences' | translate : lang}}</p>
+                <p class="tab-name2">{{'correspondences' | translate : lang}}</p>
                 <div class="progress">
                   <div class="progress-bar" role="progressbar" [style.width]="corresStatus.percent + '%'"  aria-valuemin="0" aria-valuemax="100">{{corresStatus.percent | number :'1.0-0'}}%</div>
                 </div>

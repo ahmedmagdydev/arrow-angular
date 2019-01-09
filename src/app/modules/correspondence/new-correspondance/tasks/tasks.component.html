@@ -1,12 +1,12 @@
 <div class="tasks-container">
 	<div *ngIf="tasks.length <= 0" class="text-center no-content">
 		<div><span class="icon-no-task"></span></div>
-		<p>لا يوجد مهام قم بإنشاء اول مهمة</p>
+		<p>{{'noTasks'| translate: lang}}</p>
 		<div>
 			<div class="btn btn-outline-primary btn-block" (click)="addTask = true">إنشاء مهمة جديدة</div>
 		</div>
 	</div>
-	<div class="{{addTask ? 'add-task-container show' : 'add-task-container' }}">
+	<div [formGroup]="tasksForm" class="{{addTask ? 'add-task-container show' : 'add-task-container' }}">
 		<div class="add-task">
 			<div class="clearfix">
 				<a  class="close" (click)="addTask = false"><i class="fa fa-times"></i></a>
@@ -14,54 +14,54 @@
 			
 			<div class="row align-items-end">
 				<div class="col-6">
-					<div class="form-group"><label for="">اسم المهمة</label>
-						<input type="text" class="form-control" id="staticEmail">
+					<div class="form-group"><label for="">{{'task.name'| translate: lang}} </label>
+						<input type="text" formControlName="name" class="form-control" id="staticEmail">
 					</div>
 				</div>
 				<div class="col-6 text-right">
 					<div class="form-group">
-						<a  (click)="addAttachment = true" class="btn btn-outline-primary"><i class="fa fa-paperclip"></i> إضافة مرفقات</a>
+						<a  (click)="addAttachment = true" class="btn btn-outline-primary"><i class="fa fa-paperclip"></i>{{'add.attachment'| translate: lang}}  </a>
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
-				فردي <mat-slide-toggle> جماعي </mat-slide-toggle>
+				{{'individual'| translate: lang}}  <mat-slide-toggle> {{'collective'| translate: lang}} </mat-slide-toggle>
 			</div>
 			<div class="form-group">
-				<label for="">المؤدى</label>
-				<select name="" id="" class="form-control"></select>
+				<label for="">{{'performer'| translate: lang}} </label>
+				<select name="" formControlName="perfomer" id="" class="form-control"></select>
 			</div>
 			
 			<div class="form-group">
-				<label for="">الاهمية</label>
-				<select name="" id="" class="form-control">
+				<label for="">{{'priority'| translate: lang}}</label>
+				<select name="" formControlName="priority2" id="" class="form-control">
 					<option value="">مهم جدا</option>
 				</select>
 			</div>
 			<div class="form-group row">
 				<div class="col-md-6">
-					<label for="">تاريخ التسليم</label>
-					  <input type="text" class="date-picker form-control"/>
+					<label for="">{{'task.dueDate'| translate: lang}}</label>
+					  <!-- <app-hijri-date [rangeSelect]="false" [monthsToShow]="1"></app-hijri-date> -->
 				</div>
 				<div class="col-md-6">
-					<label for="">وقت التسليم</label>
-					  <input type="text" class="date-picker form-control"/>
+					<label for=""> {{'task.dueTime'| translate: lang}}</label>
+					  <!-- <app-hijri-date [rangeSelect]="false" [monthsToShow]="1"></app-hijri-date> -->
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="">المصدر...</label>
+				<label for="">{{'source'| translate: lang}}...</label>
 				
 			</div>
 			<div class="form-group">
-				<label for="">مراقبة</label>
+				<label for="">{{'Observation'| translate: lang}}</label>
 				
 			</div>
 			<div class="form-group">
-				<label for="">وصف</label>
+				<label for="">{{'description'| translate: lang}}</label>
 				
 			</div>
 			<div class="form-group text-center">
-				<div class="btn btn-primary" (click)="addTasks()">إنشاء المهمة</div>
+				<div class="btn btn-primary" (click)="addTasks()"> {{'create.task'| translate: lang}}</div>
 			</div>
 		</div>
 		<div class="{{addAttachment ? 'add-attachment show' : 'add-attachment' }}">

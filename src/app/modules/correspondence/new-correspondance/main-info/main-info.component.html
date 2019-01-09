@@ -1,8 +1,9 @@
+<form [formGroup]="mainInfoForm" >
 <div class="row">
 	<div class="col-md-5 mr-auto">
 		<div class="form-group">
-			<label for="">العنوان</label>
-			<div class="form-control-plaintext">تحتاج للمتابعة</div>
+			<label for="">{{'address'| translate: lang}}</label>
+			<b class="form-control-plaintext"> {{'needObserve'| translate: lang}}</b>
 		</div>
 	</div>
 	<div class="col-md-5">
@@ -10,14 +11,14 @@
 		<div class="row">
 			<div class="col-6">
 				<div class="form-group">
-					<label for="">رقم المعاملة</label>
-					<input type="text" value="546513245" class="form-control"/>
+					<label for=""> {{'number'| translate: lang}}</label>
+					<input type="text" formControlName="corresNumber" value="546513245" class="form-control"/>
 				</div>
 			</div>
 			<div class="col-6">
 				<div class="form-group">
-					<label for="">تاريخ المعاملة</label>
-					<input type="date" class="form-control date-control">
+					<label for=""> {{'corres.date' | translate: lang}}</label>
+					<input type="date" formControlName="corresDate" class="form-control date-control">
 				</div>
 			</div>
 		</div>
@@ -26,16 +27,16 @@
 <div class="row">
 	<div class="col-md-5 mr-auto">
 		<div class="form-group">
-			<label for="">الوجدة</label>
-			<select name="" id="" class="form-control">
+			<label for="">{{'unit'| translate: lang}}</label>
+			<select formControlName="unit" name="" id="" class="form-control">
 				<option value="asdsda">asdasdasd</option>
 			</select>
 		</div>
 	</div>
 	<div class="col-md-5">
 		<div class="form-group">
-			<label for="">درجة الثقة</label>
-			<select name="" id="" class="form-control">
+			<label for=""> {{'degreeOfConfi'| translate: lang}}</label>
+			<select formControlName="degreeOfConfidentiality" name="" id="" class="form-control">
 				<option value="asdsda">asdasdasd</option>
 			</select>
 		</div>
@@ -44,33 +45,45 @@
 <div class="row">
 	<div class="col-md-5 mr-auto">
 		<div class="form-group">
-			<label for="">الاهمية</label>
-			<select name="" id="" class="form-control">
+			<label for="">{{'priority'| translate: lang}}</label>
+			<select formControlName="priority" name="" id="" class="form-control">
 				<option value="asdsda">asdasdasd</option>
 			</select>
 		</div>
 	</div>
 	<div class="col-md-5">
 		<div class="form-group keywords-wrapper">
-			<label for="">كلمات</label>
+			<label for="">{{'keywords'| translate: lang}}</label>
 			<mat-form-field class="example-chip-list">
 			  <mat-chip-list #chipList>
-			    <mat-chip *ngFor="let keyword of keywords" [selectable]="selectable"
-			             [removable]="removable" (removed)="remove(keyword)">
-			      {{keyword.name}}
+			    <mat-chip *ngFor="let keyword of keywords"
+		    			[selectable]="selectable"
+			            [removable]="removable"
+			            (removed)="remove(keyword)">
+			      {{keyword}}
 			      <i matChipRemove class="fa fa-close" *ngIf="removable"></i>
 			    </mat-chip>
-			    <input [matChipInputFor]="chipList"
+			    <input #keywordInput
+			    		[matChipInputFor]="chipList"
+			    		formControl="keywordInputs"
+			    		[formControl]="keywordCtrl"
+		    			[matAutocomplete]="auto"
 			           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
 			           [matChipInputAddOnBlur]="addOnBlur"
 			           (matChipInputTokenEnd)="add($event)">
 			  </mat-chip-list>
+			  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+			      <mat-option *ngFor="let keyword of availableKeywords | async " [value]="keyword">
+			        {{keyword}}
+			      </mat-option>
+			    </mat-autocomplete>
 			</mat-form-field>
 		</div>
-	</div>
+	</div> 
 </div>
-	
+</form>
 <div>
-	<label for="">Templates: issued</label>
+	<label for="">{{'template'| translate: lang}}: issued</label>
+	<app-correspondence-template></app-correspondence-template>
 </div>
-<img src="assets/images/template-prev.jpg" style="width: 100%;" alt="">
+<!--<img src="assets/images/template-prev.jpg" style="width: 100%;" alt="">-->

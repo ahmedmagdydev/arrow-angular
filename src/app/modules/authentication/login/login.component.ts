@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Language, LocaleService} from 'angular-l10n';
 import {DataEncryptionService} from '../../../services/util/data-encryption.service';
-
+import { UtilService } from 'src/app/services/util/util.service';
+import {authenticationUrls} from 'src/app/shared/api-url';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   submitted;
   loginForm: FormGroup;
 
-  constructor(private locale: LocaleService, private dataEncryptionService: DataEncryptionService) { }
+  constructor(private utilService: UtilService, private locale: LocaleService, private dataEncryptionService: DataEncryptionService) { }
 
   ngOnInit() {
     this.createLoginForm();
@@ -31,14 +32,33 @@ export class LoginComponent implements OnInit {
       });
   }
   get form() { return this.loginForm.controls; }
+
   login(creadencials) {
       if ( this.loginForm.valid) {
-          creadencials.password = this.dataEncryptionService.encryptAES(creadencials.password);
+        creadencials.password = this.dataEncryptionService.encryptAES(creadencials.password);
+        this.utilService.postResources(authenticationUrls, JSON.stringify(creadencials)).subscribe(
+            (response)=> {
+                alert('success login');
+                this.saveAuthData();
+            }
+        )
       } else {
           this.submitted = true;
           return ;
       }
+
+     
   }
+
+  saveAuthData() {
+    const domain = this.loginForm.controls['domain'].value;
+    const language = this.loginForm.controls['language'].value;
+    const authData = {domain:'' , lang:''};
+    authData.domain = domain;
+    authData.lang = language;
+    this.utilService.setLocalStorage('authData', authData);
+  }
+
   setLocal(event) {
     const selectedValue = event.value;
     this.locale.setDefaultLocale(selectedValue);

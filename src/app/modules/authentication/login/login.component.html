@@ -2,7 +2,7 @@
     <div class="login-head"><img src="assets/images/logo-arrow.png"/></div>
     <div class="login-wrap">
         <form class="login-form" name="form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" novalidate>
-            <div class="login-form">
+            
                 <img src="assets/images/logo-main.jpg"/>
                 <div class="form-group">
                     <mat-form-field class="full-width">
@@ -37,7 +37,7 @@
                     <mat-checkbox formControlName="forceLogin">{{'forceLogin' | translate: lang}}</mat-checkbox>
                 </div>
                 <button class="login-btn" type="submit">{{'login' | translate: lang}}</button>
-            </div>
+            
         </form>
         <div class="login-footer">
             <p>2014 - 2018 © {{'assetCopy' | translate: lang}}.</p>

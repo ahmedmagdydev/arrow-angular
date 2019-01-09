@@ -31,4 +31,11 @@ export class UtilService {
   checkSessionExist(key): boolean { return sessionStorage.getItem(key) != null; }
   removeSessionStorage(key) { sessionStorage.removeItem(key); }
   clearSession() {sessionStorage.clear(); }
+
+
+
+  getUserToken() {
+    const authData = this.getLocalStorage('auth-data');
+    return authData ? authData.userToken : null;
+  }
 }

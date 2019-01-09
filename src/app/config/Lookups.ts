@@ -54,9 +54,16 @@ export const newCorrespondenceActionsLookup: any[] = [
   {action: 'related-correspondence'},
   {action: 'links'},
 ];
-
-export  interface fileObject {
+export const newCorrespondenceTabs: any [] = [
+    {title: 'mainInfo', active: true},
+    {title: 'attachments', active: false},
+    {title: 'tasks', active: false},
+    {title: 'correspondence.related', active: false},
+    {title: 'history', active: false},
+    {title: 'redirect', active: false},
+    {title: 'prepareLetter', active: false},
+];
+export interface fileObject {
   name?: string, size?: number , lastModifiedDate?: string, type?: string, owner?: string,
   versions?: File[]
 };
-

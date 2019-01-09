@@ -2,10 +2,11 @@
 .mat-expansion-panel:not([class*=mat-elevation-z]) {box-shadow: none;}
 .mat-expansion-panel-header:not([aria-disabled=true]) {border-bottom: 1px solid #f1e7e7;border-radius: 0;}
 mat-expansion-panel-header.mat-expanded, mat-expansion-panel-header.selected{
-	background: #f1e7e7 !important; font-weight: 600; margin-bottom: 5px;
+	// background: #f1e7e7 !important;
+	 font-weight: 600; margin-bottom: 5px;
 }
 .mat-accordion .mat-expansion-panel.mat-expanded,
-.mat-accordion .mat-expansion-panel.mat-expansion-panel-spacing{background: #f1e7e7 !important;}
+// .mat-accordion .mat-expansion-panel.mat-expansion-panel-spacing{background: #f1e7e7 !important;}
 
 .mulipleSendInputs{
 	background: #f7f7f7 !important; border: 1px solid #f1e7e7;

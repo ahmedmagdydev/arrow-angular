@@ -39,7 +39,8 @@ li::before,  li::after{
 }
 
  li div.node:hover .card-header,  li div.node:hover+ul li div.node .card-header{
-  background: #28B481; color: #fff;
+  // background: #28B481;
+   color: #fff;
 }
  li div.node:hover+ul li::after,  li div.node:hover+ul li::before,  li div.node:hover+ul::before,
  li div.node:hover+ul ul::before{border-color:  #94a0b4;}

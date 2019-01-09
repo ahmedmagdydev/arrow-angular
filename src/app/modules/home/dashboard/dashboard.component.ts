@@ -71,13 +71,6 @@ export class DashboardComponent implements OnInit {
 
   // ----------------------- init hijri date picker and tab plugins -----------------------
   initView() {
-      $('.date-range').calendarsPicker({
-        rangeSelect: true, monthsToShow: 1,
-        calendar: $.calendars.instance('islamic') ,
-        prevText: 'السابق', todayText: 'اليوم', nextText: 'التالى',
-        clearText: 'مسح', closeText: 'إغلاق',
-        onClose: function(dates) {alert('The chosen date(s): ' + dates);}
-      });
       $('.main-tabs li:first-child').addClass('large').find('a').addClass('active');
         $('a[data-toggle="tab"]').on("shown.bs.tab", function(e) {
           $(e.target).parent().addClass("large"),

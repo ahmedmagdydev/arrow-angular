@@ -1,49 +1,49 @@
 <mat-accordion>
   <mat-expansion-panel [expanded]="true">
     <mat-expansion-panel-header>
-      <mat-panel-title>
-        <h3>إضافة معاملات ذات صلة</h3>
-      </mat-panel-title>
-      <mat-panel-description>
-       
-      </mat-panel-description>
+      <mat-panel-title><h3>{{'relatedCorrespondenceAdd' | translate: lang}}</h3></mat-panel-title>
+      <mat-panel-description></mat-panel-description>
     </mat-expansion-panel-header>
-	
-	<div class="row">
-		<div class="col-md-4">
-			<div class="form-group"><label for="">رقم المعاملة</label><input class="form-control" type="text"></div>
-		</div>
-		<div class="col-md-4">
-			<div class="form-group"><label for="">رقم الصلاحية</label><input class="form-control" type="text"></div>
-		</div>
-		<div class="col-md-3">
-			<div class="form-group"><label for="">نوع القالب</label><select class="form-control" name="" id="">
-				<option value="">قالب 1</option>
-			</select></div>
-		</div>
-		<div class="col-md-1">
-
-			<div class="form-group">
-				<label  class="hidden">search</label>
-				<div>
-					<div class="btn btn-primary rounded-circle" (click)="addRelatedCorr()"><i class="fa fa-search"></i></div>
+	<form [formGroup]="searchCorrespondencesForm" novalidate (ngSubmit)="search(searchCorrespondencesForm.value)">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="form-group"><label for="">{{'correspondenceNo' | translate: lang}}</label>
+					<input class="form-control" type="text" formControlName="correspondenceNumber"></div>
+			</div>
+			<div class="col-md-4">
+				<div class="form-group"><label for="">{{'privilegeNo' | translate: lang}}</label>
+					<input class="form-control" type="text" formControlName="privilegeNumber"></div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group"><label for="">{{'templateType' | translate: lang}}</label>
+					<select class="form-control" formControlName="templateType">
+					<option [value]="type.name" *ngFor="let type of templateTypes">{{type.name}}</option>
+				</select></div>
+			</div>
+			<div class="col-md-1">
+				<div class="form-group">
+					<label class="hidden">search</label>
+					<div><div class="btn btn-primary rounded-circle"
+							  (click)="search(searchCorrespondencesForm.value)">
+						<i class="fa fa-search"></i></div></div>
 				</div>
 			</div>
-			
 		</div>
-	</div> 
+	</form>
+	<!--end search form-->
+
+
 	<div class="related-container">
-		<div class="no-related text-center" *ngIf="searchRelated == false">
+		<div class="no-related text-center" *ngIf="!correspondencesTable.data || correspondencesTable.data.length <=0">
 			<span class="icon-search-related"></span>
-			<p>إبدأ البحث  لإضافة معاملات ذات صلة</p>
+			<p>{{'relatedCorrespondenceSearch' | translate: lang}}</p>
 		</div>
-		<div *ngIf="searchRelated == true">
-			
-			<app-data-table [tableInfo]="correspondencesTable"
-                        [_status]="_status" [showHeader]="true" [showFooter]="true">
-        </app-data-table>
+		<div *ngIf="correspondencesTable.data && correspondencesTable.data.length > 0">
+			<app-data-table [tableInfo]="correspondencesTable" [_status]="_status" [hideActions]="true"
+							(selectedRowsEvent)="onSelectRows($event)"
+							[showHeader]="true" [showFooter]="true"></app-data-table>
 		</div>
 	</div>
+	<!--end search results table-->
   </mat-expansion-panel>
-
 </mat-accordion>

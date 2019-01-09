@@ -38,11 +38,13 @@ export class RedirectComponent  implements OnInit {
         this.getCategories();
     }
 
-
+    /********* get Categories list from api**********/
     getCategories() {
         this.categories = ORIGINAL_DATA;
         this.multipleSendFields = this.coresspondenceService.getInitFields();
     }
+
+    /* ******************** on select category/department ****************/
     toggleCategory(category) {
         category.selected = !category.selected;
         category.departments.filter(department => { department.selected = category.selected; });
@@ -100,18 +102,33 @@ export class RedirectComponent  implements OnInit {
         });
     }
 
-    // on delete icon of a department clicked in the preview section
+
+    /********* on delete icon of a department clicked in the preview section **********/
     deleteDepartment(event) {
-        if ( !event ) {
-            return;
-        }
+        if ( !event ) { return; }
         this.toggleDepartment(event.category, event.department);
     }
 
 
-    /* ******************** add nother contacts *********************/
-    onSelectedContactsChanged(selectedContacts) {
-        this.otherContacts = selectedContacts;
+    /* ******************** add another contacts *********************/
+    onSelectedContactsChanged = selectedContacts => this.otherContacts = selectedContacts;
+
+    /* ******************** get selected departments *********************/
+    getSelectedCategories(): any[] {
+        const selectedCategories: any[] = [];
+        for ( const category of this.categories) {
+            if ( category.selected ) {
+                selectedCategories.push(category);
+            } else {
+                const selectedDepartments = category.departments.filter(department => {
+                    return department.selected;
+                });
+                if ( selectedDepartments.length > 0) {
+                    selectedCategories.push({name: category.name, departments: selectedDepartments});
+                }
+            }
+        }
+        return selectedCategories;
     }
 }
 

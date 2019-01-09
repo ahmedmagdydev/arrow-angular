@@ -22,7 +22,7 @@ import {
     MatCheckboxModule,
     MatIconModule,
     MatRadioModule,
-    MatExpansionModule, MatDialogModule, MatButtonModule
+    MatExpansionModule, MatDialogModule, MatButtonModule, MatMenuModule
 } from '@angular/material';
 // import {sharedModule} from '../../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -36,6 +36,8 @@ import {LocalizationModule} from '../../shared/localization/localization.module'
 import { RedirectPreviewComponent } from './redirect/redirect-preview/redirect-preview.component';
 import { RedirectAddOtherContactsComponent } from './redirect/redirect-add-other-contacts/redirect-add-other-contacts.component';
 import {VisualTreeModule} from '../../shared/charts/visual-tree/visual-tree.module';
+import { HijriDateModule } from '../../shared/hijri-date/hijri-date.module';
+import {CorrespondenceTemplateModule} from '../correspondence-template/correspondence-template.module';
 @NgModule({
   declarations: [
   NewCorrespondanceComponent,
@@ -61,15 +63,18 @@ import {VisualTreeModule} from '../../shared/charts/visual-tree/visual-tree.modu
     MatCheckboxModule,
     MatIconModule,
     MatRadioModule,
+      MatMenuModule,
     MatExpansionModule,
     CKEditorModule,
     FileUploadModule,
-DataTableModule,
-FileUploaderModule,
-      LocalizationModule,
-      MatDialogModule,
-      MatButtonModule,
-      VisualTreeModule
+    DataTableModule,
+    FileUploaderModule,
+    LocalizationModule,
+    MatDialogModule,
+    MatButtonModule,
+    VisualTreeModule,
+    HijriDateModule,
+    CorrespondenceTemplateModule
   ],
     entryComponents: [InstractionComponent]
 })

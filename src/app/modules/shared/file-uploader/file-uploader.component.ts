@@ -8,7 +8,6 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
   selector: 'app-file-uploader',
   templateUrl: './file-uploader.component.html',
   styleUrls: ['./file-uploader.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FileUploaderComponent {
 
@@ -16,12 +15,17 @@ export class FileUploaderComponent {
   public uploader:FileUploader = new FileUploader({url: URL});
   @Output() uploaders = new EventEmitter<any>();
   
-  public fileOverAnother(e:any):void {
+  fileOverAnother():void {
     this.uploader.queue = this.uploader.queue.filter((file, index, self) =>
         index === self.findIndex((t) => (
           file.file.name === t.file.name        
         ))  
     ) 
+    for(let event of this.uploader.queue) {
+      if(!event.isUploaded) {
+        event.upload();
+      }
+    }
     this.uploaders.emit(this.uploader.queue);
   }
 
@@ -29,7 +33,7 @@ export class FileUploaderComponent {
 
   }
 
-  clickOnUploadInput(event) {
+  clickOnUploadInput() {
     $('#importInput').click();
   }
 

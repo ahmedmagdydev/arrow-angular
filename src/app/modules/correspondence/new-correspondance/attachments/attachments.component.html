@@ -14,7 +14,7 @@
 										
 									</div>
 									<ul class="list-inline m-0">
-										<li class="list-inline-item"><a href="#"><span class="icon-eye"></span></a></li>
+										<li class="list-inline-item"><a (click)="previewImage(item, i)"><span class="icon-eye"></span></a></li>
 										<li class="list-inline-item"><a  (click)="showFileDetails(item, i)"><span class="icon-info"></span></a></li>
 										<li class="list-inline-item"><a (click)="deleteFile(i, item)"><span class="icon-trash"></span></a></li>
 									</ul>
@@ -23,13 +23,19 @@
 	</div>
 	<div class="col-md-6 bg-gray py-3">
 		<div class="attachment-container">
-			<div *ngIf="info == false" class="text-center no-content">
+			
+			<div *ngIf="!info && !showImage" class="text-center no-content">
 				<div>
 					<span class="icon-info-big"></span>
 				</div>
 				<p>{{'chooseFileToView' | translate: lang}}</p>
 			</div>
-			<div *ngIf="info"> 
+			<div *ngIf="!info && showImage">
+					<span class="icon-upload" (click)="downloadFile(selectedFile)">download</span>
+				<h5>{{'attachmentPreview' | translate: lang}}</h5>
+				<img width="580" height="300" [src]="sanitizer.bypassSecurityTrustUrl(localImageUrl)">	
+		    </div>
+			<div *ngIf="info && !showImage"> 
 				<h5>{{'fileDetails' | translate: lang}}</h5>
 				<div class="row">
 					<div class="col-md-6">
@@ -72,7 +78,7 @@
 				<h5>{{'versions' | translate: lang}}</h5>
 				<div *ngIf="info">
 				<div class="form-group row"  *ngFor="let version of selectedFile.versions">
-						<input type="radio" name="gender" value="male" (click)="changeSelectedVersion(version)">
+						<input type="radio" [checked]="version === selectedVersion" (click)="changeSelectedVersion(version)">
 				    <label  class="col-sm-3 col-form-label"> </label>
 					<input type="text" (click)="select(version)" readonly class="form-control-plaintext" id="staticEmail" value="{{version.name }}">
 

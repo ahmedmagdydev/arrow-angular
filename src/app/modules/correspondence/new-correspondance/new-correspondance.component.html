@@ -2,133 +2,98 @@
 	<div class="d-flex mt-3">
 	  <h4 class="mr-auto"><span class="icon-related"></span>{{'correspondence.create' | translate: lang}}</h4>
 	  <div class="filter-wrapper d-flex align-items-center">
-
 	   <ul class="list-inline">
-	   	<li class="list-inline-item dropdown">
-	   	   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	   	    <span class="icon-corres-send"></span>
-	   	   {{'action.send' | translate: lang}}
-	   	   </a>
-	   	   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	   	     <a class="dropdown-item" href="#">Action</a>
-	   	     
-	   	   </div>
-	   	 </li>
-	   	 <li class="list-inline-item dropdown">
-	   	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	   	     <span class="icon-save"></span>
-				{{'action.save' | translate: lang}}
-	   	    </a>
-	   	    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	   	      <a class="dropdown-item" href="#">Action</a>
-	   	     
-	   	    </div>
-	   	  </li>
-	   	  <li class="list-inline-item dropdown">
-	   	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	   	    <span class="icon-archive"></span>
-				{{'action.archive' | translate: lang}}
-	   	    </a>
-	   	    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	   	      <a class="dropdown-item" href="#">Action</a>
-	   	     
-	   	    </div>
-	   	  </li>
-	   	  <li class="list-inline-item dropdown">
-	   	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	   	    <span class="icon-print"></span>
-				{{'action.print' | translate: lang}}
-	   	    </a>
-	   	    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	   	      <a class="dropdown-item" href="#">Action</a>
-	   	     
-	   	    </div>
-	   	  </li>
-	   	  <li class="list-inline-item dropdown">
-	   	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	   	     <span class="icon-export"></span>
-				{{'action.export' | translate: lang}}
-	   	    </a>
-	   	    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	   	      <a class="dropdown-item" href="#">Action</a>
-	   	     
-	   	    </div>
-	   	  </li>
-	   	  <li class="list-inline-item dropdown">
-	   	    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	   	    <span class="icon-close"></span>
-				{{'action.close' | translate: lang}}
-	   	    </a>
-	   	    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	   	      <a class="dropdown-item" href="#">Action</a>
-	   	     
-	   	    </div>
-	   	  </li>
-	   	  <li class="list-inline-item">
-	   	  	<a href="#">
-	   	  		<span class="icon-clone"></span>
-				{{'action.clone' | translate: lang}}
-	   	  	</a>
-	   	  </li>
-
+		   <li class="list-inline-item dropdown">
+			   <a class="nav-link dropdown-toggle"
+				  (click)="send()"
+				  href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				   <span class="icon-corres-send"></span> {{'action.send' | translate: lang}}
+			   </a>
+			   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				   <a class="dropdown-item" href="#">Action</a>
+			   </div>
+		   </li>
+		   <li class="list-inline-item dropdown">
+			   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				   <span class="icon-save"></span> {{'action.save' | translate: lang}}
+			   </a>
+			   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				   <a class="dropdown-item" href="#">Action</a>
+			   </div>
+		   </li>
+		   <li class="list-inline-item dropdown">
+			   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				   <span class="icon-archive"></span> {{'action.archive' | translate: lang}}
+			   </a>
+			   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				   <a class="dropdown-item" href="#">Action</a>
+			   </div>
+		   </li>
+		   <li class="list-inline-item dropdown">
+			   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				   <span class="icon-print"></span> {{'action.print' | translate: lang}}
+			   </a>
+			   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				   <a class="dropdown-item" href="#">Action</a>
+			   </div>
+		   </li>
+		   <li class="list-inline-item dropdown">
+			   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				   <span class="icon-export"></span> {{'action.export' | translate: lang}}
+			   </a>
+			   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				   <a class="dropdown-item" href="#">Action</a>
+			   </div>
+		   </li>
+		   <li class="list-inline-item dropdown">
+			   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				   <span class="icon-close"></span> {{'action.close' | translate: lang}}
+			   </a>
+			   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				   <a class="dropdown-item" href="#">Action</a>
+			   </div>
+		   </li>
+		   <li class="list-inline-item">
+			   <a href="#">
+				   <span class="icon-clone"></span> {{'action.clone' | translate: lang}}
+			   </a>
+		   </li>
 	   </ul>
 	  </div>
 	</div>
-	
+	<!--end actions-->
+
+
+
 	<div class="new-corres">
 		<ul class="nav " id="myTab" role="tablist">
-		  <li class="nav-item">
-		    <a class="nav-link active" id="main-tab" data-toggle="tab" href="#main" role="tab" aria-controls="main" aria-selected="true">{{'mainInfo' | translate: lang}}</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" id="attachments-tab" data-toggle="tab" href="#attachments" role="tab" aria-controls="attachments" aria-selected="false">{{'attachments' | translate: lang}}</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" id="tasks-tab" data-toggle="tab" href="#tasks" role="tab" aria-controls="tasks" aria-selected="false">{{'tasks' | translate: lang}}</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" id="related-tab" data-toggle="tab" href="#related" role="tab" aria-controls="related" aria-selected="false">{{'correspondence.related' | translate: lang}}</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" id="history-tab" data-toggle="tab" href="#history" role="tab" aria-controls="history" aria-selected="false">{{'history' | translate: lang}}</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" id="redirect-tab" data-toggle="tab" href="#redirect" role="tab" aria-controls="redirect" aria-selected="false">{{'redirect' | translate: lang}}</a>
-		  </li>
-		   <li class="nav-item">
-		    <a class="nav-link" id="prepare-tab" data-toggle="tab" href="#prepare" role="tab" aria-controls="prepare" aria-selected="false">{{'prepareLetter' | translate: lang}}</a>
-		  </li>
+			<li class="nav-item" *ngFor="let tab of newCorrespondenceTabs; let i = index">
+				<a class="nav-link" [ngClass]="{'active': tab.active}" (click)="activeTab(i)" id="{{tab.title}}-tab" data-toggle="tab" href="#{{tab.title}}"
+				   role="tab" [attr.aria-controls]="tab.title" [attr.aria-selected]="tab.active">{{tab.title | translate: lang}}</a>
+			</li>
 		</ul>
-		
 		<div class="tab-content">
-		  <div class="tab-pane active" id="main" role="tabpanel" aria-labelledby="main-tab">
-			<app-main-info></app-main-info>
-		  </div>
-		  <div class="tab-pane" id="attachments" role="tabpanel" aria-labelledby="attachments-tab">
-			<app-attachments></app-attachments>
-			
-		  </div>
-		  <div class="tab-pane" id="tasks" role="tabpanel" aria-labelledby="tasks-tab">
-			<app-tasks></app-tasks>
-			
-		  </div>
-		  <div class="tab-pane" id="related" role="tabpanel" aria-labelledby="related-tab">
-			<app-related></app-related>
-			
-		  </div>
-		   <div class="tab-pane" id="history" role="tabpanel" aria-labelledby="history-tab">
-			<app-history></app-history>
-			
-		  </div>
-		   <div class="tab-pane" id="redirect" role="tabpanel" aria-labelledby="redirect-tab">
-			<app-redirect></app-redirect>
-			
-		  </div>
-		  <div class="tab-pane" id="prepare" role="tabpanel" aria-labelledby="prepare-tab">
-			<app-prepare-letter></app-prepare-letter>
-			
-		  </div>
+			<div class="tab-pane" [ngClass]="{'active': currentTab === 'mainInfo'}" id="mainInfo" role="tabpanel" aria-labelledby="mainInfo-tab">
+				<app-main-info [(newCorrespondenceForm)] = "newCorrespondenceForm" [errors]="errors"></app-main-info>
+			</div>
+			<div class="tab-pane" [ngClass]="{'active': currentTab === 'attachments'}" id="attachments" role="tabpanel" aria-labelledby="attachments-tab">
+				<app-attachments></app-attachments>
+			</div>
+			<div class="tab-pane" [ngClass]="{'active': currentTab === 'tasks'}" id="tasks" role="tabpanel" aria-labelledby="tasks-tab">
+				<app-tasks [(newCorrespondenceForm)] = "newCorrespondenceForm" [errors]="errors"></app-tasks>
+			</div>
+			<div class="tab-pane" [ngClass]="{'active': currentTab === 'correspondence.related'}" id="related" role="tabpanel" aria-labelledby="related-tab">
+				<app-related></app-related>
+			</div>
+			<div class="tab-pane" [ngClass]="{'active': currentTab === 'history'}" id="history" role="tabpanel" aria-labelledby="history-tab">
+				<app-history></app-history>
+			</div>
+			<div class="tab-pane" [ngClass]="{'active': currentTab === 'redirect'}" id="redirect" role="tabpanel" aria-labelledby="redirect-tab">
+				<app-redirect ></app-redirect>
+			</div>
+			<div class="tab-pane" [ngClass]="{'active': currentTab === 'prepareLetter'}" id="prepare" role="tabpanel" aria-labelledby="prepare-tab">
+				<app-prepare-letter></app-prepare-letter>
+			</div>
 		</div>
-	</div>
-
+	</div> <!--end tabs-->
 </div>

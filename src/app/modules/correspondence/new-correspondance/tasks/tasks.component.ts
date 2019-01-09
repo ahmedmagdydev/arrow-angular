@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {correspondencesStatusLookup, correspondencesTableInfoLookup} from '../../../../config/Lookups';
 import {CoresspondenceService} from '../../../../services/coresspondence/coresspondence.service';
 import {UtilService} from '../../../../services/util/util.service';
 import {Language, TranslationService} from 'angular-l10n';
 import {API_URLS} from '../../../../config/AppConfig';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 declare var $;
 
@@ -13,20 +14,50 @@ declare var $;
   styleUrls: ['./tasks.component.scss']
 })
 export class TasksComponent implements OnInit {
+  @Language() lang: string;
+	@Input() newCorrespondenceForm: FormGroup;
+  @Input() errors: any;
+  @Output() newCorrespondenceFormChange: EventEmitter<any> = new EventEmitter<any>();
+	tasksForm: FormGroup;
+		
 	correspondencesStatus: any[] = correspondencesStatusLookup;
 	correspondencesTable: any = correspondencesTableInfoLookup;
   loading;
-
 	public tasks=[];
 	public addTask = false;
 	public addAttachment = false;
 	public _status = "";
 
-	constructor(private util: UtilService, private coresspondenceService: CoresspondenceService,
+	constructor(private builder: FormBuilder, private util: UtilService, private coresspondenceService: CoresspondenceService,
 	            public _translationService: TranslationService) {
 	  this._translationService.translationChanged().subscribe(() => {
 	       
 	  });
+	}
+	
+  ngOnInit() {
+		if ( this.newCorrespondenceForm) {
+					this.tasksForm = this.builder.group({
+						name: [''],
+						perfomer: [''],
+						priority2: [''],
+						// date1: [''],
+						// date2: ['', Validators.required],
+						// source: [''],
+						// description: [''],
+						// person: ['']
+					});
+					this.newCorrespondenceForm = this.builder.group({
+						...this.newCorrespondenceForm.controls,
+						...this.tasksForm.controls,
+					});
+		}
+					this.newCorrespondenceFormChange.emit(this.newCorrespondenceForm);
+					this.tasksForm.valueChanges.subscribe( val => {
+						this.newCorrespondenceFormChange.emit({
+							form: this.newCorrespondenceForm,
+							mainInfoValid: this.tasksForm.valid});
+					});
 	}
 
 	getData() {
@@ -153,20 +184,7 @@ export class TasksComponent implements OnInit {
 
 	}
 
-  ngOnInit() {
-  	
-  	$('.date-picker').calendarsPicker({
-				rangeSelect: false, monthsToShow: 1,
-				calendar: $.calendars.instance('islamic') ,
-				prevText: 'السابق', 
-			    todayText: 'اليوم', 
-			    nextText: 'التالى', 
-			    clearText: 'مسح', 
-			    closeText: 'إغلاق', 
-			    onClose: function(dates) { 
-			    	alert('The chosen date(s): ' + dates); 
-			    }
-			});
-  }
+ 
+		
 
 }

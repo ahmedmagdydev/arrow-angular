@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {Language} from 'angular-l10n';
 
 @Component({
@@ -17,7 +17,8 @@ export class DataTableComponent {
   @Input() _orderBy = 'sender';
   @Input() showHeader;
   @Input() showFooter;
-
+  @Input() hideActions;
+  @Output() selectedRowsEvent: EventEmitter<any> = new EventEmitter<any>();
 
 
 
@@ -69,26 +70,26 @@ export class DataTableComponent {
     let filteredInPage = filteredRows.slice((this._itemsPerPage*this._currentPage)-this._itemsPerPage, (this._itemsPerPage*this._currentPage))
     return filteredInPage.every(_ => _.selected);
   }
-  checkRow(e,data,selected){
-    if(e.target.checked == true){
+  checkRow(e, data, selected){
+    if ( e.target.checked) {
       this.checkedRows.push(data);
-    }else{
-      const index = this.checkedRows.indexOf(data)
+    } else {
+      const index = this.checkedRows.indexOf(data);
       if (index > -1) {
         this.checkedRows.splice(index, 1);
       }
     }
-    console.log(this.checkedRows)
-
+    this.selectedRowsEvent.emit(this.checkedRows);
   }
-  uncheckAll(event){
-    this.checkedRows=[];
-    this.tableInfo.data.forEach(x => x.selected = false)
+  uncheckAll(event) {
+    this.checkedRows = [];
+    this.tableInfo.data.forEach(x => x.selected = false);
+    this.selectedRowsEvent.emit(this.checkedRows);
   }
   checkAll(ev) {
-    let filteredRows
-    let orderby = this._orderBy
-    this.checkedRows = []
+    let filteredRows;
+    const orderby = this._orderBy;
+    this.checkedRows = [];
     filteredRows = this.tableInfo.data.filter(
       x => x.status === this._status);
     if(orderby.charAt(0) == '-'){
@@ -110,14 +111,13 @@ export class DataTableComponent {
     filteredInPage.forEach(
       x => {
         x.selected = ev.target.checked;
-        this.checkedRows.push(x)
+        this.checkedRows.push(x);
       }
-
     )
     if(!ev.target.checked) {
-      this.checkedRows = []
+      this.checkedRows = [];
     }
-
+    this.selectedRowsEvent.emit(this.checkedRows);
   }
   public orderTable = function (orderArg) {
     if (this._orderBy == orderArg ){
