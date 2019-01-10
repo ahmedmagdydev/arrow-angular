@@ -19,6 +19,6 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     HijriDateModule,
     MatProgressBarModule,
     MatSelectModule
-      
+      ]
 })
 export class HomeModule { }

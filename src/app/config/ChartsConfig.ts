@@ -16,7 +16,7 @@ export const  pieChartOptions: any = {
     },
     "series": {"dataLabels": {"enabled": false},}
   },
-  "tooltip": {"pointFormat": "{series.name}: <b>{point.percentage:.1f}%</b>"},
+  "tooltip": {"pointFormat": "<b>{point.percentage:.1f}%</b>"},
   "series": [
     {
       "name": "", "turboThreshold": 0, "colorByPoint": true,
