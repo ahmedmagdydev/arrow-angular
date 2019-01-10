@@ -12,8 +12,11 @@
 <div class="row">
 	<div class="col-md-5 mr-auto">
 		<div class="form-group">
-			<label for="">{{'address'| translate: lang}}</label>
-			<b class="form-control-plaintext"> {{'needObserve'| translate: lang}}</b>
+			<mat-form-field class="example-full-width">
+			    <input matInput readonly placeholder="{{'address'| translate: lang}}" value="{{'needObserve'| translate: lang}}">
+			  </mat-form-field>
+			<!-- <label for="">{{'address'| translate: lang}}</label>
+			<b class="form-control-plaintext"> {{'needObserve'| translate: lang}}</b> -->
 		</div>
 	</div>
 	<div class="col-md-5">
@@ -21,8 +24,11 @@
 		<div class="row">
 			<div class="col-6">
 				<div class="form-group">
-					<label for=""> {{'number'| translate: lang}}</label>
-					<input type="text" formControlName="corresNumber" value="546513245" class="form-control"/>
+					<mat-form-field class="example-full-width">
+					    <input matInput  placeholder="{{'number'| translate: lang}}" formControlName="corresNumber" value="546513245">
+					  </mat-form-field>
+					<!-- <label for=""> {{'number'| translate: lang}}</label>
+					<input type="text" formControlName="corresNumber" value="546513245" class="form-control"/> -->
 				</div>
 			</div>
 			<div class="col-6">
@@ -37,28 +43,43 @@
 <div class="row">
 	<div class="col-md-5 mr-auto">
 		<div class="form-group">
-			<label for="">{{'unit'| translate: lang}}</label>
-			<select formControlName="unit" name="" id="" class="form-control">
-				<option value="asdsda">asdasdasd</option>
-			</select>
+			<mat-form-field>
+			  <mat-select placeholder="{{'unit'| translate: lang}}" formControlName="unit">
+			    <mat-option>None</mat-option>
+			    <mat-option value="option1">Option 1</mat-option>
+			    <mat-option value="option2">Option 2</mat-option>
+			    <mat-option value="option3">Option 3</mat-option>
+			  </mat-select>
+			</mat-form-field>
+			
 		</div>
 	</div>
 	<div class="col-md-5">
 		<div class="form-group">
-			<label for=""> {{'degreeOfConfi'| translate: lang}}</label>
-			<select formControlName="degreeOfConfidentiality" name="" id="" class="form-control">
-				<option value="asdsda">asdasdasd</option>
-			</select>
+			<mat-form-field>
+			  <mat-select placeholder="{{'degreeOfConfi'| translate: lang}}" formControlName="degreeOfConfidentiality">
+			    <mat-option>None</mat-option>
+			    <mat-option value="option1">Option 1</mat-option>
+			    <mat-option value="option2">Option 2</mat-option>
+			    <mat-option value="option3">Option 3</mat-option>
+			  </mat-select>
+			</mat-form-field>
+			
 		</div>
 	</div>
 </div>
 <div class="row">
 	<div class="col-md-5 mr-auto">
 		<div class="form-group">
-			<label for="">{{'priority'| translate: lang}}</label>
-			<select formControlName="priority" name="" id="" class="form-control">
-				<option value="asdsda">asdasdasd</option>
-			</select>
+			<mat-form-field>
+			  <mat-select placeholder="{{'priority'| translate: lang}}" formControlName="priority">
+			    <mat-option>None</mat-option>
+			    <mat-option value="option1">Option 1</mat-option>
+			    <mat-option value="option2">Option 2</mat-option>
+			    <mat-option value="option3">Option 3</mat-option>
+			  </mat-select>
+			</mat-form-field>
+			
 		</div>
 	</div>
 	<div class="col-md-5">

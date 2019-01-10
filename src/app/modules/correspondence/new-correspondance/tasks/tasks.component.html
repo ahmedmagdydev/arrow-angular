@@ -14,8 +14,13 @@
 			
 			<div class="row align-items-end">
 				<div class="col-6">
-					<div class="form-group"><label for="">{{'task.name'| translate: lang}} </label>
-						<input type="text" formControlName="name" class="form-control" id="staticEmail">
+					<div class="form-group">
+						<mat-form-field class="example-full-width">
+						    <input matInput formControlName="name" id="staticEmail" placeholder="{{'task.name'| translate: lang}}">
+					  	</mat-form-field>
+
+					
+					
 					</div>
 				</div>
 				<div class="col-6 text-right">
@@ -28,15 +33,27 @@
 				{{'individual'| translate: lang}}  <mat-slide-toggle> {{'collective'| translate: lang}} </mat-slide-toggle>
 			</div>
 			<div class="form-group">
-				<label for="">{{'performer'| translate: lang}} </label>
-				<select name="" formControlName="perfomer" id="" class="form-control"></select>
+				<mat-form-field>
+				  <mat-select placeholder="{{'performer'| translate: lang}}" formControlName="perfomer">
+				    <mat-option>None</mat-option>
+				    <mat-option value="option1">Option 1</mat-option>
+				    <mat-option value="option2">Option 2</mat-option>
+				    <mat-option value="option3">Option 3</mat-option>
+				  </mat-select>
+				</mat-form-field>
+				
 			</div>
 			
 			<div class="form-group">
-				<label for="">{{'priority'| translate: lang}}</label>
-				<select name="" formControlName="priority2" id="" class="form-control">
-					<option value="">مهم جدا</option>
-				</select>
+				<mat-form-field>
+				  <mat-select placeholder="{{'priority'| translate: lang}}" formControlName="priority2">
+				    <mat-option>None</mat-option>
+				    <mat-option value="option1">Option 1</mat-option>
+				    <mat-option value="option2">Option 2</mat-option>
+				    <mat-option value="option3">Option 3</mat-option>
+				  </mat-select>
+				</mat-form-field>
+				
 			</div>
 			<div class="form-group row">
 				<div class="col-md-6">

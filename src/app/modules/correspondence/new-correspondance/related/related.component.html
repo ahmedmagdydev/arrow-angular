@@ -7,22 +7,37 @@
 	<form [formGroup]="searchCorrespondencesForm" novalidate (ngSubmit)="search(searchCorrespondencesForm.value)">
 		<div class="row">
 			<div class="col-md-4">
-				<div class="form-group"><label for="">{{'correspondenceNo' | translate: lang}}</label>
-					<input class="form-control" type="text" formControlName="correspondenceNumber"></div>
+				<div class="form-group">
+					<mat-form-field class="example-full-width">
+					    <input matInput formControlName="correspondenceNumber" placeholder="{{'correspondenceNo'| translate: lang}}">
+				  	</mat-form-field>
+					
+				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="form-group"><label for="">{{'privilegeNo' | translate: lang}}</label>
-					<input class="form-control" type="text" formControlName="privilegeNumber"></div>
+				<div class="form-group">
+					<mat-form-field class="example-full-width">
+					    <input matInput formControlName="privilegeNumber" placeholder="{{'privilegeNo'| translate: lang}}">
+				  	</mat-form-field>
+					
+				</div>
 			</div>
 			<div class="col-md-3">
-				<div class="form-group"><label for="">{{'templateType' | translate: lang}}</label>
+				<div class="form-group">
+					<mat-form-field>
+					  <mat-select placeholder="{{'templateType'| translate: lang}}" formControlName="templateType">
+					    
+					    <mat-option [value]="type.name" *ngFor="let type of templateTypes">{{type.name}}</mat-option>
+					  </mat-select>
+					</mat-form-field>
+					<!-- <label for="">{{'templateType' | translate: lang}}</label>
 					<select class="form-control" formControlName="templateType">
-					<option [value]="type.name" *ngFor="let type of templateTypes">{{type.name}}</option>
-				</select></div>
+						<option [value]="type.name" *ngFor="let type of templateTypes">{{type.name}}</option>
+					</select> -->
+				</div>
 			</div>
 			<div class="col-md-1">
 				<div class="form-group">
-					<label class="hidden">search</label>
 					<div><div class="btn btn-primary rounded-circle"
 							  (click)="search(searchCorrespondencesForm.value)">
 						<i class="fa fa-search"></i></div></div>

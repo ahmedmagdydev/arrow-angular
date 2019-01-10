@@ -22,7 +22,9 @@ import {
     MatCheckboxModule,
     MatIconModule,
     MatRadioModule,
-    MatExpansionModule, MatDialogModule, MatButtonModule, MatMenuModule
+    MatExpansionModule, MatDialogModule, MatButtonModule, MatMenuModule,
+    MatInputModule,
+    MatSelectModule
 } from '@angular/material';
 // import {sharedModule} from '../../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -76,7 +78,9 @@ import { LetterPreviewComponent } from './prepare-letter/letter-preview/letter-p
     MatButtonModule,
     VisualTreeModule,
     HijriDateModule,
-    CorrespondenceTemplateModule
+    CorrespondenceTemplateModule,
+    MatInputModule,
+    MatSelectModule
   ],
     entryComponents: [InstractionComponent, LetterPreviewComponent]
 })

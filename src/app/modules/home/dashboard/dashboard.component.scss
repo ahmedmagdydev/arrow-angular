@@ -3,3 +3,11 @@
 	padding-left: 50px;
 	    width: 256px;
 }
+@media screen and (max-width: 1024px) {
+	.main-tabs li.large{
+		    width: 174px;
+	}
+	.tab-chart{
+		display: none !important;
+	}
+}

@@ -2,13 +2,19 @@
 	<div class="row align-items-center">
 		<div class="col-md-6">
 			<div class="form-group">
-				<label for="">{{'selectLetterTemplate' | translate: lang}}</label>
-				<select name="" id="" class="form-control" formControlName="template">
-					<option value="">قاليب 1</option>
-				</select>
+				<mat-form-field>
+				  <mat-select placeholder="{{'selectLetterTemplate'| translate: lang}}" formControlName="template">
+				    
+				    <mat-option value="قاليب" >قاليب</mat-option>
+				    <mat-option value="قاليب" >قاليب</mat-option>
+				  </mat-select>
+				</mat-form-field>
+				
 			</div>
 		</div>
-		<div class="col-md-6 text-right"><div class="btn btn-primary" (click)="letterPreview()">{{'previewLetter' | translate: lang}}</div></div>
+		<div class="col-md-6 text-right"><div class="form-group">
+			<div class="btn btn-primary" (click)="letterPreview()">{{'previewLetter' | translate: lang}}</div>
+		</div></div>
 	</div>
 	<ckeditor formControlName="content"> </ckeditor>
 	<div class="mt-4">
