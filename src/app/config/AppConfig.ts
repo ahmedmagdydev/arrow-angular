@@ -29,7 +29,7 @@ export const APP_PROFILE = {
   test2: {url: 'https://arrow-4.herokuapp.com/'},
   local: {url : 'http://localhost:4200/'}
 };
-export const APP_PROFILE_active = APP_PROFILE.local;
+export const APP_PROFILE_active = APP_PROFILE.test2;
 export const API_URLS = {
   correspondences: APP_PROFILE_active.url + 'assets/data/dashboard.json',
 };
