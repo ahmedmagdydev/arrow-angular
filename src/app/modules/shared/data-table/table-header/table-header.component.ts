@@ -6,7 +6,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
   styleUrls: ['./table-header.component.scss']
 })
 export class TableHeaderComponent {
-
+labelPosition = 'after';
   @Input() isAllChecked: boolean;
   @Output() checkAllEvent: EventEmitter<boolean> = new EventEmitter();
   constructor() { }
