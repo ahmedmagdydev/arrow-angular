@@ -1,13 +1,31 @@
 <ul *ngIf="treeData && treeData.length>0">
   <li *ngFor="let node of treeData">
-    <div class="node" (click)="openNodePreview(node)">
-      <div class="card-header">{{node.title}}</div>
+    <div class="node history-node" (click)="openNodePreview(node)">
+      <!--<div class="card-header">{{node.title}}</div>
       <div class="node-content">
           <div *ngFor="let item of node.data">
             <span>{{ item.title | translate: lang}}</span> :
             <span *ngIf="!isDate(item.value)">{{ item.value}}</span>
             <span *ngIf="isDate(item.value)">{{ item.value | date : 'medium'}}</span>
           </div>
+      </div>-->
+      <div class="history-status">Created</div>
+      <div class="text-right">
+        <a href="#" class="history-info"><span class="icon-info"></span></a>
+      </div>
+      <div class="d-flex align-items-center">
+        <div class="history-icon mr-3 ml-2"><span class="icon-related"></span></div>
+        <div class="history-details">
+          <h6 class="history-name">{{node.title}}</h6>
+          <div class="row">
+            <div class="col-8"><b>أانشئت</b>: 25 صفر 1431</div>
+            <div class="col-4"><b>تحتاج قرار:</b> نعم</div>
+          </div>
+          <div class="row">
+            <div class="col-8"><b>تم التعديل:</b> 28 حماد اول 1431</div>
+            <div class="col-4"><b>اخرى:</b> اخرى</div>
+          </div>
+        </div>
       </div>
     </div>
     <app-tree-level [treeData]="node.childs" *ngIf="node.childs && node.childs.length > 0" (openNodePreviewEvent)="openNodePreview($event)"></app-tree-level>

@@ -1,6 +1,6 @@
 *{box-sizing: border-box;}
 .treeResizerContainer, .treeContainer{position: relative;overflow: hidden;display: block;width: 100%;}
-.treeContainer{border: 1px solid #cac7c7;background: #E7E7E7;height: 82vh;}
+.treeContainer{border: 1px solid #cac7c7;background: #fff;height: 82vh;}
 .tree{
   position: absolute;left: 0;right: 0;margin-left: auto;margin-right: auto;overflow: hidden;
   white-space:nowrap;width: max-content;padding: 0 30px 20px 30px;
