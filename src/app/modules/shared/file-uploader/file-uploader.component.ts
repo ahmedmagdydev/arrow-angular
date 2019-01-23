@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ChangeDetectionStrategy, Input, ViewChild, ViewContainerRef, TemplateRef, AfterViewInit, ElementRef } from '@angular/core';
 declare var $:any;
-import { FileUploader, FileItem } from 'ng2-file-upload';
+import { FileUploader } from 'ng2-file-upload';
 
 const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 
@@ -8,33 +8,26 @@ const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
   selector: 'app-file-uploader',
   templateUrl: './file-uploader.component.html',
   styleUrls: ['./file-uploader.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class FileUploaderComponent {
 
   @Input() lang: string;
-  public uploader:FileUploader = new FileUploader({url: URL});
   @Output() uploaders = new EventEmitter<any>();
-  
+  @Input() uploadId;
+  @Input() uploader:FileUploader;
+
   fileOverAnother():void {
-    this.uploader.queue = this.uploader.queue.filter((file, index, self) =>
-        index === self.findIndex((t) => (
-          file.file.name === t.file.name        
-        ))  
-    ) 
-    for(let event of this.uploader.queue) {
-      if(!event.isUploaded) {
-        event.upload();
-      }
-    }
     this.uploaders.emit(this.uploader.queue);
   }
 
-  constructor() {
-
-  }
-
   clickOnUploadInput() {
-    $('#importInput').click();
+    const id= '#'+this.uploadId;
+    $(id).click();
   }
 
-}
+  
+ }
+  
+
+

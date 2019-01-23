@@ -1,9 +1,12 @@
-<div class="login-cont">
-    <div class="login-head"><img src="assets/images/logo-arrow.png"/></div>
+<div class="login-cont" *ngIf="!authorized">
+    <div class="login-head"><img src="assets/images/logo-arrow.png"/></div> 
     <div class="login-wrap">
-        <form class="login-form" name="form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" novalidate>
-            
+        <form class="login-form" name="form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" novalidate>       
                 <img src="assets/images/logo-main.jpg"/>
+                <p class="help-class error-login-msg" *ngIf="!domainInvalid && !invalidUser && invalidUserNameOrPass">{{'1001' | translate: lang}}</p>
+                <p class="help-class error-login-msg" *ngIf="domainInvalid && !invalidUser && !invalidUserNameOrPass">{{'1005' | translate: lang}}</p>
+                <p class="help-class error-login-msg" *ngIf="invalidUser && !domainInvalid && !invalidUserNameOrPass">{{'1004' | translate: lang}}</p>
+
                 <div class="form-group">
                     <mat-form-field class="full-width">
                         <input formControlName="userName" matInput placeholder="{{'userName' | translate: lang}}">
@@ -18,13 +21,13 @@
                 </div>
                 <div class="form-group">
                     <mat-form-field class="full-width">
-                        <input matInput placeholder="{{'domain' | translate: lang}}" formControlName="domain">
+                        <input matInput placeholder="{{'domain' | translate: lang}}" formControlName="domainPrefix">
                     </mat-form-field>
-                    <span class="error" *ngIf="!form.domain.valid && submitted">{{'domainRequired' | translate: lang}}</span>
+                    <span class="error" *ngIf="!form.domainPrefix.valid && submitted">{{'domainRequired' | translate: lang}}</span>
                 </div>
                 <div class="form-group">
                     <mat-form-field class="full-width">
-                        <mat-select formControlName="language" placeholder="{{'language' | translate: lang}}" (selectionChange)="setLocal($event)">
+                        <mat-select formControlName="lang" placeholder="{{'language' | translate: lang}}" (selectionChange)="setLocal($event)">
                             <mat-option value="ar">{{'arabic' | translate: lang}}</mat-option>
                             <mat-option value="en">{{'english' | translate: lang}}</mat-option>
                         </mat-select>
@@ -36,8 +39,15 @@
                 <div class="form-group">
                     <mat-checkbox formControlName="forceLogin">{{'forceLogin' | translate: lang}}</mat-checkbox>
                 </div>
-                <button class="login-btn" type="submit">{{'login' | translate: lang}}</button>
-            
+               
+                <div >
+                <button class="login-btn" [disabled]="!loginForm.valid" type="submit">
+                     <div [ngClass]="{'loginBtnLoading': loadingLogin}">
+                    <app-spinner *ngIf="loadingLogin" ></app-spinner>
+                    <span [ngClass]="{'loginLoading': loadingLogin}"> {{'login' | translate: lang}}</span> 
+                    </div> 
+               </button>
+            </div>
         </form>
         <div class="login-footer">
             <p>2014 - 2018 © {{'assetCopy' | translate: lang}}.</p>

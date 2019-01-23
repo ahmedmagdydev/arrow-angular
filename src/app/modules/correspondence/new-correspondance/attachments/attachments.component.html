@@ -1,15 +1,17 @@
 
 <div class="row">
 	<div class="col-md-6" style="min-height: 500px">
-		<app-file-uploader [lang]="lang" (uploaders)="handleUploaders($event)"></app-file-uploader>
+		<app-file-uploader [uploader]="uploader" [lang]="lang" (uploaders)="handleUploaders($event)" [uploadId]="'attachmentInput'" ></app-file-uploader>
+
+		  
 		<div class="upload-table">
 				<div class="d-flex align-items-center" *ngFor="let item of files; let i=index">
 						<div class="d-flex align-items-center mr-auto">
 							<i class="icon-attachment"></i>
 								<div>
 									<div class="file-name">{{item.name }}</div>
-									<div *ngIf="!fileUploaderComponent.uploader.queue[i].isUploaded" class="progress-bar progress-bar-success" [ngStyle]="{ 'width': fileUploaderComponent.uploader.queue[i].progress + '%', 'height': '5px' }"  placement="bottom"></div>
-									<div *ngIf="fileUploaderComponent.uploader.queue[i].isUploaded" class="file-date"  >{{item.lastModifiedDate | date  }}</div>
+									<div *ngIf="!uploader.queue[i].isUploaded" class="progress-bar progress-bar-success" [ngStyle]="{ 'width': uploader.queue[i].progress + '%', 'height': '5px' }"  placement="bottom"></div>
+									 <div *ngIf="uploader.queue[i].isUploaded" class="file-date"  >{{item.lastModifiedDate | date  }}</div>
 								</div>
 										
 									</div>

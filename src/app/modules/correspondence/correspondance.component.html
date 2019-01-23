@@ -1,10 +1,9 @@
-<div class="container-fluid main-content">
+<div class="container-fluid main-content" *ngIf="!loading">
   <div class="d-flex align-items-center">
     <ul class="breadcrumb mr-auto">
       <li><a href="#">{{'correspondences' | translate: lang}}</a></li>
       <!--<li><img src="assets/images/left-arr.png" /> الجديد </li>-->
     </ul>
-
     <!-- priority filter -->
     <a class="filter-menu-trigger" mat-button [matMenuTriggerFor]="filter">تصفية بواسطة: <i class="fa fa-chevron-down"></i></a>
     <mat-menu #filter="matMenu">
@@ -13,7 +12,6 @@
       <button mat-menu-item [matMenuTriggerFor]="readUndread">مقروء/غير مقروء</button>
       <button mat-menu-item [matMenuTriggerFor]="template">القالب</button>
     </mat-menu>
-
     <mat-menu #date="matMenu">
       <button mat-menu-item >اليوم</button>
       <button mat-menu-item >الشهر الماضى</button>
@@ -31,7 +29,6 @@
       <button mat-menu-item >قالب 2</button>
     </mat-menu>
     <!-- end priority filter -->
-
   </div>
   <ngx-slick class="corres-carousel" #slickModal="slick-modal" [config]="slideConfig">
     <div ngxSlickItem *ngFor="let status of correspondencesStatus; let i = index" class="slide">
@@ -43,6 +40,10 @@
   </ngx-slick>
   <app-data-table [tableInfo]="correspondencesTable" [_status]="_status" [showHeader]="true" [showFooter]="true"></app-data-table>
 </div>
+
+<!--<div class="container-fluid main-content" *ngIf="loading">
+  <app-spinner ></app-spinner>
+</div>-->
 <!--
 <div class="modal fade" id="preview-template" tabindex="-1" role="dialog" aria-labelledby="preview-template" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">

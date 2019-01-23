@@ -65,7 +65,7 @@
   "size": "الحجم",
   "type":"النوع",
   "modifiedDate":"تاريخ التعديل",
-  "owner": "المالك",
+  "owner": "المالك ",
   "versions":"نسخ",
   "AccessRights": "صلاحيات",
   "viewAll": "عرض للكل",
@@ -115,5 +115,18 @@
   "templateType": "نوع القالب",
   "relatedCorrespondenceSearch": "إبدأ البحث  لإضافة معاملات ذات صلة",
   "letterPreview": "معاينه الخطاب",
-  "searchResult": "نتائج البحث"
+  "searchResult": "نتائج البحث",
+  "scan": "مسح ضوئى",
+  "dashboard": "لوحه التحكم",
+  "queryName": "اسم الاستعلام ",
+  "run": "تنفيذ ",
+  "runSearchText": "قم بتنفيذ استعلام لعرض نتائج البحث",
+  "createSearchTask": "إنشاء بحث في المهام",
+  "createSearchCorress": "إنشلء بحث في المعاملات",
+  "createSearch": "إنشاء  بحث جديد",
+  "all": "الكل",
+  "selectAll": "اختر الكل",
+  "trash": "حذف",
+  "accessRights": "صلاحيه التشغيل",
+  "searchParams": "عامل متغير"
 }

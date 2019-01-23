@@ -10,21 +10,23 @@ export class DataTableComponent {
 
   @Language() lang: string;
   @Input() tableInfo: any;
-  _itemsPerPage = 5;
+  _itemsPerPage = 10;
   _currentPage = 1;
   checkedRows = [];
+  searchString = '';
   @Input() _status = 'new';
   @Input() _orderBy = 'sender';
   @Input() showHeader;
   @Input() showFooter;
   @Input() hideActions;
   @Output() selectedRowsEvent: EventEmitter<any> = new EventEmitter<any>();
-
+  @Output() actionColumnEvent: EventEmitter<any> = new EventEmitter<any>();
+  @Output() actionHeaderEvent: EventEmitter<any> = new EventEmitter<any>();  @Input() noExpandable;
 
 
   constructor() { }
 
-
+ 
   getObjectAttribute(object: any, attribute): any {return object[attribute];}
   getObjectAttributeFromArray(arr: any[], attribute): any {
     const ob = arr[0];
@@ -47,6 +49,17 @@ export class DataTableComponent {
       return 'fa-sort';
     }
   }
+ public orderTable = function (orderArg) {
+        if (this._orderBy == orderArg ){
+            this._orderBy = '-' + orderArg;
+        } else {
+            this._orderBy = orderArg;
+        }
+        this.uncheckAll();
+    }
+
+
+  // ================ row selection ===============
   showCheckBox(): boolean { return this.checkedRows.length > 0; }
   isAllChecked() {
     let filteredRows;
@@ -122,12 +135,10 @@ export class DataTableComponent {
     }
     this.selectedRowsEvent.emit(this.checkedRows);
   }
-  public orderTable = function (orderArg) {
-    if (this._orderBy == orderArg ){
-      this._orderBy = '-' + orderArg;
-    } else {
-      this._orderBy = orderArg;
-    }
-    this.uncheckAll();
-  }
+
+
+
+  // ==================== actionColumnEvent ==================
+    actionColumnEventClick = (row, action) => this.actionColumnEvent.emit({'action': action, 'row': row});
+    headerActionEvent = (action) => this.actionHeaderEvent.emit(action);
 }

@@ -30,7 +30,6 @@ import {
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 // import { Diagram} from 'gojs';
-import { FileDropModule } from 'ngx-file-drop';
 import { FileUploaderModule } from '../../shared/file-uploader/file-uploader.module';
 import { FileUploader, FileUploadModule } from 'ng2-file-upload';
 import {InstractionComponent} from './redirect/instraction/instraction.component';
@@ -41,6 +40,8 @@ import {VisualTreeModule} from '../../shared/charts/visual-tree/visual-tree.modu
 import { HijriDateModule } from '../../shared/hijri-date/hijri-date.module';
 import {CorrespondenceTemplateModule} from '../correspondence-template/correspondence-template.module';
 import { LetterPreviewComponent } from './prepare-letter/letter-preview/letter-preview.component';
+import { FormSampleComponent } from './form-sample/form-sample.component';
+
 @NgModule({
   declarations: [
   NewCorrespondanceComponent,
@@ -51,7 +52,8 @@ import { LetterPreviewComponent } from './prepare-letter/letter-preview/letter-p
 ,HistoryComponent
 ,RedirectComponent
 ,PrepareLetterComponent,InstractionComponent, RedirectPreviewComponent, RedirectAddOtherContactsComponent,
-      LetterPreviewComponent ],
+      LetterPreviewComponent,
+      FormSampleComponent ],
   imports: [
     CommonModule,
     NewCorrespondanceRoutingModule,
@@ -67,7 +69,7 @@ import { LetterPreviewComponent } from './prepare-letter/letter-preview/letter-p
     MatCheckboxModule,
     MatIconModule,
     MatRadioModule,
-      MatMenuModule,
+    MatMenuModule,
     MatExpansionModule,
     CKEditorModule,
     FileUploadModule,

@@ -5,6 +5,9 @@ import {UtilService} from '../../../../services/util/util.service';
 import {Language, TranslationService} from 'angular-l10n';
 import {API_URLS} from '../../../../config/AppConfig';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {fileObject} from '../../../../config/Lookups';
+import { FileUploader } from 'ng2-file-upload';
+const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 
 declare var $;
 
@@ -14,27 +17,33 @@ declare var $;
   styleUrls: ['./tasks.component.scss']
 })
 export class TasksComponent implements OnInit {
+
+	uploader: FileUploader = new FileUploader({url:URL});
   @Language() lang: string;
 	@Input() newCorrespondenceForm: FormGroup;
   @Input() errors: any;
-  @Output() newCorrespondenceFormChange: EventEmitter<any> = new EventEmitter<any>();
+	@Output() newCorrespondenceFormChange: EventEmitter<any> = new EventEmitter<any>();
+	
 	tasksForm: FormGroup;
-		
+	files: fileObject[] = [];
 	correspondencesStatus: any[] = correspondencesStatusLookup;
 	correspondencesTable: any = correspondencesTableInfoLookup;
-  loading;
+	loading;
+	@Input() targetName;
 	public tasks=[];
 	public addTask = false;
 	public addAttachment = false;
 	public _status = "";
 
-	constructor(private builder: FormBuilder, private util: UtilService, private coresspondenceService: CoresspondenceService,
-	            public _translationService: TranslationService) {
+	constructor(private builder: FormBuilder, private util: UtilService,
+		 private coresspondenceService: CoresspondenceService, public _translationService: TranslationService) {
 	  this._translationService.translationChanged().subscribe(() => {
 	       
 	  });
 	}
-	
+
+
+
   ngOnInit() {
 		if ( this.newCorrespondenceForm) {
 					this.tasksForm = this.builder.group({
@@ -59,6 +68,8 @@ export class TasksComponent implements OnInit {
 							mainInfoValid: this.tasksForm.valid});
 					});
 	}
+	 
+
 
 	getData() {
 	    this.loading = true;
@@ -71,7 +82,11 @@ export class TasksComponent implements OnInit {
 	      (error) => { this.loading = false; } ,
 	      () => {this.loading = false; }
 	      );
-	  }
+		}
+		handle(event){
+			console.log(event);
+		}
+		
 	public addTasks(){
 		this.tasks=[
 		{
@@ -183,6 +198,44 @@ export class TasksComponent implements OnInit {
 		this.addTask = false;
 
 	}
+
+	handleUploaders(event) {    
+		//remove duplicate files
+		this.uploader.queue = this.uploader.queue.filter((file, index, self) =>
+		index === self.findIndex((t) => (
+			file.file.name === t.file.name        
+			))  
+		) 
+	for(let file of this.uploader.queue) {
+			if(!file.isUploaded) {
+				file.upload();                         
+				this.files.push(file._file);
+			}
+		} 
+				
+	}
+
+	downloadFile(file, index) {
+		if (window.navigator.msSaveOrOpenBlob) {
+		 navigator.msSaveBlob(file, file.name);
+		} else {
+		 const downloadLink = document.createElement("a");
+		 downloadLink.style.display = "none";
+		 document.body.appendChild(downloadLink);
+		 const fileItem = this.uploader.queue[index];
+		 const url = (window.URL) ? window.URL.createObjectURL(fileItem._file) :
+			(window as any).webkitURL.createObjectURL(file._file);
+		 downloadLink.setAttribute("href", url);
+		 downloadLink.setAttribute("download", file.name);
+		 downloadLink.click();
+		 document.body.removeChild(downloadLink);
+		}
+	}
+
+deleteFile(index) {
+	this.files.splice(index, 1);
+	this.uploader.queue.splice(index,1);
+}
 
  
 		

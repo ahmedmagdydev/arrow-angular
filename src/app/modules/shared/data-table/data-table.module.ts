@@ -9,11 +9,14 @@ import { TableHeaderComponent } from './table-header/table-header.component';
 import { TableFooterComponent } from './table-footer/table-footer.component';
 import { RowDetailsComponent } from './row-details/row-details.component';
 import {LocalizationModule} from '../localization/localization.module';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCheckboxModule, MatButtonModule, MatInputModule} from '@angular/material';
+import {FilterPipePipe} from '../../../pipes/filter-pipe.pipe';
+import {SpinnerModule} from '../spinner/spinner.module';
 
 @NgModule({
-  declarations: [DataTableComponent, TableHeaderComponent, TableFooterComponent, RowDetailsComponent],
-  imports: [CommonModule, NgxPaginationModule, NgPipesModule, FormsModule, LocalizationModule, MatCheckboxModule],
-  exports: [DataTableComponent, SlickModule]
+  declarations: [DataTableComponent, TableHeaderComponent, TableFooterComponent, RowDetailsComponent, FilterPipePipe],
+  imports: [CommonModule, NgxPaginationModule, NgPipesModule, FormsModule, LocalizationModule, MatCheckboxModule,
+      MatButtonModule, MatInputModule, SpinnerModule],
+  exports: [DataTableComponent, SlickModule, SpinnerModule]
 })
 export class DataTableModule { }

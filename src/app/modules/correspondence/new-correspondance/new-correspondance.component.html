@@ -77,7 +77,7 @@
 				<app-main-info [(newCorrespondenceForm)] = "newCorrespondenceForm" [errors]="errors"></app-main-info>
 			</div>
 			<div class="tab-pane" [ngClass]="{'active': currentTab === 'attachments'}" id="attachments" role="tabpanel" aria-labelledby="attachments-tab">
-				<app-attachments></app-attachments>
+				<app-attachments ></app-attachments>
 			</div>
 			<div class="tab-pane" [ngClass]="{'active': currentTab === 'tasks'}" id="tasks" role="tabpanel" aria-labelledby="tasks-tab">
 				<app-tasks [(newCorrespondenceForm)] = "newCorrespondenceForm" [errors]="errors"></app-tasks>
@@ -93,6 +93,9 @@
 			</div>
 			<div class="tab-pane" [ngClass]="{'active': currentTab === 'prepareLetter'}" id="prepare" role="tabpanel" aria-labelledby="prepare-tab">
 				<app-prepare-letter [newCorrespondenceForm]="newCorrespondenceForm"></app-prepare-letter>
+			</div>
+			<div class="tab-pane" [ngClass]="{'active': currentTab === 'form-sample'}" id="form-sample" role="tabpanel" aria-labelledby="form-sample">
+				<app-form-sample></app-form-sample>
 			</div>
 		</div>
 	</div> <!--end tabs-->

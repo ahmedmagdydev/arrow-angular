@@ -1,4 +1,4 @@
-/* ========================== correspondences ===================== */
+/* =================== correspondences module ================ */
 export const correspondencesStatusLookup: any[] = [
   {title: 'new', coresspondences: [], percent: 0},
   {title: 'done', coresspondences: [], percent: 0},
@@ -62,8 +62,36 @@ export const newCorrespondenceTabs: any [] = [
     {title: 'history', active: false},
     {title: 'redirect', active: false},
     {title: 'prepareLetter', active: false},
+    {title: 'form-sample', active: false},
 ];
 export interface fileObject {
   name?: string, size?: number , lastModifiedDate?: string, type?: string, owner?: string,
   versions?: File[]
+};
+
+
+
+
+
+
+
+
+/* =================== search module ================ */
+export const queryTableInfoLookup: any = {
+  columns: [
+    {title: 'queryName', name: 'queryName'},
+    {title: 'owner', name: 'owner'},
+    {title: 'run', name: 'run', tooltip: ''},
+    {title: 'actionList', name: 'actionList'}
+  ],
+  data: [],
+  filters: [
+      {title: 'all', value: 0, colorClass: 'primary-bg'},
+      {title: 'correspondences', value: 0, colorClass: 'third-bg'},
+      {title: 'tasks', value: 0, colorClass: 'secondary-bg'},
+  ],
+    actions: [
+        {icon: 'assets/images/trash.png', title: 'trash', name: 'trash'},
+        {icon: 'assets/images/forward.png', title: 'accessRights', name: 'accessRights'},
+    ]
 };

@@ -1,34 +1,43 @@
 <div class="container-fluid main-content">
-  <ul class="nav bg-light justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link active" routerLink="/search/query"><span class="fa fa-search-plus"></span> New</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><span class="fa fa-search-minus"></span> Delete</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><span class="fa fa-user"></span> Access rights</a>
-    </li>
-  </ul>
-
-
-  <div class="row">
-    <div class="col-lg-8 p-3">
-      <div class="alert alert-primary" role="alert">querie parameters</div>
-      <form class="form-inline">
-        <div class="form-group mx-sm-3 mb-2">
-          <label for="dateinput" class="sr-only">date equal</label>
-          <input type="text" class="form-control" id="dateinput" placeholder="date equal">
+    <div class="d-flex align-items-center">
+        <ul class="breadcrumb mr-auto">
+            <li><a href="#">{{'searchResult' | translate: lang}}</a></li>
+        </ul>
+    </div>
+        <div class="d-flex">
+        <div class="mr-auto">
+            <app-filter-list [filters]="queryTable.filters" [activeTab]="activeTab"
+                             (filterSelectEvent)="filterSearchQueries($event.title)"></app-filter-list>
         </div>
-        <button type="submit" class="btn btn-primary mb-2">search</button>
-      </form>
+        <button class="btn btn-secondary" [matMenuTriggerFor]="newQuery"><i class="fa fa-plus"></i> {{'createSearch' | translate: lang}}</button>
+        <mat-menu #newQuery="matMenu">
+            <button mat-menu-item [routerLink]="['/search/query']" [queryParams]="{ type: 'Corresspondence' }">
+                <i class="icon icon-related"></i> <span>{{'createSearchCorress' | translate: lang}}</span>
+            </button>
+            <button mat-menu-item [routerLink]="['/search/query']" [queryParams]="{ type: 'task' }">
+                <span class="icon icon-tasks"></span> <span>{{'createSearchTask' | translate: lang}}</span>
+            </button>
+        </mat-menu>
+    </div><!--end search filters-->
+
+    <div class="split-container">
+        <div class="row ">
+            <div class="col-md-6" style="min-height: 500px">
+                <div class="bg-white">
+                  <app-data-table *ngIf="!loading" [tableInfo]="queryTable" [showHeader]="true" [noExpandable]="true" [_status]="_status"
+                                  [showFooter]="true"
+                                  (actionColumnEvent)="runQuery($event)" (actionHeaderEvent)="selectedRowsAction($event)">
+                  </app-data-table>
+                </div>
+            </div>
+            <div class="col-md-6 py-3">
+                <div *ngIf="!selectedQuery" class="text-center no-content">
+                    <div><span class="icon-search-related"></span></div>
+                    <p>{{'runSearchText' | translate: lang}}</p>
+                </div>
+                <app-query-params *ngIf="selectedQuery && !selectedQuery.run" [params]="selectedQuery.conditionList"
+                                  (paramsFormEvent)="search($event)"></app-query-params>
+            </div>
+        </div>
     </div>
-    <div class="col-lg-4 p-3">
-      <div class="alert alert-primary" role="alert">saved queries</div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
-          <a routerLink="/search/result"> query {{i}} </a></li>
-      </ul>
-    </div>
-  </div>
 </div>

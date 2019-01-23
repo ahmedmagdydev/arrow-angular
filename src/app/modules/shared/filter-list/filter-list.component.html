@@ -1,0 +1,7 @@
+<div class="query-tabs" *ngIf="filters">
+  <a [class]="filter.colorClass" [ngClass]="{'active': activeTab == filter.title}" *ngFor="let filter of filters"
+     (click)="selectFilter(filter)">
+    <span class="slide-name">{{filter.title | translate: lang}}</span>
+    <span class="slide-number">{{filter.value}}</span>
+  </a>
+</div>

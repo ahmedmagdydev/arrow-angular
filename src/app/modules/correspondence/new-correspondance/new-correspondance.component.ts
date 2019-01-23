@@ -5,16 +5,21 @@ import {newCorrespondenceTabs} from '../../../config/Lookups';
 import {RedirectComponent} from './redirect/redirect.component';
 import {RelatedComponent} from './related/related.component';
 
+
 @Component({
   selector: 'app-new-correspondance',
   templateUrl: './new-correspondance.component.html',
   styleUrls: ['./new-correspondance.component.scss']
 })
+
 export class NewCorrespondanceComponent implements OnInit {
 
   @Language() lang: string;
   @ViewChild(RedirectComponent) redirectComponent: RedirectComponent;
   @ViewChild(RelatedComponent) relatedComponent: RelatedComponent;
+
+
+
   newCorrespondenceForm: FormGroup;
   errors: any;
   newCorrespondenceTabs: any [] = newCorrespondenceTabs;
@@ -36,6 +41,7 @@ export class NewCorrespondanceComponent implements OnInit {
   send() {
       if (this.newCorrespondenceForm && !this.newCorrespondenceForm.valid) {
           this.errors = {};
+          console.log(this.newCorrespondenceForm.value);
         this.errors.corresNumber = 'not valid Number require';
       } else {
           this.errors = null;

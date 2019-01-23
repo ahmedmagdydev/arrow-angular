@@ -1,0 +1,106 @@
+$primary-color:rgb(48,138,201) ;
+$secondary-color:#6cbf55;
+$third-color:#25b4bc;
+$primary-menu-color:rgb(48,138,201);
+.query-tabs{
+  a{
+    display: inline-block;
+    min-width: 90px;
+    margin-left: 15px;
+    padding: 3px 15px;
+    border-radius: 15px;
+    color: #898e97;
+    transition:all .2s linear;
+    cursor: pointer;
+    &.active{
+      color:#fff;
+      min-width: 190px;
+      &.primary-bg{
+        background: $primary-color;
+      }
+      &.secondary-bg{
+        background: $secondary-color;
+      }
+      &.third-bg{
+        background: $third-color;
+      }
+    }
+    &.primary-bg {
+      .slide-number{
+        background: $primary-color;
+      }
+    }
+    &.secondary-bg {
+      .slide-number{
+        background: $secondary-color;
+      }
+    }
+    &.third-bg {
+      .slide-number{
+        background: $third-color;
+      }
+    }
+  }
+  .slide-number{
+    float: left;
+    color: #fff;
+    width: 26px;height: 26px;
+    border-radius: 50%;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 11px;
+    margin-right: 15px;
+  }
+}
+
+
+.corres-carousel{
+  width: calc(100% - 53px);
+  position: relative;
+  /deep/ {
+    .slick-list{
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+    .slick-arrow{
+      position: absolute;
+      right: 100%;
+      left: auto;
+      &.slick-next{
+        margin-right: 30px;
+      }
+      &.slick-next:before, &.slick-prev:before{
+        background: #000;
+        border-radius: 50%;
+      }
+    }
+  }
+  .slide{
+    a{
+      color: #898c91;
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 26px;
+      cursor: pointer;
+      outline: none;
+      &.active {
+        background: #fff;
+        box-shadow: -0.523px 5.977px 0px 0px rgba(76, 117, 158, 0.03);
+      }
+    }
+    &-name{
+      text-transform: capitalize;
+    }
+    &-number{
+      background-color: #fff;
+      border-radius: 50%;
+      padding: 3px;
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      text-align: center;
+      position: relative;
+      bottom: 2px;
+    }
+  }
+}

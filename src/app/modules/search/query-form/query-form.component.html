@@ -1,49 +1,21 @@
 <div class="container-fluid main-content">
-  <div class="row p-3">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for=""> select template</label>
-        <select formControlName="degreeOfConfidentiality" name="" id="" class="form-control">
-          <option value="asdsda">asdasdasd</option>
-        </select>
+  <div class="d-flex align-items-center">
+      <ul class="breadcrumb mr-auto w-25">
+          <li><a href="#">Add New Query</a></li>
+      </ul>
+      <div class="w-75 ">
+        <mat-form-field  class="w-50 mr-3">
+            <input matInput placeholder="Query Name" >
+          </mat-form-field>
+          <mat-radio-group>
+            <mat-radio-button class="mr-3" value="archive">Search In Archive </mat-radio-button>
+            <mat-radio-button class="mr-3" value="folders">Search in User Folders</mat-radio-button>
+          </mat-radio-group>
       </div>
-    </div>
-    <div class="col-md-6 p-4">
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">Search for Correspondences</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Search for Tasks</label>
-        </div>
-      </div>
-    </div>
+        <button class="btn btn-secondary"><i class="fa fa-plus"></i> Save Query</button>
   </div>
-  <hr/>
 
 
-  <div class="row p-3">
-    <div class="col-md-6">
-      <div class="form-group">
-        <label for=""> query name</label>
-        <input type="text" value="" class="form-control"/>
-      </div>
-    </div>
-    <div class="col-md-6 p-4">
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="searchIn" id="inlineRadio3" value="option1">
-          <label class="form-check-label" for="inlineRadio3">Search In Archive</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="searchIn" id="inlineRadio4" value="option2">
-          <label class="form-check-label" for="inlineRadio4">Search in User Folders</label>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -57,8 +29,72 @@
          aria-selected="false">conditions</a>
     </li>
   </ul>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Output</div>
+  <div class="tab-content m-0" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+      <div class="split-container">
+        <div class="row ">
+          <div class="col-md-6" style="min-height: 500px">
+              <div class="bg-white p-5">
+                <h4 class="pb-3">Add Output</h4>
+                <div class="form-group">
+                  <mat-form-field class="w-100">
+                    <mat-select placeholder="Templates">
+                      <mat-option value="Correspondence">
+                        Correspondence
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                 <div class="form-group">
+                  <mat-form-field class="w-100">
+                    <mat-select placeholder="Select Field">
+                      <mat-option value="Priority">
+                        Priority
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <div class="form-group">
+                  <mat-form-field class="w-100" >
+                    <input matInput 
+                           placeholder="Display As">
+                  </mat-form-field>
+                </div>
+                 <div class="form-group">
+                  <mat-form-field class="w-100">
+                    <mat-select placeholder="sort">
+                      <mat-option value="Ascending">
+                        Ascending
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="form-group text-center">
+                  <button class="btn btn-primary rounded px-5" (click)="addedOutput = true" type="submit">Add</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 py-3">
+              <div *ngIf="!addedOutput" class="text-center no-content">
+                  <div><span class="icon-search-related"></span></div>
+                  <p>{{'runSearchText' | translate: lang}}</p>
+              </div>
+              <div *ngIf="addedOutput">
+                <table cdkDropList (cdkDropListDropped)="drop($event)">
+                  <tr *ngFor="let output of outputs" cdkDrag>
+                    <td>{{output.field}}</td>
+                    <td>{{output.sort}}</td>
+                  </tr>
+                </table>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">conditions</div>
   </div>
 </div>

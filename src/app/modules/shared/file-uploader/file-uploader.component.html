@@ -1,5 +1,3 @@
-
-
 <div class="container">
     <div class="navbar navbar-default">
     </div>
@@ -15,7 +13,7 @@
 			   <p style="font-size: 18px; color:lightgray;">{{'clickHere' | translate: lang}} </p>
             </div>
 			
-            <input type="file"  class="hidden" id="importInput" (change)="fileOverAnother()"
+            <input type="file" class="hidden" id="{{uploadId}}" (change)="fileOverAnother()"
                    ng2FileSelect [uploader]="uploader" multiple  /><br/>
  
         
@@ -23,7 +21,7 @@
         <div class="col-md-5 col-lg-3">
             <button class="scan">
                 <span class="icon-scan"></span>
-                <p>مسح ضوئى</p>
+                <p>{{'scan' | translate: lang}}</p>
             </button>
         </div>
  

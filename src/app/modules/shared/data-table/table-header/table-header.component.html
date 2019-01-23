@@ -2,18 +2,21 @@
   <div class="d-flex align-items-center">
     <div class="table-header-item mr-auto">
       <ul>
-        <li><a href="#" data-toggle="tooltip" title="Trash"><img src="assets/images/trash.png" alt="trash"></a></li>
-        <li><a href="#" data-toggle="tooltip" title="Forward"><img src="assets/images/forward.png" alt="forward"></a></li>
+        <li *ngFor="let action of actions">
+          <a data-toggle="tooltip" role="button"
+             title="{{action.title | translate: lang}}" (click)="actionEventClicked(action)"><img [src]="action.icon" alt="{{action.title}}"></a>
+        </li>
         <li>
-         
-          <!-- <input class="check-all" id="selectAll" (change)="checkAll($event)"  [checked]="isAllChecked" type="checkbox"> -->
-          <mat-checkbox class="check-all" [labelPosition]="labelPosition" id="selectAll" (change)="checkAll($event)"  [checked]="isAllChecked">اختيار الكل</mat-checkbox>
-
+          <mat-checkbox class="check-all" [labelPosition]="labelPosition" id="selectAll" (change)="checkAll($event)"
+                        [checked]="isAllChecked">{{'selectAll' | translate: lang}}</mat-checkbox>
         </li>
       </ul>
     </div>
     <div class="table-header-search">
-      <input type="text" class="form-control" placeholder="بحث ....">
+     
+       <mat-form-field class="example-full-width">
+         <input matInput placeholder="{{'search' | translate: lang}}" (keyup)="searchStringEnter($event.target.value)">
+       </mat-form-field>
     </div>
   </div>
 </div>

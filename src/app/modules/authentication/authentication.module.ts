@@ -6,11 +6,12 @@ import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LocalizationModule} from '../shared/localization/localization.module';
+import { SpinnerModule } from '../shared/spinner/spinner.module';
 
 @NgModule({
   declarations: [LoginComponent],
   imports: [
-
+    SpinnerModule,
     CommonModule,
     AuthenticationRoutingModule,
     FormsModule,

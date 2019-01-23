@@ -65,7 +65,7 @@
   "size": "size",
   "type":"type",
   "modifiedDate":"Modified Date",
-  "owner": "owner",
+  "owner": " owner",
   "versions":"versions",
   "AccessRights": "Access Rights",
   "viewAll": "View To All",
@@ -115,5 +115,18 @@
   "templateType": "Template Type",
   "relatedCorrespondenceSearch": "Start Search to add related correspondences",
   "letterPreview": "letter Preview",
-  "searchResult": "searchResult"
+  "searchResult": "searchResult",
+  "scan": "scan",
+  "dashboard": "Dashboard",
+  "queryName": " Query Name",
+  "run": " Run",
+  "runSearchText": "Run a Query to Start Search",
+  "createSearchTask": "Search In task",
+  "createSearchCorress": "Search In Correspondence",
+  "createSearch": "Create New Search",
+  "all": "All",
+  "selectAll": "select All",
+  "trash": "Trash",
+  "accessRights": "Access Rights",
+  "searchParams": "search Parameters"
 }

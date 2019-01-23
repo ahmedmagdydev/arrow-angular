@@ -3,7 +3,7 @@
 		<div><span class="icon-no-task"></span></div>
 		<p>{{'noTasks'| translate: lang}}</p>
 		<div>
-			<div class="btn btn-outline-primary btn-block" (click)="addTask = true">إنشاء مهمة جديدة</div>
+			<div class="btn btn-outline-primary btn-block" (click)="addTask = true"> {{'noTasks'| translate: lang}} </div>
 		</div>
 	</div>
 	<div [formGroup]="tasksForm" class="{{addTask ? 'add-task-container show' : 'add-task-container' }}">
@@ -58,11 +58,11 @@
 			<div class="form-group row">
 				<div class="col-md-6">
 					<label for="">{{'task.dueDate'| translate: lang}}</label>
-					  <!-- <app-hijri-date [rangeSelect]="false" [monthsToShow]="1"></app-hijri-date> -->
+					  <app-hijri-date [rangeSelect]="false" [monthsToShow]="1"></app-hijri-date>
 				</div>
 				<div class="col-md-6">
 					<label for=""> {{'task.dueTime'| translate: lang}}</label>
-					  <!-- <app-hijri-date [rangeSelect]="false" [monthsToShow]="1"></app-hijri-date> -->
+					  <app-hijri-date [rangeSelect]="false" [monthsToShow]="1"></app-hijri-date>
 				</div>
 			</div>
 			<div class="form-group">
@@ -85,8 +85,26 @@
 			<div class="clearfix">
 				<a  class="close" (click)="addAttachment = false"><i class="fa  fa-chevron-right"></i></a>
 			</div>
-			<app-attachments></app-attachments>
+			<app-file-uploader [uploader]="uploader" [lang]="lang" (uploaders)="handleUploaders($event)" [uploadId]="'taskInput'" ></app-file-uploader>
+			<div class="upload-table">
+				<div class="d-flex align-items-center" *ngFor="let item of files; let i=index">
+						<div class="d-flex align-items-center mr-auto">
+							<i class="icon-attachment"></i>
+								<div>
+									<div class="file-name">{{item.name }}</div>
+									<div *ngIf="!uploader.queue[i].isUploaded" class="progress-bar progress-bar-success" [ngStyle]="{ 'width':uploader.queue[i].progress + '%', 'height': '5px' }"  placement="bottom"></div>
+									 <div *ngIf="uploader.queue[i].isUploaded" class="file-date"  >{{item.lastModifiedDate | date  }}</div>
+								</div>			
+									</div>
+									<ul class="list-inline m-0">
+										<li class="list-inline-item"><a  (click)="downloadFile(item, i)"><span class="icon-upload"></span></a></li>
+										<li class="list-inline-item"><a (click)="deleteFile(i, item)"><span class="icon-trash"></span></a></li>
+									</ul>
+								</div>
+					</div>
+			
 		</div>
+		
 	</div>
 	<div *ngIf="tasks.length > 0">
 		

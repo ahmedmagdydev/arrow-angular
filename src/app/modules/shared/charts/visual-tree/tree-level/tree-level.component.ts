@@ -8,6 +8,7 @@ import {Language} from 'angular-l10n';
 })
 export class TreeLevelComponent implements OnInit {
 
+    today = new Date;
     @Language() lang: string;
     @Input() treeData: any[];
     @Output() openNodePreviewEvent: EventEmitter<any> = new EventEmitter();

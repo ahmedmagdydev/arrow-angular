@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild, OnInit, OnChanges} from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit, OnChanges, HostListener, Input } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatAutocompleteSelectedEvent, MatChipInputEvent } from '@angular/material';
 import { FormControl } from '@angular/forms';
@@ -15,14 +15,14 @@ declare var $: any;
 @Component({
   selector: 'app-attachments',
   templateUrl: './attachments.component.html',
-  styleUrls: ['./attachments.component.scss']
+  styleUrls: ['./attachments.component.scss'],
 })
 export class AttachmentsComponent  {
-
+  
+  uploader: FileUploader = new FileUploader({url: URL});
   files: fileObject[] = [];
   @Language() lang: string;
   detailsObj = {name : '', type:'', lastModifiedDate: '', size: ''}
-  @ViewChild(FileUploaderComponent) fileUploaderComponent: FileUploaderComponent; 
   versionUploader:FileUploader = new FileUploader({url: URL});
   info = false;
   localImageUrl;
@@ -58,11 +58,13 @@ export class AttachmentsComponent  {
          name: 'Malta'
        }
      ];
+
       @ViewChild('fruitInput') fruitInput: ElementRef;
-      constructor(public sanitizer:DomSanitizer) {
+      constructor(private eRef: ElementRef, public sanitizer:DomSanitizer) {
         this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
           startWith(null),
           map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFruits.slice()));
+          this.uploader = new FileUploader({url: URL});
       }
      
       add(event: MatChipInputEvent): void {
@@ -108,11 +110,12 @@ export class AttachmentsComponent  {
             queue.file.name = this.selectedFile.name;
             this.selectedVersion = queue._file;
             
-          const newFile = new File([""], this.selectedFile.name, {type: queue.file.type, lastModified: this.selectedVersion.lastModifiedDate});
-          this.files[this.selectedIndex].versions = this.files[this.selectedIndex].versions || [];
-          this.files[this.selectedIndex].versions.push(newFile);   
+            const newFile = new File([""], this.selectedFile.name, {type: queue.file.type, 
+            lastModified: this.selectedVersion.lastModifiedDate});
+            this.files[this.selectedIndex].versions = this.files[this.selectedIndex].versions || [];
+            this.files[this.selectedIndex].versions.push(newFile);   
             
-          if(!queue.isUploaded) {
+            if(!queue.isUploaded) {
               queue.upload();
             }   
           }
@@ -125,11 +128,19 @@ export class AttachmentsComponent  {
           this.fillDetailsObj(version);
           this.selectedVersion = version;
         }     
-          
+           
         // handle file uploaded from uploader queue
-        handleUploaders(events) {       
-          for(let event of events) {
+        handleUploaders(events) {    
+          //remove duplicate files
+          this.uploader.queue = this.uploader.queue.filter((file, index, self) =>
+          index === self.findIndex((t) => (
+            file.file.name === t.file.name        
+            ))  
+          ) 
+          events = this.uploader.queue;
+        for(let event of events) {
             if(!event.isUploaded) {
+              event.upload();
               const file: fileObject = {};
               file.name = event._file.name;
               file.lastModifiedDate = event._file.lastModifiedDate;
@@ -138,16 +149,16 @@ export class AttachmentsComponent  {
               file.versions = [event._file];                           
               this.files.push(file);
             }
-          }          
+          } 
+              
         }
 
         // preview Image selected
         previewImage(item, index) {
           if(item.type.split('/')[0] === 'image' ) {
-            let fileItem;
-            fileItem = this.fileUploaderComponent.uploader.queue[index];
-            let url = (window.URL) ? window.URL.createObjectURL(fileItem._file) : (window as any).webkitURL.createObjectURL(fileItem._file);
-            this.localImageUrl = url
+            let fileItem = this.uploader.queue[index];
+            this.localImageUrl = (window.URL) ? window.URL.createObjectURL(fileItem._file) :
+             (window as any).webkitURL.createObjectURL(fileItem._file);
             this.info= false;
             this.showImage = true;
             this.selectedFile = item;
@@ -162,15 +173,15 @@ export class AttachmentsComponent  {
            const downloadLink = document.createElement("a");
            downloadLink.style.display = "none";
            document.body.appendChild(downloadLink);
-           let fileItem;
-           fileItem = this.fileUploaderComponent.uploader.queue[this.selectedIndex];
-           let url = (window.URL) ? window.URL.createObjectURL(fileItem._file) : (window as any).webkitURL.createObjectURL(file._file);
+           const fileItem = this.uploader.queue[this.selectedIndex];
+           const url = (window.URL) ? window.URL.createObjectURL(fileItem._file) :
+            (window as any).webkitURL.createObjectURL(file._file);
            downloadLink.setAttribute("href", url);
            downloadLink.setAttribute("download", this.selectedFile.name);
            downloadLink.click();
            document.body.removeChild(downloadLink);
+          }
         }
-      }
 
         
 
@@ -191,7 +202,7 @@ export class AttachmentsComponent  {
 
       deleteFile(index, item) {
         this.files.splice(index, 1);
-        this.fileUploaderComponent.uploader.queue.splice(index,1);
+        this.uploader.queue.splice(index,1);
         if(item.name === this.selectedFile.name) {
           return this.info? this.info = false : this.showImage = false;
         }

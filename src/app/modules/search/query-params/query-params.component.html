@@ -1,0 +1,13 @@
+<div class="p-5">
+  <h4 class="pb-3">{{'searchParams' | translate:lang }}</h4>
+  <form [formGroup]="paramsFormGroup" novalidate *ngIf="formReady" (submit)="submit(paramsFormGroup.value, paramsFormGroup.valid)" id="searchParamsForm">
+     <div class="form-group" *ngFor="let field of params; let i=index">
+      <!--ALPHA_NUMERIC/NUMERIC-->
+        <mat-form-field class="zoomIn" *ngIf="field.inputType === 'ALPHA_NUMERIC' || field.inputType === 'NUMERIC'">
+          <input matInput [type]="field.inputType === 'NUMERIC' ? 'number' : 'text'" [id]="field.inputType"
+                 placeholder="{{field.displayName}}" [formControlName]="field.promptName">
+        </mat-form-field>
+      </div>
+      <button class="btn btn-primary rounded btn-block" type="submit">{{'search' | translate:lang }}</button>
+  </form>
+</div>

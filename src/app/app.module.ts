@@ -10,16 +10,17 @@ import {l10nConfig} from './config/AppConfig';
 import {LayoutModule} from './modules/shared/layout/layout.module';
 import { AuthGuard } from './services/authentication/auth.guard';
 import { AuthInterceptor } from './services/authentication/auth.interceptor';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, LayoutModule,
+  BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, LayoutModule,
     TranslationModule.forRoot(l10nConfig)
   ],
-  providers: [UtilService, AuthGuard,
+  providers: [UtilService, AuthGuard, CookieService 
     //  {
     //   provide: HTTP_INTERCEPTORS,
     //   useClass: AuthInterceptor,
