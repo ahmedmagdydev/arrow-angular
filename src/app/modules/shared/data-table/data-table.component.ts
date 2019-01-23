@@ -19,9 +19,12 @@ export class DataTableComponent {
   @Input() showHeader;
   @Input() showFooter;
   @Input() hideActions;
+
   @Output() selectedRowsEvent: EventEmitter<any> = new EventEmitter<any>();
   @Output() actionColumnEvent: EventEmitter<any> = new EventEmitter<any>();
-  @Output() actionHeaderEvent: EventEmitter<any> = new EventEmitter<any>();  @Input() noExpandable;
+  @Output() actionHeaderEvent: EventEmitter<any> = new EventEmitter<any>();
+  @Input() noExpandable;
+  @Input() noDrag;
 
 
   constructor() { }

@@ -82,13 +82,20 @@
                   <p>{{'runSearchText' | translate: lang}}</p>
               </div>
               <div *ngIf="addedOutput">
-                <table cdkDropList (cdkDropListDropped)="drop($event)">
-                  <tr *ngFor="let output of outputs" cdkDrag>
-                    <td>{{output.field}}</td>
-                    <td>{{output.sort}}</td>
-                  </tr>
+                <table class="table table-condensed">
+                  <thead>
+                    <tr>
+                      <th>Fields</th>
+                      <th>Sort</th>
+                    </tr>
+                  </thead>
+                  <tbody cdkDropList (cdkDropListDropped)="drop($event)">
+                    <tr *ngFor="let output of outputs" cdkDrag>
+                      <td>{{output.field}}</td>
+                      <td>{{output.sort}}</td>
+                    </tr>
+                  </tbody>
                 </table>
-                
               </div>
             </div>
           </div>
