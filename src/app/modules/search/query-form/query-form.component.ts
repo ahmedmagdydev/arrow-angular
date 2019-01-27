@@ -26,9 +26,13 @@ export class QueryFormComponent implements OnInit {
 	    	sort:"Ascending"
 	    },
 	  ];
+	  conditions=['1','2']
   constructor() { }
   drop(event: CdkDragDrop<string[]>) {
       moveItemInArray(this.outputs, event.previousIndex, event.currentIndex);
+    }
+    dropCondition(event: CdkDragDrop<string[]>) {
+      moveItemInArray(this.conditions, event.previousIndex, event.currentIndex);
     }
   ngOnInit() {
   }

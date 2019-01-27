@@ -12,7 +12,7 @@
             <mat-radio-button class="mr-3" value="folders">Search in User Folders</mat-radio-button>
           </mat-radio-group>
       </div>
-        <button class="btn btn-secondary"><i class="fa fa-plus"></i> Save Query</button>
+        <button class="btn btn-secondary">Save Query</button>
   </div>
 
 
@@ -102,6 +102,59 @@
         </div>
       
     </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">conditions</div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="bg-white p-5" style="min-height: 300px;">
+        <h4 class="pb-3">Create Conditions</h4>
+        <table class="table" cdkDropList (cdkDropListDropped)="dropCondition($event)">
+          <ng-template ngFor let-condition [ngForOf]="conditions">
+            <tr cdkDrag>
+              <td><i class="fa fa-bars"></i></td>
+              <td><i class="fa fa-edit"></i></td>
+              <td><span class="icon-trash"></span></td>
+              <td>
+                <mat-form-field >
+                  <mat-select placeholder="operator">
+                    <mat-option value="Ascending">
+                      Ascending
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field >
+                  <mat-select placeholder="Fields">
+                    <mat-option value="Ascending">
+                      Ascending
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field >
+                  <mat-select placeholder="Condition">
+                    <mat-option value="Ascending">
+                      Ascending
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field >
+                  <mat-select placeholder="Values">
+                    <mat-option value="Ascending">
+                      Ascending
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <a href="#"><i class="fa fa-plus-circle"></i></a>
+              </td>
+            </tr>
+          </ng-template>
+        </table>
+      </div>
+      
+    </div>
   </div>
 </div>
