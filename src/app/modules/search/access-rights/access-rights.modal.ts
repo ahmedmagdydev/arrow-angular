@@ -118,7 +118,7 @@ import {API_URLS} from '../../../config/AppConfig';
 })
 
 export class AccessRightsModal implements OnInit{
-
+	selectedAccess=false;
 	accessTable: any = accessTableInfoLookup;
 	loading
 	// ----------------------- get Access Rights ----------------
