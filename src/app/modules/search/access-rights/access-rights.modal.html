@@ -1,0 +1,71 @@
+<div mat-dialog-title class="d-flex">
+  <button mat-button mat-dialog-close tabindex="-1"><i class="fa fa-close"></i></button>
+  <h2 class="mr-auto">
+
+  إدارة الصلاحيات</h2>
+<h6>المالك  الحالى : بلال جابر</h6>
+
+</div>
+<div class="row">
+  <div class="col-md-4 add-access-rights">
+    <h4>مجموعات ومستخدمين</h4>
+    <mat-dialog-content>
+      <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+          <button mat-icon-button disabled></button>
+          <mat-checkbox class="checklist-leaf-node"
+                        [checked]="checklistSelection.isSelected(node)"
+                        (change)="todoLeafItemSelectionToggle(node)">{{node.item}}</mat-checkbox>
+        </mat-tree-node>
+    
+    
+    
+        <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+          <button mat-icon-button matTreeNodeToggle
+                  [attr.aria-label]="'toggle ' + node.filename">
+            <i class="fa flip  {{treeControl.isExpanded(node) ? 'fa-chevron-up' : 'fa-chevron-right'}}">
+             
+            </i>
+          </button>
+          <mat-checkbox [checked]="descendantsAllSelected(node)"
+                        [indeterminate]="descendantsPartiallySelected(node)"
+                        (change)="todoItemSelectionToggle(node)">{{node.item}}</mat-checkbox>
+          
+        </mat-tree-node>
+      </mat-tree>
+    </mat-dialog-content>
+    <div class="add-selected {{selectedAccess ? 'add-selected-true' : null}}" mat-button [matMenuTriggerFor]="menu" >
+     إضافة
+      <i class="fa fa-long-arrow-right flip ml-5"></i>
+    </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item><mat-checkbox (click)="$event.stopPropagation()">Read</mat-checkbox></button>
+      <button mat-menu-item><mat-checkbox (click)="$event.stopPropagation()">Write</mat-checkbox></button>
+      <button mat-menu-item><mat-checkbox (click)="$event.stopPropagation()">Delete</mat-checkbox></button>
+      <button mat-menu-item><mat-checkbox (click)="$event.stopPropagation()">Change Access</mat-checkbox></button>
+      <button mat-menu-item (click)="selectedAccess = true">Apply</button>
+    </mat-menu>
+  </div>
+  <div class="col-md-8 bg-light">
+    <mat-dialog-content>
+      <div *ngIf="!selectedAccess" class="text-center no-content p-4">
+          <div><span class="icon icon-no-access"></span></div>
+          <p>Select from Groups and Users To Add Access Rights </p>
+      </div>
+      <div *ngIf="selectedAccess">
+        <app-data-table
+            [tableInfo]="accessTable"
+            [showHeader]="true"
+            [noExpandable]="true"
+            [_status]="_status"
+            [showFooter]="true"
+            (actionHeaderEvent)="selectedRowsAction($event)">
+        </app-data-table>
+
+      </div>
+    </mat-dialog-content>
+  </div>
+</div>
+        <mat-dialog-actions align="end"  *ngIf="selectedAccess">
+          <button class="btn btn-secondary px-5" [mat-dialog-close]="true">Save</button>
+        </mat-dialog-actions>

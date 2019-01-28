@@ -33,5 +33,6 @@ export const APP_PROFILE = {
 export const APP_PROFILE_active = APP_PROFILE.test2;
 export const API_URLS = {
   correspondences: APP_PROFILE_active.url + 'assets/data/dashboard.json',
-  query:  APP_PROFILE_active.url + 'assets/data/query.json'
+  query:  APP_PROFILE_active.url + 'assets/data/query.json',
+  access:  APP_PROFILE_active.url + 'assets/data/access.json'
 };

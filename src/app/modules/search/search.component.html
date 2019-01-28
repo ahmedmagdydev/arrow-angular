@@ -18,6 +18,7 @@
                 <span class="icon icon-tasks"></span> <span>{{'createSearchTask' | translate: lang}}</span>
             </button>
         </mat-menu>
+        <button class="btn btn-secondary ml-3" (click)="openAccessRights()"><i class="fa fa-plus"></i> access rights</button>
     </div><!--end search filters-->
 
     <div class="split-container">
@@ -32,7 +33,7 @@
             </div>
             <div class="col-md-6 py-3">
                 <div *ngIf="!selectedQuery" class="text-center no-content">
-                    <div><span class="icon-search-related"></span></div>
+                    <div><span class="icon icon-search-related"></span></div>
                     <p>{{'runSearchText' | translate: lang}}</p>
                 </div>
                 <app-query-params *ngIf="selectedQuery && !selectedQuery.run" [params]="selectedQuery.conditionList"

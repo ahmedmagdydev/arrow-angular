@@ -1,3 +1,80 @@
-<p>
-  settings works!
-</p>
+<div class="container-fluid main-content">
+  <div class="container">
+    <form novalidate [formGroup]="settingsForm" (submit)="submit(this.settingsForm.valid)">
+      <h3 class="mr-auto">{{'settings' | translate: lang}}</h3>
+      <div class="row">
+        <div class="col-lg-6">
+          <mat-form-field class="zoomIn">
+            <input matInput [placeholder]="'attachementsType' | translate: lang" [formControlName]="'attachAllowedTypes'" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <span>{{'refreshType' | translate: lang}} : </span>
+          <mat-radio-group [formControlName]="'refreshType'">
+            <mat-radio-button value="1">{{'automatically' | translate: lang}}</mat-radio-button>
+            <mat-radio-button value="2">{{'manually' | translate: lang}}</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="col-lg-6">
+          <mat-form-field class="zoomIn">
+            <input matInput [placeholder]="'REFRESH_RATE' | translate: lang" [formControlName]="'refreshRate'" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-slide-toggle [formControlName]="'Show_Correspondence_count'">{{'Show_Correspondence_count' | translate: lang}}</mat-slide-toggle>
+        </div>
+        <div class="col-lg-6">
+          <mat-slide-toggle [formControlName]="'confirmDialog'">{{'CONFIRM_DIALOG' | translate: lang}}</mat-slide-toggle>
+        </div>
+        <div class="col-lg-6">
+          <mat-slide-toggle [formControlName]="'sendNotificationEmail'">{{'SEND_NOTIFICATION' | translate: lang}}</mat-slide-toggle>
+        </div>
+        <div class="col-lg-6">
+          <mat-slide-toggle [formControlName]="'sendNotificationTaskEmail'">{{'SEND_NOTIFICATION_TASK' | translate: lang}}</mat-slide-toggle>
+        </div>
+        <div class="col-lg-6">
+          <mat-slide-toggle [formControlName]="'receiveDelayedTaskEmailAndNotification'">{{'DELAYED_TASKS_NOTIFICATION' | translate: lang}}</mat-slide-toggle>
+        </div>
+        <div class="col-lg-6">
+          <mat-slide-toggle [formControlName]="'receiveDelayedCorrEmailAndNotification'">{{'DELAYED_CORRS_NOTIFICATION' | translate: lang}}</mat-slide-toggle>
+        </div>
+        <div class="col-lg-6">
+          <mat-slide-toggle [formControlName]="'readReceipt'">{{'SEND_READ_RECEIPT' | translate: lang}}</mat-slide-toggle>
+        </div>
+        <div class="col-lg-6">
+          <mat-form-field>
+            <mat-select [formControlName]="'themeId'" [placeholder]="'THEME' | translate: lang">
+              <mat-option *ngFor="let them of thems" [value]="them">{{them}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-form-field class="zoomIn">
+            <input matInput type="number" [placeholder]="'PAGE_SIZE' | translate: lang" [formControlName]="'pageSize'" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-form-field class="zoomIn">
+            <input matInput type="number" [placeholder]="'SEARCH_PAGE_SIZE' | translate: lang" [formControlName]="'searchPageSize'" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-form-field class="zoomIn">
+            <input matInput type="number" [placeholder]="'MAX_SEARCH_RESULT' | translate: lang" [formControlName]="'maxSearchResult'" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-form-field class="zoomIn">
+            <input matInput type="number" [placeholder]="'MAX_SEARCH_RESULT_REPORT' | translate: lang" [formControlName]="'maxSearchResultReport'" />
+          </mat-form-field>
+        </div>
+        <div class="col-lg-6">
+          <mat-form-field class="zoomIn">
+            <input matInput type="number" [placeholder]="'ATTACHMENT_SIZE' | translate: lang" [formControlName]="'attachementSize'" />
+          </mat-form-field>
+        </div>
+      </div>
+      <button mat-raised-button color="primary">{{'apply' | translate: lang}}</button>
+    </form>
+  </div>
+</div>

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { Component, OnInit, Inject } from '@angular/core';
+import {Language, TranslationService} from 'angular-l10n';
+import {ActivatedRoute} from '@angular/router';
+
 
 @Component({
   selector: 'app-query-form',
@@ -7,34 +9,21 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
   styleUrls: ['./query-form.component.scss']
 })
 export class QueryFormComponent implements OnInit {
-	addedOutput=false;	
-	outputs = [
-	    {
-	    	field:"Created By",
-	    	sort:"Descending"
-	    },{
-	    	field:"Sent By",
-	    	sort:"Ascending"
-	    },{
-	    	field:"Created By",
-	    	sort:"Descending"
-	    },{
-	    	field:"Is Need Action",
-	    	sort:"Ascending"
-	    },{
-	    	field:"Created By",
-	    	sort:"Ascending"
-	    },
-	  ];
-	  conditions=['1','2']
-  constructor() { }
-  drop(event: CdkDragDrop<string[]>) {
-      moveItemInArray(this.outputs, event.previousIndex, event.currentIndex);
-    }
-    dropCondition(event: CdkDragDrop<string[]>) {
-      moveItemInArray(this.conditions, event.previousIndex, event.currentIndex);
-    }
-  ngOnInit() {
-  }
 
+	@Language() lang: string;
+	templates: any[] = [{name: 'temp1', id: 0}, {name: 'temp2', id: 1}, {name: 'temp3', id: 2}];
+    templateFields: any[] = [{name: 'field1', id: 0}, {name: 'field2', id: 1}, {name: 'field3', id: 2}];
+	outputs: any[] = [];
+	conditions = ['1', '2'];
+	searchType;
+
+	constructor(private route: ActivatedRoute) {
+        this.route.queryParams.subscribe(params => {
+            this.searchType = params['type'];
+        });
+    }
+    ngOnInit() {}
+
+    
 }
+

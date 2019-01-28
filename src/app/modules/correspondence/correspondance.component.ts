@@ -4,6 +4,7 @@ import {UtilService} from '../../services/util/util.service';
 import {API_URLS} from '../../config/AppConfig';
 import {Language} from 'angular-l10n';
 import {CoresspondenceService} from '../../services/coresspondence/coresspondence.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-correspondance',
@@ -23,7 +24,18 @@ export class CorrespondanceComponent implements OnInit {
   correspondencesStatus: any[] = correspondencesPortalStatusLookup;
   loading;
 
-  constructor(private util: UtilService, private coresspondenceService: CoresspondenceService) {}
+  constructor(private util: UtilService, private coresspondenceService: CoresspondenceService, private route: ActivatedRoute) {
+      this.route.queryParams.subscribe(params => {
+          if ( params['status'] ) {
+              for ( let i = 0; i < this.correspondencesStatus.length; i++ ) {
+                  if ( this.correspondencesStatus[i].title === params['status']) {
+                      this.corresActive(i, params['status']);
+                      break;
+                  }
+              }
+          }
+      });
+  }
   ngOnInit() { this.getData(); }
 
 

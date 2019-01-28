@@ -1,0 +1,32 @@
+.add-access-rights{
+  padding-bottom: 55px;
+  box-shadow: -10px 0px 14px -9px #ccc;
+      z-index: 2;
+}
+.add-selected{
+  height: 55px;
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  right: -9px;
+  background: #2d8dc9;
+  color: #fff;
+  text-align: center;
+  padding: 18px;
+  &-true{
+    bottom: -54px;
+  }
+}
+/deep/ {
+  .add-access-rights .mat-dialog-content{
+    margin: 0 -16px;
+  }
+}
+.mat-dialog-content{
+  /deep/{
+    .table-header,.table-main,.table-footer{
+      background: transparent;
+      box-shadow:none;
+    }
+  }
+}

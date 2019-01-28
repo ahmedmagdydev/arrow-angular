@@ -3,7 +3,8 @@ import {queryTableInfoLookup} from '../../config/Lookups';
 import {UtilService} from '../../services/util/util.service';
 import {API_URLS} from '../../config/AppConfig';
 import {Language} from 'angular-l10n';
-
+import {MatDialog} from '@angular/material';
+import {AccessRightsModal } from './access-rights/access-rights.modal'
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -19,9 +20,19 @@ export class SearchComponent implements OnInit {
     loading;
     _status = 'query';
     selectedQuery: any;
-    constructor(private util: UtilService) {}
+    constructor(private util: UtilService, public dialog: MatDialog) {}
     ngOnInit() {this.getData(); }
 
+    // ----------------------- open access rights modal ----------------
+    openAccessRights() {
+        const dialogRef = this.dialog.open(AccessRightsModal,{
+            width: '1140px',
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(`Dialog result: ${result}`);
+        });
+      }
 
     // ----------------------- get search queries ----------------
     getData() {

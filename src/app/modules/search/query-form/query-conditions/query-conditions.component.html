@@ -1,0 +1,61 @@
+<h4 class="pb-3">Create Conditions</h4>
+        <table class="table" cdkDropList (cdkDropListDropped)="dropCondition($event)">
+          <ng-template ngFor let-condition let-i=index [ngForOf]="conditions">
+            <tr cdkDrag>
+              <td><i class="fa fa-bars"></i></td>
+              <td><i class="fa fa-edit"></i></td>
+              <td><span class="icon-trash"></span></td>
+              
+              <td>
+                <mat-form-field >
+                  <mat-select placeholder="operator" [disabled]="i == 0" [value]="i == 0 ? '' : null">
+                    <mat-option value="Ascending">
+                      Ascending
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field >
+                  <mat-select placeholder="Fields">
+                    <mat-option value="Ascending">
+                      Ascending
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field >
+                  <mat-select placeholder="Condition">
+                    <mat-option value="Ascending">
+                      Ascending
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field >
+                  <mat-select placeholder="Values">
+                    <mat-option value="Ascending">
+                      Ascending
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+
+                <a (click)="addCondition()" *ngIf="i+1 == conditions.length"><i class="fa fa-plus-circle fa-3x text-secondary"></i></a>
+              </td>
+            </tr>
+          </ng-template>
+        </table>
+        <div class="mt-4">
+          <div class="d-flex">
+            <h5 class="mr-auto">Generated Code</h5>
+            <a (click)="openEditCode(code)"><h6><i class="fa fa-edit"></i> Edit Code </h6></a>
+          </div> 
+          
+            
+            <textarea readonly class="form-control readonly" [(ngModel)]="code" ></textarea>
+
+        </div>

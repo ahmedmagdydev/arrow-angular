@@ -2,7 +2,9 @@
     <div class="login-head"><img src="assets/images/logo-arrow.png"/></div> 
     <div class="login-wrap">
         <form class="login-form" name="form" [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)" novalidate>       
-                <img src="assets/images/logo-main.jpg"/>
+                <div class="text-center">
+                    <img src="assets/images/mcs-logo.png"/>
+                </div>
                 <p class="help-class error-login-msg" *ngIf="!domainInvalid && !invalidUser && invalidUserNameOrPass">{{'1001' | translate: lang}}</p>
                 <p class="help-class error-login-msg" *ngIf="domainInvalid && !invalidUser && !invalidUserNameOrPass">{{'1005' | translate: lang}}</p>
                 <p class="help-class error-login-msg" *ngIf="invalidUser && !domainInvalid && !invalidUserNameOrPass">{{'1004' | translate: lang}}</p>

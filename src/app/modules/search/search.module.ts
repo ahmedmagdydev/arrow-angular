@@ -11,19 +11,26 @@ import {FilterListModule} from '../shared/filter-list/filter-list.module';
 import {QueryParamsComponent} from './query-params/query-params.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { AccessRightsModal } from './access-rights/access-rights.modal';
 
 import {
     MatIconModule, MatMenuModule, MatButtonModule, MatTooltipModule, MatSelectModule,
     MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatCheckboxModule, MatRadioModule,
-    MatProgressSpinnerModule, MatTabsModule,
+    MatProgressSpinnerModule, MatTabsModule, MatDialogModule, MatTreeModule,
 } from '@angular/material';
+import { QueryOutputComponent } from './query-form/query-output/query-output.component';
+import { QueryConditionsComponent, EditCodeModal } from './query-form/query-conditions/query-conditions.component';
 @NgModule({
-    declarations: [SearchComponent, QueryResultComponent, QueryFormComponent, QueryParamsComponent],
+
+    declarations: [SearchComponent, QueryResultComponent, QueryFormComponent, QueryParamsComponent, QueryOutputComponent, QueryConditionsComponent, EditCodeModal, QueryParamsComponent, AccessRightsModal],
     imports: [
         CommonModule, SearchRoutingModule, LocalizationModule, DataTableModule, MatMenuModule, MatSelectModule,
         FilterListModule, FormsModule, ReactiveFormsModule, MatIconModule,
         MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatCheckboxModule, MatRadioModule,
-        MatProgressSpinnerModule, MatTabsModule, DragDropModule, MatButtonModule, MatTooltipModule
-    ]
+
+        MatProgressSpinnerModule, MatTabsModule, MatDialogModule, MatTreeModule, DragDropModule, MatButtonModule, MatTooltipModule,
+    ],
+    entryComponents:[AccessRightsModal, EditCodeModal],
+    bootstrap:[AccessRightsModal]
 })
 export class SearchModule { }

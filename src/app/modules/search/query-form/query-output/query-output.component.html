@@ -1,0 +1,66 @@
+<div class="row ">
+  <div class="col-md-6" style="min-height: 500px">
+    <div class="bg-white p-5">
+      <h4 class="pb-3">{{'OutputAdd' | translate: lang}}</h4>
+      <form [formGroup]="outputForm" novalidate (submit)="submitOutput(outputForm.value)">
+        <div class="form-group" *ngIf="searchType && searchType ==='Corresspondence'">
+          <mat-form-field class="w-100">
+            <mat-select placeholder="{{'templates' | translate: lang}}" [formControlName]="'templateID'">
+              <mat-option [value]="template.name" *ngFor="let template of templates">{{template.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="w-100">
+            <mat-select placeholder="{{'fieldSelect' | translate: lang}}" [formControlName]="'field'">
+              <mat-option [value]="field.name" *ngFor="let field of templateFields">{{field.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="w-100" >
+            <input matInput placeholder="{{'displayAs' | translate: lang}}" [formControlName]="'displayAs'">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="w-100">
+            <mat-select placeholder="{{'sort' | translate: lang}}" [formControlName]="'sort'">
+              <mat-option value="ascending">{{'ascending' | translate: lang}}</mat-option>
+              <mat-option value="descending">{{'descending' | translate: lang}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group text-center">
+          <button class="btn btn-primary rounded px-5" type="submit" [disabled]="!outputForm.valid">{{'apply' | translate: lang}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-6 py-3">
+    <div *ngIf="outputs.length <=0" class="text-center no-content">
+      <div><span class="icon icon-search-related"></span></div>
+      <p class="zoomIn">{{'outputsTable' | translate: lang}}</p>
+    </div>
+    <div *ngIf="outputs.length > 0">
+      <table class="table table-condensed">
+        <thead>
+        <tr>
+          <th></th>
+          <th>{{'fields' | translate: lang}}</th>
+          <th>{{'sort' | translate: lang}}</th>
+        </tr>
+        </thead>
+        <tbody cdkDropList (cdkDropListDropped)="dropOutput($event)">
+        <tr *ngFor="let output of outputs; let i=index" class="zoomIn" cdkDrag>
+          <td>
+            <i class="fa fa-edit actionIcon" (click)="editOutput(output, i)"></i>
+            <span class="icon-trash actionIcon" (click)="deleteOutput(output, i)"></span>
+          </td>
+          <td>{{output.field}}</td>
+          <td>{{output.sort}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

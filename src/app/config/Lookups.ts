@@ -95,3 +95,18 @@ export const queryTableInfoLookup: any = {
         {icon: 'assets/images/forward.png', title: 'accessRights', name: 'accessRights'},
     ]
 };
+
+/* =================== Access Rights Module ================ */
+export const accessTableInfoLookup: any = {
+  columns: [
+    {title: 'queryName', name: 'queryName'},
+    {title: 'owner', name: 'owner'},
+    {title: 'accessright', name: 'accessright'},
+    {title: 'actionList', name: 'actionList'}
+  ],
+  data: [],
+
+    actions: [
+        {icon: 'assets/images/trash.png', title: 'trash', name: 'trash'}
+        ]
+};

@@ -6,14 +6,15 @@ import {Language, TranslationService} from 'angular-l10n';
 import {CoresspondenceService} from '../../services/coresspondence/coresspondence.service';
 import {pieChartOptions} from '../../config/ChartsConfig';
 import {ChartComponent} from '../shared/charts/chart/chart.component';
+import {ActivatedRoute} from '@angular/router';
 declare var $;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
 
     @ViewChild(ChartComponent) _chartComponent: ChartComponent;
     chartOptions;
@@ -25,9 +26,14 @@ export class HomeComponent implements OnInit {
     loading;
 
     constructor(private util: UtilService, private coresspondenceService: CoresspondenceService,
-                public _translationService: TranslationService) {
-        this._translationService.translationChanged().subscribe(() => {
-            this.updateChart();
+                public _translationService: TranslationService, private route: ActivatedRoute) {
+        this._translationService.translationChanged().subscribe(() => this.updateChart());
+        this.route.queryParams.subscribe(params => {
+            if ( params['status'] ) {
+                const tabId = '#' + params['status'] + '-tab';
+                $(tabId).click();
+                this.changeStatus(params['status']);
+            }
         });
     }
     ngOnInit() {
@@ -49,6 +55,7 @@ export class HomeComponent implements OnInit {
             () => {this.loading = false; }
         );
     }
+
 
     // ----------------------- update chart -----------------------
     updateChart() {
