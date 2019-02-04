@@ -1,3 +1,31 @@
-<p>
-  address-book works!
-</p>
+
+
+<div class="container-fluid main-content">
+	<div class="d-flex align-items-center">
+		<ul class="breadcrumb mr-auto">
+		  <li><a href="#">Address Book</a></li>
+		  <!--<li><img src="assets/images/left-arr.png" /> ?????? </li>-->
+		</ul>
+		<button class="btn btn-secondary" ><i class="fa fa-plus"></i> Create Contact</button>
+	</div>
+
+	<div class="split-container">
+	    <div class="row ">
+	        <div class="col-md-4">
+	            <div class="bg-white p-4" style="min-height: 500px">
+	            	<app-address-book-filter></app-address-book-filter>
+	            </div>
+	        </div>
+	        <div class="col-md-8">
+	        	<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+				<app-data-tree [dir]="'rtl'" *ngIf="!loading"
+                           [treeData]="addressBook"
+                           [childrenNodesName]="'childrenNodes'"
+                           [nodeDisplayName]="'nodeName'"
+                           [nodeID]="'nodeId'"
+           		></app-data-tree>
+	        </div>
+	    </div>
+	</div>
+
+</div>

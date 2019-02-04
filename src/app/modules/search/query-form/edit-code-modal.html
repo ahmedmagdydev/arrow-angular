@@ -1,0 +1,16 @@
+<div mat-dialog-title class="d-flex">
+  <button mat-button mat-dialog-close tabindex="-1"><i class="fa fa-close"></i></button>
+<h2>Edit Generated Code</h2>
+
+</div>
+<mat-dialog-content>
+<div class="alert alert-danger text-center">
+  Warning If you edit the Generated Code , Condition builder will be Disabled
+</div>
+<div class="form-group"><label for="">Edit Code</label><textarea tabindex="-1" readonly class="form-control readonly" value="{{data.code}}"></textarea></div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" >
+  <button class="btn btn-secondary px-5 mr-2"  mat-dialog-close>cancel</button>
+  <button class="btn btn-primary px-5" [mat-dialog-close]="true">confirm</button>
+</mat-dialog-actions>

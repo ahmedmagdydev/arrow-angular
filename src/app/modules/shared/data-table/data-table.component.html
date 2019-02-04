@@ -9,13 +9,13 @@
         <tr>
           <th style="width: 55px" *ngIf="showHeader"></th>
           <th (click)="orderTable(col.name)" class="table-filter" *ngFor="let col of tableInfo.columns">
-            <span  *ngIf="col.name !== 'actionList' && !hideActions">{{col.title | translate: lang}}</span>
-            <i class="fa {{faSort(col.name)}}" *ngIf="col.name !== 'actions' && col.name !== 'actionList' && !hideActions"></i>
+            <span  *ngIf="col.name !== 'actionList' && !hideActions && col.name !=='run'">{{col.title | translate: lang}}</span>
+            <i class="fa {{faSort(col.name)}}" *ngIf="col.name !== 'actions' && col.name !=='run' && col.name !== 'actionList' && !hideActions"></i>
           </th>
         </tr>
         </thead>
         
-        <tbody *ngFor="let row of tableInfo.data | filterPipe : searchString | filterBy: ['status']: _status | orderBy : _orderBy | paginate: { itemsPerPage: _itemsPerPage, currentPage: _currentPage }; let i=index">
+        <tbody *ngFor="let row of tableInfo.data | filterPipe : searchString | orderBy : _orderBy | paginate: { itemsPerPage: _itemsPerPage, currentPage: _currentPage }; let i=index">
         <tr data-toggle="collapse" attr.data-target="#row{{row.index}}" class="accordion-toggle collapsed">
           <td  *ngIf="showHeader">
              <mat-checkbox [checked]="row.selected" (click)="$event.stopPropagation()"  class="table-check" id="{{row._id}}"
@@ -39,12 +39,11 @@
               </span>
 
 			<!--for search module-->
-              <span *ngIf="col.name === 'run'" (click)="actionColumnEventClick(row, row[col.name])">
-                <button mat-mini-fab color="white" *ngIf="row[col.name]">
+              <span *ngIf="col.title === 'prompt'" (click)="actionColumnEventClick(row, row[col.title])">
+                <button mat-mini-fab color="white" *ngIf="!row[col.title]">
                   <span class="icon-run text-secondary flip"></span>
                 </button>
-                
-                <button mat-mini-fab color="white" *ngIf="!row[col.name]">
+                <button mat-mini-fab color="white" *ngIf="row[col.title]">
                   <span class="icon-with-param text-third flip"></span>
                 </button>
               </span>

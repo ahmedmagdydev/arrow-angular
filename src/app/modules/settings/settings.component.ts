@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Language} from 'angular-l10n';
 import {UtilService} from '../../services/util/util.service';
@@ -13,6 +13,7 @@ export class SettingsComponent implements OnInit {
   @Language() lang: string;
   settingsForm: FormGroup;
   thems: any[] = ['Blue', 'Green'];
+
   constructor(private _builder: FormBuilder, private util: UtilService) { }
   ngOnInit() {
     this.createSettingsForm();
@@ -50,7 +51,7 @@ export class SettingsComponent implements OnInit {
       });
     }
 
-  //---------------- submit settings ---------------
+  // ---------------- submit settings ---------------
     submit(settings) {
       /*this.util.postResources('', {}).subscribe( result => {
 

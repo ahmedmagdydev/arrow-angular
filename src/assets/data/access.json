@@ -2,41 +2,41 @@
   {
     "id": 0,
     "queryName":"Search Query corres 01 ",
-    "owner":"Adara", "status": "query",
+    "queryType":"Adara", "status": "query",
     "accessright":"R W D",
     "type": "correspondences"
   },{
   "id": 1,
     "queryName":"Search Query corres 02 ",
-    "owner":"Adara","status": "query",
+    "queryType":"Adara","status": "query",
     "accessright":"R",
     "type": "correspondences"
   },{
   "id": 2,
   "queryName":"Search Query corres 03 ",
-  "owner":"Adara","status": "query",
+  "queryType":"Adara","status": "query",
   "accessright":"R W D",
   "type": "correspondences"
   },{
   "id": 3,
   "queryName":"Search Query corres 04 ",
-  "owner":"Adara","status": "query",
+  "queryType":"Adara","status": "query",
   "accessright":"R W D",
   "type": "correspondences"
   },{
   "id": 4,
   "queryName":"Search Query tasks 01 ",
-  "owner":"Adara","status": "query",
+  "queryType":"Adara","status": "query",
   "accessright":"R"
   },{
   "id": 5,
   "queryName":"Search Query tasks 02 ",
-  "owner":"Adara","status": "query",
+  "queryType":"Adara","status": "query",
   "accessright":"R W D"
   },{
   "id": 6,
   "queryName":"Search Query tasks 03 ",
-  "owner":"Adara","status": "query",
+  "queryType":"Adara","status": "query",
   "accessright":"R"
   }
 ]

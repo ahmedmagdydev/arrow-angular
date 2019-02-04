@@ -13,3 +13,5 @@ export const userInfoUrls: any = {
     getUserInfo: serviceUrl + 'user',
 };
 
+
+export const addressBookUrls:any = {};

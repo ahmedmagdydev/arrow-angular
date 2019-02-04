@@ -100,7 +100,7 @@ export const queryTableInfoLookup: any = {
 export const accessTableInfoLookup: any = {
   columns: [
     {title: 'queryName', name: 'queryName'},
-    {title: 'owner', name: 'owner'},
+    {title: 'queryType', name: 'queryType'},
     {title: 'accessright', name: 'accessright'},
     {title: 'actionList', name: 'actionList'}
   ],

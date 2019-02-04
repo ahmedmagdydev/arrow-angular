@@ -1,0 +1,34 @@
+// tree container
+.treeContainer{position: relative; display: block; width: 100%;}
+.treeContainer.ltr{text-align: left;}
+.treeContainer.rtl{text-align: right;}
+
+
+//tree style
+.tree-menu {font-size: 14px;line-height: 24px;overflow: hidden; position: relative; display: block; margin: 0; padding: 0;}
+.tree-menu input[type=checkbox] {display: none;}
+.tree-menu ul {display: none; position: relative;}
+.tree-menu ul:before {content: ""; position: absolute; top: 30px; bottom: 12px; border-left: 1px #EEE solid;}
+.tree-menu label, li span, .fa-plus-circle, .fa-trash {cursor: pointer;}
+.tree-menu input[type=checkbox]:checked ~ app-data-tree ul {display: block;}
+.tree-menu input[type=checkbox]:checked ~ app-data-tree label {color: #CCC;}
+.tree-menu li {list-style: none;position: relative; padding: 5px 0;}
+.tree-menu li:before {content: "";position: absolute; width: 10px;border-bottom: 1px #EEE solid;z-index: -1;top: 12px;}
+.mat-checkbox{margin-right: 5px;}
+.chevron{margin-right: 10px;}
+.fa-plus-circle, .fa-trash{ margin-left: 10px;}
+.fa-trash{ color: red;}
+//li:hover .mat-checkbox{display: inline;}
+
+//left dir
+.tree-menu.ltr ul {margin: 0 0 0 10px;}
+.tree-menu.ltr ul:before{left: -10px;}
+.tree-menu.ltr li:before{left: -10px;}
+.tree-menu.ltr > li {margin-left: 10px;}
+
+
+//right dir
+.tree-menu.rtl ul {margin: 0 10px 0 0;}
+.tree-menu.rtl ul:before{right: -10px;}
+.tree-menu.rtl li:before{right: -10px;}
+.tree-menu.rtl > li {margin-right: 10px;}

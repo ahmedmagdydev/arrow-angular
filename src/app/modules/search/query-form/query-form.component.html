@@ -5,9 +5,9 @@
         <mat-form-field  class="w-50 mr-3">
             <input matInput placeholder="{{'queryName' | translate: lang}}" >
         </mat-form-field>
-        <mat-radio-group>
-          <mat-radio-button class="mr-3" value="archive">{{'archiveSearch' | translate: lang}}</mat-radio-button>
+        <mat-radio-group value="folders">
           <mat-radio-button class="mr-3" value="folders">{{'foldersSearch' | translate: lang}}</mat-radio-button>
+          <mat-radio-button class="mr-3" value="archive">{{'archiveSearch' | translate: lang}}</mat-radio-button>
         </mat-radio-group>
       </div>
       <button class="btn btn-secondary">{{'saveQuery' | translate: lang}}</button>
@@ -15,26 +15,32 @@
 
 
 
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
-
-         role="tab" aria-controls="home" aria-selected="true">{{'Output'| translate: lang}}</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-
-         aria-selected="false">{{'conditions'| translate: lang}}</a>
-    </li>
-  </ul>
-  <div class="tab-content m-0" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <div class="split-container">
+  <div class="d-flex">
+    <ul class="nav nav-tabs" id="myTab" role="tablist" *ngIf="!disabled">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+    
+           role="tab" aria-controls="home" aria-selected="true">{{'Output'| translate: lang}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+    
+           aria-selected="false">{{'conditions'| translate: lang}}</a>
+      </li>
+    </ul>
+    <div class=" ml-auto">
+      <mat-slide-toggle [(ngModel)]="checked" [disabled]="disabled" (change)="advancedMode($event)">advanced mode</mat-slide-toggle>
+    </div>
+  </div>
+  <app-search-advanced-mode *ngIf="disabled"  [(code)]="code"></app-search-advanced-mode>
+  <div class="tab-content m-0" id="myTabContent" *ngIf="!disabled">
+    <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="split-container mt-0">
           <app-query-output [templates]="templates" [templateFields]="templateFields" [(outputs)]="outputs"
                             [searchType]="searchType"></app-query-output>
       </div>
     </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="bg-white p-5" style="min-height: 300px;">
        
        <app-query-conditions [(conditions)]="conditions"></app-query-conditions>

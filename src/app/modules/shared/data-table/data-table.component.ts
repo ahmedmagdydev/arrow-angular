@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Language} from 'angular-l10n';
 
 @Component({
@@ -10,7 +10,7 @@ export class DataTableComponent {
 
   @Language() lang: string;
   @Input() tableInfo: any;
-  _itemsPerPage = 10;
+  @Input() _itemsPerPage = 10;
   _currentPage = 1;
   checkedRows = [];
   searchString = '';
@@ -29,20 +29,15 @@ export class DataTableComponent {
 
   constructor() { }
 
- 
-  getObjectAttribute(object: any, attribute): any {return object[attribute];}
+
+  getObjectAttribute = (object: any, attribute) => object[attribute];
+  currentPageChanged = (page) => this._currentPage = page;
+  priority = (_priority) => Math.ceil(_priority / 2);
+  changeItemsPerPage = (_value) => this._itemsPerPage = _value;
   getObjectAttributeFromArray(arr: any[], attribute): any {
     const ob = arr[0];
     return ob[attribute];
   }
-  currentPageChanged(page){this._currentPage = page;}
-
-
-
-  public priority(_priority): any { return Math.ceil(_priority / 2); }
-  public changeItemsPerPage(_value) {
-    console.log(_value);
-    this._itemsPerPage = _value; }
   faSort(sortby): string {
     if ( this._orderBy === sortby) {
       return 'fa-sort-asc';
@@ -52,14 +47,14 @@ export class DataTableComponent {
       return 'fa-sort';
     }
   }
- public orderTable = function (orderArg) {
-        if (this._orderBy == orderArg ){
+  orderTable = function (orderArg) {
+        if (this._orderBy === orderArg ){
             this._orderBy = '-' + orderArg;
         } else {
             this._orderBy = orderArg;
         }
         this.uncheckAll();
-    }
+  }
 
 
   // ================ row selection ===============

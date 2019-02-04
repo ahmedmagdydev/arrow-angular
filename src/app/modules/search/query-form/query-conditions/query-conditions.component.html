@@ -3,59 +3,127 @@
           <ng-template ngFor let-condition let-i=index [ngForOf]="conditions">
             <tr cdkDrag>
               <td><i class="fa fa-bars"></i></td>
-              <td><i class="fa fa-edit"></i></td>
               <td><span class="icon-trash"></span></td>
-              
               <td>
-                <mat-form-field >
+                <mat-form-field style="width: 30px">
+                  <mat-select >
+                    <mat-option value="">
+                    </mat-option>
+                    <mat-option value="(">
+                      (
+                    </mat-option>
+                    <mat-option value="((">
+                      ((
+                    </mat-option>
+                    <mat-option value="(((">
+                      (((
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field  style="width: 70px">
                   <mat-select placeholder="operator" [disabled]="i == 0" [value]="i == 0 ? '' : null">
-                    <mat-option value="Ascending">
-                      Ascending
+                    <mat-option value="AND">
+                      AND
+                    </mat-option>
+                    <mat-option value="OR">
+                      OR
+                    </mat-option>
+                    <mat-option value="NOR">
+                      NOR
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <mat-form-field  style="width: 120px">
+                  <mat-select placeholder="Template" >
+                    <mat-option value="Template">
+                      Template
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
               </td>
               <td>
                 <mat-form-field >
-                  <mat-select placeholder="Fields">
-                    <mat-option value="Ascending">
-                      Ascending
+                  <mat-select placeholder="Fields" (selectionChange)="changeField($event,i)">
+                    <mat-option value="date">
+                      date
+                    </mat-option>
+                     <mat-option value="text">
+                      text
+                    </mat-option>
+                     <mat-option value="lookup">
+                      lookup
+                    </mat-option>
+                     <mat-option value="autocomplete">
+                      autocomplete
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
               </td>
               <td>
-                <mat-form-field >
+                <mat-form-field  style="width: 120px">
                   <mat-select placeholder="Condition">
-                    <mat-option value="Ascending">
-                      Ascending
+                    <mat-option value="equal">
+                      ==
+                    </mat-option>
+                    <mat-option value="notEqual">
+                      !=
+                    </mat-option>
+                    <mat-option value="greaterThan">
+                       &gt;
+                    </mat-option>
+                    <mat-option value="lessThan">
+                     
+                      &lt;
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
               </td>
               <td>
-                <mat-form-field >
-                  <mat-select placeholder="Values">
-                    <mat-option value="Ascending">
-                      Ascending
+                <mat-form-field  style="width: 120px">
+                  <mat-select placeholder="Parameters" value="{{condition.parameter}}" (selectionChange)="changeParameter($event,i)">
+                    <mat-option value="value">
+                      Value
+                    </mat-option>
+                    <mat-option value="prompt">
+                      Prompt
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
               </td>
               <td>
+                <app-query-condition-values [fieldType]="condition.field" *ngIf="condition.parameter == 'value'"></app-query-condition-values>
 
-                <a (click)="addCondition()" *ngIf="i+1 == conditions.length"><i class="fa fa-plus-circle fa-3x text-secondary"></i></a>
+                <mat-form-field  *ngIf="condition.parameter !== 'value'">
+                  <input matInput placeholder="Display Name" [value]="condition.field"/>
+                </mat-form-field>
+                <mat-checkbox *ngIf="condition.field == 'date' && condition.parameter == 'value'" class="mr-2">Current Date</mat-checkbox>
+                <mat-checkbox>Match Case</mat-checkbox>
+              </td>
+              <td>
+                <mat-form-field style="width: 30px">
+                  <mat-select >
+                    <mat-option value="">
+                      
+                    </mat-option>
+                    <mat-option value=")">
+                      )
+                    </mat-option>
+                    <mat-option value="))">
+                      ))
+                    </mat-option>
+                    <mat-option value=")))">
+                      )))
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td>
+                <a (click)="addCondition()" *ngIf="i+1 == conditions.length"><i class="fa fa-plus-circle fa-2x pt-3 text-secondary"></i></a>
               </td>
             </tr>
           </ng-template>
         </table>
-        <div class="mt-4">
-          <div class="d-flex">
-            <h5 class="mr-auto">Generated Code</h5>
-            <a (click)="openEditCode(code)"><h6><i class="fa fa-edit"></i> Edit Code </h6></a>
-          </div> 
-          
-            
-            <textarea readonly class="form-control readonly" [(ngModel)]="code" ></textarea>
-
-        </div>

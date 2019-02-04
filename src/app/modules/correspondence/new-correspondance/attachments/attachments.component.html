@@ -106,8 +106,8 @@
 						</mat-option>
 					</mat-autocomplete> 
 					<mat-chip-list #chipList>
-						<div class="form-control"><input placeholder="New fruit..." #fruitInput [formControl]="fruitCtrl" [matAutocomplete]="auto" [matChipInputFor]="chipList"
-							 [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)"/></div>
+						<input placeholder="New fruit..." #fruitInput [formControl]="fruitCtrl" [matAutocomplete]="auto" [matChipInputFor]="chipList"
+							 [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)"/>
 						<mat-chip *ngFor="let fruit of fruits;let indx=index;" [selectable]="selectable" [removable]="removable" (removed)="remove(fruit,indx)">
 							{{fruit.name}}
 							<i class="fa fa-close" matChipRemove *ngIf="removable"></i>

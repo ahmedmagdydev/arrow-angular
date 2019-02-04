@@ -124,7 +124,7 @@ export class AccessRightsModal implements OnInit{
 	// ----------------------- get Access Rights ----------------
 	getData() {
 	    this.loading = true;
-	    this.util.getResources(API_URLS.query).subscribe( result => {
+	    this.util.getResources(API_URLS.access).subscribe( result => {
 	            this.accessTable.data = result;
 	            this.loading = false;
 	        },

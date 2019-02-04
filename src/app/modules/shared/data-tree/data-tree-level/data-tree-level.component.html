@@ -1,0 +1,26 @@
+<ul *ngIf="opened" class="{{dir}}">
+    <li *ngFor="let node of children">
+        <input [id]='node[nodeID]' type='checkbox' (change)="_treeService.onNodeToggleChange(node, $event)"
+               *ngIf="node[childrenNodesName] && node[childrenNodesName].length > 0"/>
+        <mat-checkbox [checked]="node.selected"
+                      (change)="_treeService.onSelectNode(node, node[childrenNodesName], childrenNodesName); onSelectChildNode(node)"></mat-checkbox>
+        <label [for]='node[nodeID]' *ngIf="node[childrenNodesName] && node[childrenNodesName].length > 0">
+            <i class="chevron fa fas" [ngClass]="{
+                'fa-chevron-down': node[childrenNodesName] && node[childrenNodesName].length > 0 && node.opened,
+                'fa-chevron-right': node[childrenNodesName] && node[childrenNodesName].length > 0 && !node.opened
+            }"></i>
+            {{node[nodeDisplayName]}}
+        </label>
+        <span *ngIf="!node[childrenNodesName] || node[childrenNodesName].length <= 0">{{node[nodeDisplayName]}}</span>
+        <i class="fa fas fa-plus-circle" *ngIf="node.opened"></i>
+        <i class="fa fas fa-trash" *ngIf="node.selected" (click)="deleteNode(node)"></i>
+        <app-data-tree-level *ngIf="node[childrenNodesName] && node[childrenNodesName].length > 0"
+                             (childSelectEvent)="_treeService.onChildSelectIonChange(node, node[childrenNodesName], $event)"
+                             [opened]="node.opened"
+                             [children]="node[childrenNodesName]"
+                             [childrenNodesName]="childrenNodesName"
+                             [nodeDisplayName]="nodeDisplayName"
+                             [nodeID]="nodeID"
+        ></app-data-tree-level>
+    </li>
+</ul>

@@ -118,7 +118,8 @@
   "searchResult": "نتائج البحث",
   "scan": "مسح ضوئى",
   "dashboardReports": "لوحه التقارير",
-  "queryName": "اسم البحث ",
+  "queryName": "الإسم",
+  "queryType":"النوع",
   "run": "تنفيذ ",
   "runSearchText": "قم بتنفيذ بحث لعرض نتائج البحث",
   "createSearchTask": "إنشاء بحث في المهام",
@@ -174,5 +175,6 @@
   "outputsTable": "اضف حقول للبحث",
   "ascending": "تصاعدي",
   "descending": "تنازلى",
-"accessright":"الصلاحيات"
+  "accessright":"الصلاحيات",
+  "correspondencesARCHIVED": "ارشيف المراسلات"
 }

@@ -10,13 +10,16 @@ import {
     MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatCheckboxModule, MatRadioModule,
     MatProgressSpinnerModule, MatSlideToggleModule
 } from '@angular/material';
+import {SignatureModule} from '../shared/signature/signature.module';
+
+
 @NgModule({
   declarations: [SettingsComponent],
   imports: [
     CommonModule, LocalizationModule, SettingsRoutingModule, FormsModule, ReactiveFormsModule,
       MatIconModule, MatButtonModule, MatTooltipModule, MatSelectModule,
       MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatCheckboxModule, MatRadioModule,
-      MatProgressSpinnerModule, MatSlideToggleModule
+      MatProgressSpinnerModule, MatSlideToggleModule, SignatureModule
   ]
 })
 export class SettingsModule { }

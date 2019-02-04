@@ -118,7 +118,8 @@
   "searchResult": "searchResult",
   "scan": "scan",
   "dashboardReports": "Dashboard",
-  "queryName": " Query Name",
+  "queryName": " Name",
+  "queryType":"Type",
   "run": " Run",
   "runSearchText": "Run a Query to Start Search",
   "createSearchTask": "Search In task",
@@ -173,5 +174,7 @@
   "fields": "Fields",
   "outputsTable": "Add Outputs To Your Search",
   "ascending": "Ascending",
-  "descending": "Descending"
+  "descending": "Descending",
+  "correspondencesARCHIVED": "Archived Correspondences",
+  "tasksARCHIVED": "Archived Tasks"
 }

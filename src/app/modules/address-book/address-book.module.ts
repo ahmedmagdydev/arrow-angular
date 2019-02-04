@@ -4,12 +4,18 @@ import {LocalizationModule} from '../shared/localization/localization.module';
 
 import { AddressBookRoutingModule } from './address-book-routing.module';
 import { AddressBookComponent } from './address-book.component';
+import {AddressBookFilterComponent} from './address-book-filter/address-book-filter.component'
+import {DataTreeModule} from '../shared/data-tree/data-tree.module';
+import {MatTreeModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule,MatProgressBarModule} from '@angular/material';
 
 @NgModule({
-  declarations: [AddressBookComponent],
+
+  declarations: [AddressBookComponent, AddressBookFilterComponent],
   imports: [
     CommonModule, LocalizationModule,
-    AddressBookRoutingModule
+    AddressBookRoutingModule,DataTreeModule,MatProgressBarModule,
+    MatTreeModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule
+
   ]
 })
 export class AddressBookModule { }

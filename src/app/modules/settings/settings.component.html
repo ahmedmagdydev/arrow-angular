@@ -73,6 +73,9 @@
             <input matInput type="number" [placeholder]="'ATTACHMENT_SIZE' | translate: lang" [formControlName]="'attachementSize'" />
           </mat-form-field>
         </div>
+        <div  class="col-lg-6">
+         <app-signature></app-signature>
+        </div>
       </div>
       <button mat-raised-button color="primary">{{'apply' | translate: lang}}</button>
     </form>

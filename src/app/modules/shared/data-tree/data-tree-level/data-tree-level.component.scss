@@ -1,0 +1,26 @@
+//tree style
+input[type=checkbox] {display: none;}
+ul.childMenu {display: none; position: relative;}
+ul:before {content: ""; position: absolute; top: 30px; bottom: 12px; border-left: 1px #EEE solid;}
+label, li span, .fa-plus-circle, .fa-trash {cursor: pointer;}
+input[type=checkbox]:checked ~ ul {display: block;}
+input[type=checkbox]:checked ~ label {color: #CCC;}
+li {list-style: none;position: relative;}
+li:before {content: "";position: absolute;width: 25px;border-bottom: 1px #EEE solid;z-index: -1;top: 12px;}
+.mat-checkbox{margin-right: 5px;}
+.chevron{margin-right: 10px;}
+.fa-plus-circle, .fa-trash{ margin-left: 10px;}
+.fa-trash{ color: red;}
+
+//left dir
+ul.ltr {margin: 0 0 0 10px;}
+ul.ltr:before{left: -10px;}
+.ltr li:before{left: -10px;}
+.ltr > li {margin-left: 10px;}
+
+
+//right dir
+ul.rtl {margin: 0 10px 0 0;}
+ul.rtl:before{right: -10px;}
+.rtl li:before{right: -10px;}
+.rtl > li {margin-right: 10px;}
