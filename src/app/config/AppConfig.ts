@@ -27,7 +27,7 @@ export const l10nConfig: L10nConfig = {
 // ========================= API =====================
 export const APP_PROFILE = {
   test: {url : 'http://10.0.10.107:7676/arrow4-client/'},
-  test2: {url: 'https://arrow-4angular.herokuapp.com/'},
+  test2: {url: 'https://arrow-angular.herokuapp.com/'},
   local: {url : 'http://localhost:4200/'}
 };
 export const APP_PROFILE_active = APP_PROFILE.test2;
