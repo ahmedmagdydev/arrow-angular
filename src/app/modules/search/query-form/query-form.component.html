@@ -34,13 +34,13 @@
   </div>
   <app-search-advanced-mode *ngIf="disabled"  [(code)]="code"></app-search-advanced-mode>
   <div class="tab-content m-0" id="myTabContent" *ngIf="!disabled">
-    <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div class="split-container mt-0">
           <app-query-output [templates]="templates" [templateFields]="templateFields" [(outputs)]="outputs"
                             [searchType]="searchType"></app-query-output>
       </div>
     </div>
-    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <div class="bg-white p-5" style="min-height: 300px;">
        
        <app-query-conditions [(conditions)]="conditions"></app-query-conditions>

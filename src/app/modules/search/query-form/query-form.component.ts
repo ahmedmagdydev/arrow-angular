@@ -24,16 +24,6 @@ export class QueryFormComponent implements OnInit {
       value:'',
       openingBracket:'',
       closingBracket:''
-    },
-    {
-      operator:'',
-      field:'',
-      condition:'',
-      parameter:'',
-      displayName:'',
-      value:'',
-      openingBracket:'',
-      closingBracket:''
     }
   ];
 	searchType;
